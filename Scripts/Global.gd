@@ -7,19 +7,24 @@ var rng
 
 var m_parent = null
 var m_numOfCPUs = null
+
 var clubsArr = null
 var diamondsArr = null
 var heartsArr = null
 var spadesArr = null
+
 var firstCardSuit = null
 var firstCard = null
 var tempCard = null
 var noNewCard = null
+
+
 var playerHand = null
 var cpuOneHand = null
 var cpuTwoHand = null
 var cpuThreeHand = null
 var cpuFourHand = null
+var centerHand = null
 
 
 # Called when the node enters the scene tree for the first time.
@@ -38,13 +43,9 @@ func newGame():
 	cpuTwoHand = []
 	cpuThreeHand = []
 	cpuFourHand = []
+	centerHand = []
 
-
-	if(m_numOfCPUs == 1):
-		for x in 26:
-			playerHand.append(getRandomCard())
-			cpuOneHand.append(getRandomCard())
-	elif(m_numOfCPUs == 2):
+	if(m_numOfCPUs == 2):
 		for x in 17:
 			playerHand.append(getRandomCard())
 			cpuOneHand.append(getRandomCard())

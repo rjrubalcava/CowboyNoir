@@ -1,7 +1,6 @@
 extends Node2D
 
 onready var m_popup = $newGame
-onready var oneCPU = null
 onready var twoCPU = null
 onready var threeCPU = null
 onready var fourCPU = null
@@ -9,6 +8,8 @@ onready var noWinner = true
 onready var playerTurn = 1
 onready var numOfPlayers = null
 onready var myCards = $PlayerCards
+
+
 onready var card = preload("res://Scenes/Card.tscn")
 onready var c1 = preload("res://Assets/Cards/Clubs/c1.png")
 onready var c2 = preload("res://Assets/Cards/Clubs/c2.png")
@@ -77,11 +78,22 @@ func _exit_tree():
 func playGame():
 	print(Global.playerHand)
 	print(Global.playerHand.size())
+	var cardPosition
+	var tempNode
+	var handSize = float(Global.playerHand.size())
 	for x in Global.playerHand.size():
-		var cardPosition = Vector2((x * 65) + 100,950)
-		var tempNode = Global.newNode(card, cardPosition, myCards, 1)
-		tempNode.texture = get(Global.playerHand[x-1])
-		tempNode.scale *=.40
+		if(x < (Global.playerHand.size() / 2)):
+			cardPosition = Vector2(900 - (x * 95),900 + (10 * x))
+			tempNode = Global.newNode(card, cardPosition, myCards, 1)
+			tempNode.texture = get(Global.playerHand[x])
+			tempNode.scale *=.40
+			tempNode.rotation = float((-x) / (2 * handSize))
+		else:
+			cardPosition = Vector2(900 + ((handSize - x)* 95),900 + (10 * (handSize - x)))
+			tempNode = Global.newNode(card, cardPosition, myCards, 1)
+			tempNode.texture = get(Global.playerHand[x])
+			tempNode.scale *=.40
+			tempNode.rotation = float((handSize - x) / (2 * handSize))
 		
 		
 	while noWinner:
@@ -91,15 +103,16 @@ func playGame():
 
 func _on_Button_button_up():
 	m_popup.popup()
-	oneCPU = $newGame/Container/Control/oneCPU
 	twoCPU = $newGame/Container/Control/twoCPU
 	threeCPU = $newGame/Container/Control/threeCPU
 	fourCPU = $newGame/Container/Control/fourCPU
 
 func _on_newGame_confirmed():
-	if(oneCPU.pressed == true):
-		Global.m_numOfCPUs = 1
-	elif (twoCPU.pressed == true):
+	for x in myCards.get_children():
+		myCards.remove_child(x)
+		x.queue_free()
+		
+	if (twoCPU.pressed == true):
 		Global.m_numOfCPUs = 2
 	elif(threeCPU.pressed == true):
 		Global.m_numOfCPUs = 3
