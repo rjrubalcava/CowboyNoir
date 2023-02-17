@@ -10,6 +10,7 @@ onready var playerTurn = 1
 onready var numOfPlayers = null
 onready var myCards = $PlayerCards
 onready var card = preload("res://Scenes/Card.tscn")
+
 onready var c1 = preload("res://Assets/Cards/Clubs/c1.png")
 onready var c2 = preload("res://Assets/Cards/Clubs/c2.png")
 onready var c3 = preload("res://Assets/Cards/Clubs/c3.png")
@@ -82,10 +83,14 @@ func playGame():
 		var tempNode = Global.newNode(card, cardPosition, myCards, 1)
 		tempNode.texture = get(Global.playerHand[x-1])
 		tempNode.scale *=.40
-		
+	# begin dialogue
+	Global.playDialogue(0)
+	
 		
 	while noWinner:
 		noWinner = false
+	
+	
 
 
 

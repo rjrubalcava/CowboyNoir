@@ -1,10 +1,10 @@
 extends Node2D
 
 
-#VARIABLES
+# General vars
 var rng
 
-
+# Bluff vars
 var m_parent = null
 var m_numOfCPUs = null
 var clubsArr = null
@@ -20,6 +20,14 @@ var cpuOneHand = null
 var cpuTwoHand = null
 var cpuThreeHand = null
 var cpuFourHand = null
+
+# Dialogue vars
+onready var dialogueBox = preload("res://Scenes/DialogueBox.tscn")
+onready var dialogueOption = preload("res://Scenes/DialogueOption.tscn")
+var character_dialogue_dict = {}
+var player_dialogue_dict = {}
+var current_prompt = null
+var current_options = []
 
 
 # Called when the node enters the scene tree for the first time.
@@ -38,6 +46,7 @@ func newGame():
 	cpuTwoHand = []
 	cpuThreeHand = []
 	cpuFourHand = []
+	init_dialogue()
 
 
 	if(m_numOfCPUs == 1):
@@ -96,9 +105,54 @@ func getRandomCard():
 	return tempCard
 
 
-func newNode(node, location, _parent, scaleMult):
+func newNode(node, location, parent, scaleMult):
 	var newNode = node.instance()
-	_parent.add_child(newNode)
+	parent.add_child(newNode)
 	newNode.global_position = location
 	newNode.scale *= scaleMult
 	return newNode
+	
+func init_dialogue():
+	character_dialogue_dict[0] = ["Mind if I smoke?", [0,1]]
+	character_dialogue_dict[1] = ["Mm.", [2,3]]
+	character_dialogue_dict[2] = ["Fine then.", [2,3]]
+	character_dialogue_dict[3] = ["Only when I'm with someone I can't stand.", [3]]
+	character_dialogue_dict[4] = ["And?", [4]]
+	
+	player_dialogue_dict[0] = ["Go ahead.", 1]
+	player_dialogue_dict[1] = ["Hell No.", 2]
+	player_dialogue_dict[2] = ["You smoke often?", 3]
+	player_dialogue_dict[3] = ["I have a few questions.", 4]
+	
+func playDialogue(key):
+	# Erase old prompt
+	if current_prompt != null:
+		current_prompt.queue_free()
+	# Erase old options
+	while not(current_options.empty()):
+		var prompt = current_options.pop_front()
+		prompt.queue_free()
+	# Lookup prompt string
+	var prompt_text = Global.character_dialogue_dict[key][0]
+	# Lookup options key array
+	var options = Global.character_dialogue_dict[key][1]
+	# Create visual prompt
+	current_prompt = dialogueBox.instance()
+	current_prompt.rect_position = Vector2(100, 100)
+	current_prompt.get_node("Text").bbcode_text = "[center]" + prompt_text + "[/center]"
+	get_tree().get_root().add_child(current_prompt) # adding to main
+	# Create visual options
+	for i in len(options):
+		# Lookup option string
+		var option_text = Global.player_dialogue_dict[options[i]][0]
+		# Lookup prompts key (option outcomes)
+		var prompt = Global.player_dialogue_dict[options[i]][1]
+		# Create visual prompt
+		var new_option = dialogueOption.instance()
+		new_option.rect_position = Vector2(500 + 500*i, 500)
+		new_option.get_node("Text").bbcode_text = "[center]" + option_text + "[/center]"
+		new_option.outcome = prompt # here we assign the outcome to be triggered on button press
+		print(prompt)
+		print(new_option.outcome)
+		current_options.append(new_option)
+		get_tree().get_root().add_child(new_option) # adding to main
