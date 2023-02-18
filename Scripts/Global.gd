@@ -134,23 +134,45 @@ func playDialogue(key):
 		prompt.queue_free()
 	# Lookup prompt string
 	var prompt_text = Global.character_dialogue_dict[key][0]
+	var prompt_size = len(prompt_text)
 	# Lookup options key array
 	var options = Global.character_dialogue_dict[key][1]
 	# Create visual prompt
 	current_prompt = dialogueBox.instance()
 	current_prompt.rect_position = Vector2(100, 100)
 	current_prompt.get_node("Text").bbcode_text = "[center]" + prompt_text + "[/center]"
+	# Reference for updating font size at runtime:
+	# https://godotengine.org/qa/42430/changing-font-size-of-theme-or-control-at-runtime
+	var font = current_prompt.get_node("Text").get_font("normal_font", "")
+	if prompt_size < 10:
+		font.size = 75
+	elif prompt_size < 20:
+		font.size = 60
+	else:
+		font.size = 45
+	current_prompt.get_node("Text").add_font_override("normal_font", font)
 	get_tree().get_root().add_child(current_prompt) # adding to main
 	# Create visual options
-	for i in len(options):
+	var num_options = len(options)
+	for i in num_options:
 		# Lookup option string
 		var option_text = Global.player_dialogue_dict[options[i]][0]
+		var option_size = len(option_text)
 		# Lookup prompts key (option outcomes)
 		var prompt = Global.player_dialogue_dict[options[i]][1]
 		# Create visual prompt
 		var new_option = dialogueOption.instance()
-		new_option.rect_position = Vector2(500 + 500*i, 500)
+		new_option.rect_position = Vector2((1920/(1 + num_options))*(i + 1) - 215, 500)
 		new_option.get_node("Text").bbcode_text = "[center]" + option_text + "[/center]"
+		# Update font size to fit box as needed
+		font = new_option.get_node("Text").get_font("normal_font", "")
+		if option_size < 10:
+			font.size = 75
+		elif option_size < 20:
+			font.size = 60
+		else:
+			font.size = 45
+		new_option.get_node("Text").add_font_override("normal_font", font)
 		new_option.outcome = prompt # here we assign the outcome to be triggered on button press
 		print(prompt)
 		print(new_option.outcome)
