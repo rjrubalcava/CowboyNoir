@@ -148,16 +148,16 @@ func playDialogue(key):
 	current_prompt = dialogueBox.instance()
 	current_prompt.rect_position = Vector2(100, 100)
 	current_prompt.get_node("Text").bbcode_text = "[center]" + prompt_text + "[/center]"
-	# Reference for updating font size at runtime:
-	# https://godotengine.org/qa/42430/changing-font-size-of-theme-or-control-at-runtime
-	var font = current_prompt.get_node("Text").get_font("normal_font", "")
-	if prompt_size < 10:
-		font.size = 75
-	elif prompt_size < 20:
-		font.size = 60
-	else:
-		font.size = 45
-	current_prompt.get_node("Text").add_font_override("normal_font", font)
+	# Update text size to fit box
+	if prompt_size > 10:
+		current_prompt.get_node("Text").rect_size = current_prompt.get_node("Text").rect_size * 1.25
+		current_prompt.get_node("Text").rect_scale = current_prompt.get_node("Text").rect_scale * 0.75
+	if prompt_size > 20:
+		current_prompt.get_node("Text").rect_size = current_prompt.get_node("Text").rect_size * 1.25
+		current_prompt.get_node("Text").rect_scale = current_prompt.get_node("Text").rect_scale * 0.75
+	if prompt_size > 40:
+		current_prompt.get_node("Text").rect_size = current_prompt.get_node("Text").rect_size * 1.25
+		current_prompt.get_node("Text").rect_scale = current_prompt.get_node("Text").rect_scale * 0.75
 	get_tree().get_root().add_child(current_prompt) # adding to main
 	# Create visual options
 	var num_options = len(options)
@@ -171,18 +171,16 @@ func playDialogue(key):
 		var new_option = dialogueOption.instance()
 		new_option.rect_position = Vector2((1920/(1 + num_options))*(i + 1) - 215, 500)
 		new_option.get_node("Text").bbcode_text = "[center]" + option_text + "[/center]"
-		# Update font size to fit box as needed
-		var option_font = new_option.get_node("Text").get_font("normal_font", "")
-		if option_size < 10:
-			option_font.size = 75
-		elif option_size < 20:
-			option_font.size = 60
-		elif option_size < 40:
-			option_font.size = 45
-		else:
-			option_font.size = 30
-		new_option.get_node("Text").add_font_override("normal_font", option_font)
-		print(str(option_size) + " " + str(option_font.size) + " " + str(new_option.get_node("Text").get_font("normal_font", "").size) + ": " + option_text)
+		# Update text size to fit box
+		if option_size > 10:
+			new_option.get_node("Text").rect_size = new_option.get_node("Text").rect_size * 1.25
+			new_option.get_node("Text").rect_scale = new_option.get_node("Text").rect_scale * 0.75
+		if option_size > 20:
+			new_option.get_node("Text").rect_size = new_option.get_node("Text").rect_size * 1.25
+			new_option.get_node("Text").rect_scale = new_option.get_node("Text").rect_scale * 0.75
+		if option_size > 40:
+			new_option.get_node("Text").rect_size = new_option.get_node("Text").rect_size * 1.25
+			new_option.get_node("Text").rect_scale = new_option.get_node("Text").rect_scale * 0.75
 		new_option.outcome = prompt # here we assign the outcome to be triggered on button press
 		current_options.append(new_option)
 		get_tree().get_root().add_child(new_option) # adding to main
