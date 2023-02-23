@@ -113,16 +113,23 @@ func newNode(node, location, parent, scaleMult):
 	return newNode
 	
 func init_dialogue():
-	character_dialogue_dict[0] = ["Mind if I smoke?", [0,1]]
-	character_dialogue_dict[1] = ["Mm.", [2,3]]
-	character_dialogue_dict[2] = ["Fine then.", [2,3]]
-	character_dialogue_dict[3] = ["Only when I'm with someone I can't stand.", [3]]
-	character_dialogue_dict[4] = ["And?", [4]]
-	
-	player_dialogue_dict[0] = ["Go ahead.", 1]
-	player_dialogue_dict[1] = ["Hell No.", 2]
-	player_dialogue_dict[2] = ["You smoke often?", 3]
-	player_dialogue_dict[3] = ["I have a few questions.", 4]
+	character_dialogue_dict[0] = ["Been a while, kid ...", [0,1]]
+	character_dialogue_dict[1] = ["What's the matter? Can't speak?", [2,3]]
+	character_dialogue_dict[2] = ["Too long! Where you been?!", [4,5]]
+	character_dialogue_dict[3] = ["I heard about Felecia ...", [6,7]]
+	character_dialogue_dict[4] = ["I've missed ya kid! You and Felicia ... where's she?", [8,9]]
+	character_dialogue_dict[5] = ["I heard she was in the hospital or something ...", []]
+	character_dialogue_dict[6] = ["Heard she got her head hurt or something ...", []]
+	player_dialogue_dict[0] = ["...", 1]
+	player_dialogue_dict[1] = ["Sure has ...", 2]
+	player_dialogue_dict[2] = ["...", 3]
+	player_dialogue_dict[3] = ["Don't got much to say.", 4]
+	player_dialogue_dict[4] = ["Just looking after Felicia.", 5]
+	player_dialogue_dict[5] = ["Around.", 6]
+	player_dialogue_dict[6] = ["What did you hear?", 7]
+	player_dialogue_dict[7] = ["What about her?", 8]
+	player_dialogue_dict[8] = ["Dead.", 7]
+	player_dialogue_dict[9] = ["Left her at home, I've got my own business to take care of.", 8]
 	
 func playDialogue(key):
 	# Erase old prompt
@@ -165,16 +172,17 @@ func playDialogue(key):
 		new_option.rect_position = Vector2((1920/(1 + num_options))*(i + 1) - 215, 500)
 		new_option.get_node("Text").bbcode_text = "[center]" + option_text + "[/center]"
 		# Update font size to fit box as needed
-		font = new_option.get_node("Text").get_font("normal_font", "")
+		var option_font = new_option.get_node("Text").get_font("normal_font", "")
 		if option_size < 10:
-			font.size = 75
+			option_font.size = 75
 		elif option_size < 20:
-			font.size = 60
+			option_font.size = 60
+		elif option_size < 40:
+			option_font.size = 45
 		else:
-			font.size = 45
-		new_option.get_node("Text").add_font_override("normal_font", font)
+			option_font.size = 30
+		new_option.get_node("Text").add_font_override("normal_font", option_font)
+		print(str(option_size) + " " + str(option_font.size) + " " + str(new_option.get_node("Text").get_font("normal_font", "").size) + ": " + option_text)
 		new_option.outcome = prompt # here we assign the outcome to be triggered on button press
-		print(prompt)
-		print(new_option.outcome)
 		current_options.append(new_option)
 		get_tree().get_root().add_child(new_option) # adding to main
