@@ -53,6 +53,7 @@ margin_left = 460.0
 margin_top = 250.0
 margin_right = 960.0
 margin_bottom = 500.0
+rect_min_size = Vector2( 400, 140 )
 rect_scale = Vector2( 2, 2 )
 window_title = "New Game"
 
