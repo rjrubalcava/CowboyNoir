@@ -11,6 +11,7 @@ onready var myCards = $PlayerCards
 
 
 onready var card = preload("res://Scenes/Card.tscn")
+
 onready var c1 = preload("res://Assets/Cards/Clubs/c1.png")
 onready var c2 = preload("res://Assets/Cards/Clubs/c2.png")
 onready var c3 = preload("res://Assets/Cards/Clubs/c3.png")
@@ -94,10 +95,14 @@ func playGame():
 			tempNode.texture = get(Global.playerHand[x])
 			tempNode.scale *=.40
 			tempNode.rotation = float((handSize - x) / (2 * handSize))
-		
-		
+	# begin dialogue
+	Global.playDialogue(0)
+
+
 	while noWinner:
 		noWinner = false
+
+
 
 
 
@@ -111,7 +116,7 @@ func _on_newGame_confirmed():
 	for x in myCards.get_children():
 		myCards.remove_child(x)
 		x.queue_free()
-		
+
 	if (twoCPU.pressed == true):
 		Global.m_numOfCPUs = 2
 	elif(threeCPU.pressed == true):
