@@ -1,11 +1,11 @@
 [gd_scene format=2]
 
-[node name="Sprite" type="Sprite"]
+[node name="Sprite2D" type="Sprite2D"]
 
 [node name="Card Background" type="ColorRect" parent="."]
 show_behind_parent = true
-margin_left = -115.0
-margin_top = -163.0
-margin_right = 115.0
-margin_bottom = 163.0
+offset_left = -115.0
+offset_top = -163.0
+offset_right = 115.0
+offset_bottom = 163.0
 color = Color( 0.815686, 0.768627, 0.627451, 1 )

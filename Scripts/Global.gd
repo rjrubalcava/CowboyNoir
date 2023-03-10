@@ -22,8 +22,8 @@ var cpuThreeHand = null
 var cpuFourHand = null
 
 # Dialogue vars
-onready var dialogueBox = preload("res://Scenes/DialogueBox.tscn")
-onready var dialogueOption = preload("res://Scenes/DialogueOption.tscn")
+@onready var dialogueBox = preload("res://Scenes/DialogueBox.tscn")
+@onready var dialogueOption = preload("res://Scenes/DialogueOption.tscn")
 var character_dialogue_dict = {}
 var player_dialogue_dict = {}
 var current_prompt = null
@@ -106,7 +106,7 @@ func getRandomCard():
 
 
 func newNode(node, location, parent, scaleMult):
-	var newNode = node.instance()
+	var newNode = node.instantiate()
 	parent.add_child(newNode)
 	newNode.global_position = location
 	newNode.scale *= scaleMult
@@ -136,7 +136,7 @@ func playDialogue(key):
 	if current_prompt != null:
 		current_prompt.queue_free()
 	# Erase old options
-	while not(current_options.empty()):
+	while not(current_options.is_empty()):
 		var prompt = current_options.pop_front()
 		prompt.queue_free()
 	# Lookup prompt string
@@ -145,19 +145,19 @@ func playDialogue(key):
 	# Lookup options key array
 	var options = Global.character_dialogue_dict[key][1]
 	# Create visual prompt
-	current_prompt = dialogueBox.instance()
-	current_prompt.rect_position = Vector2(100, 100)
-	current_prompt.get_node("Text").bbcode_text = "[center]" + prompt_text + "[/center]"
+	current_prompt = dialogueBox.instantiate()
+	current_prompt.position = Vector2(100, 100)
+	current_prompt.get_node("Text").text = "[center]" + prompt_text + "[/center]"
 	# Update text size to fit box
 	if prompt_size > 10:
-		current_prompt.get_node("Text").rect_size = current_prompt.get_node("Text").rect_size * 1.25
-		current_prompt.get_node("Text").rect_scale = current_prompt.get_node("Text").rect_scale * 0.75
+		current_prompt.get_node("Text").size = current_prompt.get_node("Text").size * 1.25
+		current_prompt.get_node("Text").scale = current_prompt.get_node("Text").scale * 0.75
 	if prompt_size > 20:
-		current_prompt.get_node("Text").rect_size = current_prompt.get_node("Text").rect_size * 1.25
-		current_prompt.get_node("Text").rect_scale = current_prompt.get_node("Text").rect_scale * 0.75
+		current_prompt.get_node("Text").size = current_prompt.get_node("Text").size * 1.25
+		current_prompt.get_node("Text").scale = current_prompt.get_node("Text").scale * 0.75
 	if prompt_size > 40:
-		current_prompt.get_node("Text").rect_size = current_prompt.get_node("Text").rect_size * 1.25
-		current_prompt.get_node("Text").rect_scale = current_prompt.get_node("Text").rect_scale * 0.75
+		current_prompt.get_node("Text").size = current_prompt.get_node("Text").size * 1.25
+		current_prompt.get_node("Text").scale = current_prompt.get_node("Text").scale * 0.75
 	get_tree().get_root().add_child(current_prompt) # adding to main
 	# Create visual options
 	var num_options = len(options)
@@ -168,19 +168,19 @@ func playDialogue(key):
 		# Lookup prompts key (option outcomes)
 		var prompt = Global.player_dialogue_dict[options[i]][1]
 		# Create visual prompt
-		var new_option = dialogueOption.instance()
-		new_option.rect_position = Vector2((1920/(1 + num_options))*(i + 1) - 215, 500)
-		new_option.get_node("Text").bbcode_text = "[center]" + option_text + "[/center]"
+		var new_option = dialogueOption.instantiate()
+		new_option.position = Vector2((1920/(1 + num_options))*(i + 1) - 215, 500)
+		new_option.get_node("Text").text = "[center]" + option_text + "[/center]"
 		# Update text size to fit box
 		if option_size > 10:
-			new_option.get_node("Text").rect_size = new_option.get_node("Text").rect_size * 1.25
-			new_option.get_node("Text").rect_scale = new_option.get_node("Text").rect_scale * 0.75
+			new_option.get_node("Text").size = new_option.get_node("Text").size * 1.25
+			new_option.get_node("Text").scale = new_option.get_node("Text").scale * 0.75
 		if option_size > 20:
-			new_option.get_node("Text").rect_size = new_option.get_node("Text").rect_size * 1.25
-			new_option.get_node("Text").rect_scale = new_option.get_node("Text").rect_scale * 0.75
+			new_option.get_node("Text").size = new_option.get_node("Text").size * 1.25
+			new_option.get_node("Text").scale = new_option.get_node("Text").scale * 0.75
 		if option_size > 40:
-			new_option.get_node("Text").rect_size = new_option.get_node("Text").rect_size * 1.25
-			new_option.get_node("Text").rect_scale = new_option.get_node("Text").rect_scale * 0.75
+			new_option.get_node("Text").size = new_option.get_node("Text").size * 1.25
+			new_option.get_node("Text").scale = new_option.get_node("Text").scale * 0.75
 		new_option.outcome = prompt # here we assign the outcome to be triggered on button press
 		current_options.append(new_option)
 		get_tree().get_root().add_child(new_option) # adding to main
