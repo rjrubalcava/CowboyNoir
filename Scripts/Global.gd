@@ -7,19 +7,24 @@ var rng
 # Bluff vars
 var m_parent = null
 var m_numOfCPUs = null
+
 var clubsArr = null
 var diamondsArr = null
 var heartsArr = null
 var spadesArr = null
+
 var firstCardSuit = null
 var firstCard = null
 var tempCard = null
 var noNewCard = null
+
+
 var playerHand = null
 var cpuOneHand = null
 var cpuTwoHand = null
 var cpuThreeHand = null
 var cpuFourHand = null
+var centerHand = null
 
 # Dialogue vars
 onready var dialogueBox = preload("res://Scenes/DialogueBox.tscn")
@@ -46,14 +51,10 @@ func newGame():
 	cpuTwoHand = []
 	cpuThreeHand = []
 	cpuFourHand = []
+	centerHand = []
 	init_dialogue()
 
-
-	if(m_numOfCPUs == 1):
-		for x in 26:
-			playerHand.append(getRandomCard())
-			cpuOneHand.append(getRandomCard())
-	elif(m_numOfCPUs == 2):
+	if(m_numOfCPUs == 2):
 		for x in 17:
 			playerHand.append(getRandomCard())
 			cpuOneHand.append(getRandomCard())
@@ -111,7 +112,7 @@ func newNode(node, location, parent, scaleMult):
 	newNode.global_position = location
 	newNode.scale *= scaleMult
 	return newNode
-	
+
 func init_dialogue():
 	character_dialogue_dict[0] = ["Been a while, kid ...", [0,1]]
 	character_dialogue_dict[1] = ["What's the matter? Can't speak?", [2,3]]
