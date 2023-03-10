@@ -2,3 +2,8 @@ res://Z-RNDM/default_env.tres
 res://Scenes/MainScene.tscn
 res://Scripts/Card.gd
 res://Scenes/Card.tscn
+res://Scenes/playerHand.tscn
+res://Scenes/Global.tscn
+res://Scenes/DialogueOption.tscn
+res://Scenes/DialogueBox.tscn
+res://Scripts/Global.gd

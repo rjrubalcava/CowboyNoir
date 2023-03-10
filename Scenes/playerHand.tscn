@@ -1,4 +1,4 @@
-[gd_scene format=2]
+[gd_scene format=3 uid="uid://ci5br5x2jqky7"]
 
 [node name="playerHand" type="Node2D"]
 

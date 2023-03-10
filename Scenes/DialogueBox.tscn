@@ -1,36 +1,18 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Assets/Fonts/LCALLIG.TTF" type="FontFile" id=1]
-
-[sub_resource type="FontFile" id=1]
-size = 70
-font_data = ExtResource( 1 )
+[gd_scene format=3 uid="uid://umuoyje8ae8j"]
 
 [node name="DialogueBox" type="Control"]
-offset_right = 430.0
-offset_bottom = 230.0
-__meta__ = {
-"_edit_group_": true
-}
+layout_mode = 3
+anchors_preset = 0
 
-[node name="OutlineColor" type="ColorRect" parent="."]
-offset_right = 430.0
-offset_bottom = 230.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="FillColor" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 15.0
 offset_top = 15.0
 offset_right = 415.0
-offset_bottom = 215.0
+offset_bottom = 415.0
+color = Color(1, 0.207843, 0.121569, 1)
 
 [node name="Text" type="RichTextLabel" parent="."]
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 415.0
-offset_bottom = 215.0
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+offset_right = 40.0
+offset_bottom = 40.0
 bbcode_enabled = true
-text = "[center]default bbcode [/center]"
-text = "default bbcode "
+text = "[center]default bbcode[/center]"

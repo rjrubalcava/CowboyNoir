@@ -10,16 +10,16 @@ var card_offset=0
 var tween
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	tween = get_tree().create_tween()
-	$TweenHolder.add_child(tween)
-	tween.interpolate_property(self, "position", position, Vector2(-400, -700), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	pass
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if get_rect().has_point(to_local(event.position)) and (focused):
 			card_offset+=300
 			if(notSelected):
-				tween.start()
+				tween = get_tree().create_tween()
+				tween.set_ease(Tween.EASE_IN_OUT)
+				tween.tween_property(self, "position", Vector2(-400, -700), 1)
 				notSelected = false
 				scale *= 1.25       
 			else:
