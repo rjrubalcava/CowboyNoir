@@ -1,17 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://bgn32n6bsm8n8"]
 
-[ext_resource path="res://Scripts/Card.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://Scripts/Card.gd" id="1"]
 
-[node name="Sprite" type="Sprite"]
-script = ExtResource( 1 )
+[node name="Sprite2D" type="Sprite2D"]
+script = ExtResource("1")
 
 [node name="Card Background" type="ColorRect" parent="."]
 show_behind_parent = true
-margin_left = -115.0
-margin_top = -163.0
-margin_right = 115.0
-margin_bottom = 163.0
-color = Color( 0.815686, 0.768627, 0.627451, 1 )
+offset_left = -115.0
+offset_top = -163.0
+offset_right = 115.0
+offset_bottom = 163.0
+color = Color(0.815686, 0.768627, 0.627451, 1)
+
+[node name="TweenHolder" type="Node2D" parent="."]
 
 [connection signal="mouse_entered" from="Card Background" to="." method="_on_Card_Background_mouse_entered"]
 [connection signal="mouse_exited" from="Card Background" to="." method="_on_Card_Background_mouse_exited"]

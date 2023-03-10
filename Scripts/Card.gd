@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 
 
 # Declare member variables here. Examples:
@@ -6,15 +6,16 @@ extends Sprite
 # var b = "text"
 var focused = false
 var notSelected = true
-var tween = Tween.new()
 var card_offset=0
+var tween
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_child(tween)
+	tween = get_tree().create_tween()
+	$TweenHolder.add_child(tween)
 	tween.interpolate_property(self, "position", position, Vector2(-400, -700), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 
 func _input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if get_rect().has_point(to_local(event.position)) and (focused):
 			card_offset+=300
 			if(notSelected):
@@ -33,7 +34,7 @@ func _input(event):
 
 func _on_Card_Background_mouse_entered():
 	scale*=1.25
-	raise()
+	move_to_front()
 	focused = true 
 	# Replace with function body.
 

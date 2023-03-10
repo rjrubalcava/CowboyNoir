@@ -1,5 +1,5 @@
 extends Control
-# Reference: I found the means of making the button invisible but still interactable here: 
+# RefCounted: I found the means of making the button invisible but still interactable here: 
 # https://godotengine.org/qa/111711/how-to-make-an-button-invisible
 
 var outcome = -1
