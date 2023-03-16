@@ -10,5 +10,5 @@ func _ready():
 
 # Called when button is clicked. Scene is instanced and then immediately provided an outcome,
 # so initial error value of -1 should not be reached
-func _on_Button_pressed():
+func _on_button_pressed():
 	Global.playDialogue(outcome)

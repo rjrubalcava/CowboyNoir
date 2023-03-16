@@ -149,16 +149,9 @@ func playDialogue(key):
 	current_prompt = dialogueBox.instantiate()
 	current_prompt.position = Vector2(100, 100)
 	current_prompt.get_node("Text").text = "[center]" + prompt_text + "[/center]"
-	# Update text size to fit box
-	if prompt_size > 10:
-		current_prompt.get_node("Text").size = current_prompt.get_node("Text").size * 1.25
-		current_prompt.get_node("Text").scale = current_prompt.get_node("Text").scale * 0.75
-	if prompt_size > 20:
-		current_prompt.get_node("Text").size = current_prompt.get_node("Text").size * 1.25
-		current_prompt.get_node("Text").scale = current_prompt.get_node("Text").scale * 0.75
-	if prompt_size > 40:
-		current_prompt.get_node("Text").size = current_prompt.get_node("Text").size * 1.25
-		current_prompt.get_node("Text").scale = current_prompt.get_node("Text").scale * 0.75
+	# Update text size to fit box (have to do in a roundabout way because there is no way to scale font size
+	# differently for two labels displayed simultaneously)
+	resize_text(current_prompt.get_node("Text"), prompt_size)
 	get_tree().get_root().add_child(current_prompt) # adding to main
 	# Create visual options
 	var num_options = len(options)
@@ -173,15 +166,30 @@ func playDialogue(key):
 		new_option.position = Vector2((1920/(1 + num_options))*(i + 1) - 215, 500)
 		new_option.get_node("Text").text = "[center]" + option_text + "[/center]"
 		# Update text size to fit box
-		if option_size > 10:
-			new_option.get_node("Text").size = new_option.get_node("Text").size * 1.25
-			new_option.get_node("Text").scale = new_option.get_node("Text").scale * 0.75
-		if option_size > 20:
-			new_option.get_node("Text").size = new_option.get_node("Text").size * 1.25
-			new_option.get_node("Text").scale = new_option.get_node("Text").scale * 0.75
-		if option_size > 40:
-			new_option.get_node("Text").size = new_option.get_node("Text").size * 1.25
-			new_option.get_node("Text").scale = new_option.get_node("Text").scale * 0.75
+		resize_text(new_option.get_node("Text"), option_size)
 		new_option.outcome = prompt # here we assign the outcome to be triggered on button press
 		current_options.append(new_option)
 		get_tree().get_root().add_child(new_option) # adding to main
+		
+"""
+* this function scales a text box to fit within a DialogueOption or DialogueBox object
+* param: textBox: the text box object
+* param: char_count: the number of (visible) characters in the text string being displayed by the textBox
+"""
+func resize_text(textBox, char_count):
+	# Determine how many resizings must be performed based on number of characters in text string
+	var scale_level = 0
+	if char_count > 10:
+		scale_level+=1
+	if char_count > 20:
+		scale_level+=1
+	if char_count > 40:
+		scale_level+=1
+	# Reduce scale to give the appearance of shrinking text
+	textBox.scale = textBox.scale * pow(0.75, scale_level)
+	# Increase size of textBox rect to counteract reduced scale
+	textBox.size = textBox.size * pow(1.25, scale_level)
+	# Increase x origin of textBox rect to counteract reduced scale
+	textBox.position.x = textBox.position.x * pow(1.5, scale_level)
+	# Reduce y origin of textBox rect to utilize space above the center of the DialogueBox or DialogueOption
+	textBox.position.y = textBox.position.y * pow(0.9, scale_level)

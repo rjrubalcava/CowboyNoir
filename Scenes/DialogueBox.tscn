@@ -1,18 +1,28 @@
-[gd_scene format=3 uid="uid://umuoyje8ae8j"]
+[gd_scene load_steps=3 format=3 uid="uid://umuoyje8ae8j"]
+
+[ext_resource type="Texture2D" uid="uid://cef27f01828o1" path="res://Assets/ButtonPlaceholder.png" id="1_6ci6n"]
+[ext_resource type="FontFile" uid="uid://cunjkg6pmw73y" path="res://Assets/Fonts/LCALLIG.TTF" id="1_f5dyy"]
 
 [node name="DialogueBox" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Texture" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 15.0
 offset_top = 15.0
 offset_right = 415.0
-offset_bottom = 415.0
-color = Color(1, 0.207843, 0.121569, 1)
+offset_bottom = 215.0
+texture = ExtResource("1_6ci6n")
 
 [node name="Text" type="RichTextLabel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 0
+offset_left = 15.0
+offset_top = 45.0
+offset_right = 415.0
+offset_bottom = 245.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_f5dyy")
+theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]default bbcode[/center]"
