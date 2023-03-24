@@ -1,43 +1,40 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://bw4dg1l2h0lx"]
 
-[ext_resource path="res://Assets/Fonts/LCALLIG.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://Scripts/DialogueOption.gd" type="Script" id=2]
-
-[sub_resource type="DynamicFont" id=1]
-size = 70
-font_data = ExtResource( 1 )
+[ext_resource type="Script" path="res://Scripts/DialogueOption.gd" id="2"]
+[ext_resource type="FontFile" uid="uid://cunjkg6pmw73y" path="res://Assets/Fonts/LCALLIG.TTF" id="2_jmpq3"]
+[ext_resource type="Texture2D" uid="uid://cef27f01828o1" path="res://Assets/ButtonPlaceholder.png" id="2_nfqc2"]
 
 [node name="DialogueOption" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-script = ExtResource( 2 )
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2")
 
-[node name="OutlineColor" type="ColorRect" parent="."]
-margin_right = 430.0
-margin_bottom = 230.0
-color = Color( 0.572549, 0.027451, 0.027451, 1 )
-
-[node name="FillColor" type="ColorRect" parent="."]
-margin_left = 15.0
-margin_top = 15.0
-margin_right = 415.0
-margin_bottom = 215.0
-color = Color( 1, 0.854902, 0.509804, 1 )
+[node name="Texture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 415.0
+offset_bottom = 215.0
+texture = ExtResource("2_nfqc2")
 
 [node name="Text" type="RichTextLabel" parent="."]
-margin_left = 15.0
-margin_top = 15.0
-margin_right = 415.0
-margin_bottom = 215.0
-custom_colors/default_color = Color( 0.572549, 0.027451, 0.027451, 1 )
-custom_fonts/normal_font = SubResource( 1 )
+layout_mode = 0
+offset_left = 15.0
+offset_top = 45.0
+offset_right = 415.0
+offset_bottom = 245.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_jmpq3")
+theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
-bbcode_text = "[center]default bbcode [/center]"
-text = "default bbcode "
+text = "[center]default bbcode[/center]"
 
 [node name="Button" type="Button" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-margin_right = 430.0
-margin_bottom = 230.0
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 415.0
+offset_bottom = 215.0
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
