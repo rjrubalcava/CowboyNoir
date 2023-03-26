@@ -115,61 +115,61 @@ func newNode(node, location, parent, scaleMult):
 
 func init_dialogue():
 	# Depth 1
-	character_dialogue_dict[0] = ["It's been a while Jack, you remember how to play?", [0,1]]
+	character_dialogue_dict[0] = ["It's been a while Jack, you remember how to play?", [0,1], []]
 	# Depth 3
-	character_dialogue_dict[1] = ["Really? Well, it's not too hard.", [-1]]
-	character_dialogue_dict[2] = ["Well let's get started then.", [2,3]]
+	character_dialogue_dict[1] = ["Really? Well, it's not too hard.", [], ["tutorial"]]
+	character_dialogue_dict[2] = ["Well let's get started then.", [2,3], []]
 	# Depth 5
-	character_dialogue_dict[3] = ["Really? Why?", [4,5]]
-	character_dialogue_dict[4] = ["Did you and Iris play this often? Before everything ... went south?", [6,7]]
+	character_dialogue_dict[3] = ["Really? Why?", [4,5], []]
+	character_dialogue_dict[4] = ["Did you and Iris play this often? Before everything ... went south?", [6,7], []]
 	# Depth 7
-	character_dialogue_dict[5] = ["Well, it's still good fun.", [8,9]]
-	character_dialogue_dict[6] = ["She was pretty good, wasn't she?", [10]]
-	character_dialogue_dict[7] = ["Well ... you know.", [11]]
-	character_dialogue_dict[8] = ["Why are you here, Jack?", [12,13]]
+	character_dialogue_dict[5] = ["Well, it's still good fun.", [8,9], []]
+	character_dialogue_dict[6] = ["She was pretty good, wasn't she?", [10], []]
+	character_dialogue_dict[7] = ["Well ... you know.", [11], []]
+	character_dialogue_dict[8] = ["Why are you here, Jack?", [12,13], []]
 	# Depth 9
-	character_dialogue_dict[9] = ["Whaddya mean?", [14,15]]
-	character_dialogue_dict[10] = ["Know what?", [16,17]]
-	character_dialogue_dict[11] = ["", []]
-	character_dialogue_dict[12] = ["", []]
-	character_dialogue_dict[13] = ["", []]
-	character_dialogue_dict[14] = ["", []]
-	character_dialogue_dict[15] = ["", []]
-	character_dialogue_dict[16] = ["", []]
+	character_dialogue_dict[9] = ["Whaddya mean?", [14,15], []]
+	character_dialogue_dict[10] = ["Know what?", [16,17], []]
+	character_dialogue_dict[11] = ["", [], []]
+	character_dialogue_dict[12] = ["", [], []]
+	character_dialogue_dict[13] = ["", [], []]
+	character_dialogue_dict[14] = ["", [], []]
+	character_dialogue_dict[15] = ["", [], []]
+	character_dialogue_dict[16] = ["", [], []]
 	
 	# Depth 2
-	player_dialogue_dict[0] = ["No, I actually haven't played since Iris and I were kids", 1]
-	player_dialogue_dict[1] = ["Yeah, I remember.", 2]
+	player_dialogue_dict[0] = ["No, I actually haven't played since Iris and I were kids", 1, []]
+	player_dialogue_dict[1] = ["Yeah, I remember.", 2, []]
 	# Depth 4
-	player_dialogue_dict[2] = ["Okay. Always hated the game, to be honest", 3]
-	player_dialogue_dict[3] = ["Okay. I've missed playing this.", 4]
-	player_dialogue_dict[4] = ["It's too easy. Not much of a challenge", 5]
+	player_dialogue_dict[2] = ["Okay. Always hated the game, to be honest", 3, []]
+	player_dialogue_dict[3] = ["Okay. I've missed playing this.", 4, []]
+	player_dialogue_dict[4] = ["It's too easy. Not much of a challenge", 5, []]
 	# Depth 6
-	player_dialogue_dict[5] = ["I've never been too good at it. Iris was always better at it.", 6]
-	player_dialogue_dict[6] = ["South?", 7]
-	player_dialogue_dict[7] = ["Yeah. That's a nice way of putting it.", 8]
+	player_dialogue_dict[5] = ["I've never been too good at it. Iris was always better at it.", 6, []]
+	player_dialogue_dict[6] = ["South?", 7, []]
+	player_dialogue_dict[7] = ["Yeah. That's a nice way of putting it.", 8, []]
 	# Depth 8
-	player_dialogue_dict[8] = ["Is that what we're here to celebrate? Good fun?", 9]
-	player_dialogue_dict[9] = ["Yeah, you're right. She would have liked this.", -1]
-	player_dialogue_dict[10] = ["Yeah ... I miss her. What happened anyway?", 11]
-	player_dialogue_dict[11] = ["No, I don't, Peter. You're gonna have to remind me.", 12]
-	player_dialogue_dict[12] = ["Peter ... I know.", 10]
-	player_dialogue_dict[13] = ["I just want to know what happened to my sister.", 14]
+	player_dialogue_dict[8] = ["Is that what we're here to celebrate? Good fun?", 9, []]
+	player_dialogue_dict[9] = ["Yeah, you're right. She would have liked this.", -1, []]
+	player_dialogue_dict[10] = ["Yeah ... I miss her. What happened anyway?", 11, []]
+	player_dialogue_dict[11] = ["No, I don't, Peter. You're gonna have to remind me.", 12, []]
+	player_dialogue_dict[12] = ["Peter ... I know.", 10, []]
+	player_dialogue_dict[13] = ["I just want to know what happened to my sister.", 14, []]
 	# Depth 10
-	player_dialogue_dict[14] = ["Did you think her murder was 'good fun?'", 15]
-	player_dialogue_dict[15] = ["I just wouldn't call this 'good fun.'", 16]
-	player_dialogue_dict[16] = ["One of them killed her ... didn't they?", 17]
-	player_dialogue_dict[17] = ["You're the eyes and ears around here. You must have heard something.", -1]
-	player_dialogue_dict[18] = ["", -1]
-	player_dialogue_dict[19] = ["", -1]
-	player_dialogue_dict[20] = ["", -1]
-	player_dialogue_dict[21] = ["", -1]
-	player_dialogue_dict[22] = ["", -1]
-	player_dialogue_dict[23] = ["", -1]
-	player_dialogue_dict[24] = ["", -1]
-	player_dialogue_dict[25] = ["", -1]
-	player_dialogue_dict[26] = ["", -1]
-	player_dialogue_dict[27] = ["", -1]
+	player_dialogue_dict[14] = ["Did you think her murder was 'good fun?'", 15, []]
+	player_dialogue_dict[15] = ["I just wouldn't call this 'good fun.'", 16, []]
+	player_dialogue_dict[16] = ["One of them killed her ... didn't they?", 17, []]
+	player_dialogue_dict[17] = ["You're the eyes and ears around here. You must have heard something.", -1, []]
+	player_dialogue_dict[18] = ["", -1, []]
+	player_dialogue_dict[19] = ["", -1, []]
+	player_dialogue_dict[20] = ["", -1, []]
+	player_dialogue_dict[21] = ["", -1, []]
+	player_dialogue_dict[22] = ["", -1, []]
+	player_dialogue_dict[23] = ["", -1, []]
+	player_dialogue_dict[24] = ["", -1, []]
+	player_dialogue_dict[25] = ["", -1, []]
+	player_dialogue_dict[26] = ["", -1, []]
+	player_dialogue_dict[27] = ["", -1, []]
 	
 func playDialogue(key):
 	# Erase old prompt
@@ -182,8 +182,10 @@ func playDialogue(key):
 	# Lookup prompt string
 	var prompt_text = Global.character_dialogue_dict[key][0]
 	var prompt_size = len(prompt_text)
-	# Lookup options key array
+	# Lookup options array
 	var options = Global.character_dialogue_dict[key][1]
+	# Lookup actions array
+	var actions = Global.character_dialogue_dict[key][2]
 	# Create visual prompt
 	current_prompt = dialogueBox.instantiate()
 	current_prompt.position = Vector2(100, 100)
@@ -192,6 +194,14 @@ func playDialogue(key):
 	# differently for two labels displayed simultaneously)
 	resize_text(current_prompt.get_node("Text"), prompt_size)
 	get_tree().get_root().add_child(current_prompt) # adding to main
+	# Execute actions
+	for action in actions:
+		if action == "tutorial":
+			print("requested tutorial")
+		elif action == "+stress":
+			print("increased stress")
+		elif action == "-stress":
+			print("decreased tutorial")
 	# Create visual options
 	var num_options = len(options)
 	for i in num_options:

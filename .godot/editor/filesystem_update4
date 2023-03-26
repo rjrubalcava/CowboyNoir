@@ -1,1 +1,5 @@
 res://Z-RNDM/default_env.tres
+res://Scenes/Global.tscn
+res://Scripts/Global.gd
+res://Scenes/MainScene.tscn
+res://Scenes/DialogueOption.tscn

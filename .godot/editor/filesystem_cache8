@@ -1,5 +1,5 @@
 2a60927148abd1d33b818b535e306557
-::res://::1679700951
+::res://::1679867889
 README.md::TextFile::-1::1679700705::0::1::::<><>::
 ::res://Assets/::1679700749
 ButtonPlaceholder.png::CompressedTexture2D::5065615437381662818::1679700718::1679700718::1::::<><>::
@@ -71,12 +71,12 @@ JR.png::CompressedTexture2D::8207952097853345231::1679700705::1679700718::1::::<
 LCALLIG.TTF::FontFile::6204019825551081824::1679700705::1679700718::1::::<><>::
 ::res://Groups/::1679700749
 NumOfCPUS.tres::ButtonGroup::-1::1679700705::0::1::::<><>::
-::res://Scenes/::1679700749
+::res://Scenes/::1679701457
 Card.tscn::PackedScene::2836139679319454143::1679700718::0::1::::<><>::res://Scripts/Card.gd
 DialogueBox.tscn::PackedScene::1429790021468852555::1679700718::0::1::::<><>::uid://cef27f01828o1<>uid://cunjkg6pmw73y
 DialogueOption.tscn::PackedScene::117371660240480441::1679700718::0::1::::<><>::res://Scripts/DialogueOption.gd<>uid://cunjkg6pmw73y<>uid://cef27f01828o1
 Global.tscn::PackedScene::599049541030276570::1679700718::0::1::::<><>::res://Scripts/Global.gd
-MainScene.tscn::PackedScene::3118517110821397835::1679700718::0::1::::<><>::res://Scripts/MainScene.gd<>res://Scenes/Player.tscn
+MainScene.tscn::PackedScene::3118517110821397835::1679701457::0::1::::<><>::res://Scripts/MainScene.gd<>res://Scenes/Player.tscn
 Player.tscn::PackedScene::-1::1679700718::0::1::::<><>::res://Scripts/Player.gd
 playerHand.tscn::PackedScene::5396376137071834792::1679700718::0::1::::<><>::
 ::res://Scripts/::1679700749
@@ -85,6 +85,6 @@ DialogueOption.gd::GDScript::-1::1679700718::0::1::::<>Control<>::
 Global.gd::GDScript::-1::1679700718::0::1::::<>Node2D<>::
 MainScene.gd::GDScript::-1::1679700718::0::1::::<>Node2D<>::
 Player.gd::GDScript::-1::1679700705::0::1::::<>Node2D<>::
-::res://Z-RNDM/::1679700749
-default_env.tres::Environment::797910927413459770::1679700718::0::1::::<><>::
+::res://Z-RNDM/::1679701415
+default_env.tres::Environment::797910927413459770::1679701415::0::1::::<><>::
 icon.png::CompressedTexture2D::8149539214728030452::1679700705::1679700718::1::::<><>::
