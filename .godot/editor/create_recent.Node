@@ -1,7 +1,7 @@
 Button
 TextureRect
-TextureButton
 Control
+TextureButton
 RichTextLabel
 ColorRect
 Node2D

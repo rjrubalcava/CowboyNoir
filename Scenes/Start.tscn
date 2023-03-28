@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0yshtcmy0ui8"]
+
+[ext_resource type="Script" path="res://Scripts/Start.gd" id="1_s8hsd"]
+[ext_resource type="Texture2D" uid="uid://leiuirv5rc6u" path="res://Assets/Backgrounds/StartScreen.png" id="2_tnkj4"]
+
+[node name="Start" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_s8hsd")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.77, 0.77)
+texture = ExtResource("2_tnkj4")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1401.0
+offset_top = 514.0
+offset_right = 1741.0
+offset_bottom = 594.0
+rotation = -0.00828301
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
