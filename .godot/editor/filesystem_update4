@@ -1,4 +1,3 @@
 res://Z-RNDM/default_env.tres
-res://Scenes/Start.tscn
-res://Scripts/Start.gd
-res://Scenes/MainScene.tscn
+res://Scenes/BunnyHeadspace.tscn
+res://Scripts/BunnyHeadspace.gd
