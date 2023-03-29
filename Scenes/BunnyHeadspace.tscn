@@ -1,16 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciaes6gmsx3ut"]
+[gd_scene load_steps=7 format=3 uid="uid://ciaes6gmsx3ut"]
 
 [ext_resource type="Texture2D" uid="uid://bh18cd86aasdc" path="res://Assets/BunnyHeadspace/Background.png" id="1_5mip6"]
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
 [ext_resource type="Texture2D" uid="uid://b48g563mak7fp" path="res://Assets/BunnyHeadspace/Clock.png" id="2_hiwio"]
 [ext_resource type="Texture2D" uid="uid://g0nkxe70nsos" path="res://Assets/BunnyHeadspace/Newspaper.png" id="4_742xc"]
 [ext_resource type="Texture2D" uid="uid://c8erkayaqercf" path="res://Assets/BunnyHeadspace/Letter.png" id="5_e2wtt"]
+[ext_resource type="Texture2D" uid="uid://bh64tl0ndbw2x" path="res://Assets/BunnyHeadspace/TreasureChest.png" id="6_cqlvg"]
 
 [node name="BunnyHeadspace" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -15.0
+offset_right = -3.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ioy2x")
@@ -39,8 +44,16 @@ texture = ExtResource("4_742xc")
 
 [node name="Letter" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1263.0
-offset_top = 560.0
-offset_right = 1303.0
-offset_bottom = 600.0
+offset_left = 1323.0
+offset_top = 160.0
+offset_right = 1363.0
+offset_bottom = 258.0
 texture = ExtResource("5_e2wtt")
+
+[node name="TreasureChest" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1137.0
+offset_top = 494.0
+offset_right = 1637.0
+offset_bottom = 985.0
+texture = ExtResource("6_cqlvg")
