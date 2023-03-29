@@ -6,7 +6,6 @@ var rng
 
 # Bluff vars
 var m_parent = null
-var m_numOfCPUs = null
 
 var clubsArr = null
 var diamondsArr = null
@@ -20,10 +19,7 @@ var noNewCard = null
 
 
 var playerHand = null
-var cpuOneHand = null
-var cpuTwoHand = null
-var cpuThreeHand = null
-var cpuFourHand = null
+var cpuHand = null
 var centerHand = null
 
 # Dialogue vars
@@ -47,34 +43,11 @@ func newGame():
 	heartsArr = [1,2,3,4,5,6,7,8,9,10,11,12,13]
 	spadesArr = [1,2,3,4,5,6,7,8,9,10,11,12,13]
 	playerHand = []
-	cpuOneHand = []
-	cpuTwoHand = []
-	cpuThreeHand = []
-	cpuFourHand = []
-	centerHand = []
+	cpuHand = []
 	init_dialogue()
-
-	if(m_numOfCPUs == 2):
-		for x in 17:
-			playerHand.append(getRandomCard())
-			cpuOneHand.append(getRandomCard())
-			cpuTwoHand.append(getRandomCard())
+	for x in 17:
 		playerHand.append(getRandomCard())
-	elif(m_numOfCPUs == 3):
-		for x in 13:
-			playerHand.append(getRandomCard())
-			cpuOneHand.append(getRandomCard())
-			cpuTwoHand.append(getRandomCard())
-			cpuThreeHand.append(getRandomCard())
-	elif(m_numOfCPUs == 4):
-		for x in 10:
-			playerHand.append(getRandomCard())
-			cpuOneHand.append(getRandomCard())
-			cpuTwoHand.append(getRandomCard())
-			cpuThreeHand.append(getRandomCard())
-			cpuFourHand.append(getRandomCard())
-		playerHand.append(getRandomCard())
-		cpuOneHand.append(getRandomCard())
+		cpuHand.append(getRandomCard())
 
 
 
