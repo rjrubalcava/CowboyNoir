@@ -92,6 +92,8 @@ func playGame():
 			tempNode.scale *=.40
 			tempNode.rotation = float((handSize - x) / (2 * handSize))
 	# Load level-specific information
-	### we can preload these for the time being since there is only 1 level
+	### we can preload most of these for the time being since there is only 1 level
+	# Load Paper Overlay shader
+	$Background.material.set_shader_parameter("overlay", preload("res://Assets/BunnyTable/Paper Texture Overlay.png"))
 	# begin dialogue
 	Global.playDialogue(0)

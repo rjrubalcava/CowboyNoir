@@ -8,3 +8,4 @@ res://Scenes/Start.tscn
 res://Scripts/Start.gd
 res://Scenes/Player.tscn
 res://Scenes/BluffTable.gdshader
+res://Assets/Shaders/BluffTable.gdshader

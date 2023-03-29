@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://t77ednhf3rx4"]
+[gd_scene load_steps=8 format=3 uid="uid://t77ednhf3rx4"]
 
 [ext_resource type="Script" path="res://Scripts/BluffTable.gd" id="1_kepka"]
+[ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_kt33e"]
 [ext_resource type="Texture2D" uid="uid://bpo0sj8ob4gft" path="res://Assets/BunnyTable/Background.png" id="2_qjalq"]
 [ext_resource type="Texture2D" uid="uid://cvkby0y3wty4a" path="res://Assets/BunnyTable/Neutral.png" id="3_y301b"]
 [ext_resource type="Texture2D" uid="uid://gc0yb4w8nr1a" path="res://Assets/BunnyTable/Table Textures.png" id="4_ph6ip"]
 [ext_resource type="Texture2D" uid="uid://dtbm0egjugty0" path="res://Assets/BunnyTable/Beam of Light.png" id="5_jeqbl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c2cak"]
+shader = ExtResource("2_kt33e")
 
 [node name="BluffTable" type="Control"]
 layout_mode = 3
@@ -15,44 +19,38 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kepka")
 
-[node name="PlayerCards" type="HBoxContainer" parent="."]
-offset_left = 940.0
-offset_top = 1040.0
-offset_right = 980.0
-offset_bottom = 1080.0
-
 [node name="Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_c2cak")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.768, 0.768)
 texture = ExtResource("2_qjalq")
 
 [node name="Character" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.768, 0.768)
 texture = ExtResource("3_y301b")
 
 [node name="Details" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.768, 0.768)
 texture = ExtResource("4_ph6ip")
 
-[node name="LightOpaque" type="TextureRect" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.258824)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("5_jeqbl")
-
 [node name="LightDim" type="PointLight2D" parent="."]
-position = Vector2(1250, 703)
+visible = false
+position = Vector2(960, 540)
+scale = Vector2(0.768, 0.768)
+energy = 1.8
+blend_mode = 2
 texture = ExtResource("5_jeqbl")
 
-[node name="LightBright" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(1250, 703)
-energy = 2.0
-texture = ExtResource("5_jeqbl")
+[node name="PlayerCards" type="HBoxContainer" parent="."]
+offset_left = 940.0
+offset_top = 1040.0
+offset_right = 980.0
+offset_bottom = 1080.0

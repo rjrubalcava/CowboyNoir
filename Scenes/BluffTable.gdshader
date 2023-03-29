@@ -1,5 +1,6 @@
 shader_type canvas_item;
 
 void fragment() {
-	// Place fragment code here.
+	COLOR = texture(TEXTURE, UV); //read from texture
+  	COLOR.b = 1.0; //set blue channel to 1.0
 }
