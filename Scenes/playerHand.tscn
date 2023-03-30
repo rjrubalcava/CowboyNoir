@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://ci5br5x2jqky7"]
-
-[node name="playerHand" type="Node2D"]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0

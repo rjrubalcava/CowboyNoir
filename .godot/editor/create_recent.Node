@@ -1,9 +1,10 @@
-PointLight2D
-TextureRect
 Button
+OptionButton
+RichTextLabel
+HBoxContainer
+TextureRect
 Control
 TextureButton
-RichTextLabel
 ColorRect
 Node2D
 Sprite2D

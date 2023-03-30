@@ -1,26 +1,7 @@
 extends Node2D
 
 
-# General vars
-var rng
-
-# Bluff vars
-var m_parent = null
-
-var clubsArr = null
-var diamondsArr = null
-var heartsArr = null
-var spadesArr = null
-
-var firstCardSuit = null
-var firstCard = null
-var tempCard = null
-var noNewCard = null
-
-
-var playerHand = null
-var cpuHand = null
-var centerHand = null
+var m_parent
 
 # Dialogue vars
 @onready var dialogueBox = preload("res://Scenes/DialogueBox.tscn")
@@ -34,51 +15,7 @@ var character = "amity"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	rng = RandomNumberGenerator.new()
-	rng.randomize()
 	pass # Replace with function body.
-
-func newGame():
-	clubsArr = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-	diamondsArr = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-	heartsArr = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-	spadesArr = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-	playerHand = []
-	cpuHand = []
-	init_dialogue()
-	for x in 17:
-		playerHand.append(getRandomCard())
-		cpuHand.append(getRandomCard())
-
-
-
-func getRandomCard():
-	noNewCard = true
-	while noNewCard:
-		firstCardSuit = rng.randi_range(1, 4)
-		firstCard = rng.randi_range(1, 13)
-		if firstCardSuit == 1:
-			if int(clubsArr[firstCard - 1]) == int(firstCard):
-				clubsArr[firstCard - 1] = 'X'
-				noNewCard = false
-				tempCard = 'c' + str(firstCard)
-		elif firstCardSuit == 2:
-			if int(diamondsArr[firstCard - 1]) == int(firstCard):
-				diamondsArr[firstCard - 1] = 'X'
-				noNewCard = false
-				tempCard = 'd' + str(firstCard)
-		elif firstCardSuit == 3:
-			if int(heartsArr[firstCard - 1]) == int(firstCard):
-				heartsArr[firstCard - 1] = 'X'
-				noNewCard = false
-				tempCard = 'h' + str(firstCard)
-		elif firstCardSuit == 4:
-			if int(spadesArr[firstCard - 1]) == int(firstCard):
-				spadesArr[firstCard - 1] = 'X'
-				noNewCard = false
-				tempCard = 's' + str(firstCard)
-	return tempCard
-
 
 func newNode(node, location, parent, scaleMult):
 	var newNode = node.instantiate()
