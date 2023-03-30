@@ -96,4 +96,4 @@ func playGame():
 	# Load Paper Overlay shader
 	$Background.material.set_shader_parameter("overlay", preload("res://Assets/BunnyTable/Paper Texture Overlay.png"))
 	# begin dialogue
-	Global.playDialogue(0)
+	Global.playDialogue("1a")

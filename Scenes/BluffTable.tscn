@@ -50,6 +50,7 @@ blend_mode = 2
 texture = ExtResource("5_jeqbl")
 
 [node name="PlayerCards" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 940.0
 offset_top = 1040.0
 offset_right = 980.0
