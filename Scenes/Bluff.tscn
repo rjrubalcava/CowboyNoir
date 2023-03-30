@@ -1,9 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=8 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
+[ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
+[ext_resource type="Texture2D" uid="uid://bpo0sj8ob4gft" path="res://Assets/BunnyTable/Background.png" id="3_7l4it"]
+[ext_resource type="Texture2D" uid="uid://cvkby0y3wty4a" path="res://Assets/BunnyTable/Neutral.png" id="4_dhp8w"]
+[ext_resource type="Texture2D" uid="uid://gc0yb4w8nr1a" path="res://Assets/BunnyTable/Table Textures.png" id="5_fklcd"]
+[ext_resource type="Texture2D" uid="uid://dtbm0egjugty0" path="res://Assets/BunnyTable/Beam of Light.png" id="6_kdsla"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrtgy"]
+shader = ExtResource("2_belpe")
 
 [node name="Bluff" type="Node2D"]
 script = ExtResource("1_ei7cw")
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_rrtgy")
+offset_right = 2500.0
+offset_bottom = 1406.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("3_7l4it")
+
+[node name="Character" type="TextureRect" parent="."]
+offset_right = 2500.0
+offset_bottom = 1406.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("4_dhp8w")
+
+[node name="Details" type="TextureRect" parent="."]
+offset_right = 2500.0
+offset_bottom = 1406.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("5_fklcd")
+
+[node name="LightDim" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+scale = Vector2(0.768, 0.768)
+energy = 1.8
+blend_mode = 2
+texture = ExtResource("6_kdsla")
 
 [node name="PlayerCards" type="HBoxContainer" parent="."]
 offset_right = 40.0

@@ -188,10 +188,15 @@ func initGame(numOfOpponents):
 	Global.init_dialogue()	
 	"""INITIALIZING DIALOGUE"""
 	
+	# Load level-specific information
+	### we can preload most of these for the time being since there is only 1 level
+	# Load Paper Overlay shader
+	#$Background.material.set_shader_parameter("overlay", preload("res://Assets/BunnyTable/Paper Texture Overlay.png"))
+
 	#Calling to Add Players Cards to Hand
 	realizeHands()
 	"""PLAYING DIALOGUE"""
-	Global.playDialogue(0)
+	Global.playDialogue("1a")
 	"""PLAYING DIALOGUE"""
 
 

@@ -12,7 +12,7 @@ script = ExtResource("1_s8hsd")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.77, 0.77)
+scale = Vector2(0.768, 0.768)
 texture = ExtResource("2_tnkj4")
 
 [node name="Button" type="Button" parent="."]
