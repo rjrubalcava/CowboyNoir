@@ -120,12 +120,21 @@ func _on_button_button_up():
 		lastRoundHand = []
 		for x in playerCards.get_children():
 				if(x.get("notSelected") == false):
-					print(x)
+					#print(x)
 					cardCount += 1
 					lastRoundHand.append(x)
-		if(cardCount == 0):
-			pass
-		pass
+		if(cardCount > 0):
+			stageOfRound = 3
+			playerTurn = 2
+			lastRoundBluff = false
+			for x in lastRoundHand:
+				var a = x.get("cardID")
+				#print(a)
+				var c = a.to_int()
+				print(c)
+				if(c != cardOfRound):
+					lastRoundBluff = true
+			butt.visible = false
 
 func _on_buton_button_up():
 	pass # Replace with function body.
@@ -161,6 +170,11 @@ func player():
 
 func cpuTurn(cheatProc, bluffProc):
 	pass
+	#print(inRound)
+	#print(cardOfRound)
+	#print(cardCount)
+	#for x in cpuOneHand:
+		#print(x)
 
 #Creates a new Game
 #Right now Number of Opponents Doesn't work and is fixed
@@ -193,13 +207,14 @@ func realizeHands():
 			tempNode.texture = get(playerHand[x])
 			tempNode.scale *=.40
 			tempNode.rotation = float((-x) / (2 * handSize))
+			tempNode.setCardID(playerHand[x])
 		else:
 			cardPosition = Vector2(900 + ((handSize - x)* 95),900 + (10 * (handSize - x)))
 			tempNode = Global.newNode(card, cardPosition, playerCards, 1)
 			tempNode.texture = get(playerHand[x])
 			tempNode.scale *=.40
 			tempNode.rotation = float((handSize - x) / (2 * handSize))
-	
+			tempNode.setCardID(playerHand[x])
 	
 #Deals out new hands for the new game
 func dealNewHands(numOfOpponents):

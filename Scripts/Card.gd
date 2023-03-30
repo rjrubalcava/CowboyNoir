@@ -8,6 +8,7 @@ var focused = false
 var notSelected = true
 var readyToPlay = false
 var card_offset=0
+var cardID = null
 var tween
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +18,8 @@ func _ready():
 func setReady(val):
 	readyToPlay = val
 
+func setCardID(m_cid):
+	cardID = m_cid
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and readyToPlay:
