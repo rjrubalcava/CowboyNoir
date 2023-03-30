@@ -1,11 +1,3 @@
 res://Z-RNDM/default_env.tres
-res://Scenes/BluffTable.tscn
-res://Scripts/BluffTable.gd
 res://Scenes/Global.tscn
 res://Scripts/Global.gd
-res://Scenes/MainScene.tscn
-res://Scenes/Start.tscn
-res://Scripts/Start.gd
-res://Scenes/Player.tscn
-res://Scenes/BluffTable.gdshader
-res://Assets/Shaders/BluffTable.gdshader
