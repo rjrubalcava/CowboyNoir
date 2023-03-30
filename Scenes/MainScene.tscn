@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkovryrasnl0f"]
+[gd_scene load_steps=2 format=3 uid="uid://bkovryrasnl0f"]
 
 [ext_resource type="Script" path="res://Scripts/MainScene.gd" id="1"]
-[ext_resource type="PackedScene" path="res://Scenes/Player.tscn" id="2"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1")
@@ -11,83 +10,3 @@ offset_top = 2.0
 offset_right = 1920.0
 offset_bottom = 1082.0
 color = Color(0.152941, 0.262745, 0.121569, 1)
-
-[node name="Player" parent="." instance=ExtResource("2")]
-position = Vector2(960, 1080)
-
-[node name="Button" type="Button" parent="."]
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 115.0
-offset_bottom = 55.0
-scale = Vector2(2, 2)
-text = "New Game"
-
-[node name="PlayerCards" type="HBoxContainer" parent="."]
-offset_left = 940.0
-offset_top = 1040.0
-offset_right = 980.0
-offset_bottom = 1080.0
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 460.0
-offset_top = 25.0
-offset_right = 500.0
-offset_bottom = 65.0
-scale = Vector2(2, 2)
-
-[node name="GameDirection" type="RichTextLabel" parent="Control"]
-layout_mode = 0
-offset_right = 450.0
-offset_bottom = 150.0
-text = "Come, Sit Down, Play for a While!"
-
-[node name="CurrentCard" type="RichTextLabel" parent="Control"]
-layout_mode = 0
-offset_left = 450.0
-offset_right = 500.0
-offset_bottom = 150.0
-
-[node name="newGame" type="ConfirmationDialog" parent="."]
-
-[node name="Container" type="Container" parent="newGame"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 192.0
-offset_bottom = 51.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="newGame/Container"]
-layout_mode = 2
-text = "Select the Number of CPU's You Would Like to Play Against"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="newGame/Container"]
-layout_mode = 2
-text = "Number of CPU's: "
-
-[node name="Control" type="Control" parent="newGame/Container"]
-layout_mode = 2
-
-[node name="twoCPU" type="CheckBox" parent="newGame/Container/Control"]
-layout_mode = 0
-offset_right = 76.0
-offset_bottom = 24.0
-text = "2 CPU's"
-
-[node name="threeCPU" type="CheckBox" parent="newGame/Container/Control"]
-layout_mode = 0
-offset_top = 20.0
-offset_right = 76.0
-offset_bottom = 44.0
-text = "3 CPU's"
-
-[node name="fourCPU" type="CheckBox" parent="newGame/Container/Control"]
-layout_mode = 0
-offset_top = 40.0
-offset_right = 76.0
-offset_bottom = 64.0
-text = "4 CPU's"
-
-[connection signal="button_up" from="Button" to="." method="_on_Button_button_up"]
-[connection signal="confirmed" from="newGame" to="." method="_on_newGame_confirmed"]
