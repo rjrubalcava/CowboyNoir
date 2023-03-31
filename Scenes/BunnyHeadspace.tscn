@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://ou6w5vem52dk" path="res://Assets/BunnyHeadspace/Zoom out/diamond rock.png" id="4_1w7tk"]
 [ext_resource type="Texture2D" uid="uid://bhruy6ojupxnk" path="res://Assets/BunnyHeadspace/Zoom out/gf clock.png" id="5_vp4ug"]
 [ext_resource type="Texture2D" uid="uid://bl4clgbd0bkk1" path="res://Assets/BunnyHeadspace/Zoom out/hearts card.png" id="6_8umd0"]
-[ext_resource type="FontFile" uid="uid://cunjkg6pmw73y" path="res://Assets/Fonts/LCALLIG.TTF" id="7_cgbaf"]
 [ext_resource type="Texture2D" uid="uid://cmufdprq4ktta" path="res://Assets/BunnyHeadspace/Zoom out/mirrordesk.png" id="7_sgxk8"]
 [ext_resource type="Texture2D" uid="uid://b4q7jx6jd4syj" path="res://Assets/BunnyHeadspace/Zoom out/newspaper w. knife(1).png" id="8_ov48k"]
 [ext_resource type="Texture2D" uid="uid://dr044bs16d6gn" path="res://Assets/BunnyHeadspace/Zoom out/club vase.png" id="9_f3jki"]
@@ -23,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bci08vshyoahq" path="res://Assets/BunnyHeadspace/inventoryStuff/spade card in invt.png" id="17_67m7m"]
 [ext_resource type="Texture2D" uid="uid://dpax0dk10g40g" path="res://Assets/BunnyHeadspace/inventoryStuff/hour hand in invt.png" id="18_yyxmo"]
 [ext_resource type="Texture2D" uid="uid://cqfktwup771bn" path="res://Assets/BunnyHeadspace/inventoryStuff/minute hand in invt.png" id="19_g7haf"]
+[ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="23_7due0"]
 
 [node name="BunnyHeadspace" type="Control"]
 layout_mode = 3
@@ -237,7 +237,7 @@ offset_left = -841.0
 offset_top = 390.0
 offset_right = -596.0
 offset_bottom = 619.0
-theme_override_fonts/normal_font = ExtResource("7_cgbaf")
+theme_override_fonts/normal_font = ExtResource("23_7due0")
 theme_override_font_sizes/normal_font_size = 30
 
 [node name="NumberSelector2" type="RichTextLabel" parent="."]
@@ -246,7 +246,7 @@ offset_left = -817.0
 offset_top = 420.0
 offset_right = -572.0
 offset_bottom = 649.0
-theme_override_fonts/normal_font = ExtResource("7_cgbaf")
+theme_override_fonts/normal_font = ExtResource("23_7due0")
 theme_override_font_sizes/normal_font_size = 30
 
 [node name="NumberSelector3" type="RichTextLabel" parent="."]
@@ -255,7 +255,7 @@ offset_left = -570.0
 offset_top = 421.0
 offset_right = -325.0
 offset_bottom = 650.0
-theme_override_fonts/normal_font = ExtResource("7_cgbaf")
+theme_override_fonts/normal_font = ExtResource("23_7due0")
 theme_override_font_sizes/normal_font_size = 30
 
 [node name="NumberSelector4" type="RichTextLabel" parent="."]
@@ -264,6 +264,6 @@ offset_left = -1247.0
 offset_top = 241.0
 offset_right = -1002.0
 offset_bottom = 470.0
-theme_override_fonts/normal_font = ExtResource("7_cgbaf")
+theme_override_fonts/normal_font = ExtResource("23_7due0")
 theme_override_font_sizes/normal_font_size = 30
 text = "1"
