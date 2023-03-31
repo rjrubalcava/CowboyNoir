@@ -1,9 +1,9 @@
-CollisionShape2D
-Area2D
-TextureRect
-RichTextLabel
-Button
 Control
+TextureRect
+Button
+OptionButton
+RichTextLabel
+HBoxContainer
 TextureButton
 ColorRect
 Node2D

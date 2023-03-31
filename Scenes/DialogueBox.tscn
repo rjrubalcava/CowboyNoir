@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://umuoyje8ae8j"]
 
-[ext_resource type="Texture2D" uid="uid://cef27f01828o1" path="res://Assets/ButtonPlaceholder.png" id="1_6ci6n"]
-[ext_resource type="FontFile" uid="uid://cunjkg6pmw73y" path="res://Assets/Fonts/LCALLIG.TTF" id="1_f5dyy"]
+[ext_resource type="Texture2D" uid="uid://dhd7slqpr7ebh" path="res://Assets/BunnyTable/Opponent Response Blank.png" id="1_2ur4r"]
+[ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="2_0ewdj"]
 
 [node name="DialogueBox" type="Control"]
 layout_mode = 3
@@ -9,20 +9,20 @@ anchors_preset = 0
 
 [node name="Texture" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 415.0
-offset_bottom = 215.0
-texture = ExtResource("1_6ci6n")
+offset_right = 2500.0
+offset_bottom = 1406.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("1_2ur4r")
 
 [node name="Text" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 45.0
-offset_right = 415.0
-offset_bottom = 245.0
+offset_left = 137.0
+offset_top = 378.0
+offset_right = 537.0
+offset_bottom = 537.0
+rotation = -0.0436332
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("1_f5dyy")
+theme_override_fonts/normal_font = ExtResource("2_0ewdj")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]default bbcode[/center]"
