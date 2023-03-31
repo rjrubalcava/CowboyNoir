@@ -128,6 +128,7 @@ func _process(delta):
 		
 		
 func _on_button_button_up():
+	$Click.play()
 	if(cardToBluff.get_selected_id() > 0 and stageOfRound == 0):
 		stageOfRound = 1
 		cardOfRound = cardToBluff.get_selected_id()
@@ -203,6 +204,7 @@ func _on_button_button_up():
 				x.setReady(false)
 
 func _on_buton_button_up():
+	$Click.play()
 	#IF WE ARE HERE, PLAYER CALLS BLUFF ON CPU
 	if(lastRoundBluff):
 		#IF HERE THE CPU WAS BLUFFING
@@ -227,6 +229,7 @@ func _on_buton_button_up():
 	inRound = false
 
 func _on_pass_button_up():
+	$Click.play()
 	#IF HERE, PLAYER HAS DECIDED TO PASS TURN
 	numOfPasses += 1
 	if(numOfPasses >= 2):

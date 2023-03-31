@@ -29,6 +29,7 @@ func _input(event):
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		$Click.play()
 		if Clock.get_global_rect().has_point(event.position):
 			TW.tween_property(Clock, "scale", Vector2(1, 1), 0.8 )
 			TW.parallel().tween_property(Newspaper, "scale", Vector2(0.76, 0.76), 0.5 )

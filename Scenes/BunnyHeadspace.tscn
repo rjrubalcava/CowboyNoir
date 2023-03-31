@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ciaes6gmsx3ut"]
+[gd_scene load_steps=25 format=3 uid="uid://ciaes6gmsx3ut"]
 
 [ext_resource type="Texture2D" uid="uid://bh18cd86aasdc" path="res://Assets/BunnyHeadspace/Background.png" id="1_5mip6"]
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dpax0dk10g40g" path="res://Assets/BunnyHeadspace/inventoryStuff/hour hand in invt.png" id="18_yyxmo"]
 [ext_resource type="Texture2D" uid="uid://cqfktwup771bn" path="res://Assets/BunnyHeadspace/inventoryStuff/minute hand in invt.png" id="19_g7haf"]
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="23_7due0"]
+[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="24_ismgp"]
 
 [node name="BunnyHeadspace" type="Control"]
 layout_mode = 3
@@ -267,3 +268,6 @@ offset_bottom = 470.0
 theme_override_fonts/normal_font = ExtResource("23_7due0")
 theme_override_font_sizes/normal_font_size = 30
 text = "1"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_ismgp")
