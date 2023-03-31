@@ -28,14 +28,14 @@ func _input(event):
 			if(notSelected):
 				tween = get_tree().create_tween()
 				tween.set_ease(Tween.EASE_IN_OUT)
-				print(self.position)
+				#print(self.position)
 				tween.tween_property(self, "position", Vector2(400, 700), 1)
 				notSelected = false
 				scale *= 1.25       
 				set_texture(back)
 				set_scale(Vector2(.3,.3))
 				notSelected = false
-			print("A click!")
+			#print("A click!")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
