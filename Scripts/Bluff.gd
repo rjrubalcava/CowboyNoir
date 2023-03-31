@@ -66,6 +66,8 @@ extends Node2D
 @onready var pesto = $pass
 
 var rng
+var pushGaugeLvl = 0
+
 
 var clubsArr = null
 var diamondsArr = null
@@ -88,8 +90,6 @@ var inRound = null
 var playerTurn = null
 var playerConf = null
 var stageOfRound = 0
-
-
 
 
 # Called when the node enters the scene tree for the first time.
@@ -175,6 +175,22 @@ func cpuTurn(cheatProc, bluffProc):
 	#print(cardCount)
 	#for x in cpuOneHand:
 		#print(x)
+
+
+
+func incPshGge(upOrDown):
+	if(upOrDown):
+		pushGaugeLvl += 1
+		if(pushGaugeLvl == 3):
+			pushGaugeLvl = 0
+			Global.current_prompt.show()
+			for option in Global.current_options:
+				option.show()
+	else:
+		if(pushGaugeLvl > 0):
+			pushGaugeLvl -= 1
+
+
 
 #Creates a new Game
 #Right now Number of Opponents Doesn't work and is fixed
