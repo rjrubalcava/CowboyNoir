@@ -1,8 +1,8 @@
+TextureRect
 Button
 OptionButton
 RichTextLabel
 HBoxContainer
-TextureRect
 Control
 TextureButton
 ColorRect

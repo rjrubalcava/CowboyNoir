@@ -207,6 +207,8 @@ func playDialogue(key):
 	# differently for two labels displayed simultaneously)
 	resize_text(current_prompt.get_node("Text"), prompt_size)
 	get_tree().get_root().add_child(current_prompt) # adding to main
+	if key != "1a":
+		current_prompt.hide() # hide until push gage fills
 	# Execute actions
 	for action in actions:
 		if action == "tutorial":
@@ -232,6 +234,9 @@ func playDialogue(key):
 		new_option.outcome = prompt # here we assign the outcome to be triggered on button press
 		current_options.append(new_option)
 		get_tree().get_root().add_child(new_option) # adding to main
+		if key != "1a" and key != "1b":
+			current_prompt.hide() # hide until push gage fills
+			new_option.hide() # hide until push gage fills
 		
 """
 * this function scales a text box to fit within a DialogueOption or DialogueBox object
