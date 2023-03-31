@@ -1,40 +1,106 @@
-[gd_scene load_steps=4 format=3 uid="uid://bw4dg1l2h0lx"]
+[gd_scene load_steps=5 format=3 uid="uid://bw4dg1l2h0lx"]
 
 [ext_resource type="Script" path="res://Scripts/DialogueOption.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://cef27f01828o1" path="res://Assets/ButtonPlaceholder.png" id="2_nfqc2"]
+[ext_resource type="Texture2D" uid="uid://cogjpl23ffkhm" path="res://Assets/BunnyTable/Response_Card_crop.png" id="2_wwnas"]
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="3_3agfe"]
+[ext_resource type="Texture2D" uid="uid://cn65cvhd023be" path="res://Assets/BunnyTable/Response_hovered_Crop.png" id="4_4gqbt"]
 
 [node name="DialogueOption" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("2")
 
-[node name="Texture" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 415.0
-offset_bottom = 215.0
-texture = ExtResource("2_nfqc2")
+[node name="LeftOpt" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -260.0
+offset_right = -220.0
+offset_bottom = 40.0
 
-[node name="Text" type="RichTextLabel" parent="."]
+[node name="Texture" type="TextureRect" parent="LeftOpt"]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 45.0
-offset_right = 415.0
-offset_bottom = 245.0
+offset_left = 360.0
+offset_top = 534.0
+offset_right = 2860.0
+offset_bottom = 1940.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_wwnas")
+
+[node name="HoverTexture" type="TextureRect" parent="LeftOpt"]
+visible = false
+layout_mode = 0
+offset_left = 345.0
+offset_top = 505.0
+offset_right = 661.0
+offset_bottom = 737.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("4_4gqbt")
+
+[node name="Text" type="RichTextLabel" parent="LeftOpt"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 580.0
+offset_right = 670.0
+offset_bottom = 736.0
+rotation = -0.0174533
+scale = Vector2(0.5, 0.5)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_3agfe")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]default bbcode[/center]"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="LeftOpt"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 415.0
-offset_bottom = 215.0
+offset_left = 366.0
+offset_top = 545.0
+offset_right = 555.0
+offset_bottom = 645.0
+rotation = -0.0174533
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="RightOpt" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Texture" type="TextureRect" parent="RightOpt"]
+offset_left = 360.0
+offset_top = 534.0
+offset_right = 2860.0
+offset_bottom = 1940.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_wwnas")
+
+[node name="HoverTexture" type="TextureRect" parent="RightOpt"]
+visible = false
+layout_mode = 0
+offset_left = 345.0
+offset_top = 505.0
+offset_right = 661.0
+offset_bottom = 737.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("4_4gqbt")
+
+[node name="Text" type="RichTextLabel" parent="RightOpt"]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 580.0
+offset_right = 670.0
+offset_bottom = 736.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3agfe")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]default bbcode[/center]"
+
+[node name="Button" type="Button" parent="RightOpt"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 366.0
+offset_top = 545.0
+offset_right = 555.0
+offset_bottom = 645.0
+
+[connection signal="pressed" from="LeftOpt/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="RightOpt/Button" to="." method="_on_button_pressed"]

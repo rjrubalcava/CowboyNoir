@@ -201,11 +201,12 @@ func playDialogue(key):
 	var actions = Global.character_dialogue_dict[key][2]
 	# Create visual prompt
 	current_prompt = dialogueBox.instantiate()
-	current_prompt.position = Vector2(100, 100)
 	current_prompt.get_node("Text").text = "[center]" + prompt_text + "[/center]"
+	# Assign image for opponent response box
+	current_prompt.get_node("Texture").texture = preload("res://Assets/BunnyTable/Opponent Response Blank.png")
 	# Update text size to fit box (have to do in a roundabout way because there is no way to scale font size
 	# differently for two labels displayed simultaneously)
-	#resize_text(current_prompt.get_node("Text"), prompt_size)
+	resize_text(current_prompt.get_node("Text"), prompt_size)
 	get_tree().get_root().add_child(current_prompt) # adding to main
 	# hide until push gage fills
 	if key != "1a":
@@ -223,10 +224,23 @@ func playDialogue(key):
 		var option_actions = Global.player_dialogue_dict[options[i]][2]
 		# Create visual prompt
 		var new_option = dialogueOption.instantiate()
-		new_option.position = Vector2((1920/(1 + num_options))*(i + 1) - 215, 500)
-		new_option.get_node("Text").text = "[center]" + option_text + "[/center]"
-		# Update text size to fit box
-		#resize_text(new_option.get_node("Text"), option_size)
+		# Assign image for left vs right option
+		if i % 2 == 0:
+			# Select image
+			new_option.get_node("LeftOpt").show()
+			new_option.get_node("RightOpt").hide()
+			# Set text
+			new_option.get_node("LeftOpt").get_node("Text").text = "[center]" + option_text + "[/center]"
+			# Update text size to fit box
+			resize_text(new_option.get_node("LeftOpt").get_node("Text"), option_size)
+		else:
+			# Select image
+			new_option.get_node("LeftOpt").hide()
+			new_option.get_node("RightOpt").show()
+			# Set text
+			new_option.get_node("RightOpt").get_node("Text").text = "[center]" + option_text + "[/center]"
+			# Update text size to fit box
+			resize_text(new_option.get_node("RightOpt").get_node("Text"), option_size)
 		# Assign the outcome to be triggered on button press
 		new_option.outcome = prompt # here we assign the outcome to be triggered on button press
 		new_option.actions = option_actions
@@ -245,17 +259,15 @@ func playDialogue(key):
 func resize_text(textBox, char_count):
 	# Determine how many resizings must be performed based on number of characters in text string
 	var scale_level = 0
-	if char_count > 10:
+	if char_count > 9:
 		scale_level+=1
-	if char_count > 20:
+	if char_count > 18:
 		scale_level+=1
-	if char_count > 40:
+	if char_count > 36:
 		scale_level+=1
 	# Reduce scale to give the appearance of shrinking text
-	textBox.scale = textBox.scale * pow(0.75, scale_level)
+	textBox.scale = textBox.scale * pow(0.9, scale_level)
 	# Increase size of textBox rect to counteract reduced scale
-	textBox.size = textBox.size * pow(1.25, scale_level)
-	# Increase x origin of textBox rect to counteract reduced scale
-	textBox.position.x = textBox.position.x * pow(1.5, scale_level)
+	textBox.size = textBox.size * pow(1.1, scale_level)
 	# Reduce y origin of textBox rect to utilize space above the center of the DialogueBox or DialogueOption
-	textBox.position.y = textBox.position.y * pow(0.9, scale_level)
+	textBox.position.y = textBox.position.y * pow(0.99, scale_level)

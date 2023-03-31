@@ -1,16 +1,16 @@
 2a60927148abd1d33b818b535e306557
 ::res://::1680229590
 README.md::TextFile::-1::1679700705::0::1::::<><>::
-::res://Assets/::1680229553
+::res://Assets/::1680236073
 ButtonPlaceholder.png::CompressedTexture2D::5065615437381662818::1679700718::1679700718::1::::<><>::
 ::res://Assets/Backgrounds/::1680055145
 StartScreen.png::CompressedTexture2D::780856690298206722::1680055145::1680055145::1::::<><>::
-::res://Assets/BunnyHeadspace/::1680055145
+::res://Assets/BunnyHeadspace/::1680236069
 Background.png::CompressedTexture2D::2933423853071100240::1680055145::1680055145::1::::<><>::
 Clock.png::CompressedTexture2D::4490441162877791881::1680055145::1680055145::1::::<><>::
 Letter.png::CompressedTexture2D::7098380802370453037::1680055145::1680055145::1::::<><>::
 Newspaper.png::CompressedTexture2D::473550900228846894::1680055145::1680055145::1::::<><>::
-::res://Assets/BunnyTable/::1680229757
+::res://Assets/BunnyTable/::1680236073
 Background.png::CompressedTexture2D::3469705220257149645::1680217419::1680217419::1::::<><>::
 Beam of Light.png::CompressedTexture2D::8495687926514929445::1680217419::1680217419::1::::<><>::
 Card on Table.png::CompressedTexture2D::6893268601411464292::1680217419::1680217419::1::::<><>::
@@ -36,6 +36,8 @@ Response 2 Blank.png::CompressedTexture2D::8957558361202333426::1680229700::1680
 Response 2 Hovered Blank.png::CompressedTexture2D::2934845438271470586::1680229700::1680229763::1::::<><>::
 Response 2 Hovered.png::CompressedTexture2D::569380444822715620::1680217419::1680217419::1::::<><>::
 Response 2.png::CompressedTexture2D::9164723269200734882::1680217419::1680217419::1::::<><>::
+Response_Card_crop.png::CompressedTexture2D::5768445305432138458::1680235869::1680236077::1::::<><>::
+Response_hovered_Crop.png::CompressedTexture2D::5751118240402072094::1680235867::1680236077::1::::<><>::
 Table Textures.png::CompressedTexture2D::426822699576081072::1680217419::1680217419::1::::<><>::
 ::res://Assets/Cards/::1679700749
 ::res://Assets/Cards/Clubs/::1679700749
@@ -111,24 +113,24 @@ LICENSE.txt::TextFile::-1::1680229553::0::1::::<><>::
 BluffTable.gdshader::Shader::-1::1680217419::0::1::::<><>::
 ::res://Groups/::1679700749
 NumOfCPUS.tres::ButtonGroup::-1::1679700705::0::1::::<><>::
-::res://Scenes/::1680229553
-Bluff.tscn::PackedScene::2980733325626427760::1680229553::0::1::::<><>::res://Scripts/Bluff.gd<>res://Assets/Shaders/BluffTable.gdshader<>uid://bpo0sj8ob4gft<>uid://cvkby0y3wty4a<>uid://gc0yb4w8nr1a<>uid://dtbm0egjugty0<>uid://ddyjb7x7r8137
+::res://Scenes/::1680235877
+Bluff.tscn::PackedScene::2980733325626427760::1680235813::0::1::::<><>::res://Scripts/Bluff.gd<>res://Assets/Shaders/BluffTable.gdshader<>uid://bpo0sj8ob4gft<>uid://cvkby0y3wty4a<>uid://gc0yb4w8nr1a<>uid://dtbm0egjugty0<>uid://bn4glukot66r5
 BluffTable.gdshader::Shader::-1::1680217419::0::1::::<><>::
 BunnyHeadspace.tscn::PackedScene::5334628766814712323::1680055244::0::1::::<><>::uid://bh18cd86aasdc<>res://Scripts/BunnyHeadspace.gd<>uid://b48g563mak7fp<>uid://g0nkxe70nsos<>uid://c8erkayaqercf
 Card.tscn::PackedScene::2836139679319454143::1680217391::0::1::::<><>::res://Scripts/Card.gd
-DialogueBox.tscn::PackedScene::1429790021468852555::1680229553::0::1::::<><>::uid://cef27f01828o1<>uid://bpqfu6dwnng44
-DialogueOption.tscn::PackedScene::117371660240480441::1680229553::0::1::::<><>::res://Scripts/DialogueOption.gd<>uid://cef27f01828o1<>uid://bpqfu6dwnng44
-Global.tscn::PackedScene::599049541030276570::1680225250::0::1::::<><>::res://Scripts/Global.gd
-MainScene.tscn::PackedScene::3118517110821397835::1680225251::0::1::::<><>::res://Scripts/MainScene.gd
+DialogueBox.tscn::PackedScene::1429790021468852555::1680233898::0::1::::<><>::uid://dhd7slqpr7ebh<>uid://bpqfu6dwnng44
+DialogueOption.tscn::PackedScene::117371660240480441::1680235813::0::1::::<><>::res://Scripts/DialogueOption.gd<>uid://d0vdxbgg0qxju<>uid://bpqfu6dwnng44
+Global.tscn::PackedScene::599049541030276570::1680235877::0::1::::<><>::res://Scripts/Global.gd
+MainScene.tscn::PackedScene::3118517110821397835::1680235813::0::1::::<><>::res://Scripts/MainScene.gd
 Start.tscn::PackedScene::8964634616166242761::1680217419::0::1::::<><>::res://Scripts/Start.gd<>uid://leiuirv5rc6u
-::res://Scripts/::1680229553
-Bluff.gd::GDScript::-1::1680229553::0::1::::<>Node2D<>::
+::res://Scripts/::1680235811
+Bluff.gd::GDScript::-1::1680230151::0::1::::<>Node2D<>::
 BunnyHeadspace.gd::GDScript::-1::1680055145::0::1::::<>Control<>::
 Card.gd::GDScript::-1::1680221383::0::1::::<>Sprite2D<>::
-DialogueOption.gd::GDScript::-1::1680229553::0::1::::<>Control<>::
-Global.gd::GDScript::-1::1680229553::0::1::::<>Node2D<>::
+DialogueOption.gd::GDScript::-1::1680230805::0::1::::<>Control<>::
+Global.gd::GDScript::-1::1680235811::0::1::::<>Node2D<>::
 MainScene.gd::GDScript::-1::1680229553::0::1::::<>Node2D<>::
 Start.gd::GDScript::-1::1680217191::0::1::::<>Control<>::
-::res://Z-RNDM/::1680225327
-default_env.tres::Environment::797910927413459770::1680225327::0::1::::<><>::
+::res://Z-RNDM/::1680235877
+default_env.tres::Environment::797910927413459770::1680235877::0::1::::<><>::
 icon.png::CompressedTexture2D::8149539214728030452::1679700705::1679700718::1::::<><>::

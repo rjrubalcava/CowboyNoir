@@ -1,9 +1,9 @@
+Control
 TextureRect
 Button
 OptionButton
 RichTextLabel
 HBoxContainer
-Control
 TextureButton
 ColorRect
 Node2D
