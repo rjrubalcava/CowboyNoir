@@ -192,6 +192,12 @@ func incPshGge(upOrDown):
 	else:
 		if(pushGaugeLvl > 0):
 			pushGaugeLvl -= 1
+	if pushGaugeLvl == 0:
+		$PushGauge.texture = preload("res://Assets/BunnyTable/Empty Push Gauge.png")
+	elif pushGaugeLvl == 1:
+		$PushGauge.texture = preload("res://Assets/BunnyTable/Push Gauge 33.png")
+	else:
+		$PushGauge.texture = preload("res://Assets/BunnyTable/Push Gauge.png")
 
 
 
