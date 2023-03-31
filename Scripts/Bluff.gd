@@ -104,7 +104,7 @@ func _process(delta):
 		if(playerTurn == 1):
 			player()
 		elif(playerTurn == 2):
-			cpuTurn(1,1)
+			cpuTurn(0,100)
 		
 		
 func _on_button_button_up():
@@ -135,6 +135,7 @@ func _on_button_button_up():
 				if(c != cardOfRound):
 					lastRoundBluff = true
 			butt.visible = false
+			inRound = true
 
 func _on_buton_button_up():
 	pass # Replace with function body.
@@ -165,14 +166,19 @@ func player():
 			for x in playerCards.get_children():
 				x.setReady(true)
 			stageOfRound = 2
-		#inRound = true
-
 
 func cpuTurn(cheatProc, bluffProc):
-	pass
-	#print(inRound)
-	#print(cardOfRound)
-	#print(cardCount)
+	if(inRound):
+		
+		if(cardCount > 4):
+			#CALL BLUFF
+			pass
+	print(inRound)
+	print(cardOfRound)
+	print(cardCount)
+	print(cheatProc)
+	print(bluffProc)
+	playerTurn = 1
 	#for x in cpuOneHand:
 		#print(x)
 
