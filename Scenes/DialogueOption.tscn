@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bw4dg1l2h0lx"]
 
 [ext_resource type="Script" path="res://Scripts/DialogueOption.gd" id="2"]
-[ext_resource type="FontFile" uid="uid://cunjkg6pmw73y" path="res://Assets/Fonts/LCALLIG.TTF" id="2_jmpq3"]
 [ext_resource type="Texture2D" uid="uid://cef27f01828o1" path="res://Assets/ButtonPlaceholder.png" id="2_nfqc2"]
+[ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="3_3agfe"]
 
 [node name="DialogueOption" type="Control"]
 layout_mode = 3
@@ -24,7 +24,7 @@ offset_top = 45.0
 offset_right = 415.0
 offset_bottom = 245.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_jmpq3")
+theme_override_fonts/normal_font = ExtResource("3_3agfe")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]default bbcode[/center]"

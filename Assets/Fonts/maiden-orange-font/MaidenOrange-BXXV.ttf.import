@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cunjkg6pmw73y"
-path="res://.godot/imported/LCALLIG.TTF-af14a43ac19d70f80ee32a201f9e095e.fontdata"
+uid="uid://bpqfu6dwnng44"
+path="res://.godot/imported/MaidenOrange-BXXV.ttf-554dca2ac205c218281e2ba126f404af.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/LCALLIG.TTF"
-dest_files=["res://.godot/imported/LCALLIG.TTF-af14a43ac19d70f80ee32a201f9e095e.fontdata"]
+source_file="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf"
+dest_files=["res://.godot/imported/MaidenOrange-BXXV.ttf-554dca2ac205c218281e2ba126f404af.fontdata"]
 
 [params]
 

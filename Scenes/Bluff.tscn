@@ -40,6 +40,12 @@ energy = 1.8
 blend_mode = 2
 texture = ExtResource("6_kdsla")
 
+[node name="PushGauge" type="TextureRect" parent="."]
+offset_right = 2500.0
+offset_bottom = 1406.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("7_hjklu")
+
 [node name="PlayerCards" type="HBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -110,12 +116,6 @@ offset_top = 226.0
 offset_right = 1739.0
 offset_bottom = 276.0
 text = "Pass Round"
-
-[node name="PushGauge" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.768, 0.768)
-texture = ExtResource("7_hjklu")
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="Buton" to="." method="_on_buton_button_up"]

@@ -205,18 +205,12 @@ func playDialogue(key):
 	current_prompt.get_node("Text").text = "[center]" + prompt_text + "[/center]"
 	# Update text size to fit box (have to do in a roundabout way because there is no way to scale font size
 	# differently for two labels displayed simultaneously)
-	resize_text(current_prompt.get_node("Text"), prompt_size)
+	#resize_text(current_prompt.get_node("Text"), prompt_size)
 	get_tree().get_root().add_child(current_prompt) # adding to main
+	# hide until push gage fills
 	if key != "1a":
-		current_prompt.hide() # hide until push gage fills
-	# Execute actions
-	for action in actions:
-		if action == "tutorial":
-			print("requested tutorial")
-		elif action == "+stress":
-			print("increased stress")
-		elif action == "-stress":
-			print("decreased tutorial")
+		current_prompt.hide()
+
 	# Create visual options
 	var num_options = len(options)
 	for i in num_options:
@@ -225,18 +219,23 @@ func playDialogue(key):
 		var option_size = len(option_text)
 		# Lookup prompts key (option outcomes)
 		var prompt = Global.player_dialogue_dict[options[i]][1]
+		# Lookup actions array
+		var option_actions = Global.player_dialogue_dict[options[i]][2]
 		# Create visual prompt
 		var new_option = dialogueOption.instantiate()
 		new_option.position = Vector2((1920/(1 + num_options))*(i + 1) - 215, 500)
 		new_option.get_node("Text").text = "[center]" + option_text + "[/center]"
 		# Update text size to fit box
-		resize_text(new_option.get_node("Text"), option_size)
+		#resize_text(new_option.get_node("Text"), option_size)
+		# Assign the outcome to be triggered on button press
 		new_option.outcome = prompt # here we assign the outcome to be triggered on button press
-		current_options.append(new_option)
+		new_option.actions = option_actions
+		# Complete process
+		current_options.append(new_option) # Store as current option
 		get_tree().get_root().add_child(new_option) # adding to main
+		# Hide until push gauge fills
 		if key != "1a" and key != "1b":
-			current_prompt.hide() # hide until push gage fills
-			new_option.hide() # hide until push gage fills
+			new_option.hide()
 		
 """
 * this function scales a text box to fit within a DialogueOption or DialogueBox object
