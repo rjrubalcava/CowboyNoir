@@ -3,6 +3,7 @@ extends Control
 # https://godotengine.org/qa/111711/how-to-make-an-button-invisible
 
 var outcome = -1
+var actions = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,4 +12,13 @@ func _ready():
 # Called when button is clicked. Scene is instanced and then immediately provided an outcome,
 # so initial error value of -1 should not be reached
 func _on_button_pressed():
+	# Execute actions associated with this option
+	for action in actions:
+		if action == "tutorial":
+			pass
+		elif action == "+stress":
+			get_parent().get_node("MainScene").get_node("Bluff").updateStress(30)
+		elif action == "-stress":
+			get_parent().get_node("MainScene").get_node("Bluff").updateStress(-30)
 	Global.playDialogue(outcome)
+	

@@ -1,46 +1,269 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciaes6gmsx3ut"]
+[gd_scene load_steps=24 format=3 uid="uid://ciaes6gmsx3ut"]
 
 [ext_resource type="Texture2D" uid="uid://bh18cd86aasdc" path="res://Assets/BunnyHeadspace/Background.png" id="1_5mip6"]
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
-[ext_resource type="Texture2D" uid="uid://b48g563mak7fp" path="res://Assets/BunnyHeadspace/Clock.png" id="2_hiwio"]
-[ext_resource type="Texture2D" uid="uid://g0nkxe70nsos" path="res://Assets/BunnyHeadspace/Newspaper.png" id="4_742xc"]
-[ext_resource type="Texture2D" uid="uid://c8erkayaqercf" path="res://Assets/BunnyHeadspace/Letter.png" id="5_e2wtt"]
+[ext_resource type="Texture2D" uid="uid://cjyrvlcws68lw" path="res://Assets/BunnyHeadspace/Zoom out/ground and wall.png" id="3_usumk"]
+[ext_resource type="Texture2D" uid="uid://ou6w5vem52dk" path="res://Assets/BunnyHeadspace/Zoom out/diamond rock.png" id="4_1w7tk"]
+[ext_resource type="Texture2D" uid="uid://bhruy6ojupxnk" path="res://Assets/BunnyHeadspace/Zoom out/gf clock.png" id="5_vp4ug"]
+[ext_resource type="Texture2D" uid="uid://bl4clgbd0bkk1" path="res://Assets/BunnyHeadspace/Zoom out/hearts card.png" id="6_8umd0"]
+[ext_resource type="Texture2D" uid="uid://cmufdprq4ktta" path="res://Assets/BunnyHeadspace/Zoom out/mirrordesk.png" id="7_sgxk8"]
+[ext_resource type="Texture2D" uid="uid://b4q7jx6jd4syj" path="res://Assets/BunnyHeadspace/Zoom out/newspaper w. knife(1).png" id="8_ov48k"]
+[ext_resource type="Texture2D" uid="uid://dr044bs16d6gn" path="res://Assets/BunnyHeadspace/Zoom out/club vase.png" id="9_f3jki"]
+[ext_resource type="Texture2D" uid="uid://hjdbvf5xo8yt" path="res://Assets/BunnyHeadspace/Zoom out/code drawer.png" id="10_xhkrq"]
+[ext_resource type="Texture2D" uid="uid://cq1uiaod6361i" path="res://Assets/BunnyHeadspace/Zoom out/costume chest.png" id="11_hqo4u"]
+[ext_resource type="Texture2D" uid="uid://dla3ger8ohykc" path="res://Assets/BunnyHeadspace/Zoom out/diamond drawer.png" id="12_4cjag"]
+[ext_resource type="Texture2D" uid="uid://biwchg5puqcqa" path="res://Assets/BunnyHeadspace/inventoryStuff/inventory box.png" id="12_6j47j"]
+[ext_resource type="Texture2D" uid="uid://bkrvnro3vqqa6" path="res://Assets/BunnyHeadspace/inventoryStuff/frame.png" id="13_4iq0c"]
+[ext_resource type="Texture2D" uid="uid://b45uyo2p1m1y6" path="res://Assets/BunnyHeadspace/Zoom out/spade lamp.png" id="13_tsk05"]
+[ext_resource type="Texture2D" uid="uid://dmajmhrwb8vnd" path="res://Assets/BunnyHeadspace/inventoryStuff/heart card in invt.png" id="14_aphy6"]
+[ext_resource type="Texture2D" uid="uid://ddm5dfqj2jlfs" path="res://Assets/BunnyHeadspace/Zoom out/the sun.png" id="14_ykb1b"]
+[ext_resource type="Texture2D" uid="uid://jcxrxmjl4ubc" path="res://Assets/BunnyHeadspace/inventoryStuff/diamond card in invt.png" id="15_ee2hf"]
+[ext_resource type="Texture2D" uid="uid://2k080temt43x" path="res://Assets/BunnyHeadspace/inventoryStuff/club card in invt.png" id="16_bphh4"]
+[ext_resource type="Texture2D" uid="uid://bci08vshyoahq" path="res://Assets/BunnyHeadspace/inventoryStuff/spade card in invt.png" id="17_67m7m"]
+[ext_resource type="Texture2D" uid="uid://dpax0dk10g40g" path="res://Assets/BunnyHeadspace/inventoryStuff/hour hand in invt.png" id="18_yyxmo"]
+[ext_resource type="Texture2D" uid="uid://cqfktwup771bn" path="res://Assets/BunnyHeadspace/inventoryStuff/minute hand in invt.png" id="19_g7haf"]
+[ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="23_7due0"]
 
 [node name="BunnyHeadspace" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 3.083
+anchor_bottom = 3.05
+offset_left = -3.0
+offset_top = -15.0
+offset_right = -4022.36
+offset_bottom = -2226.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ioy2x")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 2543.0
+offset_bottom = 1459.0
+scale = Vector2(0.76, 0.76)
 texture = ExtResource("1_5mip6")
 
-[node name="Clock" type="TextureRect" parent="."]
+[node name="Midground" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 249.0
-offset_top = 385.0
-offset_right = 329.0
-offset_bottom = 625.0
-texture = ExtResource("2_hiwio")
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 2501.0
+offset_bottom = 1404.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("3_usumk")
+
+[node name="DiamondRock" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 2501.0
+offset_bottom = 1404.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("4_1w7tk")
+
+[node name="HeartsCard" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 9.00002
+offset_right = 2511.0
+offset_bottom = 1415.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("6_8umd0")
+
+[node name="MirrorDesk" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 9.00002
+offset_right = 2511.0
+offset_bottom = 1415.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("7_sgxk8")
+
+[node name="ClubVase" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -14.0
+offset_right = 2498.0
+offset_bottom = 1392.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("9_f3jki")
+
+[node name="CodeDrawer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -14.0
+offset_right = 2498.0
+offset_bottom = 1392.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("10_xhkrq")
+
+[node name="CostumeChest" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -14.0
+offset_right = 2498.0
+offset_bottom = 1392.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("11_hqo4u")
+
+[node name="DiamondDrawer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -14.0
+offset_right = 2498.0
+offset_bottom = 1392.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("12_4cjag")
+
+[node name="SpadeLamp" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 2506.0
+offset_bottom = 1411.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("13_tsk05")
+
+[node name="InventoryBox" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 2506.0
+offset_bottom = 1411.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("12_6j47j")
+
+[node name="Frame" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 2506.0
+offset_bottom = 1411.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("13_4iq0c")
+
+[node name="HeartCard" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 2506.0
+offset_bottom = 1411.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("14_aphy6")
+
+[node name="DiamondCard" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 2506.0
+offset_bottom = 1411.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("15_ee2hf")
+
+[node name="ClubCard" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 2506.0
+offset_bottom = 1411.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("16_bphh4")
+
+[node name="SpadeCard" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 2506.0
+offset_bottom = 1411.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("17_67m7m")
+
+[node name="HourHand" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 2506.0
+offset_bottom = 1411.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("18_yyxmo")
+
+[node name="MinuteHand" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 2506.0
+offset_bottom = 1411.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("19_g7haf")
 
 [node name="Newspaper" type="TextureRect" parent="."]
+light_mask = 16
+visibility_layer = 16
 layout_mode = 0
-offset_left = 703.0
-offset_top = 50.0
-offset_right = 925.0
-offset_bottom = 373.0
-texture = ExtResource("4_742xc")
+offset_left = 1086.0
+offset_top = 267.0
+offset_right = 1417.0
+offset_bottom = 579.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("8_ov48k")
 
-[node name="Letter" type="TextureRect" parent="."]
+[node name="Clock" type="TextureRect" parent="."]
+light_mask = 2
+visibility_layer = 2
 layout_mode = 0
-offset_left = 1263.0
-offset_top = 560.0
-offset_right = 1303.0
-offset_bottom = 600.0
-texture = ExtResource("5_e2wtt")
+offset_left = 469.0
+offset_top = 337.0
+offset_right = 715.0
+offset_bottom = 943.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("5_vp4ug")
+
+[node name="TheSun" type="TextureRect" parent="."]
+light_mask = 4
+visibility_layer = 4
+layout_mode = 0
+offset_left = 1520.0
+offset_top = 73.0
+offset_right = 1975.0
+offset_bottom = 500.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("14_ykb1b")
+
+[node name="NumberSelector1" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -841.0
+offset_top = 390.0
+offset_right = -596.0
+offset_bottom = 619.0
+theme_override_fonts/normal_font = ExtResource("23_7due0")
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="NumberSelector2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -817.0
+offset_top = 420.0
+offset_right = -572.0
+offset_bottom = 649.0
+theme_override_fonts/normal_font = ExtResource("23_7due0")
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="NumberSelector3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -570.0
+offset_top = 421.0
+offset_right = -325.0
+offset_bottom = 650.0
+theme_override_fonts/normal_font = ExtResource("23_7due0")
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="NumberSelector4" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -1247.0
+offset_top = 241.0
+offset_right = -1002.0
+offset_bottom = 470.0
+theme_override_fonts/normal_font = ExtResource("23_7due0")
+theme_override_font_sizes/normal_font_size = 30
+text = "1"

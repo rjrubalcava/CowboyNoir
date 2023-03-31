@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cvkby0y3wty4a" path="res://Assets/BunnyTable/Neutral.png" id="4_dhp8w"]
 [ext_resource type="Texture2D" uid="uid://gc0yb4w8nr1a" path="res://Assets/BunnyTable/Table Textures.png" id="5_fklcd"]
 [ext_resource type="Texture2D" uid="uid://dtbm0egjugty0" path="res://Assets/BunnyTable/Beam of Light.png" id="6_kdsla"]
-[ext_resource type="Texture2D" uid="uid://ddyjb7x7r8137" path="res://Assets/BunnyTable/Push Gauge.png" id="7_hjklu"]
+[ext_resource type="Texture2D" uid="uid://bn4glukot66r5" path="res://Assets/BunnyTable/Empty Push Gauge.png" id="7_4om0p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrtgy"]
 shader = ExtResource("2_belpe")
@@ -44,7 +44,7 @@ texture = ExtResource("6_kdsla")
 offset_right = 2500.0
 offset_bottom = 1406.0
 scale = Vector2(0.768, 0.768)
-texture = ExtResource("7_hjklu")
+texture = ExtResource("7_4om0p")
 
 [node name="PlayerCards" type="HBoxContainer" parent="."]
 offset_right = 40.0

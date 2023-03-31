@@ -13,6 +13,7 @@ func _ready():
 	
 	#Adding Bluff instance to Main Tree
 	add_child(initBluff)
+	initBluff.name = "Bluff"
 	
 	#Initializing a new Game 
 	initBluff.initGame(2)

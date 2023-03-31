@@ -95,6 +95,9 @@ var numOfPasses = 0
 var cpuCardsLastRound = null
 
 
+var stressLevel = 0
+var psychometerStage = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -563,6 +566,12 @@ func incPshGge(upOrDown):
 	else:
 		if(pushGaugeLvl > 0):
 			pushGaugeLvl -= 1
+	if pushGaugeLvl == 0:
+		$PushGauge.texture = preload("res://Assets/BunnyTable/Empty Push Gauge.png")
+	elif pushGaugeLvl == 1:
+		$PushGauge.texture = preload("res://Assets/BunnyTable/Push Gauge 33.png")
+	else:
+		$PushGauge.texture = preload("res://Assets/BunnyTable/Push Gauge.png")
 
 
 
@@ -679,3 +688,17 @@ func rmPlayerHand():
 	inRound = false
 	cardOfRound = -1
 	cpuCardsLastRound = []
+	
+func updateStress(stress):
+	print("got update")
+	stressLevel += stress
+	if stressLevel < 0:
+		stressLevel = 0
+	if stressLevel < 30:
+		$Character.texture = preload("res://Assets/BunnyTable/Neutral.png")
+	elif stressLevel < 60:
+		$Character.texture = preload("res://Assets/BunnyTable/Level Two.png")
+	elif stressLevel < 90:
+		$Character.texture = preload("res://Assets/BunnyTable/Level Three.png")
+	else:
+		$Character.texture = preload("res://Assets/BunnyTable/Level Four.png")
