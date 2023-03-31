@@ -263,6 +263,8 @@ func player():
 			#IF HERE, THEY HAVENT SELECTED A CARD YET
 			if(lastPlay < 0):
 				inst.text="It's your turn to start a new round, Select what type of card to play!"
+			if(lastPlay == 3):
+				inst.text="Amity Passed Too. It's Your Turn To Start a New Round!"
 			buton.visible = false
 			pesto.visible = false
 			butt.visible = true
@@ -314,12 +316,12 @@ func cpuTurn(cheatProc, bluffProc):
 		stageOfRound = 3
 		var newM = cpuChooseNewMove(cheatProc)
 		if(newM == 1):
-			var card = rng.randi_range(1, cpuOneHand.size())
+			var card = rng.randi_range(0, cpuOneHand.size() - 1)
 			cardOfRound = cpuOneHand[card].to_int()
 			print("NoCheat")
 			cpuExecuteMove(newM)
 		else:
-			cardOfRound = rng.randi_range(1,13)
+			cardOfRound = rng.randi_range(0,12)
 			print("Cheat")
 			print(cardOfRound)
 			cpuExecuteMove(newM)
@@ -330,7 +332,7 @@ func cpuChooseNewMove(cheatProc):
 	#ON A NEW TURN WE CHEAT HALF AS OFTEN
 	var k = float(cheatProc) / 2
 	var t = rng.randi_range(0,100)
-	var toCheat = (cheatProc > t)
+	var toCheat = (k > t)
 	#IF WE PLAY STRAIGHT RETURN 1
 	if(!toCheat):
 		return(1)
@@ -401,6 +403,7 @@ func cpuExecuteMove(myMove):
 		#IF HERE WE ARE CHOOSING TO PASS
 		print("Pass Move")
 		numOfPasses += 1
+		print(numOfPasses)
 		lastPlay = 3
 		cardCount = 0
 		lastRoundHand = []
@@ -408,10 +411,12 @@ func cpuExecuteMove(myMove):
 		playerTurn = 1
 		if(numOfPasses >= 2):
 			#IF HERE PLAYER AND CPU PASS
+			numOfPasses = 0
 			inRound = false
 			stageOfRound = 0
 		else:
 			inRound = true
+			stageOfRound = 3
 
 func printAmityTurn():
 	inst.text="Amity Played "
@@ -663,7 +668,6 @@ func rmPlayerHand():
 	for x in playerCards.get_children():
 		playerCards.remove_child(x)
 		x.queue_free()
-	
 	#Resetting Game Status
 	noWinner = true
 	playerTurn = 1
