@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=9 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cvkby0y3wty4a" path="res://Assets/BunnyTable/Neutral.png" id="4_dhp8w"]
 [ext_resource type="Texture2D" uid="uid://gc0yb4w8nr1a" path="res://Assets/BunnyTable/Table Textures.png" id="5_fklcd"]
 [ext_resource type="Texture2D" uid="uid://dtbm0egjugty0" path="res://Assets/BunnyTable/Beam of Light.png" id="6_kdsla"]
+[ext_resource type="Texture2D" uid="uid://ddyjb7x7r8137" path="res://Assets/BunnyTable/Push Gauge.png" id="7_hjklu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrtgy"]
 shader = ExtResource("2_belpe")
@@ -109,6 +110,12 @@ offset_top = 226.0
 offset_right = 1739.0
 offset_bottom = 276.0
 text = "Pass Round"
+
+[node name="PushGauge" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("7_hjklu")
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="Buton" to="." method="_on_buton_button_up"]
