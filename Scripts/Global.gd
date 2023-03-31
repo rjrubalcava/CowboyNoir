@@ -74,7 +74,7 @@ func init_dialogue():
 		
 	elif character == "amity":
 		# Depth 1
-		character_dialogue_dict["1a"] = ["Hello Jack. It's nice to meet you", ["1a", "1b"], []]
+		character_dialogue_dict["1a"] = ["Hello Jack. It's nice to meet you.", ["1a", "1b"], []]
 		# Depth 3
 		character_dialogue_dict["2a"] = ["Funny.", ["2a", "2b"], []]
 		character_dialogue_dict["2b"] = ["You know how to play?", ["2c", "2d"], []]
@@ -110,6 +110,50 @@ func init_dialogue():
 		character_dialogue_dict["5o"] = ["You have nothing to fear.", ["5ac", "5ad"], []]
 		character_dialogue_dict["5p"] = ["", ["5ae", "5af"], []]
 		# Depth 11
+		character_dialogue_dict["6a"] = ["What then?", ["6a", "6b"], []]
+		character_dialogue_dict["6b"] = ["What? You didn't respect your own family?", ["6c", "6d"], []]
+		# Depth 13
+		character_dialogue_dict["7a"] = ["You'll have to be more specific, detective.", ["7a", "7b"], []]
+		character_dialogue_dict["7b"] = ["Just to mock us?", ["7c", "7d"], []]
+		# Depth 15
+		character_dialogue_dict["8a"] = ["How dare _you_! Showing up like this.", ["8a", "8b"], []]
+		character_dialogue_dict["8b"] = ["We both know you never cared about her. Who knows? Maybe you killed her.", ["8c", "8d"], []]
+		# Depth 17
+		character_dialogue_dict["9a"] = ["Are you sure about that? Because this feels personal.", ["9a", "9b"], []]
+		character_dialogue_dict["9b"] = ["What the hell is that supposed to mean?!", ["9c", "9d"], []]
+		# Depth 19
+		character_dialogue_dict["10a"] = ["Thought cops weren't supposed to mix work and personal life.", ["10a", "10b"], []]
+		character_dialogue_dict["10b"] = ["It was always personal. She's your sister, what did you expect?", ["10c", "10d"], []]
+		# Depth 21
+		character_dialogue_dict["11a"] = ["It doesn't matter anymore.", ["11a", "11b"], []]
+		# Depth 23
+		character_dialogue_dict["12a"] = ["If anything you should be happy. You finally got what you wanted.", ["12a", "12b"], []]
+		# Depth 25
+		character_dialogue_dict["13a"] = ["Could have fooled me.", ["13a", "13b"], []]
+		# Depth 27
+		character_dialogue_dict["14a"] = ["Of course!", ["14a", "14b"], []]
+		# Depth 29
+		character_dialogue_dict["15a"] = ["Why should I?", ["15a", "15b"], []]
+		# Depth 31
+		character_dialogue_dict["16a"] = ["Well I want you dead, so I'm not sure I'm following.", ["16a", "16b"], []]
+		# Depth 33
+		character_dialogue_dict["17a"] = ["How do you know what I want?", ["17a", "17b"], []]
+		# Depth 35
+		character_dialogue_dict["18a"] = ["I don't know that. Matter of fact I don't know you at all.", ["18a", "18b"], []]
+		# Depth 37
+		character_dialogue_dict["19a"] = ["Not a big difference where I come from.", ["19a", "19b"], []]
+		# Depth 39
+		character_dialogue_dict["20a"] = ["...", ["20a", "20b"], []]
+		# Depth 41
+		character_dialogue_dict["21a"] = ["...", ["21a", "21b"], []]
+		# Depth 43
+		character_dialogue_dict["22a"] = ["Maybe ... it'd be suicide.", ["22a", "22b"], []]
+		# Depth 45
+		character_dialogue_dict["23a"] = ["You don't even know what that word means.", ["23a", "23b"], []]
+		# Depth 47
+		character_dialogue_dict["24a"] = ["All I can say is something Iris' car ... and a bomb.", ["24a", "24b"], []]
+		# Depth 49
+		character_dialogue_dict["25a"] = ["Gila.", ["25a", "25b"], []]
 		
 		# Depth 2
 		player_dialogue_dict["1a"] = ["We've actually met before. Just not officially.", "2a", ["+stress"]]
@@ -120,7 +164,7 @@ func init_dialogue():
 		player_dialogue_dict["2c"] = ["Peter just gave me a refresher course.", "3c", ["+stress"]]
 		player_dialogue_dict["2d"] = ["Of course.", "3d", ["-stress"]]
 		# Depth 6
-		player_dialogue_dict["3a"] = ["Well it wasn't mean to be.", "4a", ["+stress"]]
+		player_dialogue_dict["3a"] = ["Iris may have thought so.", "4a", ["+stress"]]
 		player_dialogue_dict["3b"] = ["Ouch.", "4b", ["-stress"]]
 		player_dialogue_dict["3c"] = ["Eh, just give me a few minutes.", "4c", ["+stress"]]
 		player_dialogue_dict["3d"] = ["Ouch.", "4d", ["-stress"]]
@@ -146,8 +190,8 @@ func init_dialogue():
 		player_dialogue_dict["4o"] = ["I'm terrified.", "5g", ["+stress"]]
 		player_dialogue_dict["4p"] = ["I was gonna let you win anyway.", "5h", ["-stress"]]
 		# Depth 10
-		player_dialogue_dict["5a"] = ["No.", "", ["+stress"]]
-		player_dialogue_dict["5b"] = ["Sure, Amity, let's call it that", "", ["-stress"]]
+		player_dialogue_dict["5a"] = ["No.", "6a", ["+stress"]]
+		player_dialogue_dict["5b"] = ["Sure, Amity, let's call it that", "6b", ["-stress"]]
 		player_dialogue_dict["5c"] = ["They were, depending on your point of view.", "", ["+stress"]]
 		player_dialogue_dict["5d"] = ["I was just doing my job.", "", ["-stress"]]
 		player_dialogue_dict["5e"] = ["", "", ["+stress"]]
@@ -179,11 +223,74 @@ func init_dialogue():
 		player_dialogue_dict["5ae"] = ["", "", ["+stress"]]
 		player_dialogue_dict["5af"] = ["", "", ["-stress"]]
 		# Depth 12
-		player_dialogue_dict["6a"] = ["I'm looking for someone.", "", ["+stress"]]
-		player_dialogue_dict["6b"] = ["...", "", ["-stress"]]
+		player_dialogue_dict["6a"] = ["I'm looking for someone.", "7a", ["+stress"]]
+		player_dialogue_dict["6b"] = ["...", "7b", ["-stress"]]
 		player_dialogue_dict["6c"] = ["No.", "", ["+stress"]]
 		player_dialogue_dict["6d"] = ["At some point, maybe I did.", "", ["-stress"]]
-	
+		# Depth 14
+		player_dialogue_dict["7a"] = ["", "", ["+stress"]]
+		player_dialogue_dict["7b"] = ["", "", ["-stress"]]
+		player_dialogue_dict["7c"] = ["How dare you!", "8a", ["+stress"]]
+		player_dialogue_dict["7d"] = ["What?", "8b", ["-stress"]]
+		# Depth 16
+		player_dialogue_dict["8a"] = ["I'm doing my job.", "9a", ["+stress"]]
+		player_dialogue_dict["8b"] = ["I didn't know what else to do.", "9b", ["-stress"]]
+		player_dialogue_dict["8c"] = ["Maybe you did.", "", ["+stress"]]
+		player_dialogue_dict["8d"] = ["She was my sister!", "", ["-stress"]]
+		# Depth 18
+		player_dialogue_dict["9a"] = ["Why can't it be a bit of both?", "10a", ["+stress"]]
+		player_dialogue_dict["9b"] = ["I never meant for it to be personal.", "10b", ["-stress"]]
+		# Depth 20
+		player_dialogue_dict["10a"] = ["I've been mixing them my whole career. I'm not gonna stop now.", "", ["+stress"]]
+		player_dialogue_dict["10b"] = ["Wish I learned that 15 years ago.", "", ["-stress"]]
+		player_dialogue_dict["10c"] = ["She was also a criminal. That was her choice.", "11a", ["+stress"]]
+		player_dialogue_dict["10d"] = ["I don't know.", "", ["-stress"]]
+		# Depth 22
+		player_dialogue_dict["11a"] = ["If anything, it matters more.", "12a", ["+stress"]]
+		player_dialogue_dict["11b"] = ["", "", ["-stress"]]
+		# Depth 24
+		player_dialogue_dict["12a"] = ["I never wanted this!", "13a", ["+stress"]]
+		player_dialogue_dict["12b"] = ["", "", ["-stress"]]
+		# Depth 26
+		player_dialogue_dict["13a"] = ["Did you love my sister?", "14a", ["+stress"]]
+		player_dialogue_dict["13b"] = ["", "", ["-stress"]]
+		# Depth 28
+		player_dialogue_dict["14a"] = ["Then let's just stop and think for a second.", "15a", ["+stress"]]
+		player_dialogue_dict["14b"] = ["", "", ["-stress"]]
+		# Depth 30
+		player_dialogue_dict["15a"] = ["Because we bot want the same thing.", "16a", ["+stress"]]
+		player_dialogue_dict["15b"] = ["", "", ["-stress"]]
+		# Depth 32
+		player_dialogue_dict["16a"] = ["I'm not the one you want.", "17a", ["+stress"]]
+		player_dialogue_dict["16b"] = ["", "", ["-stress"]]
+		# Depth 34
+		player_dialogue_dict["17a"] = ["You know I would never kill Iris.", "18a", ["+stress"]]
+		player_dialogue_dict["17b"] = ["", "", ["-stress"]]
+		# Depth 36
+		player_dialogue_dict["18a"] = ["Imprisoning and killing aren't the same thing.", "19a", ["+stress"]]
+		player_dialogue_dict["18b"] = ["", "", ["-stress"]]
+		# Depth 38
+		player_dialogue_dict["19a"] = ["Are you saying you _wouldn't_ rather Iris be in prison rather than be dead?", "20a", ["+stress"]]
+		player_dialogue_dict["19b"] = ["", "", ["-stress"]]
+		# Depth 40
+		player_dialogue_dict["20a"] = ["If you really loved my sister you'd help me.", "21a", ["+stress"]]
+		player_dialogue_dict["20b"] = ["", "", ["-stress"]]
+		# Depth 42
+		player_dialogue_dict["21a"] = ["And if you're anything like the woman I've investigated these last 15 years ... then you know something.", "22a", ["+stress"]]
+		player_dialogue_dict["21b"] = ["", "", ["-stress"]]
+		# Depth 44
+		player_dialogue_dict["22a"] = ["Relax. You're safe.", "23a", ["+stress"]]
+		player_dialogue_dict["22b"] = ["", "", ["-stress"]]
+		# Depth 46
+		player_dialogue_dict["23a"] = ["Look at me. What do you know?", "24a", ["+stress"]]
+		player_dialogue_dict["23b"] = ["", "", ["-stress"]]
+		# Depth 48
+		player_dialogue_dict["24a"] = ["Give me a name.", "25", ["+stress"]]
+		player_dialogue_dict["24b"] = ["", "", ["-stress"]]
+		# Depth 50
+		player_dialogue_dict["25a"] = ["", "", ["+stress"]]
+		player_dialogue_dict["25b"] = ["", "", ["-stress"]]
+		
 func playDialogue(key):
 	# Erase old prompt
 	if current_prompt != null:
