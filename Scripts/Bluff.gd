@@ -101,7 +101,11 @@ func _ready():
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 
-
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_up"):
+		incPshGge(true)
+	elif event.is_action_pressed("ui_down"):
+		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#for x in centerHand:
@@ -549,6 +553,7 @@ func caughtBluffing(wasPlayer):
 
 func incPshGge(upOrDown):
 	if(upOrDown):
+		print("Push Gauge Up")
 		pushGaugeLvl += 1
 		if(pushGaugeLvl == 3):
 			pushGaugeLvl = 0
