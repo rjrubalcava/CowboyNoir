@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=10 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gc0yb4w8nr1a" path="res://Assets/BunnyTable/Table Textures.png" id="5_fklcd"]
 [ext_resource type="Texture2D" uid="uid://dtbm0egjugty0" path="res://Assets/BunnyTable/Beam of Light.png" id="6_kdsla"]
 [ext_resource type="Texture2D" uid="uid://bn4glukot66r5" path="res://Assets/BunnyTable/Empty Push Gauge.png" id="7_4om0p"]
+[ext_resource type="AudioStream" path="res://Assets/SFX/click.wav" id="8_irqys"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrtgy"]
 shader = ExtResource("2_belpe")
@@ -51,10 +52,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="playInstruction" type="RichTextLabel" parent="."]
-offset_left = 1313.0
-offset_top = 31.0
-offset_right = 1593.0
-offset_bottom = 186.0
+offset_left = 1149.0
+offset_top = 33.0
+offset_right = 1429.0
+offset_bottom = 188.0
 scale = Vector2(2, 2)
 text = "Current Round Card: "
 
@@ -116,6 +117,9 @@ offset_top = 226.0
 offset_right = 1739.0
 offset_bottom = 276.0
 text = "Pass Round"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_irqys")
 
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="Buton" to="." method="_on_buton_button_up"]

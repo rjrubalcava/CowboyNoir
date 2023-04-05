@@ -24,4 +24,6 @@ offset_right = 1741.0
 offset_bottom = 594.0
 rotation = -0.00828301
 
+[node name="Click" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

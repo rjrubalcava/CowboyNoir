@@ -12,6 +12,7 @@ func _ready():
 # Called when button is clicked. Scene is instanced and then immediately provided an outcome,
 # so initial error value of -1 should not be reached
 func _on_button_pressed():
+	$Click.play()
 	# Execute actions associated with this option
 	for action in actions:
 		if action == "tutorial":
