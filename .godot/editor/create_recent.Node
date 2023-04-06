@@ -1,10 +1,10 @@
+Timer
 TextureRect
 CollisionShape2D
 Area2D
 Sprite2D
 Control
 Camera2D
-Timer
 AudioStreamPlayer2D
 Button
 OptionButton

@@ -218,10 +218,10 @@ texture = ExtResource("14_ykb1b")
 light_mask = 4
 visibility_layer = 4
 layout_mode = 0
-offset_left = 1236.0
-offset_top = 344.0
-offset_right = 1236.0
-offset_bottom = 344.0
+offset_left = 1172.0
+offset_top = 289.0
+offset_right = 1397.0
+offset_bottom = 499.0
 scale = Vector2(0.76, 0.76)
 texture = ExtResource("22_ydlq2")
 
