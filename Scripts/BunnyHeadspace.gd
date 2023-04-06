@@ -45,10 +45,9 @@ func change_texture(my_tween, old_texture, new_texture):
 func change_position(my_tween, my_sprite, pos):
 	my_tween.parallel().tween_property(my_sprite, "position", Vector2(pos.x, pos.y), 0.2)
 	
-	
 func _input(event):
 	var newspaper_coordinates = Newspaper.position
-	var center = Vector2(1000,350)
+	var center = Vector2(1200,500)
 	flag = false
 	
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
@@ -56,25 +55,19 @@ func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		
 		if Clock.get_global_rect().has_point(event.position):
-			
 			Enlarged_Newspaper_sprite.hide()
 			scale_up(TW, Clock)
 			change_texture(TW, Newspaper, SmallerNewspaper)	
 			change_position(TW, Newspaper, newspaper_coordinates)
 			scale_down(TW,TheSun)
 			scale_down(TW,Newspaper)
-			
-					
 		elif  Newspaper.get_global_rect().has_point(event.position):
 			scale_up(TW, Newspaper)
-			#TW.tween_interval(3)
 			change_texture(TW, Newspaper, Enlarged_Newspaper_sprite)
 			change_position(TW, Enlarged_Newspaper_sprite, center)
 			scale_down(TW, Clock)
 			scale_down(TW, TheSun)
-			
 			await get_tree().create_timer(0.8).timeout
-
 			Enlarged_Newspaper_sprite.show()
 		elif  TheSun.get_global_rect().has_point(event.position):
 			scale_up(TW, TheSun)
@@ -83,8 +76,6 @@ func _input(event):
 			change_position(TW, Newspaper, newspaper_coordinates)
 			scale_down(TW,Clock)
 			scale_down(TW, Newspaper)
-			
-			
 		elif Background.get_global_rect().has_point(event.position):
 			scale_down(TW, TheSun)
 			scale_down(TW, Newspaper)
@@ -93,12 +84,7 @@ func _input(event):
 			change_position(TW, Newspaper, newspaper_coordinates)
 			Enlarged_Newspaper_sprite.hide()
 		
-			
-
-	
-	
 func _unhandled_input(event):
-	
 	if event.is_action_pressed("ui_up"):
 		adjust_letter("up")
 	elif event.is_action_pressed("ui_down"):
@@ -114,7 +100,6 @@ func _unhandled_input(event):
 			
 	# Mark input as handled so it won't trigger multiple times per keypress
 	
-			
 func adjust_letter(direction):
 	var selector = null
 	if current_selector == 0:
@@ -133,6 +118,3 @@ func adjust_letter(direction):
 		if letter_indices[current_selector] != 0:
 			letter_indices[current_selector]-=1
 	selector.set("text", alphabet[letter_indices[current_selector]])
-	
-func _on_timer_timeout():
-	flag=true
