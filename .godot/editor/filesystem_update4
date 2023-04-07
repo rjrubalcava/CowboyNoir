@@ -1,6 +1,5 @@
 res://Z-RNDM/default_env.tres
 res://Scenes/BunnyHeadspace.tscn
-res://Scripts/BunnyHeadspace.gd
 res://Scenes/Global.tscn
 res://Scenes/DialogueOption.tscn
 res://Scenes/MainScene.tscn
@@ -8,3 +7,7 @@ res://Scenes/DialogueBox.tscn
 res://Scenes/Card.tscn
 res://Scenes/Start.tscn
 res://Scenes/Bluff.tscn
+res://Scenes/BoxPuzzle.tscn
+res://Scripts/BunnyHeadspace.gd
+res://Scenes/CodeDrawer.tscn
+res://Scripts/CodeDrawer.gd

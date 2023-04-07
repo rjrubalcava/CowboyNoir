@@ -7,10 +7,15 @@ extends Control
 @onready var Midground: TextureRect = $Midground
 @onready var EnlargedNewspaper = preload("res://Assets/BunnyHeadspace/Newspaper/newspaper close up.png")
 @onready var SmallerNewspaper = preload("res://Assets/BunnyHeadspace/Zoom out/newspaper.png")
-var flag = false
-var current_selector = 0
-var letter_indices = [0,0,0,0]
-var alphabet = [0,1,2,3,4,5,6,7,8,9]
+@onready var InventoryBox: TextureRect = $InventoryBox
+@onready var HourHand: TextureRect = $HourHand
+@onready var MinuteHand: TextureRect = $MinuteHand
+@onready var HeartCard: TextureRect = $HeartCard
+@onready var DiamondCard: TextureRect = $DiamondCard
+@onready var ClubCard: TextureRect = $ClubCard
+@onready var SpadeCard: TextureRect = $SpadeCard
+@onready var Frame: TextureRect = $Frame
+@onready var CodeDrawer: TextureRect = $CodeDrawer
 var Enlarged_Newspaper_sprite: Sprite2D
 
 
@@ -58,7 +63,6 @@ func change_position(my_tween, my_sprite, pos):
 func _input(event):
 	var newspaper_coordinates = Newspaper.position
 	var center = Vector2(1000,550)
-	flag = false
 	
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	
@@ -78,6 +82,14 @@ func _input(event):
 			scale_down(TW, Clock)
 			scale_down(TW, TheSun)
 			await get_tree().create_timer(0.8).timeout
+			InventoryBox.move_to_front()
+			HourHand.move_to_front()
+			MinuteHand.move_to_front()
+			HeartCard.move_to_front()
+			DiamondCard.move_to_front()
+			ClubCard.move_to_front()
+			SpadeCard.move_to_front()
+			Frame.move_to_front()
 			Enlarged_Newspaper_sprite.show()
 		elif  TheSun.get_global_rect().has_point(event.position):
 			change_texture(TW, Newspaper, SmallerNewspaper)
@@ -86,6 +98,9 @@ func _input(event):
 			change_position(TW, Newspaper, newspaper_coordinates)
 			scale_down(TW,Clock)
 			scale_down(TW, Newspaper)
+		elif CodeDrawer.get_global_rect().has_point(event.position):
+			get_tree().change_scene_to_file("res://Scenes/CodeDrawer.tscn")
+			
 		elif Background.get_global_rect().has_point(event.position):
 			change_texture(TW, Newspaper, SmallerNewspaper)
 			scale_down(TW, TheSun)
@@ -93,38 +108,3 @@ func _input(event):
 			scale_down(TW, Clock)
 			change_position(TW, Newspaper, newspaper_coordinates)
 			Enlarged_Newspaper_sprite.hide()
-		
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_up"):
-		adjust_letter("up")
-	elif event.is_action_pressed("ui_down"):
-		adjust_letter("down")
-	elif event.is_action_pressed("ui_left"):
-		if current_selector != 0:
-			current_selector-=1
-			#$Cursor.set("rect_position", Vector2($Cursor.get("rect_position").x - 80, $Cursor.get("rect_position").y))
-	elif event.is_action_pressed("ui_right"):
-		if current_selector != 3:
-			current_selector+=1
-			#$Cursor.set("rect_position", Vector2($Cursor.get("rect_position").x + 80, $Cursor.get("rect_position").y))
-			
-	# Mark input as handled so it won't trigger multiple times per keypress
-	
-func adjust_letter(direction):
-	var selector = null
-	if current_selector == 0:
-		selector = $NumberSelector1
-	elif current_selector == 1:
-		selector = $NumberSelector2
-	elif current_selector == 2:
-		selector =$NumberSelector3
-	elif current_selector == 3:
-		selector =$NumberSelector4
-	
-	if direction == "up":
-		if letter_indices[current_selector] != 9:
-			letter_indices[current_selector]+=1
-	elif direction == "down":
-		if letter_indices[current_selector] != 0:
-			letter_indices[current_selector]-=1
-	selector.set("text", alphabet[letter_indices[current_selector]])

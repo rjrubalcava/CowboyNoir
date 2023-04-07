@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh6urp6y76v4v"]
+
+[ext_resource type="Script" path="res://Scripts/CodeDrawer.gd" id="1_awhxe"]
+[ext_resource type="Texture2D" uid="uid://cior73gkqvjvs" path="res://Assets/BunnyHeadspace/Code drawer/Exterior/code drawer back drop.png" id="2_cmhsb"]
+[ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="2_htv41"]
+[ext_resource type="Texture2D" uid="uid://b54ib3hbrgud" path="res://Assets/BunnyHeadspace/Code drawer/Exterior/code drawer drawer.png" id="3_a25b0"]
+[ext_resource type="Texture2D" uid="uid://dgujlabxfvrum" path="res://Assets/BunnyHeadspace/Code drawer/Exterior/code drawer buttons.png" id="4_swvda"]
+
+[node name="CodeDrawer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_awhxe")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2500.0
+offset_bottom = 1406.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("2_cmhsb")
+
+[node name="Drawer" type="TextureRect" parent="."]
+offset_left = 352.0
+offset_top = 280.0
+offset_right = 1980.0
+offset_bottom = 1099.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_a25b0")
+
+[node name="Buttons" type="TextureRect" parent="."]
+offset_left = 505.0
+offset_top = 317.0
+offset_right = 1636.0
+offset_bottom = 1037.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("4_swvda")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NumberSelector1" type="RichTextLabel" parent="."]
+offset_left = 580.0
+offset_top = 612.0
+offset_right = 780.0
+offset_bottom = 882.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_htv41")
+theme_override_font_sizes/normal_font_size = 70
+
+[node name="NumberSelector2" type="RichTextLabel" parent="."]
+offset_left = 806.0
+offset_top = 599.0
+offset_right = 1006.0
+offset_bottom = 869.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_htv41")
+theme_override_font_sizes/normal_font_size = 70
+
+[node name="NumberSelector3" type="RichTextLabel" parent="."]
+offset_left = 1046.0
+offset_top = 585.0
+offset_right = 1246.0
+offset_bottom = 855.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_htv41")
+theme_override_font_sizes/normal_font_size = 70
+
+[node name="NumberSelector4" type="RichTextLabel" parent="."]
+offset_left = 1283.0
+offset_top = 585.0
+offset_right = 1483.0
+offset_bottom = 855.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_htv41")
+theme_override_font_sizes/normal_font_size = 70
