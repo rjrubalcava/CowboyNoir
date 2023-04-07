@@ -31,7 +31,12 @@ func _process(delta):
 	pass
 	
 func scale_up(my_tween, my_sprite):
-	my_tween.tween_property(my_sprite, "scale", Vector2(1, 1), 0.8 )
+	if my_sprite == Newspaper:
+		Enlarged_Newspaper_sprite.scale = Vector2(1.5, 1.5)
+		my_tween.tween_property(my_sprite, "scale", Vector2(1.2, 1.2), 0.8 )
+	else:
+		Enlarged_Newspaper_sprite.scale = Vector2(0.75, 0.75)
+		my_tween.tween_property(my_sprite, "scale", Vector2(1, 1), 0.8 )
 
 func scale_down(my_tween, my_sprite):
 	if my_sprite == Newspaper:
@@ -40,14 +45,19 @@ func scale_down(my_tween, my_sprite):
 		my_tween.parallel().tween_property(my_sprite, "scale", Vector2(0.76, 0.76), 0.5 )
 	
 func change_texture(my_tween, old_texture, new_texture):
-	my_tween.parallel().tween_property(old_texture, "texture", new_texture, 0.8)
+	if new_texture == EnlargedNewspaper:
+		my_tween.parallel().tween_property(old_texture, "texture", new_texture, 0.8)
+	elif new_texture == SmallerNewspaper:
+		my_tween.parallel().tween_property(old_texture, "texture", new_texture, 0.01)
+		
+	
 	
 func change_position(my_tween, my_sprite, pos):
 	my_tween.parallel().tween_property(my_sprite, "position", Vector2(pos.x, pos.y), 0.2)
 	
 func _input(event):
 	var newspaper_coordinates = Newspaper.position
-	var center = Vector2(1200,500)
+	var center = Vector2(1000,550)
 	flag = false
 	
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
@@ -55,9 +65,9 @@ func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		
 		if Clock.get_global_rect().has_point(event.position):
+			change_texture(TW, Newspaper, SmallerNewspaper)	
 			Enlarged_Newspaper_sprite.hide()
 			scale_up(TW, Clock)
-			change_texture(TW, Newspaper, SmallerNewspaper)	
 			change_position(TW, Newspaper, newspaper_coordinates)
 			scale_down(TW,TheSun)
 			scale_down(TW,Newspaper)
@@ -70,17 +80,17 @@ func _input(event):
 			await get_tree().create_timer(0.8).timeout
 			Enlarged_Newspaper_sprite.show()
 		elif  TheSun.get_global_rect().has_point(event.position):
-			scale_up(TW, TheSun)
 			change_texture(TW, Newspaper, SmallerNewspaper)
+			scale_up(TW, TheSun)
 			Enlarged_Newspaper_sprite.hide()
 			change_position(TW, Newspaper, newspaper_coordinates)
 			scale_down(TW,Clock)
 			scale_down(TW, Newspaper)
 		elif Background.get_global_rect().has_point(event.position):
+			change_texture(TW, Newspaper, SmallerNewspaper)
 			scale_down(TW, TheSun)
 			scale_down(TW, Newspaper)
 			scale_down(TW, Clock)
-			change_texture(TW, Newspaper, SmallerNewspaper)
 			change_position(TW, Newspaper, newspaper_coordinates)
 			Enlarged_Newspaper_sprite.hide()
 		
