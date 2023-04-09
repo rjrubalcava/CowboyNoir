@@ -84,15 +84,6 @@ offset_bottom = 925.0
 scale = Vector2(0.768, 0.768)
 texture = ExtResource("9_f3jki")
 
-[node name="CodeDrawer" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 1306.0
-offset_top = 641.0
-offset_right = 1478.0
-offset_bottom = 719.0
-scale = Vector2(0.768, 0.768)
-texture = ExtResource("10_xhkrq")
-
 [node name="CostumeChest" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 775.0
@@ -223,3 +214,17 @@ offset_right = 2506.0
 offset_bottom = 1411.0
 scale = Vector2(0.768, 0.768)
 texture = ExtResource("13_4iq0c")
+
+[node name="CodeDrawer" type="TextureRect" parent="."]
+light_mask = 512
+visibility_layer = 512
+layout_mode = 0
+offset_left = 1304.0
+offset_top = 640.0
+offset_right = 1476.0
+offset_bottom = 718.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("10_xhkrq")
+
+[connection signal="mouse_entered" from="CodeDrawer" to="." method="_on_code_drawer_mouse_entered"]
+[connection signal="mouse_exited" from="CodeDrawer" to="." method="_on_code_drawer_mouse_exited"]

@@ -29,6 +29,7 @@ func _ready():
 	add_child(Enlarged_Newspaper_sprite)
 	Enlarged_Newspaper_sprite.hide()
 	
+	
 func _process(delta):
 	#var c_oordinates = Newspaper.position
 	#print(c_oordinates)
@@ -75,6 +76,7 @@ func _input(event):
 			change_position(TW, Newspaper, newspaper_coordinates)
 			scale_down(TW,TheSun)
 			scale_down(TW,Newspaper)
+			CodeDrawer.move_to_front()
 		elif  Newspaper.get_global_rect().has_point(event.position):
 			scale_up(TW, Newspaper)
 			change_texture(TW, Newspaper, Enlarged_Newspaper_sprite)
@@ -98,6 +100,7 @@ func _input(event):
 			change_position(TW, Newspaper, newspaper_coordinates)
 			scale_down(TW,Clock)
 			scale_down(TW, Newspaper)
+			CodeDrawer.move_to_front()
 		elif CodeDrawer.get_global_rect().has_point(event.position):
 			get_tree().change_scene_to_file("res://Scenes/CodeDrawer.tscn")
 			
@@ -108,3 +111,18 @@ func _input(event):
 			scale_down(TW, Clock)
 			change_position(TW, Newspaper, newspaper_coordinates)
 			Enlarged_Newspaper_sprite.hide()
+			CodeDrawer.move_to_front()
+
+
+func _on_code_drawer_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(CodeDrawer, "scale", Vector2(0.8,0.8), 0.1)
+	
+	#scale_up(TW,CodeDrawer)
+
+
+
+
+func _on_code_drawer_mouse_exited():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(CodeDrawer, "scale", Vector2(0.76,0.76), 0.1)

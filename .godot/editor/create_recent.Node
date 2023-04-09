@@ -1,9 +1,10 @@
 TextureRect
+Sprite2D
+TextEdit
 Control
 Timer
 CollisionShape2D
 Area2D
-Sprite2D
 Camera2D
 AudioStreamPlayer2D
 Button

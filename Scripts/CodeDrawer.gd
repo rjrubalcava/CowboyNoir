@@ -72,4 +72,5 @@ func open_drawer():
 	if result[0]== "1" and result[1]=="2" and result[2]=="3"  and result[3]=="4":
 		get_tree().change_scene_to_file("res://Scenes/OpenDrawer.tscn")
 	else:
+		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
 		print("Try again, the passsword is not correct")

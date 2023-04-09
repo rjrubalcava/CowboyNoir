@@ -19,6 +19,7 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("2_6sidm")
 
 [node name="ClubsCard" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1038.0
 offset_top = 660.0
 offset_right = 1442.0
@@ -27,6 +28,7 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("3_ie6uq")
 
 [node name="Locket" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1312.0
 offset_top = 393.0
 offset_right = 1714.0
@@ -35,6 +37,7 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("4_te5ts")
 
 [node name="HourHand" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 855.0
 offset_top = 493.0
 offset_right = 1359.0
