@@ -598,7 +598,7 @@ func initGame(numOfOpponents):
 	#Calling to Add Players Cards to Hand
 	realizeHands()
 	"""PLAYING DIALOGUE"""
-	Global.playDialogue("1a")
+	Global.playDialogue("111a")
 	"""PLAYING DIALOGUE"""
 
 
