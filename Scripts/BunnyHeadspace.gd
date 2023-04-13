@@ -199,9 +199,9 @@ func _on_spade_card_mouse_exited():
 
 func _on_newspaper_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(Newspaper, "scale", Vector2(0.8,0.8), 0.3)
+	TW.tween_property(Newspaper, "modulate", Color.ROSY_BROWN, 0.1)
 
 
 func _on_newspaper_mouse_exited():
-	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(Newspaper, "scale", Vector2(0.76,0.76), 0.5)
+	Newspaper.set_modulate(Color(1, 1, 1, 1))
+	

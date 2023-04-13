@@ -12,9 +12,7 @@ var ticks = 0
 var selected_button
 var flag = false
 
-# Called when the node enters the scene tree for the first time.
-
-
+# Called when the node enters the scene tree for the first time
 func _ready():
 	pass
 	
