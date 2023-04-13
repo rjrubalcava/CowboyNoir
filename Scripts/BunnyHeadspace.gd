@@ -17,7 +17,7 @@ extends Control
 @onready var Frame: TextureRect = $Frame
 @onready var CodeDrawer: TextureRect = $CodeDrawer
 var Enlarged_Newspaper_sprite: Sprite2D
-
+var selected = false
 
 	
 #$Background, $Clock, $Newspaper, $Letter, $TreasureChest
@@ -28,13 +28,16 @@ func _ready():
 	Enlarged_Newspaper_sprite.scale = Vector2(0.75, 0.75)
 	add_child(Enlarged_Newspaper_sprite)
 	Enlarged_Newspaper_sprite.hide()
-	
+
 	
 func _process(delta):
 	#var c_oordinates = Newspaper.position
 	#print(c_oordinates)
 	#print(c_oordinates.y)
 	pass
+	
+	
+	
 	
 func scale_up(my_tween, my_sprite):
 	if my_sprite == Newspaper:
@@ -66,7 +69,6 @@ func _input(event):
 	var center = Vector2(1000,550)
 	
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		
 		if Clock.get_global_rect().has_point(event.position):
@@ -76,7 +78,6 @@ func _input(event):
 			change_position(TW, Newspaper, newspaper_coordinates)
 			scale_down(TW,TheSun)
 			scale_down(TW,Newspaper)
-			CodeDrawer.move_to_front()
 		elif  Newspaper.get_global_rect().has_point(event.position):
 			scale_up(TW, Newspaper)
 			change_texture(TW, Newspaper, Enlarged_Newspaper_sprite)
@@ -84,15 +85,8 @@ func _input(event):
 			scale_down(TW, Clock)
 			scale_down(TW, TheSun)
 			await get_tree().create_timer(0.8).timeout
-			InventoryBox.move_to_front()
-			HourHand.move_to_front()
-			MinuteHand.move_to_front()
-			HeartCard.move_to_front()
-			DiamondCard.move_to_front()
-			ClubCard.move_to_front()
-			SpadeCard.move_to_front()
-			Frame.move_to_front()
 			Enlarged_Newspaper_sprite.show()
+			Enlarged_Newspaper_sprite.z_index = 5
 		elif  TheSun.get_global_rect().has_point(event.position):
 			change_texture(TW, Newspaper, SmallerNewspaper)
 			scale_up(TW, TheSun)
@@ -100,10 +94,8 @@ func _input(event):
 			change_position(TW, Newspaper, newspaper_coordinates)
 			scale_down(TW,Clock)
 			scale_down(TW, Newspaper)
-			CodeDrawer.move_to_front()
 		elif CodeDrawer.get_global_rect().has_point(event.position):
 			get_tree().change_scene_to_file("res://Scenes/CodeDrawer.tscn")
-			
 		elif Background.get_global_rect().has_point(event.position):
 			change_texture(TW, Newspaper, SmallerNewspaper)
 			scale_down(TW, TheSun)
@@ -111,7 +103,7 @@ func _input(event):
 			scale_down(TW, Clock)
 			change_position(TW, Newspaper, newspaper_coordinates)
 			Enlarged_Newspaper_sprite.hide()
-			CodeDrawer.move_to_front()
+			
 
 
 func _on_code_drawer_mouse_entered():
@@ -120,9 +112,96 @@ func _on_code_drawer_mouse_entered():
 	
 	#scale_up(TW,CodeDrawer)
 
-
-
-
 func _on_code_drawer_mouse_exited():
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(CodeDrawer, "scale", Vector2(0.76,0.76), 0.1)
+
+
+func _on_clock_mouse_entered():
+	
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(Clock, "modulate", Color.ROSY_BROWN, 0.1)
+
+
+func _on_clock_mouse_exited():
+	Clock.set_modulate(Color(1, 1, 1, 1))
+
+
+func _on_the_sun_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(TheSun, "modulate", Color.ROSY_BROWN, 0.1)
+
+
+func _on_the_sun_mouse_exited():
+	TheSun.set_modulate(Color(1, 1, 1, 1))
+
+
+func _on_hour_hand_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(HourHand, "scale", Vector2(0.8,0.8), 0.1)
+	
+
+
+func _on_hour_hand_mouse_exited():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(HourHand, "scale", Vector2(0.76,0.76), 0.1)
+
+
+func _on_minute_hand_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(MinuteHand, "scale", Vector2(0.8,0.8), 0.1)
+
+
+func _on_minute_hand_mouse_exited():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(MinuteHand, "scale", Vector2(0.76,0.76), 0.1)
+
+
+func _on_heart_card_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(HeartCard, "scale", Vector2(0.8,0.8), 0.1)
+
+
+func _on_heart_card_mouse_exited():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(HeartCard, "scale", Vector2(0.76,0.76), 0.1)
+
+
+func _on_diamond_card_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(DiamondCard, "scale", Vector2(0.8,0.8), 0.1)
+
+
+func _on_diamond_card_mouse_exited():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(DiamondCard, "scale", Vector2(0.76,0.76), 0.1)
+
+
+func _on_club_card_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(ClubCard, "scale", Vector2(0.8,0.8), 0.1)
+
+
+func _on_club_card_mouse_exited():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(ClubCard, "scale", Vector2(0.76,0.76), 0.1)
+
+
+func _on_spade_card_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(SpadeCard, "scale", Vector2(0.8,0.8), 0.1)
+
+
+func _on_spade_card_mouse_exited():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(SpadeCard, "scale", Vector2(0.76,0.76), 0.1)
+
+
+func _on_newspaper_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(Newspaper, "scale", Vector2(0.8,0.8), 0.3)
+
+
+func _on_newspaper_mouse_exited():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(Newspaper, "scale", Vector2(0.76,0.76), 0.5)

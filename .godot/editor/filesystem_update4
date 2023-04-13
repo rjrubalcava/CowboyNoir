@@ -9,5 +9,4 @@ res://Scenes/BunnyHeadspace.tscn
 res://Scenes/Bluff.tscn
 res://Scenes/CodeDrawer.tscn
 res://Scenes/OpenDrawer.tscn
-res://Scripts/BunnyHeadspace.gd
 res://Scripts/CodeDrawer.gd
