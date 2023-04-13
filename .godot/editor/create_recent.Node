@@ -1,10 +1,10 @@
+Control
 CollisionShape2D
 Area2D
 Camera2D
 TextureRect
 Sprite2D
 TextEdit
-Control
 Timer
 AudioStreamPlayer2D
 Button

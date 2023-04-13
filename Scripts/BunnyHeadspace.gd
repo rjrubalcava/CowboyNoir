@@ -16,6 +16,8 @@ extends Control
 @onready var SpadeCard: TextureRect = $SpadeCard
 @onready var Frame: TextureRect = $Frame
 @onready var CodeDrawer: TextureRect = $CodeDrawer
+@onready var CostumeChest: TextureRect = $CostumeChest
+
 var Enlarged_Newspaper_sprite: Sprite2D
 var selected = false
 
@@ -95,7 +97,9 @@ func _input(event):
 			scale_down(TW,Clock)
 			scale_down(TW, Newspaper)
 		elif CodeDrawer.get_global_rect().has_point(event.position):
-			get_tree().change_scene_to_file("res://Scenes/CodeDrawer.tscn")
+			get_tree().change_scene_to_file("res://Scenes/CodeDrawerVanity.tscn")
+		elif CostumeChest.get_global_rect().has_point(event.position):
+			get_tree().change_scene_to_file("res://Scenes/CodeDrawerChest.tscn")
 		elif Background.get_global_rect().has_point(event.position):
 			change_texture(TW, Newspaper, SmallerNewspaper)
 			scale_down(TW, TheSun)
@@ -205,3 +209,12 @@ func _on_newspaper_mouse_entered():
 func _on_newspaper_mouse_exited():
 	Newspaper.set_modulate(Color(1, 1, 1, 1))
 	
+
+
+func _on_costume_chest_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(CostumeChest, "scale", Vector2(0.8,0.8), 0.1)
+
+func _on_costume_chest_mouse_exited():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(CostumeChest, "scale", Vector2(0.76,0.76), 0.1)

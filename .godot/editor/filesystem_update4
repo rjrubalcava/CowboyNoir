@@ -11,3 +11,8 @@ res://Scenes/CodeDrawer.tscn
 res://Scenes/OpenDrawer.tscn
 res://Scripts/CodeDrawer.gd
 res://Scripts/BunnyHeadspace.gd
+res://Scripts/OpenDrawer.gd
+res://Scenes/code_drawer_chest.tscn
+res://Scenes/CodeDrawerChest.tscn
+res://Scripts/CodeDrawerChest.gd
+res://Scenes/CodeDrawerVanity.tscn
