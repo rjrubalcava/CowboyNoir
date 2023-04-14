@@ -1,12 +1,12 @@
 2a60927148abd1d33b818b535e306557
 ::res://::1681438771
 README.md::TextFile::-1::1679700705::0::1::::<><>::
-::res://Assets/::1680279914
+::res://Assets/::1681449789
 ButtonPlaceholder.png::CompressedTexture2D::5065615437381662818::1679700718::1679700718::1::::<><>::
 ::res://Assets/Backgrounds/::1680242547
 IMG_0339.png::CompressedTexture2D::222450540307864517::1680242547::1680242547::1::::<><>::
 StartScreen.png::CompressedTexture2D::780856690298206722::1680055145::1680055145::1::::<><>::
-::res://Assets/BunnyHeadspace/::1680242547
+::res://Assets/BunnyHeadspace/::1681449778
 Background.png::CompressedTexture2D::2933423853071100240::1680242547::1680055145::1::::<><>::
 ::res://Assets/BunnyHeadspace/Clothes Chest/::1680242547
 ::res://Assets/BunnyHeadspace/Clothes Chest/Exterior/::1680242547
@@ -55,18 +55,24 @@ newspaper w. knife.png::CompressedTexture2D::3282533954359215854::1680242547::16
 newspaper.png::CompressedTexture2D::6398939493142217099::1680242547::1680242547::1::::<><>::
 spade lamp.png::CompressedTexture2D::4485086458480280151::1680242547::1680242547::1::::<><>::
 the sun.png::CompressedTexture2D::7396428269985814144::1680242547::1680242547::1::::<><>::
-::res://Assets/BunnyTable/::1681443642
+::res://Assets/BunnyTable/::1681449789
 Amity Base Expression.png::CompressedTexture2D::2149427172502022216::1681443628::1681443655::1::::<><>::
 Amity Expression 2.png::CompressedTexture2D::813259296476653602::1681443628::1681443655::1::::<><>::
 Amity Expression 3.png::CompressedTexture2D::4249454543208599400::1681443628::1681443655::1::::<><>::
 Amity Expression 4.png::CompressedTexture2D::3362716456417348028::1681443628::1681443655::1::::<><>::
 Amity Expression BREAK.png::CompressedTexture2D::2345874930625054034::1681443628::1681443655::1::::<><>::
+Amity Text Boil 2.png::CompressedTexture2D::209795472200480941::1681449741::1681449809::1::::<><>::
+Amity Text With Boil.png::CompressedTexture2D::2479152112727192250::1681449741::1681449809::1::::<><>::
+Background Bottom Layer.png::CompressedTexture2D::4959836606816384976::1681449741::1681449810::1::::<><>::
+Background Middle Layer.png::CompressedTexture2D::2053497878672321760::1681449741::1681449811::1::::<><>::
+Background Top Layer.png::CompressedTexture2D::6627038677512809153::1681449741::1681449810::1::::<><>::
 Background.png::CompressedTexture2D::3469705220257149645::1680217419::1680217419::1::::<><>::
 Beam of Light.png::CompressedTexture2D::8495687926514929445::1680217419::1680217419::1::::<><>::
 Card on Table.png::CompressedTexture2D::6893268601411464292::1680217419::1680217419::1::::<><>::
 Cursor.png::CompressedTexture2D::9018090738365579434::1680217419::1680217419::1::::<><>::
 Cursor_Final.png::CompressedTexture2D::1220825986946819071::1681443628::1681443655::1::::<><>::
 Empty Push Gauge.png::CompressedTexture2D::3359127618122596420::1680237798::1680237798::1::::<><>::
+Gun Chamber.png::CompressedTexture2D::856636053243879738::1681449741::1681449810::1::::<><>::
 Hand Down.png::CompressedTexture2D::226089234012895047::1680217419::1680217419::1::::<><>::
 Hand Up.png::CompressedTexture2D::3614245647330477164::1680217419::1680217419::1::::<><>::
 Jack Response Blank.png::CompressedTexture2D::7252868991814132823::1680237798::1680237798::1::::<><>::
@@ -170,25 +176,25 @@ click.wav::AudioStreamWAV::4026376881997781456::1680279912::1680280297::1::::<><
 BluffTable.gdshader::Shader::-1::1680217419::0::1::::<><>::
 ::res://Groups/::1679700749
 NumOfCPUS.tres::ButtonGroup::-1::1679700705::0::1::::<><>::
-::res://Scenes/::1681443245
-Bluff.tscn::PackedScene::2980733325626427760::1681443132::0::1::::<><>::res://Scripts/Bluff.gd<>res://Assets/Shaders/BluffTable.gdshader<>uid://bpo0sj8ob4gft<>uid://cvkby0y3wty4a<>uid://gc0yb4w8nr1a<>uid://dtbm0egjugty0<>uid://bn4glukot66r5<>uid://bxmn3r4qq71ua
-BluffTable.gdshader::Shader::-1::1680217419::0::1::::<><>::
-BunnyHeadspace.tscn::PackedScene::5334628766814712323::1681443132::0::1::::<><>::uid://bh18cd86aasdc<>res://Scripts/BunnyHeadspace.gd<>uid://cjyrvlcws68lw<>uid://ou6w5vem52dk<>uid://bhruy6ojupxnk<>uid://bl4clgbd0bkk1<>uid://cmufdprq4ktta<>uid://b4q7jx6jd4syj<>uid://dr044bs16d6gn<>uid://hjdbvf5xo8yt<>uid://cq1uiaod6361i<>uid://dla3ger8ohykc<>uid://biwchg5puqcqa<>uid://bkrvnro3vqqa6<>uid://b45uyo2p1m1y6<>uid://dmajmhrwb8vnd<>uid://ddm5dfqj2jlfs<>uid://jcxrxmjl4ubc<>uid://2k080temt43x<>uid://bci08vshyoahq<>uid://dpax0dk10g40g<>uid://cqfktwup771bn<>uid://bpqfu6dwnng44<>uid://bxmn3r4qq71ua
+::res://Scenes/::1681448905
+Bluff.tscn::PackedScene::2980733325626427760::1681448905::0::1::::<><>::res://Scripts/Bluff.gd<>res://Assets/Shaders/BluffTable.gdshader<>uid://bpo0sj8ob4gft<>uid://cvkby0y3wty4a<>uid://gc0yb4w8nr1a<>uid://dtbm0egjugty0<>uid://bxmn3r4qq71ua
+BluffTable.gdshader::Shader::-1::1681448905::0::1::::<><>::
+BunnyHeadspace.tscn::PackedScene::5334628766814712323::1681448905::0::1::::<><>::uid://bh18cd86aasdc<>res://Scripts/BunnyHeadspace.gd<>uid://cjyrvlcws68lw<>uid://ou6w5vem52dk<>uid://bhruy6ojupxnk<>uid://bl4clgbd0bkk1<>uid://cmufdprq4ktta<>uid://b4q7jx6jd4syj<>uid://dr044bs16d6gn<>uid://hjdbvf5xo8yt<>uid://cq1uiaod6361i<>uid://dla3ger8ohykc<>uid://biwchg5puqcqa<>uid://bkrvnro3vqqa6<>uid://b45uyo2p1m1y6<>uid://dmajmhrwb8vnd<>uid://ddm5dfqj2jlfs<>uid://jcxrxmjl4ubc<>uid://2k080temt43x<>uid://bci08vshyoahq<>uid://dpax0dk10g40g<>uid://cqfktwup771bn<>uid://bpqfu6dwnng44<>uid://bxmn3r4qq71ua
 Card.tscn::PackedScene::2836139679319454143::1680217391::0::1::::<><>::res://Scripts/Card.gd
 DialogueBox.tscn::PackedScene::1429790021468852555::1680242638::0::1::::<><>::uid://dhd7slqpr7ebh<>uid://bpqfu6dwnng44
-DialogueOption.tscn::PackedScene::117371660240480441::1681443245::0::1::::<><>::res://Scripts/DialogueOption.gd<>uid://cogjpl23ffkhm<>uid://bpqfu6dwnng44<>uid://cn65cvhd023be<>uid://bxmn3r4qq71ua
-Global.tscn::PackedScene::599049541030276570::1680242693::0::1::::<><>::res://Scripts/Global.gd
+DialogueOption.tscn::PackedScene::117371660240480441::1681448905::0::1::::<><>::res://Scripts/DialogueOption.gd<>uid://dxopv4ubc2kxp<>uid://bpqfu6dwnng44<>uid://cmskvn4uinm3e<>uid://bxmn3r4qq71ua<>uid://c8boduqd2ory5<>uid://d2bqrr1g4wsfs
+Global.tscn::PackedScene::599049541030276570::1681448905::0::1::::<><>::res://Scripts/Global.gd
 MainScene.tscn::PackedScene::3118517110821397835::1680242584::0::1::::<><>::res://Scripts/MainScene.gd
-Start.tscn::PackedScene::8964634616166242761::1681443132::0::1::::<><>::res://Scripts/Start.gd<>uid://leiuirv5rc6u<>uid://bxmn3r4qq71ua
-::res://Scripts/::1681443130
-Bluff.gd::GDScript::-1::1681434576::0::1::::<>Node2D<>::
+Start.tscn::PackedScene::8964634616166242761::1681448905::0::1::::<><>::res://Scripts/Start.gd<>uid://leiuirv5rc6u<>uid://bxmn3r4qq71ua
+::res://Scripts/::1681448800
+Bluff.gd::GDScript::-1::1681444806::0::1::::<>Node2D<>::
 BunnyHeadspace.gd::GDScript::-1::1680280145::0::1::::<>Control<>::
 Card.gd::GDScript::-1::1681434576::0::1::::<>Sprite2D<>::
 Clock.gd::GDScript::-1::1680242547::0::1::::<>TextureRect<>::
-DialogueOption.gd::GDScript::-1::1681443130::0::1::::<>Control<>::
-Global.gd::GDScript::-1::1681433517::0::1::::<>Node2D<>::
+DialogueOption.gd::GDScript::-1::1681447519::0::1::::<>Control<>::
+Global.gd::GDScript::-1::1681448800::0::1::::<>Node2D<>::
 MainScene.gd::GDScript::-1::1681434576::0::1::::<>Node2D<>::
 Start.gd::GDScript::-1::1680280167::0::1::::<>Control<>::
-::res://Z-RNDM/::1681443245
-default_env.tres::Environment::797910927413459770::1681443245::0::1::::<><>::
+::res://Z-RNDM/::1681448905
+default_env.tres::Environment::797910927413459770::1681448905::0::1::::<><>::
 icon.png::CompressedTexture2D::8149539214728030452::1679700705::1679700718::1::::<><>::
