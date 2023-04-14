@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgillxbhf2j1y"]
+
+[ext_resource type="Script" path="res://Scripts/OpenDrawer.gd" id="1_7ybmh"]
+[ext_resource type="Texture2D" uid="uid://djce10hh6ewmf" path="res://Assets/BunnyHeadspace/Code drawer/Interior/code drawer interior backdrop.png" id="2_6sidm"]
+[ext_resource type="Texture2D" uid="uid://fme2uxug5bvm" path="res://Assets/BunnyHeadspace/Code drawer/Interior/code drawer clubs card.png" id="3_ie6uq"]
+[ext_resource type="Texture2D" uid="uid://nmuyqgnbevlm" path="res://Assets/BunnyHeadspace/Code drawer/Interior/codedrawer locket.png" id="4_te5ts"]
+[ext_resource type="Texture2D" uid="uid://cyhv5w7ohrxa5" path="res://Assets/BunnyHeadspace/Code drawer/Interior/code drawer hour hand.png" id="5_uhwjp"]
+
+[node name="OpenDrawer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7ybmh")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("2_6sidm")
+
+[node name="ClubsCard" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 1038.0
+offset_top = 660.0
+offset_right = 1442.0
+offset_bottom = 969.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("3_ie6uq")
+
+[node name="Locket" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 1312.0
+offset_top = 393.0
+offset_right = 1714.0
+offset_bottom = 676.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("4_te5ts")
+
+[node name="HourHand" type="TextureRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 855.0
+offset_top = 493.0
+offset_right = 1359.0
+offset_bottom = 678.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("5_uhwjp")
+
+[connection signal="mouse_entered" from="ClubsCard" to="." method="_on_clubs_card_mouse_entered"]
+[connection signal="mouse_exited" from="ClubsCard" to="." method="_on_clubs_card_mouse_exited"]
+[connection signal="mouse_entered" from="Locket" to="." method="_on_locket_mouse_entered"]
+[connection signal="mouse_exited" from="Locket" to="." method="_on_locket_mouse_exited"]
+[connection signal="mouse_entered" from="HourHand" to="." method="_on_hour_hand_mouse_entered"]
+[connection signal="mouse_exited" from="HourHand" to="." method="_on_hour_hand_mouse_exited"]

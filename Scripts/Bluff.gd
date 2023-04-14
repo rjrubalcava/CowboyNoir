@@ -58,16 +58,18 @@ extends Node2D
 @onready var s12 = preload("res://Assets/Cards/Spades/s12.png")
 @onready var s13 = preload("res://Assets/Cards/Spades/s13.png")
 
-@onready var playerCards = $PlayerCards
-@onready var inst = $playInstruction
-@onready var cardToBluff = $cardSelection
-@onready var butt = $Button
-@onready var buton = $Buton
-@onready var pesto = $pass
+@onready var playerCards = $BluffyTheVampireSlayer/PlayerCards
+@onready var inst = $BluffyTheVampireSlayer/playInstruction
+@onready var cardToBluff = $BluffyTheVampireSlayer/cardSelection
+@onready var butt = $BluffyTheVampireSlayer/Button
+@onready var buton = $BluffyTheVampireSlayer/Buton
+@onready var pesto = $BluffyTheVampireSlayer/pass
+@onready var bluffy = $BluffyTheVampireSlayer
 
 var rng
 var pushGaugeLvl = 0
-
+var depthOfGame = 0
+var depthOfTurns = 0
 
 var clubsArr = null
 var diamondsArr = null
@@ -91,6 +93,8 @@ var playerConf = null
 var stageOfRound = 0
 var lastPlay = -1
 var numOfPasses = 0
+var dontDisplay = true
+
 
 var cpuCardsLastRound = null
 
@@ -107,26 +111,32 @@ func _ready():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_up"):
-		incPshGge(true)
+		incPshGge()
 	elif event.is_action_pressed("ui_down"):
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#for x in centerHand:
-	#	print(x)
-	#print("")
-	if(noWinner):	
-		if(playerTurn == 1):
-			player()
-			if(cpuOneHand.size() == 0):
-				noWinner = false
-				inst.text = ("Amity Beat You!")
-		elif(playerTurn == 2):
-			cpuTurn(75,50)
-			if(playerHand.size() == 0):
-				noWinner = false
-				inst.text = ("You Beat Amity!")
-		
+	#print(dontDisplay)
+	if(depthOfTurns >= 2):
+		dontDisplay = true
+		incPshGge()
+		depthOfTurns = 0
+	if(dontDisplay):
+		bluffy.visible = false
+	else:
+		bluffy.visible = true
+		if(noWinner):	
+			if(playerTurn == 1):
+				player()
+				if(cpuOneHand.size() == 0):
+					noWinner = false
+					inst.text = ("Amity Beat You!")
+			elif(playerTurn == 2):
+				cpuTurn(75,50)
+				if(playerHand.size() == 0):
+					noWinner = false
+					inst.text = ("You Beat Amity!")
+			
 		
 func _on_button_button_up():
 	$Click.play()
@@ -203,6 +213,7 @@ func _on_button_button_up():
 			lastPlay = 1
 			for x in playerCards.get_children():
 				x.setReady(false)
+				
 
 func _on_buton_button_up():
 	$Click.play()
@@ -210,7 +221,6 @@ func _on_buton_button_up():
 	if(lastRoundBluff):
 		#IF HERE THE CPU WAS BLUFFING
 		caughtBluffing(false)
-		incPshGge(true)
 		inst.text="You Caught Amity Bluffing! Her Turn Now"
 		buton.visible = false
 		pesto.visible = false
@@ -219,7 +229,6 @@ func _on_buton_button_up():
 	else:
 		#OTHERWISE CPU WASNT BLUFFING
 		caughtBluffing(true)
-		incPshGge(false)
 		inst.text="Amity Wasn't Bluffing! Her Turn Now"
 		buton.visible = false
 		pesto.visible = false
@@ -235,6 +244,7 @@ func _on_pass_button_up():
 	numOfPasses += 1
 	if(numOfPasses >= 2):
 		#IF HERE BOTH CPU AND PLAYER HAVE PASSED
+		depthOfTurns += 1
 		numOfPasses = 0
 		inRound = false
 	inst.text="You Pass, Amity's Turn Now"
@@ -298,13 +308,11 @@ func cpuTurn(cheatProc, bluffProc):
 				#IF HERE, CPU CALLED BLUFF
 				if(lastRoundBluff):
 					#IF HERE, PLAYER WAS BLUFFING
-					inst.text="Amity Called Yout Bluff And Won! Your Turn"
-					incPshGge(false)
+					inst.text="Amity Called Your Bluff And Won! Your Turn"
 					caughtBluffing(true)
 				else:
 					#IF HERE, PLAYER WAS NOT BLUFFING
-					inst.text="Amity Called Yout Bluff And Lost! Your Turn"
-					incPshGge(true)
+					inst.text="Amity Called Your Bluff And Lost! Your Turn"
 					caughtBluffing(false)
 				#NO MATTER WHAT, IF A BLUFF IS CALLED, THE ROUND IS OVER AND IT IS THE OTHER PLAYERS TURN
 				#SETTING ROUND TO BE OVER
@@ -422,10 +430,12 @@ func cpuExecuteMove(myMove):
 		playerTurn = 1
 		if(numOfPasses >= 2):
 			#IF HERE PLAYER AND CPU PASS
+			depthOfTurns += 1
 			numOfPasses = 0
 			inRound = false
 			stageOfRound = 0
 		else:
+			numOfPasses = 1
 			inRound = true
 			stageOfRound = 3
 
@@ -551,32 +561,18 @@ func caughtBluffing(wasPlayer):
 	if(wasPlayer):
 		for x in centerHand:
 			playerHand.push_back(x)
-		realizeHands()
 	else:
 		for x in centerHand:
 			cpuOneHand.push_back(x)
 	centerHand = []
+	realizeHands()
 
 
-func incPshGge(upOrDown):
-	if(upOrDown):
-		print("Push Gauge Up")
-		pushGaugeLvl += 1
-		if(pushGaugeLvl == 3):
-			pushGaugeLvl = 0
-			Global.current_prompt.show()
-			for option in Global.current_options:
-				option.show()
-	else:
-		if(pushGaugeLvl > 0):
-			pushGaugeLvl -= 1
-	if pushGaugeLvl == 0:
-		$PushGauge.texture = preload("res://Assets/BunnyTable/Empty Push Gauge.png")
-	elif pushGaugeLvl == 1:
-		$PushGauge.texture = preload("res://Assets/BunnyTable/Push Gauge 33.png")
-	else:
-		$PushGauge.texture = preload("res://Assets/BunnyTable/Push Gauge.png")
-
+func incPshGge():
+	Global.current_prompt.show()
+	for option in Global.current_options:
+		option.show()
+		
 
 
 #Creates a new Game
@@ -599,7 +595,7 @@ func initGame(numOfOpponents):
 	#Calling to Add Players Cards to Hand
 	realizeHands()
 	"""PLAYING DIALOGUE"""
-	Global.playDialogue("1a")
+	Global.playDialogue("111a")
 	"""PLAYING DIALOGUE"""
 
 
