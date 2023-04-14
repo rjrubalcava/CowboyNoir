@@ -37,7 +37,6 @@ func _process(delta):
 		pass
 		
 func adjust_letter(direction):
-	
 	var selector = null
 	if current_selector == 0:
 		selector = $NumberSelector1
@@ -56,7 +55,6 @@ func adjust_letter(direction):
 	selector.set("text", alphabet[letter_indices[current_selector]])   
 
 func _unhandled_input(event):
-	
 	if event.is_action_pressed("ui_up"):
 		result.clear()
 		adjust_letter("up")

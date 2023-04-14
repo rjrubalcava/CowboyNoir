@@ -12,11 +12,9 @@ var ticks = 0
 var selected_button
 var flag = false
 
-# Called when the node enters the scene tree for the first time
 func _ready():
 	pass
 	
-
 func change_color_button():
 		var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 		TW.tween_property(selected_button, "modulate", Color(0,0,0,0), 0.1)

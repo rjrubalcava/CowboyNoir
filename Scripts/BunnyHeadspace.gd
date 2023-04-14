@@ -17,13 +17,9 @@ extends Control
 @onready var Frame: TextureRect = $Frame
 @onready var CodeDrawer: TextureRect = $CodeDrawer
 @onready var CostumeChest: TextureRect = $CostumeChest
-
 var Enlarged_Newspaper_sprite: Sprite2D
 var selected = false
 
-	
-#$Background, $Clock, $Newspaper, $Letter, $TreasureChest
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Enlarged_Newspaper_sprite = Sprite2D.new()
 	Enlarged_Newspaper_sprite.texture = EnlargedNewspaper
@@ -31,15 +27,8 @@ func _ready():
 	add_child(Enlarged_Newspaper_sprite)
 	Enlarged_Newspaper_sprite.hide()
 
-	
 func _process(delta):
-	#var c_oordinates = Newspaper.position
-	#print(c_oordinates)
-	#print(c_oordinates.y)
 	pass
-	
-	
-	
 	
 func scale_up(my_tween, my_sprite):
 	if my_sprite == Newspaper:
@@ -113,8 +102,6 @@ func _input(event):
 func _on_code_drawer_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(CodeDrawer, "scale", Vector2(0.8,0.8), 0.1)
-	
-	#scale_up(TW,CodeDrawer)
 
 func _on_code_drawer_mouse_exited():
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
@@ -209,7 +196,6 @@ func _on_newspaper_mouse_entered():
 func _on_newspaper_mouse_exited():
 	Newspaper.set_modulate(Color(1, 1, 1, 1))
 	
-
 
 func _on_costume_chest_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)

@@ -15,12 +15,14 @@ anchors_preset = 0
 script = ExtResource("1_k75a3")
 
 [node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 2500.0
 offset_bottom = 1406.0
 scale = Vector2(0.76, 0.76)
 texture = ExtResource("1_q0cxd")
 
 [node name="Drawer" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 352.0
 offset_top = 280.0
 offset_right = 1980.0
@@ -29,6 +31,7 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_e1wps")
 
 [node name="Buttons1" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 523.0
 offset_top = 358.0
 offset_right = 683.0
@@ -37,6 +40,7 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("3_h0i6e")
 
 [node name="Buttons2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 742.0
 offset_top = 351.0
 offset_right = 923.0
@@ -45,6 +49,7 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("4_eigy7")
 
 [node name="Buttons3" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 988.0
 offset_top = 331.0
 offset_right = 1169.0
@@ -53,6 +58,7 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("5_7soxp")
 
 [node name="Buttons4" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1223.0
 offset_top = 318.0
 offset_right = 1402.0
@@ -61,6 +67,7 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("6_f5wq2")
 
 [node name="NumberSelector1" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 568.0
 offset_top = 595.0
 offset_right = 768.0
@@ -72,6 +79,7 @@ theme_override_font_sizes/bold_font_size = 20
 text = "0"
 
 [node name="NumberSelector2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 794.0
 offset_top = 587.0
 offset_right = 994.0
@@ -83,6 +91,7 @@ theme_override_font_sizes/bold_font_size = 20
 text = "0"
 
 [node name="NumberSelector3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 1036.0
 offset_top = 577.0
 offset_right = 1236.0
@@ -94,6 +103,7 @@ theme_override_font_sizes/bold_font_size = 20
 text = "0"
 
 [node name="NumberSelector4" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 1267.0
 offset_top = 566.0
 offset_right = 1467.0
