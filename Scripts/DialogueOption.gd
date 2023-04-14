@@ -24,11 +24,13 @@ func _on_button_pressed():
 			Global.current_prompt.hide()
 			for option in Global.current_options:
 				option.hide()
+			get_parent().get_node("MainScene").continueGame();
 		elif action == "neutral":
 			# Hide dialogue to begin round of Bluff
 			Global.current_prompt.hide()
 			for option in Global.current_options:
 				option.hide()
+			get_parent().get_node("MainScene").continueGame();
 
 
 func _on_left_texture_mouse_entered():

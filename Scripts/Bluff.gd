@@ -93,7 +93,7 @@ var playerConf = null
 var stageOfRound = 0
 var lastPlay = -1
 var numOfPasses = 0
-var dontDisplay = false
+var dontDisplay = true
 
 
 var cpuCardsLastRound = null
@@ -110,17 +110,20 @@ func _ready():
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_up"):
-		incPshGge(true)
+		incPshGge()
 	elif event.is_action_pressed("ui_down"):
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#print(dontDisplay)
 	if(depthOfTurns >= 2):
 		dontDisplay = true
+		incPshGge()
 		depthOfTurns = 0
 	if(dontDisplay):
 		bluffy.visible = false
 	else:
+		bluffy.visible = true
 		if(noWinner):	
 			if(playerTurn == 1):
 				player()
@@ -217,7 +220,6 @@ func _on_buton_button_up():
 	if(lastRoundBluff):
 		#IF HERE THE CPU WAS BLUFFING
 		caughtBluffing(false)
-		incPshGge(true)
 		inst.text="You Caught Amity Bluffing! Her Turn Now"
 		buton.visible = false
 		pesto.visible = false
@@ -226,7 +228,6 @@ func _on_buton_button_up():
 	else:
 		#OTHERWISE CPU WASNT BLUFFING
 		caughtBluffing(true)
-		incPshGge(false)
 		inst.text="Amity Wasn't Bluffing! Her Turn Now"
 		buton.visible = false
 		pesto.visible = false
@@ -307,12 +308,10 @@ func cpuTurn(cheatProc, bluffProc):
 				if(lastRoundBluff):
 					#IF HERE, PLAYER WAS BLUFFING
 					inst.text="Amity Called Your Bluff And Won! Your Turn"
-					incPshGge(false)
 					caughtBluffing(true)
 				else:
 					#IF HERE, PLAYER WAS NOT BLUFFING
 					inst.text="Amity Called Your Bluff And Lost! Your Turn"
-					incPshGge(true)
 					caughtBluffing(false)
 				#NO MATTER WHAT, IF A BLUFF IS CALLED, THE ROUND IS OVER AND IT IS THE OTHER PLAYERS TURN
 				#SETTING ROUND TO BE OVER
@@ -568,25 +567,11 @@ func caughtBluffing(wasPlayer):
 	realizeHands()
 
 
-func incPshGge(upOrDown):
-	if(upOrDown):
-		print("Push Gauge Up")
-		pushGaugeLvl += 1
-		if(pushGaugeLvl == 3):
-			pushGaugeLvl = 0
-			Global.current_prompt.show()
-			for option in Global.current_options:
-				option.show()
-	else:
-		if(pushGaugeLvl > 0):
-			pushGaugeLvl -= 1
-	if pushGaugeLvl == 0:
-		$PushGauge.texture = preload("res://Assets/BunnyTable/Empty Push Gauge.png")
-	elif pushGaugeLvl == 1:
-		$PushGauge.texture = preload("res://Assets/BunnyTable/Push Gauge 33.png")
-	else:
-		$PushGauge.texture = preload("res://Assets/BunnyTable/Push Gauge.png")
-
+func incPshGge():
+	Global.current_prompt.show()
+	for option in Global.current_options:
+		option.show()
+		
 
 
 #Creates a new Game

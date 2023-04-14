@@ -57,10 +57,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="PlayerCards" type="HBoxContainer" parent="BluffyTheVampireSlayer"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="playInstruction" type="RichTextLabel" parent="BluffyTheVampireSlayer"]
+layout_mode = 0
 offset_left = 1149.0
 offset_top = 33.0
 offset_right = 1429.0
@@ -108,6 +110,7 @@ popup/item_12/text = "King"
 popup/item_12/id = 13
 
 [node name="Button" type="Button" parent="BluffyTheVampireSlayer"]
+layout_mode = 0
 offset_left = 1529.0
 offset_top = 226.0
 offset_right = 1629.0
@@ -115,6 +118,7 @@ offset_bottom = 276.0
 text = "Play Round"
 
 [node name="Buton" type="Button" parent="BluffyTheVampireSlayer"]
+layout_mode = 0
 offset_left = 1419.0
 offset_top = 226.0
 offset_right = 1519.0
@@ -122,6 +126,7 @@ offset_bottom = 276.0
 text = "Call Bluff?"
 
 [node name="pass" type="Button" parent="BluffyTheVampireSlayer"]
+layout_mode = 0
 offset_left = 1639.0
 offset_top = 226.0
 offset_right = 1739.0
