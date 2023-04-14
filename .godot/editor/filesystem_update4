@@ -1,8 +1,6 @@
 res://Z-RNDM/default_env.tres
 res://Scenes/Bluff.tscn
 res://Scenes/BunnyHeadspace.tscn
-res://Scenes/DialogueOption.tscn
 res://Scenes/Start.tscn
-res://Scripts/Global.gd
-res://Scripts/Bluff.gd
+res://Scenes/DialogueOption.tscn
 res://Scripts/DialogueOption.gd

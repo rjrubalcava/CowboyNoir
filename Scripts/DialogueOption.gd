@@ -33,18 +33,18 @@ func _on_button_pressed():
 			get_parent().get_node("MainScene").continueGame();
 
 
-func _on_left_texture_mouse_entered():
+func _on_left_button_mouse_entered():
 	$LeftOpt/Texture.hide()
 	$LeftOpt/HoverTexture.show()
 	
-func _on_left_hover_texture_mouse_exited():
+func _on_left_button_mouse_exited():
 	$LeftOpt/HoverTexture.hide()
 	$LeftOpt/Texture.show()
 
-func _on_right_texture_mouse_entered():
+func _on_right_button_mouse_entered():
 	$RightOpt/Texture.hide()
 	$RightOpt/HoverTexture.show()
 	
-func _on_right_hover_texture_mouse_exited():
+func _on_right_button_mouse_exited():
 	$RightOpt/HoverTexture.hide()
 	$RightOpt/Texture.show()

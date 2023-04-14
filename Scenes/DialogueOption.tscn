@@ -44,6 +44,7 @@ offset_right = 670.0
 offset_bottom = 736.0
 rotation = -0.0174533
 scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_3agfe")
 theme_override_font_sizes/normal_font_size = 64
@@ -90,6 +91,7 @@ offset_top = 580.0
 offset_right = 670.0
 offset_bottom = 736.0
 scale = Vector2(0.5, 0.5)
+mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_3agfe")
 theme_override_font_sizes/normal_font_size = 64
@@ -109,7 +111,11 @@ stream = ExtResource("5_2hck4")
 
 [connection signal="mouse_entered" from="LeftOpt/Texture" to="." method="_on_left_texture_mouse_entered"]
 [connection signal="mouse_exited" from="LeftOpt/HoverTexture" to="." method="_on_left_hover_texture_mouse_exited"]
+[connection signal="mouse_entered" from="LeftOpt/Button" to="." method="_on_left_button_mouse_entered"]
+[connection signal="mouse_exited" from="LeftOpt/Button" to="." method="_on_left_button_mouse_exited"]
 [connection signal="pressed" from="LeftOpt/Button" to="." method="_on_button_pressed"]
 [connection signal="mouse_entered" from="RightOpt/Texture" to="." method="_on_right_texture_mouse_entered"]
 [connection signal="mouse_exited" from="RightOpt/HoverTexture" to="." method="_on_right_hover_texture_mouse_exited"]
+[connection signal="mouse_entered" from="RightOpt/Button" to="." method="_on_right_button_mouse_entered"]
+[connection signal="mouse_exited" from="RightOpt/Button" to="." method="_on_right_button_mouse_exited"]
 [connection signal="pressed" from="RightOpt/Button" to="." method="_on_button_pressed"]
