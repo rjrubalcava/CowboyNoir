@@ -13,13 +13,36 @@ func _ready():
 # so initial error value of -1 should not be reached
 func _on_button_pressed():
 	$Click.play()
-	# Execute actions associated with this option
-	for action in actions:
-		if action == "tutorial":
-			pass
-		elif action == "+stress":
-			get_parent().get_node("MainScene").get_node("Bluff").updateStress(30)
-		elif action == "-stress":
-			get_parent().get_node("MainScene").get_node("Bluff").updateStress(-30)
+	# Play dialogue first
 	Global.playDialogue(outcome)
+	# Execute actions associated with chosen option
+	for action in actions:
+		if action == "increase":
+			# Increase stress
+			get_parent().get_node("MainScene").get_node("Bluff").updateStress(30)
+			# Hide dialogue to begin round of Bluff
+			Global.current_prompt.hide()
+			for option in Global.current_options:
+				option.hide()
+		elif action == "neutral":
+			# Hide dialogue to begin round of Bluff
+			Global.current_prompt.hide()
+			for option in Global.current_options:
+				option.hide()
+
+
+func _on_left_texture_mouse_entered():
+	$LeftOpt/Texture.hide()
+	$LeftOpt/HoverTexture.show()
 	
+func _on_left_hover_texture_mouse_exited():
+	$LeftOpt/HoverTexture.hide()
+	$LeftOpt/Texture.show()
+
+func _on_right_texture_mouse_entered():
+	$RightOpt/Texture.hide()
+	$RightOpt/HoverTexture.show()
+	
+func _on_right_hover_texture_mouse_exited():
+	$RightOpt/HoverTexture.hide()
+	$RightOpt/Texture.show()
