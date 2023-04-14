@@ -11,12 +11,14 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.76, 0.76)
 texture = ExtResource("1_bau6a")
 
 [node name="Clothes1" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1206.0
 offset_top = 37.0
 offset_right = 2116.0
@@ -25,6 +27,7 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("2_jy6m6")
 
 [node name="Clothes2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 592.0
 offset_top = 328.0
 offset_right = 1789.0
@@ -33,6 +36,7 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("3_4b8it")
 
 [node name="Knife" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1383.0
 offset_top = 408.0
 offset_right = 2069.0
@@ -41,6 +45,7 @@ scale = Vector2(0.76, 0.76)
 texture = ExtResource("4_5s4lm")
 
 [node name="MinuteHand" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 907.0
 offset_top = 702.0
 offset_right = 1504.0
