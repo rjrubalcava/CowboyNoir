@@ -4,3 +4,4 @@ res://Scenes/BunnyHeadspace.tscn
 res://Scenes/Start.tscn
 res://Scenes/DialogueOption.tscn
 res://Scripts/DialogueOption.gd
+res://Scenes/BluffTable.gdshader
