@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bw4dg1l2h0lx"]
+[gd_scene load_steps=8 format=3 uid="uid://bw4dg1l2h0lx"]
 
 [ext_resource type="Script" path="res://Scripts/DialogueOption.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://cogjpl23ffkhm" path="res://Assets/BunnyTable/Response_Card_crop.png" id="2_wwnas"]
+[ext_resource type="Texture2D" uid="uid://dxopv4ubc2kxp" path="res://Assets/BunnyTable/Response_Card_A_Base.png" id="2_wrk7b"]
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="3_3agfe"]
-[ext_resource type="Texture2D" uid="uid://cn65cvhd023be" path="res://Assets/BunnyTable/Response_hovered_Crop.png" id="4_4gqbt"]
+[ext_resource type="Texture2D" uid="uid://cmskvn4uinm3e" path="res://Assets/BunnyTable/Response_Card_A_Hovered.png" id="3_f68dq"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="5_2hck4"]
+[ext_resource type="Texture2D" uid="uid://c8boduqd2ory5" path="res://Assets/BunnyTable/Response_Card_B_Base.png" id="5_m7mbn"]
+[ext_resource type="Texture2D" uid="uid://d2bqrr1g4wsfs" path="res://Assets/BunnyTable/Response_Card_B_Hovered.png" id="6_s63xg"]
 
 [node name="DialogueOption" type="Control"]
 layout_mode = 3
@@ -24,7 +26,7 @@ offset_top = 534.0
 offset_right = 2860.0
 offset_bottom = 1940.0
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("2_wwnas")
+texture = ExtResource("2_wrk7b")
 
 [node name="HoverTexture" type="TextureRect" parent="LeftOpt"]
 visible = false
@@ -34,7 +36,7 @@ offset_top = 505.0
 offset_right = 661.0
 offset_bottom = 737.0
 scale = Vector2(0.768, 0.768)
-texture = ExtResource("4_4gqbt")
+texture = ExtResource("3_f68dq")
 
 [node name="Text" type="RichTextLabel" parent="LeftOpt"]
 layout_mode = 0
@@ -45,7 +47,7 @@ offset_bottom = 736.0
 rotation = -0.0174533
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0.882353, 0.807843, 0.678431, 1)
 theme_override_fonts/normal_font = ExtResource("3_3agfe")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
@@ -72,7 +74,7 @@ offset_top = 534.0
 offset_right = 2860.0
 offset_bottom = 1940.0
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("2_wwnas")
+texture = ExtResource("5_m7mbn")
 
 [node name="HoverTexture" type="TextureRect" parent="RightOpt"]
 visible = false
@@ -82,7 +84,7 @@ offset_top = 505.0
 offset_right = 661.0
 offset_bottom = 737.0
 scale = Vector2(0.768, 0.768)
-texture = ExtResource("4_4gqbt")
+texture = ExtResource("6_s63xg")
 
 [node name="Text" type="RichTextLabel" parent="RightOpt"]
 layout_mode = 0
@@ -92,7 +94,7 @@ offset_right = 670.0
 offset_bottom = 736.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0.882353, 0.807843, 0.678431, 1)
 theme_override_fonts/normal_font = ExtResource("3_3agfe")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
