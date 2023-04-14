@@ -29,11 +29,11 @@ func _input(event):
 				tween = get_tree().create_tween()
 				tween.set_ease(Tween.EASE_IN_OUT)
 				#print(self.position)
-				tween.tween_property(self, "position", Vector2(400, 700), 1)
+				tween.tween_property(self, "position", Vector2(520, 940), 1)
 				notSelected = false
 				scale *= 1.25       
 				set_texture(back)
-				set_scale(Vector2(.3,.3))
+				set_scale(Vector2(.3,.1))
 				notSelected = false
 			#print("A click!")
 

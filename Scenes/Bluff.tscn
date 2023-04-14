@@ -47,11 +47,20 @@ offset_bottom = 1406.0
 scale = Vector2(0.768, 0.768)
 texture = ExtResource("7_4om0p")
 
-[node name="PlayerCards" type="HBoxContainer" parent="."]
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_irqys")
+
+[node name="BluffyTheVampireSlayer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="playInstruction" type="RichTextLabel" parent="."]
+[node name="PlayerCards" type="HBoxContainer" parent="BluffyTheVampireSlayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="playInstruction" type="RichTextLabel" parent="BluffyTheVampireSlayer"]
 offset_left = 1149.0
 offset_top = 33.0
 offset_right = 1429.0
@@ -59,16 +68,17 @@ offset_bottom = 188.0
 scale = Vector2(2, 2)
 text = "Current Round Card: "
 
-[node name="cardSelection" type="OptionButton" parent="."]
+[node name="cardSelection" type="OptionButton" parent="BluffyTheVampireSlayer"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.187
 anchor_top = 0.5
 anchor_right = 0.187
 anchor_bottom = 0.5
-offset_left = 1419.0
-offset_top = 226.0
-offset_right = 1519.0
-offset_bottom = 276.0
+offset_left = 1411.52
+offset_top = 206.0
+offset_right = 1511.52
+offset_bottom = 256.0
 item_count = 13
 popup/item_0/text = "Ace"
 popup/item_0/id = 1
@@ -97,30 +107,27 @@ popup/item_11/id = 12
 popup/item_12/text = "King"
 popup/item_12/id = 13
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="BluffyTheVampireSlayer"]
 offset_left = 1529.0
 offset_top = 226.0
 offset_right = 1629.0
 offset_bottom = 276.0
 text = "Play Round"
 
-[node name="Buton" type="Button" parent="."]
+[node name="Buton" type="Button" parent="BluffyTheVampireSlayer"]
 offset_left = 1419.0
 offset_top = 226.0
 offset_right = 1519.0
 offset_bottom = 276.0
 text = "Call Bluff?"
 
-[node name="pass" type="Button" parent="."]
+[node name="pass" type="Button" parent="BluffyTheVampireSlayer"]
 offset_left = 1639.0
 offset_top = 226.0
 offset_right = 1739.0
 offset_bottom = 276.0
 text = "Pass Round"
 
-[node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_irqys")
-
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
-[connection signal="button_up" from="Buton" to="." method="_on_buton_button_up"]
-[connection signal="button_up" from="pass" to="." method="_on_pass_button_up"]
+[connection signal="button_up" from="BluffyTheVampireSlayer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="BluffyTheVampireSlayer/Buton" to="." method="_on_buton_button_up"]
+[connection signal="button_up" from="BluffyTheVampireSlayer/pass" to="." method="_on_pass_button_up"]
