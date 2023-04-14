@@ -8,3 +8,4 @@ res://Scenes/BluffTable.gdshader
 res://Scenes/Global.tscn
 res://Scripts/Global.gd
 res://Scripts/Bluff.gd
+res://Scenes/DialogueBox.tscn

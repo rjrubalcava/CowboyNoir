@@ -19,10 +19,10 @@ script = ExtResource("2")
 
 [node name="LeftOpt" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 123.0
-offset_top = 578.0
-offset_right = 163.0
-offset_bottom = 618.0
+offset_left = 110.0
+offset_top = 576.0
+offset_right = 150.0
+offset_bottom = 616.0
 
 [node name="Texture" type="TextureRect" parent="LeftOpt"]
 layout_mode = 0
@@ -69,10 +69,10 @@ rotation = -0.0174533
 
 [node name="RightOpt" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 338.0
-offset_top = 573.0
-offset_right = 378.0
-offset_bottom = 613.0
+offset_left = 353.0
+offset_top = 566.0
+offset_right = 393.0
+offset_bottom = 606.0
 
 [node name="Texture" type="TextureRect" parent="RightOpt"]
 layout_mode = 0

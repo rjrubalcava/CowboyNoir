@@ -179,7 +179,7 @@ func playDialogue(key):
 	current_prompt = dialogueBox.instantiate()
 	current_prompt.get_node("Text").text = "[center]" + prompt_text + "[/center]"
 	# Assign image for opponent response box
-	current_prompt.get_node("Texture").texture = preload("res://Assets/BunnyTable/Opponent Response Blank.png")
+	current_prompt.get_node("AnimatedSprite").play()
 	# Update text size to fit box (have to do in a roundabout way because there is no way to scale font size
 	# differently for two labels displayed simultaneously)
 	resize_text(current_prompt.get_node("Text"), prompt_size)
