@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=14 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dtbm0egjugty0" path="res://Assets/BunnyTable/Beam of Light.png" id="6_kdsla"]
 [ext_resource type="Texture2D" uid="uid://bn4glukot66r5" path="res://Assets/BunnyTable/Empty Push Gauge.png" id="7_4om0p"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="8_irqys"]
+[ext_resource type="AudioStream" uid="uid://c5ui11g0fy5y5" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_1.wav" id="9_n6tm3"]
+[ext_resource type="AudioStream" uid="uid://cej7wjqgmmlhn" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_2.wav" id="10_6811y"]
+[ext_resource type="AudioStream" uid="uid://d3ffbu77o3x68" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_3.wav" id="11_7ix15"]
+[ext_resource type="AudioStream" uid="uid://bn0x27q0drvgg" path="res://Assets/SFX/Songs/Jazz_rough_parts/jazz_rough_loopable.wav" id="13_ovjvy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrtgy"]
 shader = ExtResource("2_belpe")
@@ -121,6 +125,23 @@ text = "Pass Round"
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_irqys")
 
+[node name="chips_Stacking_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_n6tm3")
+
+[node name="chips_Stacking_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_6811y")
+
+[node name="chips_Stacking_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_7ix15")
+
+[node name="Song_start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_n6tm3")
+autoplay = true
+
+[node name="Song_loop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ovjvy")
+
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="Buton" to="." method="_on_buton_button_up"]
 [connection signal="button_up" from="pass" to="." method="_on_pass_button_up"]
+[connection signal="finished" from="Song_start" to="." method="_on_song_start_finished"]

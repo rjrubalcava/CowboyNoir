@@ -4,12 +4,15 @@ extends Sprite2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+
 var focused = false
 var notSelected = true
 var readyToPlay = false
 var card_offset=0
 var cardID = null
 var tween
+var sound_arr = ['Card_player1','Card_player2','Card_player3','Card_player4','Card_player5','Card_player6']
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -22,6 +25,7 @@ func setCardID(m_cid):
 	cardID = m_cid
 
 func _input(event):
+	
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT and readyToPlay:
 		if get_rect().has_point(to_local(event.position)) and (focused):
 			card_offset+=300
@@ -29,7 +33,10 @@ func _input(event):
 				tween = get_tree().create_tween()
 				tween.set_ease(Tween.EASE_IN_OUT)
 				#print(self.position)
+				var curr_sound = get_node(sound_arr.pick_random())
+				curr_sound.play()
 				tween.tween_property(self, "position", Vector2(400, 700), 1)
+				
 				notSelected = false
 				scale *= 1.25       
 				set_texture(back)

@@ -1,3 +1,9 @@
 res://Z-RNDM/default_env.tres
-res://Scenes/Global.tscn
-res://Scripts/Global.gd
+res://Scenes/Card.tscn
+res://Scripts/Card.gd
+res://Scenes/Start.tscn
+res://Scenes/MainScene.tscn
+res://Scripts/Bluff.gd
+res://Scenes/Bluff.tscn
+res://Scenes/BluffTable.gdshader
+res://Scenes/BunnyHeadspace.tscn
