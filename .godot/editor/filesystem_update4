@@ -3,6 +3,8 @@ res://Scenes/Bluff.tscn
 res://Scenes/BunnyHeadspace.tscn
 res://Scenes/DialogueOption.tscn
 res://Scenes/Start.tscn
-res://Scripts/Global.gd
-res://Scripts/Bluff.gd
-res://Scripts/DialogueOption.gd
+res://Scenes/CodeDrawerChest.tscn
+res://Scenes/CodeDrawerVanity.tscn
+res://Scenes/OpenChest.tscn
+res://Scripts/CodeDrawerChest.gd
+res://Scenes/OpenDrawer.tscn
