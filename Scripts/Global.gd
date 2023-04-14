@@ -179,7 +179,7 @@ func playDialogue(key):
 	current_prompt = dialogueBox.instantiate()
 	current_prompt.get_node("Text").text = "[center]" + prompt_text + "[/center]"
 	# Assign image for opponent response box
-	current_prompt.get_node("Texture").texture = preload("res://Assets/BunnyTable/Opponent Response Blank.png")
+	current_prompt.get_node("AnimatedSprite").play()
 	# Update text size to fit box (have to do in a roundabout way because there is no way to scale font size
 	# differently for two labels displayed simultaneously)
 	resize_text(current_prompt.get_node("Text"), prompt_size)
@@ -229,15 +229,22 @@ func playDialogue(key):
 func resize_text(textBox, char_count):
 	# Determine how many resizings must be performed based on number of characters in text string
 	var scale_level = 0
+	var rise_level = 0
 	if char_count > 9:
 		scale_level+=1
 	if char_count > 18:
 		scale_level+=1
 	if char_count > 36:
 		scale_level+=1
+	if char_count > 11:
+		rise_level+=3
+	if char_count > 15:
+		rise_level+=5
+	if char_count > 36:
+		rise_level+=12
 	# Reduce scale to give the appearance of shrinking text
-	textBox.scale = textBox.scale * pow(0.9, scale_level)
+	textBox.scale = textBox.scale * pow(0.85, scale_level)
 	# Increase size of textBox rect to counteract reduced scale
-	textBox.size = textBox.size * pow(1.1, scale_level)
+	textBox.size = textBox.size * pow(1.15, scale_level)
 	# Reduce y origin of textBox rect to utilize space above the center of the DialogueBox or DialogueOption
-	textBox.position.y = textBox.position.y * pow(0.99, scale_level)
+	textBox.position.y = textBox.position.y - rise_level

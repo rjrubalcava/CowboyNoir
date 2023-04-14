@@ -101,6 +101,7 @@ var cpuCardsLastRound = null
 
 var stressLevel = 0
 var psychometerStage = 0
+var stress_up_sounds = ["chips_Stacking_1","chips_Stacking_2","chips_Stacking_3"]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -690,16 +691,26 @@ func rmPlayerHand():
 	
 func updateStress(stress):
 	print("got update")
+	if stress > 0:
+		var curr_sound = get_node(stress_up_sounds.pick_random())
+		curr_sound.play()
 	stressLevel += stress
 	if stressLevel < 0:
 		stressLevel = 0
 	if stressLevel < 30:
-		$Character.texture = preload("res://Assets/BunnyTable/Neutral.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Amity Base Expression.png")
 	elif stressLevel < 60:
-		$Character.texture = preload("res://Assets/BunnyTable/Level Two.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 2.png")
 	elif stressLevel < 90:
-		$Character.texture = preload("res://Assets/BunnyTable/Level Three.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 3.png")
 	elif (stressLevel < 120):
-		$Character.texture = preload("res://Assets/BunnyTable/Level Four.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 4.png")
 	else:
+		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression BREAK.png")
+		# Need to add a timer
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+
+
+func _on_song_start_finished():
+	print("song finished playing")
+	$Song_loop.play()  
