@@ -29,3 +29,20 @@ func _on_button_pressed():
 			Global.current_prompt.hide()
 			for option in Global.current_options:
 				option.hide()
+
+
+func _on_left_texture_mouse_entered():
+	$LeftOpt/Texture.hide()
+	$LeftOpt/HoverTexture.show()
+	
+func _on_left_hover_texture_mouse_exited():
+	$LeftOpt/HoverTexture.hide()
+	$LeftOpt/Texture.show()
+
+func _on_right_texture_mouse_entered():
+	$RightOpt/Texture.hide()
+	$RightOpt/HoverTexture.show()
+	
+func _on_right_hover_texture_mouse_exited():
+	$RightOpt/HoverTexture.hide()
+	$RightOpt/Texture.show()
