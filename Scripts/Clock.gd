@@ -11,10 +11,3 @@ func _process(delta):
 	pass
 
 
-func _on_area_2d_area_entered(area):
-	 if area.get_parent() == :
-		TextRect1.hide()
-
-func _on_TextRect2_area_entered(area):
-	if area.get_parent() == TextRect1:
-		TextRect2.hide()
