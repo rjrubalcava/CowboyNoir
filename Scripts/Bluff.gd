@@ -700,12 +700,14 @@ func updateStress(stress):
 	if stressLevel < 30:
 		$Character.texture = preload("res://Assets/BunnyTable/Amity Base Expression.png")
 	elif stressLevel < 60:
-		$Character.texture = preload("res://Assets/BunnyTable/Level Two.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 2.png")
 	elif stressLevel < 90:
-		$Character.texture = preload("res://Assets/BunnyTable/Level Three.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 3.png")
 	elif (stressLevel < 120):
-		$Character.texture = preload("res://Assets/BunnyTable/Level Four.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 4.png")
 	else:
+		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression BREAK.png")
+		# Need to add a timer
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
 
 
