@@ -11,39 +11,44 @@
 [node name="DialogueOption" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+offset_left = 106.0
+offset_top = 4.0
+offset_right = 106.0
+offset_bottom = 4.0
 script = ExtResource("2")
 
 [node name="LeftOpt" type="Control" parent="."]
 anchors_preset = 0
-offset_left = -260.0
-offset_right = -220.0
-offset_bottom = 40.0
+offset_left = 123.0
+offset_top = 578.0
+offset_right = 163.0
+offset_bottom = 618.0
 
 [node name="Texture" type="TextureRect" parent="LeftOpt"]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 534.0
-offset_right = 2860.0
-offset_bottom = 1940.0
+offset_left = -81.0
+offset_top = -39.0
+offset_right = 2419.0
+offset_bottom = 1367.0
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("2_wrk7b")
 
 [node name="HoverTexture" type="TextureRect" parent="LeftOpt"]
 visible = false
 layout_mode = 0
-offset_left = 345.0
-offset_top = 505.0
-offset_right = 661.0
-offset_bottom = 737.0
-scale = Vector2(0.768, 0.768)
+offset_left = -62.0
+offset_top = -41.0
+offset_right = 254.0
+offset_bottom = 191.0
+scale = Vector2(0.512, 0.512)
 texture = ExtResource("3_f68dq")
 
 [node name="Text" type="RichTextLabel" parent="LeftOpt"]
 layout_mode = 0
-offset_left = 392.0
-offset_top = 580.0
-offset_right = 670.0
-offset_bottom = 736.0
+offset_left = -48.0
+offset_top = 7.0
+offset_right = 230.0
+offset_bottom = 163.0
 rotation = -0.0174533
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
@@ -56,42 +61,44 @@ text = "[center]default bbcode[/center]"
 [node name="Button" type="Button" parent="LeftOpt"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 366.0
-offset_top = 545.0
-offset_right = 555.0
-offset_bottom = 645.0
+offset_left = -75.0
+offset_top = -28.0
+offset_right = 114.0
+offset_bottom = 72.0
 rotation = -0.0174533
 
 [node name="RightOpt" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 338.0
+offset_top = 573.0
+offset_right = 378.0
+offset_bottom = 613.0
 
 [node name="Texture" type="TextureRect" parent="RightOpt"]
 layout_mode = 0
-offset_left = 360.0
-offset_top = 534.0
-offset_right = 2860.0
-offset_bottom = 1940.0
+offset_left = -81.0
+offset_top = -38.0
+offset_right = 2419.0
+offset_bottom = 1368.0
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("5_m7mbn")
 
 [node name="HoverTexture" type="TextureRect" parent="RightOpt"]
 visible = false
 layout_mode = 0
-offset_left = 345.0
-offset_top = 505.0
-offset_right = 661.0
-offset_bottom = 737.0
-scale = Vector2(0.768, 0.768)
+offset_left = -60.0
+offset_top = -39.0
+offset_right = 256.0
+offset_bottom = 193.0
+scale = Vector2(0.512, 0.512)
 texture = ExtResource("6_s63xg")
 
 [node name="Text" type="RichTextLabel" parent="RightOpt"]
 layout_mode = 0
-offset_left = 392.0
-offset_top = 580.0
-offset_right = 670.0
-offset_bottom = 736.0
+offset_left = -49.0
+offset_top = 7.0
+offset_right = 229.0
+offset_bottom = 163.0
 scale = Vector2(0.5, 0.5)
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.882353, 0.807843, 0.678431, 1)
@@ -103,10 +110,10 @@ text = "[center]default bbcode[/center]"
 [node name="Button" type="Button" parent="RightOpt"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 366.0
-offset_top = 545.0
-offset_right = 555.0
-offset_bottom = 645.0
+offset_left = -74.0
+offset_top = -29.0
+offset_right = 115.0
+offset_bottom = 71.0
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_2hck4")

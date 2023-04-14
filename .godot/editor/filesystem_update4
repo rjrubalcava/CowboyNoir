@@ -5,3 +5,6 @@ res://Scenes/Start.tscn
 res://Scenes/DialogueOption.tscn
 res://Scripts/DialogueOption.gd
 res://Scenes/BluffTable.gdshader
+res://Scenes/Global.tscn
+res://Scripts/Global.gd
+res://Scripts/Bluff.gd

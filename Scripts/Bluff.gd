@@ -694,7 +694,7 @@ func updateStress(stress):
 	if stressLevel < 0:
 		stressLevel = 0
 	if stressLevel < 30:
-		$Character.texture = preload("res://Assets/BunnyTable/Neutral.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Amity Base Expression.png")
 	elif stressLevel < 60:
 		$Character.texture = preload("res://Assets/BunnyTable/Level Two.png")
 	elif stressLevel < 90:

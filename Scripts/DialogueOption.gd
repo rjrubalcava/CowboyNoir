@@ -36,15 +36,19 @@ func _on_button_pressed():
 func _on_left_button_mouse_entered():
 	$LeftOpt/Texture.hide()
 	$LeftOpt/HoverTexture.show()
+	$LeftOpt.scale *= 1.5
 	
 func _on_left_button_mouse_exited():
 	$LeftOpt/HoverTexture.hide()
 	$LeftOpt/Texture.show()
+	$LeftOpt.scale /= 1.5
 
 func _on_right_button_mouse_entered():
 	$RightOpt/Texture.hide()
 	$RightOpt/HoverTexture.show()
+	$RightOpt.scale *= 1.5
 	
 func _on_right_button_mouse_exited():
 	$RightOpt/HoverTexture.hide()
 	$RightOpt/Texture.show()
+	$RightOpt.scale /= 1.5
