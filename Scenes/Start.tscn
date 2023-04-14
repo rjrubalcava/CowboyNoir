@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0yshtcmy0ui8"]
+[gd_scene load_steps=4 format=3 uid="uid://d0yshtcmy0ui8"]
 
 [ext_resource type="Script" path="res://Scripts/Start.gd" id="1_s8hsd"]
 [ext_resource type="Texture2D" uid="uid://leiuirv5rc6u" path="res://Assets/Backgrounds/StartScreen.png" id="2_tnkj4"]
+[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="3_gtvxg"]
 
 [node name="Start" type="Control"]
 layout_mode = 3
@@ -25,5 +26,6 @@ offset_bottom = 594.0
 rotation = -0.00828301
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gtvxg")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
