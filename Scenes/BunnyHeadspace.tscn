@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ciaes6gmsx3ut"]
+[gd_scene load_steps=24 format=3 uid="uid://ciaes6gmsx3ut"]
 
 [ext_resource type="Texture2D" uid="uid://bh18cd86aasdc" path="res://Assets/BunnyHeadspace/Background.png" id="1_5mip6"]
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
@@ -22,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://dpax0dk10g40g" path="res://Assets/BunnyHeadspace/inventoryStuff/hour hand in invt.png" id="18_yyxmo"]
 [ext_resource type="Texture2D" uid="uid://cqfktwup771bn" path="res://Assets/BunnyHeadspace/inventoryStuff/minute hand in invt.png" id="19_g7haf"]
 [ext_resource type="Texture2D" uid="uid://cxfxul6u8qrdr" path="res://Assets/BunnyHeadspace/Zoom out/newspaper.png" id="22_ydlq2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aw7ns"]
+size = Vector2(76.8229, 158.438)
 
 [node name="BunnyHeadspace" type="Control"]
 layout_mode = 3
@@ -56,15 +59,6 @@ offset_right = 1831.0
 offset_bottom = 966.0
 scale = Vector2(0.76, 0.76)
 texture = ExtResource("4_1w7tk")
-
-[node name="HeartsCard" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 617.0
-offset_top = 853.0
-offset_right = 778.0
-offset_bottom = 954.0
-scale = Vector2(0.76, 0.76)
-texture = ExtResource("6_8umd0")
 
 [node name="MirrorDesk" type="TextureRect" parent="."]
 layout_mode = 0
@@ -119,6 +113,16 @@ offset_bottom = 1406.0
 scale = Vector2(0.768, 0.768)
 texture = ExtResource("13_4iq0c")
 
+[node name="HeartsCard" type="TextureRect" parent="."]
+z_index = 5
+layout_mode = 0
+offset_left = 617.0
+offset_top = 853.0
+offset_right = 778.0
+offset_bottom = 954.0
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("6_8umd0")
+
 [node name="CostumeChest" type="TextureRect" parent="."]
 z_index = 5
 layout_mode = 0
@@ -150,16 +154,6 @@ offset_right = 238.0
 offset_bottom = 240.0
 scale = Vector2(0.768, 0.768)
 texture = ExtResource("18_yyxmo")
-
-[node name="MinuteHand" type="TextureRect" parent="."]
-z_index = 5
-layout_mode = 0
-offset_left = 67.0
-offset_top = 83.0
-offset_right = 180.0
-offset_bottom = 241.0
-scale = Vector2(0.768, 0.768)
-texture = ExtResource("19_g7haf")
 
 [node name="HeartCard" type="TextureRect" parent="."]
 z_index = 5
@@ -237,14 +231,38 @@ offset_bottom = 921.0
 scale = Vector2(0.76, 0.76)
 texture = ExtResource("5_vp4ug")
 
+[node name="MinuteHand" type="CharacterBody2D" parent="."]
+z_index = 6
+position = Vector2(8, 1)
+scale = Vector2(0.768, 0.768)
+
+[node name="MinuteHand" type="TextureRect" parent="MinuteHand"]
+z_index = 5
+offset_left = 74.2188
+offset_top = 106.771
+offset_right = 187.219
+offset_bottom = 264.771
+pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("19_g7haf")
+
+[node name="Area2D" type="Area2D" parent="MinuteHand/MinuteHand"]
+z_index = 10
+position = Vector2(-1.30209, 5.20833)
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MinuteHand/MinuteHand/Area2D"]
+z_index = 10
+position = Vector2(63.8021, 76.8229)
+skew = 0.42237
+shape = SubResource("RectangleShape2D_aw7ns")
+
 [connection signal="mouse_entered" from="CostumeChest" to="." method="_on_costume_chest_mouse_entered"]
 [connection signal="mouse_exited" from="CostumeChest" to="." method="_on_costume_chest_mouse_exited"]
 [connection signal="mouse_entered" from="Newspaper" to="." method="_on_newspaper_mouse_entered"]
 [connection signal="mouse_exited" from="Newspaper" to="." method="_on_newspaper_mouse_exited"]
 [connection signal="mouse_entered" from="HourHand" to="." method="_on_hour_hand_mouse_entered"]
 [connection signal="mouse_exited" from="HourHand" to="." method="_on_hour_hand_mouse_exited"]
-[connection signal="mouse_entered" from="MinuteHand" to="." method="_on_minute_hand_mouse_entered"]
-[connection signal="mouse_exited" from="MinuteHand" to="." method="_on_minute_hand_mouse_exited"]
 [connection signal="mouse_entered" from="HeartCard" to="." method="_on_heart_card_mouse_entered"]
 [connection signal="mouse_exited" from="HeartCard" to="." method="_on_heart_card_mouse_exited"]
 [connection signal="mouse_entered" from="DiamondCard" to="." method="_on_diamond_card_mouse_entered"]
@@ -259,3 +277,7 @@ texture = ExtResource("5_vp4ug")
 [connection signal="mouse_exited" from="TheSun" to="." method="_on_the_sun_mouse_exited"]
 [connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
 [connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]
+[connection signal="gui_input" from="MinuteHand/MinuteHand" to="." method="_on_minute_hand_gui_input"]
+[connection signal="mouse_entered" from="MinuteHand/MinuteHand" to="." method="_on_minute_hand_mouse_entered"]
+[connection signal="mouse_exited" from="MinuteHand/MinuteHand" to="." method="_on_minute_hand_mouse_exited"]
+[connection signal="input_event" from="MinuteHand/MinuteHand/Area2D" to="." method="_on_area_2d_input_event"]
