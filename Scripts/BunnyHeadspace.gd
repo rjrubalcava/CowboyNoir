@@ -8,7 +8,7 @@ extends Control
 @onready var EnlargedNewspaper = preload("res://Assets/BunnyHeadspace/Newspaper/newspaper close up.png")
 @onready var SmallerNewspaper = preload("res://Assets/BunnyHeadspace/Zoom out/newspaper.png")
 @onready var InventoryBox: TextureRect = $InventoryBox
-@onready var HourHand: TextureRect = $HourHand
+@onready var HourHand: CharacterBody2D = $HourHand
 @onready var MinuteHand: CharacterBody2D = $MinuteHand
 @onready var HeartCard: TextureRect = $HeartCard
 @onready var DiamondCard: TextureRect = $DiamondCard
@@ -21,6 +21,7 @@ extends Control
 var Enlarged_Newspaper_sprite: Sprite2D
 var selected = false
 var minutehandclicked=false
+var hourhandclicked = false
 var mouse_pos = Vector2()
 var mouse_velocity = Vector2()
 
@@ -54,7 +55,9 @@ func _process(delta):
 	if Global.minutecardclick == true:
 		MinuteHand.show()
 	if minutehandclicked == true:
-		drag()
+		drag(MinuteHand)
+	if hourhandclicked == true:
+		drag(HourHand)
 		
 func scale_up(my_tween, my_sprite):
 	if my_sprite == Newspaper:
@@ -240,7 +243,24 @@ func _on_minute_hand_gui_input(event):
 		minutehandclicked = true
 	else:
 		minutehandclicked = false
-func drag():
-	MinuteHand.velocity = mouse_velocity
-	MinuteHand.move_and_slide()
-	
+		
+func drag(my_sprite):
+	my_sprite.velocity = mouse_velocity
+	my_sprite.move_and_slide()
+
+
+func _on_hour_hand_sprite_gui_input(event):
+	if Input.is_action_pressed("click"):
+		hourhandclicked = true
+	else:
+		hourhandclicked = false
+
+
+func _on_hour_hand_sprite_mouse_entered():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(HourHand, "scale", Vector2(0.8,0.8), 0.1)
+
+
+func _on_hour_hand_sprite_mouse_exited():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(HourHand, "scale", Vector2(0.76,0.76), 0.1)

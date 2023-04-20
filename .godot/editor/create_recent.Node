@@ -1,7 +1,7 @@
+CollisionShape2D
+Area2D
 TextureRect
 CharacterBody2D
-Area2D
-CollisionShape2D
 DirectionalLight2D
 AnimatedSprite2D
 Control

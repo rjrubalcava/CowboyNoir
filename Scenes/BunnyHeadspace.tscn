@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ciaes6gmsx3ut"]
+[gd_scene load_steps=25 format=3 uid="uid://ciaes6gmsx3ut"]
 
 [ext_resource type="Texture2D" uid="uid://bh18cd86aasdc" path="res://Assets/BunnyHeadspace/Background.png" id="1_5mip6"]
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
@@ -22,6 +22,9 @@
 [ext_resource type="Texture2D" uid="uid://dpax0dk10g40g" path="res://Assets/BunnyHeadspace/inventoryStuff/hour hand in invt.png" id="18_yyxmo"]
 [ext_resource type="Texture2D" uid="uid://cqfktwup771bn" path="res://Assets/BunnyHeadspace/inventoryStuff/minute hand in invt.png" id="19_g7haf"]
 [ext_resource type="Texture2D" uid="uid://cxfxul6u8qrdr" path="res://Assets/BunnyHeadspace/Zoom out/newspaper.png" id="22_ydlq2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysjfa"]
+size = Vector2(60.8507, 155.947)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aw7ns"]
 size = Vector2(76.8229, 158.438)
@@ -145,16 +148,6 @@ offset_bottom = 499.0
 scale = Vector2(0.76, 0.76)
 texture = ExtResource("22_ydlq2")
 
-[node name="HourHand" type="TextureRect" parent="."]
-z_index = 5
-layout_mode = 0
-offset_left = 123.0
-offset_top = 88.0001
-offset_right = 238.0
-offset_bottom = 240.0
-scale = Vector2(0.768, 0.768)
-texture = ExtResource("18_yyxmo")
-
 [node name="HeartCard" type="TextureRect" parent="."]
 z_index = 5
 layout_mode = 0
@@ -231,12 +224,31 @@ offset_bottom = 921.0
 scale = Vector2(0.76, 0.76)
 texture = ExtResource("5_vp4ug")
 
+[node name="HourHand" type="CharacterBody2D" parent="."]
+z_index = 5
+scale = Vector2(0.768, 0.768)
+
+[node name="HourHandSprite" type="TextureRect" parent="HourHand"]
+offset_left = 161.458
+offset_top = 114.583
+offset_right = 276.458
+offset_bottom = 266.583
+texture = ExtResource("18_yyxmo")
+
+[node name="HourHandArea2D" type="Area2D" parent="HourHand/HourHandSprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HourHand/HourHandSprite/HourHandArea2D"]
+position = Vector2(59.8263, 76.8229)
+scale = Vector2(1, 1)
+skew = 0.406662
+shape = SubResource("RectangleShape2D_ysjfa")
+
 [node name="MinuteHand" type="CharacterBody2D" parent="."]
 z_index = 6
 position = Vector2(8, 1)
 scale = Vector2(0.768, 0.768)
 
-[node name="MinuteHand" type="TextureRect" parent="MinuteHand"]
+[node name="MinuteHandSprite" type="TextureRect" parent="MinuteHand"]
 z_index = 5
 offset_left = 74.2188
 offset_top = 106.771
@@ -245,13 +257,13 @@ offset_bottom = 264.771
 pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("19_g7haf")
 
-[node name="Area2D" type="Area2D" parent="MinuteHand/MinuteHand"]
+[node name="MinuteHandArea2D" type="Area2D" parent="MinuteHand/MinuteHandSprite"]
 z_index = 10
 position = Vector2(-1.30209, 5.20833)
 collision_layer = 512
 collision_mask = 512
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MinuteHand/MinuteHand/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MinuteHand/MinuteHandSprite/MinuteHandArea2D"]
 z_index = 10
 position = Vector2(63.8021, 76.8229)
 skew = 0.42237
@@ -261,8 +273,6 @@ shape = SubResource("RectangleShape2D_aw7ns")
 [connection signal="mouse_exited" from="CostumeChest" to="." method="_on_costume_chest_mouse_exited"]
 [connection signal="mouse_entered" from="Newspaper" to="." method="_on_newspaper_mouse_entered"]
 [connection signal="mouse_exited" from="Newspaper" to="." method="_on_newspaper_mouse_exited"]
-[connection signal="mouse_entered" from="HourHand" to="." method="_on_hour_hand_mouse_entered"]
-[connection signal="mouse_exited" from="HourHand" to="." method="_on_hour_hand_mouse_exited"]
 [connection signal="mouse_entered" from="HeartCard" to="." method="_on_heart_card_mouse_entered"]
 [connection signal="mouse_exited" from="HeartCard" to="." method="_on_heart_card_mouse_exited"]
 [connection signal="mouse_entered" from="DiamondCard" to="." method="_on_diamond_card_mouse_entered"]
@@ -277,7 +287,11 @@ shape = SubResource("RectangleShape2D_aw7ns")
 [connection signal="mouse_exited" from="TheSun" to="." method="_on_the_sun_mouse_exited"]
 [connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
 [connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]
-[connection signal="gui_input" from="MinuteHand/MinuteHand" to="." method="_on_minute_hand_gui_input"]
-[connection signal="mouse_entered" from="MinuteHand/MinuteHand" to="." method="_on_minute_hand_mouse_entered"]
-[connection signal="mouse_exited" from="MinuteHand/MinuteHand" to="." method="_on_minute_hand_mouse_exited"]
-[connection signal="input_event" from="MinuteHand/MinuteHand/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="HourHand" to="." method="_on_hour_hand_mouse_entered"]
+[connection signal="mouse_exited" from="HourHand" to="." method="_on_hour_hand_mouse_exited"]
+[connection signal="gui_input" from="HourHand/HourHandSprite" to="." method="_on_hour_hand_sprite_gui_input"]
+[connection signal="mouse_entered" from="HourHand/HourHandSprite" to="." method="_on_hour_hand_sprite_mouse_entered"]
+[connection signal="mouse_exited" from="HourHand/HourHandSprite" to="." method="_on_hour_hand_sprite_mouse_exited"]
+[connection signal="gui_input" from="MinuteHand/MinuteHandSprite" to="." method="_on_minute_hand_gui_input"]
+[connection signal="mouse_entered" from="MinuteHand/MinuteHandSprite" to="." method="_on_minute_hand_mouse_entered"]
+[connection signal="mouse_exited" from="MinuteHand/MinuteHandSprite" to="." method="_on_minute_hand_mouse_exited"]
