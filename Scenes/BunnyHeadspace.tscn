@@ -88,6 +88,7 @@ scale = Vector2(0.768, 0.768)
 texture = ExtResource("9_f3jki")
 
 [node name="DiamondDrawer" type="TextureRect" parent="."]
+z_index = 1
 layout_mode = 0
 offset_left = 1204.0
 offset_top = 639.0
