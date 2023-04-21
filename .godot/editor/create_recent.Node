@@ -1,5 +1,6 @@
 CollisionShape2D
 Area2D
+StaticBody2D
 TextureRect
 CharacterBody2D
 DirectionalLight2D

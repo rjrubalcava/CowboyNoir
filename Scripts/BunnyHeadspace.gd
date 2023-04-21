@@ -18,16 +18,18 @@ extends Control
 @onready var Frame: TextureRect = $Frame
 @onready var CodeDrawer: TextureRect = $CodeDrawer
 @onready var CostumeChest: TextureRect = $CostumeChest
+
 var Enlarged_Newspaper_sprite: Sprite2D
 var selected = false
 var minutehandclicked=false
 var hourhandclicked = false
 var mouse_pos = Vector2()
 var mouse_velocity = Vector2()
-
+var area_is_touched = false
+var minutehandtouched = false
+var hourhandtouched = false
 
 func _ready():
-	
 	mouse_pos = get_global_mouse_position()
 	Enlarged_Newspaper_sprite = Sprite2D.new()
 	Enlarged_Newspaper_sprite.texture = EnlargedNewspaper
@@ -58,7 +60,8 @@ func _process(delta):
 		drag(MinuteHand)
 	if hourhandclicked == true:
 		drag(HourHand)
-		
+	
+	
 func scale_up(my_tween, my_sprite):
 	if my_sprite == Newspaper:
 		Enlarged_Newspaper_sprite.scale = Vector2(1.5, 1.5)
@@ -91,7 +94,6 @@ func _input(event):
 		if Clock.get_global_rect().has_point(event.position):
 			change_texture(TW, Newspaper, SmallerNewspaper)	
 			Enlarged_Newspaper_sprite.hide()
-			#scale_up(TW, Clock)
 			change_position(TW, Newspaper, newspaper_coordinates)
 			scale_down(TW,TheSun)
 			scale_down(TW,Newspaper)
@@ -139,96 +141,66 @@ func _on_code_drawer_mouse_exited():
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(CodeDrawer, "scale", Vector2(0.76,0.76), 0.1)
 
-
 func _on_clock_mouse_entered():
 	
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(Clock, "modulate", Color.ROSY_BROWN, 0.1)
 
-
 func _on_clock_mouse_exited():
 	Clock.set_modulate(Color(1, 1, 1, 1))
 
-
 func _on_the_sun_mouse_entered():
-	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(TheSun, "modulate", Color.ROSY_BROWN, 0.1)
-
-
+	if area_is_touched == false:
+		var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+		TW.tween_property(TheSun, "modulate", Color.ROSY_BROWN, 0.1)
+	else:
+		pass
 func _on_the_sun_mouse_exited():
-	TheSun.set_modulate(Color(1, 1, 1, 1))
-
-
-func _on_hour_hand_mouse_entered():
-	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(HourHand, "scale", Vector2(0.8,0.8), 0.1)
 	
-
-
-func _on_hour_hand_mouse_exited():
-	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(HourHand, "scale", Vector2(0.76,0.76), 0.1)
-
-
-func _on_minute_hand_mouse_entered():
-	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(MinuteHand, "scale", Vector2(0.8,0.8), 0.1)
-
-
-func _on_minute_hand_mouse_exited():
-	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(MinuteHand, "scale", Vector2(0.76,0.76), 0.1)
-
+	if area_is_touched == false:
+		TheSun.set_modulate(Color(1, 1, 1, 1))
+	else:
+		pass
 
 func _on_heart_card_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(HeartCard, "scale", Vector2(0.8,0.8), 0.1)
 
-
 func _on_heart_card_mouse_exited():
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(HeartCard, "scale", Vector2(0.76,0.76), 0.1)
-
 
 func _on_diamond_card_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(DiamondCard, "scale", Vector2(0.8,0.8), 0.1)
 
-
 func _on_diamond_card_mouse_exited():
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(DiamondCard, "scale", Vector2(0.76,0.76), 0.1)
-
 
 func _on_club_card_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(ClubCard, "scale", Vector2(0.8,0.8), 0.1)
 
-
 func _on_club_card_mouse_exited():
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(ClubCard, "scale", Vector2(0.76,0.76), 0.1)
-
 
 func _on_spade_card_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(SpadeCard, "scale", Vector2(0.8,0.8), 0.1)
 
-
 func _on_spade_card_mouse_exited():
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(SpadeCard, "scale", Vector2(0.76,0.76), 0.1)
-
 
 func _on_newspaper_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(Newspaper, "modulate", Color.ROSY_BROWN, 0.1)
 
-
 func _on_newspaper_mouse_exited():
 	Newspaper.set_modulate(Color(1, 1, 1, 1))
 	
-
 func _on_costume_chest_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(CostumeChest, "scale", Vector2(0.8,0.8), 0.1)
@@ -237,30 +209,61 @@ func _on_costume_chest_mouse_exited():
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(CostumeChest, "scale", Vector2(0.76,0.76), 0.1)
 
-
-func _on_minute_hand_gui_input(event):
-	if Input.is_action_pressed("click"):
-		minutehandclicked = true
-	else:
-		minutehandclicked = false
-		
 func drag(my_sprite):
 	my_sprite.velocity = mouse_velocity
 	my_sprite.move_and_slide()
 
-
+func _on_area_2d_area_entered(area):
+	if minutehandtouched == true and hourhandtouched == true:
+		area_is_touched = true
+		TheSun.z_index = 0
+		var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+		TW.tween_property(TheSun, "position", Vector2(950,50), 2)
+		#await get_tree().create_timer(1.5).timeout
+		TW.parallel().tween_property(TheSun, "modulate", Color.ROSY_BROWN, 0.5)
+		TW.tween_property(Background, "modulate", Color.DARK_SLATE_GRAY, 0.5)
+		#area_is_touched=false
+		
+#Hour hand signals
 func _on_hour_hand_sprite_gui_input(event):
 	if Input.is_action_pressed("click"):
 		hourhandclicked = true
 	else:
 		hourhandclicked = false
 
-
 func _on_hour_hand_sprite_mouse_entered():
-	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(HourHand, "scale", Vector2(0.8,0.8), 0.1)
-
 
 func _on_hour_hand_sprite_mouse_exited():
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(HourHand, "scale", Vector2(0.76,0.76), 0.1)
+
+#Minute hand Signals
+func _on_minute_hand_sprite_gui_input(event):
+	if Input.is_action_pressed("click"):
+		minutehandclicked = true
+	else:
+		minutehandclicked = false
+
+func _on_minute_hand_sprite_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(MinuteHand, "scale", Vector2(0.8,0.8), 0.1)
+
+func _on_minute_hand_sprite_mouse_exited():
+	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(MinuteHand, "scale", Vector2(0.76,0.76), 0.1)
+
+
+func _on_hour_hand_area_2d_area_entered(area):
+	hourhandtouched = true
+	
+func _on_hour_hand_area_2d_area_exited(area):
+	hourhandtouched = false
+
+
+func _on_minute_hand_area_2d_area_entered(area):
+	minutehandtouched = true
+
+func _on_minute_hand_area_2d_area_exited(area):
+	minutehandtouched = false
