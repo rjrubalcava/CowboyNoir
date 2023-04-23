@@ -1,7 +1,9 @@
+RichTextLabel
+Control
+TextureButton
 AudioStreamPlayer
 AudioListener2D
 AudioStreamPlayer2D
-Control
 CollisionShape2D
 Area2D
 Camera2D
@@ -12,8 +14,6 @@ Timer
 AudioStreamPlayer2D
 Button
 OptionButton
-RichTextLabel
 HBoxContainer
-TextureButton
 ColorRect
 Node2D

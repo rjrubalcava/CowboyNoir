@@ -60,7 +60,7 @@ extends Node2D
 
 @onready var playerCards = $BluffyTheVampireSlayer/PlayerCards
 @onready var inst = $BluffyTheVampireSlayer/playInstruction
-@onready var cardToBluff = $BluffyTheVampireSlayer/cardSelection
+@onready var cardToBluff = $BluffyTheVampireSlayer/CardSelector
 @onready var butt = $BluffyTheVampireSlayer/Button
 @onready var buton = $BluffyTheVampireSlayer/Buton
 @onready var pesto = $BluffyTheVampireSlayer/pass
@@ -103,6 +103,9 @@ var stressLevel = 0
 var psychometerStage = 0
 var stress_up_sounds = ["chips_Stacking_1","chips_Stacking_2","chips_Stacking_3"]
 
+var cardSyms = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
+var selectorIndex = 0
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -140,10 +143,19 @@ func _process(delta):
 		
 func _on_button_button_up():
 	$Click.play()
-	if(cardToBluff.get_selected_id() > 0 and stageOfRound == 0):
+	if(stageOfRound == 0):
 		stageOfRound = 1
-		cardOfRound = cardToBluff.get_selected_id()
-		cardToBluff.select(-1)
+		cardOfRound = cardToBluff.get_node("TextCenter").text
+		if cardOfRound == "A":
+			cardOfRound = 1
+		elif cardOfRound == "J":
+			cardOfRound = 11
+		elif cardOfRound == "Q":
+			cardOfRound = 12
+		elif cardOfRound == "K":
+			cardOfRound = 13
+		else:
+			cardOfRound = int(cardOfRound)
 		cardToBluff.visible = false
 	elif(stageOfRound < 1):
 		cardOfRound = -1
@@ -714,3 +726,10 @@ func updateStress(stress):
 func _on_song_start_finished():
 	print("song finished playing")
 	$Song_loop.play()  
+
+
+func _on_barrel_button_pressed():
+	selectorIndex += 1
+	cardToBluff.get_node("TextLeft").text = cardSyms[selectorIndex  % 13]
+	cardToBluff.get_node("TextCenter").text = cardSyms[(selectorIndex + 1) % 13]
+	cardToBluff.get_node("TextRight").text = cardSyms[(selectorIndex + 2) % 13]

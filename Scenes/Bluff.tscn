@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=17 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dtbm0egjugty0" path="res://Assets/BunnyTable/Beam of Light.png" id="6_kdsla"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="8_irqys"]
 [ext_resource type="AudioStream" uid="uid://c5ui11g0fy5y5" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_1.wav" id="9_n6tm3"]
+[ext_resource type="Texture2D" uid="uid://d0d00cv72bfgn" path="res://Assets/BunnyTable/Final Chamber.png" id="9_w1n6t"]
+[ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="10_45hga"]
 [ext_resource type="AudioStream" uid="uid://cej7wjqgmmlhn" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_2.wav" id="10_6811y"]
 [ext_resource type="AudioStream" uid="uid://d3ffbu77o3x68" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_3.wav" id="11_7ix15"]
 [ext_resource type="AudioStream" uid="uid://d34ks6k5uwthn" path="res://Assets/SFX/Songs/Jazz_rough_parts/jazz_rough_start.wav" id="12_s1njf"]
@@ -64,6 +66,55 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="CardSelector" type="Control" parent="BluffyTheVampireSlayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 94.0
+offset_top = 950.0
+offset_right = 134.0
+offset_bottom = 990.0
+
+[node name="BarrelButton" type="TextureButton" parent="BluffyTheVampireSlayer/CardSelector"]
+offset_left = -283.0
+offset_top = -273.0
+offset_right = 518.0
+offset_bottom = 560.0
+scale = Vector2(0.768, 0.768)
+texture_normal = ExtResource("9_w1n6t")
+
+[node name="TextLeft" type="RichTextLabel" parent="BluffyTheVampireSlayer/CardSelector"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -187.0
+offset_right = 48.0
+offset_bottom = -130.0
+theme_override_colors/default_color = Color(0.121569, 0.0745098, 0.0666667, 1)
+theme_override_fonts/normal_font = ExtResource("10_45hga")
+theme_override_font_sizes/normal_font_size = 52
+text = "2"
+
+[node name="TextCenter" type="RichTextLabel" parent="BluffyTheVampireSlayer/CardSelector"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = -137.0
+offset_right = 201.0
+offset_bottom = -79.0
+theme_override_colors/default_color = Color(0.121569, 0.0745098, 0.0666667, 1)
+theme_override_fonts/normal_font = ExtResource("10_45hga")
+theme_override_font_sizes/normal_font_size = 52
+text = "3"
+
+[node name="TextRight" type="RichTextLabel" parent="BluffyTheVampireSlayer/CardSelector"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = -6.0
+offset_right = 265.0
+offset_bottom = 51.0
+theme_override_colors/default_color = Color(0.121569, 0.0745098, 0.0666667, 1)
+theme_override_fonts/normal_font = ExtResource("10_45hga")
+theme_override_font_sizes/normal_font_size = 52
+text = "4"
+
 [node name="PlayerCards" type="HBoxContainer" parent="BluffyTheVampireSlayer"]
 layout_mode = 0
 offset_right = 40.0
@@ -85,10 +136,10 @@ anchor_left = 0.187
 anchor_top = 0.5
 anchor_right = 0.187
 anchor_bottom = 0.5
-offset_left = 1411.52
-offset_top = 206.0
-offset_right = 1511.52
-offset_bottom = 256.0
+offset_left = 178.52
+offset_top = 110.0
+offset_right = 278.52
+offset_bottom = 160.0
 item_count = 13
 popup/item_0/text = "Ace"
 popup/item_0/id = 1
@@ -160,6 +211,7 @@ autoplay = true
 [node name="Song_loop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_ovjvy")
 
+[connection signal="pressed" from="BluffyTheVampireSlayer/CardSelector/BarrelButton" to="." method="_on_barrel_button_pressed"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/Buton" to="." method="_on_buton_button_up"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/pass" to="." method="_on_pass_button_up"]
