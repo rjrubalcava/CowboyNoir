@@ -106,9 +106,14 @@ var stress_up_sounds = ["chips_Stacking_1","chips_Stacking_2","chips_Stacking_3"
 var cardSyms = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
 var selectorIndex = 0
 
+var rotateTicks
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Set cursor to be Amity's (eventually will have a different one for each character)
+	Input.set_custom_mouse_cursor(preload("res://Assets/BunnyTable/Cursor_Final.png")) #Reference: 
+		# https://godotengine.org/qa/1155/way-to-change-what-cursor-looks-like-in-game-via-gdscript
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 
@@ -730,6 +735,22 @@ func _on_song_start_finished():
 
 func _on_barrel_button_pressed():
 	selectorIndex += 1
+	cardToBluff.get_node("TextLeft").hide()
+	cardToBluff.get_node("TextCenter").hide()
+	cardToBluff.get_node("TextRight").hide()
 	cardToBluff.get_node("TextLeft").text = cardSyms[selectorIndex  % 13]
 	cardToBluff.get_node("TextCenter").text = cardSyms[(selectorIndex + 1) % 13]
 	cardToBluff.get_node("TextRight").text = cardSyms[(selectorIndex + 2) % 13]
+	rotateTicks = 0
+	cardToBluff.get_node("RotateTimer").start()
+
+
+func _on_rotate_timer_timeout():
+	print(cardToBluff.get_node("BarrelButton").rotation)
+	cardToBluff.get_node("BarrelButton").rotation += PI/36
+	rotateTicks += 1
+	if rotateTicks == 9:
+		cardToBluff.get_node("TextLeft").show()
+		cardToBluff.get_node("TextCenter").show()
+		cardToBluff.get_node("TextRight").show()
+		cardToBluff.get_node("RotateTimer").stop()

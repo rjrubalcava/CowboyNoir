@@ -1,3 +1,5 @@
+Timer
+AnimationPlayer
 RichTextLabel
 Control
 TextureButton
@@ -10,7 +12,6 @@ Camera2D
 TextureRect
 Sprite2D
 TextEdit
-Timer
 AudioStreamPlayer2D
 Button
 OptionButton
