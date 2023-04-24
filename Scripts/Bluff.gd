@@ -747,7 +747,7 @@ func _on_barrel_button_pressed():
 
 func _on_rotate_timer_timeout():
 	print(cardToBluff.get_node("BarrelButton").rotation)
-	cardToBluff.get_node("BarrelButton").rotation += PI/36
+	cardToBluff.get_node("BarrelButton").rotation -= PI/36
 	rotateTicks += 1
 	if rotateTicks == 9:
 		cardToBluff.get_node("TextLeft").show()
