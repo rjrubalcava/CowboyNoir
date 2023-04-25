@@ -1,192 +1,228 @@
-fc8a56933c4b1c8d796fdb8f7a9f9475
-::res://::1681439604
-README.md::TextFile::-1::1680055907::0::1::::<><>::
-::res://Assets/::1680933384
-ButtonPlaceholder.png::CompressedTexture2D::5065615437381662818::1680055907::1680055907::1::::<><>::
-::res://Assets/Backgrounds/::1680242516
-IMG_0339.png::CompressedTexture2D::222450540307864517::1680242516::1680242516::1::::<><>::
-StartScreen.png::CompressedTexture2D::780856690298206722::1680055907::1680055907::1::::<><>::
-::res://Assets/BunnyHeadspace/::1680708394
-Background.png::CompressedTexture2D::2933423853071100240::1680242516::1680235473::1::::<><>::
-::res://Assets/BunnyHeadspace/Clothes Chest/::1680715450
-::res://Assets/BunnyHeadspace/Clothes Chest/Exterior/::1680242516
-clothes chest club card.png::CompressedTexture2D::6940181991346742139::1680242516::1680242516::1::::<><>::
-clothes chest diamond card.png::CompressedTexture2D::8281474179230784786::1680242516::1680242516::1::::<><>::
-clothes chest ext backdrop.png::CompressedTexture2D::8190181137354704670::1680242516::1680242516::1::::<><>::
-clothes chest ext screen mockup.png::CompressedTexture2D::5368015909742313214::1680242516::1680242516::1::::<><>::
-clothes chest heart card.png::CompressedTexture2D::2175224763259052179::1680242516::1680242516::1::::<><>::
-clothes chest spade card.png::CompressedTexture2D::9039328178549377529::1680242516::1680242516::1::::<><>::
-::res://Assets/BunnyHeadspace/Code drawer/::1680715455
-::res://Assets/BunnyHeadspace/Code drawer/Exterior/::1681313026
-Button1.png::CompressedTexture2D::8446187351990406675::1681312998::1681313026::1::::<><>::
-Buttons2.png::CompressedTexture2D::6586564660433709289::1681313004::1681313026::1::::<><>::
-Buttons3.png::CompressedTexture2D::5091290129887815651::1681313006::1681313026::1::::<><>::
-Buttons4.png::CompressedTexture2D::1309867209480290001::1681313007::1681313026::1::::<><>::
-code drawer back drop.png::CompressedTexture2D::5364344219728487272::1680242516::1680242516::1::::<><>::
-code drawer buttons.png::CompressedTexture2D::7622248767253891600::1681312812::1680882862::1::::<><>::
-code drawer drawer.png::CompressedTexture2D::133895351499226171::1680882808::1680882862::1::::<><>::
-code drawer mock up.png::CompressedTexture2D::3776064716755901394::1680242516::1680242516::1::::<><>::
-::res://Assets/BunnyHeadspace/Code drawer/Interior/::1680933277
-code drawer clubs card.png::CompressedTexture2D::376008922560789226::1680933224::1680933277::1::::<><>::
-code drawer hour hand.png::CompressedTexture2D::6473154095236229938::1680933241::1680933277::1::::<><>::
-code drawer interior backdrop.png::CompressedTexture2D::7795381022199349285::1680242516::1680242516::1::::<><>::
-code drawer interior mock up.png::CompressedTexture2D::8811369438918946437::1680242516::1680242516::1::::<><>::
-codedrawer locket.png::CompressedTexture2D::938485549486792614::1680933270::1680933277::1::::<><>::
-::res://Assets/BunnyHeadspace/inventoryStuff/::1680716539
-club card in invt.png::CompressedTexture2D::1917320754419091803::1680716004::1680716162::1::::<><>::
-diamond card in invt.png::CompressedTexture2D::637256424579910700::1680716042::1680716162::1::::<><>::
-frame.png::CompressedTexture2D::3124702729886417071::1680242517::1680242517::1::::<><>::
-heart card in invt.png::CompressedTexture2D::8002096452124812201::1680716074::1680716162::1::::<><>::
-hour hand in invt.png::CompressedTexture2D::8213536015564134220::1680716092::1680716162::1::::<><>::
-inventory box.png::CompressedTexture2D::2993482040122665544::1680716116::1680716162::1::::<><>::
-minute hand in invt.png::CompressedTexture2D::5906827041512250231::1680716136::1680716162::1::::<><>::
-spade card in invt.png::CompressedTexture2D::2544891380167170254::1680716155::1680716162::1::::<><>::
-::res://Assets/BunnyHeadspace/Newspaper/::1680708394
-newspaper close up.png::CompressedTexture2D::1417608128074839602::1680708394::1680350062::1::::<><>::
-newspaper screen mock up.png::CompressedTexture2D::4770803506925774921::1680242516::1680242516::1::::<><>::
-::res://Assets/BunnyHeadspace/Zoom out/::1680722643
-club vase.png::CompressedTexture2D::8405894499143548573::1680715650::1680715661::1::::<><>::
-code drawer.png::CompressedTexture2D::510086354133731751::1680715639::1680715661::1::::<><>::
-costume chest.png::CompressedTexture2D::5950765335212974632::1680715626::1680715661::1::::<><>::
-diamond drawer.png::CompressedTexture2D::7933050359532006318::1680715589::1680715661::1::::<><>::
-diamond rock.png::CompressedTexture2D::1025854488595702220::1680715607::1680715661::1::::<><>::
-gf clock.png::CompressedTexture2D::2914095860174769144::1680242516::1680242516::1::::<><>::
-ground and wall.png::CompressedTexture2D::5455156298646311656::1680242516::1680242516::1::::<><>::
-hearts card.png::CompressedTexture2D::3218506313152348750::1680715515::1680715661::1::::<><>::
-mirrordesk.png::CompressedTexture2D::5656704803347396658::1680715496::1680715662::1::::<><>::
-newspaper.png::CompressedTexture2D::6398939493142217099::1680715536::1680722643::1::::<><>::
-spade lamp.png::CompressedTexture2D::4485086458480280151::1680715559::1680715662::1::::<><>::
-the sun.png::CompressedTexture2D::7396428269985814144::1680242517::1680242517::1::::<><>::
-::res://Assets/BunnyTable/::1680241925
-Background.png::CompressedTexture2D::3469705220257149645::1680241925::1680241925::1::::<><>::
-Beam of Light.png::CompressedTexture2D::8495687926514929445::1680241925::1680241925::1::::<><>::
-Card on Table.png::CompressedTexture2D::6893268601411464292::1680241925::1680241925::1::::<><>::
-Cursor.png::CompressedTexture2D::9018090738365579434::1680241925::1680241925::1::::<><>::
-Empty Push Gauge.png::CompressedTexture2D::3359127618122596420::1680241925::1680241925::1::::<><>::
-Hand Down.png::CompressedTexture2D::226089234012895047::1680241925::1680241925::1::::<><>::
-Hand Up.png::CompressedTexture2D::3614245647330477164::1680241925::1680241925::1::::<><>::
-Jack Response Blank.png::CompressedTexture2D::7252868991814132823::1680241925::1680241925::1::::<><>::
-Jack Response.png::CompressedTexture2D::230947279155099098::1680241925::1680241925::1::::<><>::
-Level Four.png::CompressedTexture2D::5784364763193054313::1680241925::1680241925::1::::<><>::
-Level One.png::CompressedTexture2D::7526242669709006171::1680241925::1680241925::1::::<><>::
-Level Three.png::CompressedTexture2D::5011518052204194676::1680241925::1680241925::1::::<><>::
-Level Two.png::CompressedTexture2D::859545460741615788::1680241925::1680241925::1::::<><>::
-Neutral.png::CompressedTexture2D::6267555788833390258::1680241925::1680241925::1::::<><>::
-Opponent Response Blank.png::CompressedTexture2D::7658752781045757865::1680241925::1680241925::1::::<><>::
-Opponent Response.png::CompressedTexture2D::3310820393929174453::1680241925::1680241925::1::::<><>::
-Paper Texture Overlay.png::CompressedTexture2D::6437736417734959158::1680241925::1680241925::1::::<><>::
-Push Gauge 33.png::CompressedTexture2D::5284394125930002809::1680241925::1680241925::1::::<><>::
-Push Gauge.png::CompressedTexture2D::7419923604575323544::1680241925::1680241925::1::::<><>::
-Response 1 Hovered.png::CompressedTexture2D::5816247585100518141::1680241925::1680241925::1::::<><>::
-Response 1.png::CompressedTexture2D::3014057771457794898::1680241925::1680241925::1::::<><>::
-Response 2 Blank.png::CompressedTexture2D::8957558361202333426::1680241925::1680241925::1::::<><>::
-Response 2 Hovered Blank.png::CompressedTexture2D::2934845438271470586::1680241925::1680241925::1::::<><>::
-Response 2 Hovered.png::CompressedTexture2D::569380444822715620::1680241925::1680241925::1::::<><>::
-Response 2.png::CompressedTexture2D::9164723269200734882::1680241925::1680241925::1::::<><>::
-Response_Card_crop.png::CompressedTexture2D::5768445305432138458::1680241925::1680241925::1::::<><>::
-Response_hovered_Crop.png::CompressedTexture2D::5751118240402072094::1680241925::1680241925::1::::<><>::
-Table Textures.png::CompressedTexture2D::426822699576081072::1680241925::1680241925::1::::<><>::
-::res://Assets/Cards/::1680055907
-::res://Assets/Cards/Clubs/::1680055907
-c1.png::CompressedTexture2D::5971465954184123570::1680055907::1680055907::1::::<><>::
-c2.png::CompressedTexture2D::8797922069145250727::1680055907::1680055907::1::::<><>::
-c3.png::CompressedTexture2D::2609980216592597075::1680055907::1680055907::1::::<><>::
-c4.png::CompressedTexture2D::6797697386701264511::1680055907::1680055907::1::::<><>::
-c5.png::CompressedTexture2D::3074680852323002285::1680055907::1680055907::1::::<><>::
-c6.png::CompressedTexture2D::5498605559997636537::1680055907::1680055907::1::::<><>::
-c7.png::CompressedTexture2D::9002466816528280096::1680055907::1680055907::1::::<><>::
-c8.png::CompressedTexture2D::2410146477937327090::1680055907::1680055907::1::::<><>::
-c9.png::CompressedTexture2D::5284668519592841249::1680055907::1680055907::1::::<><>::
-c10.png::CompressedTexture2D::7164991743308491134::1680055907::1680055907::1::::<><>::
-c11.png::CompressedTexture2D::4786433232115399210::1680055907::1680055907::1::::<><>::
-c12.png::CompressedTexture2D::7491346982929300659::1680055907::1680055907::1::::<><>::
-c13.png::CompressedTexture2D::6060799684549590496::1680055907::1680055907::1::::<><>::
-::res://Assets/Cards/Diamonds/::1680055907
-d1.png::CompressedTexture2D::4556939616203114809::1680055907::1680055907::1::::<><>::
-d2.png::CompressedTexture2D::1242861601491217001::1680055907::1680055907::1::::<><>::
-d3.png::CompressedTexture2D::8630954720191962953::1680055907::1680055907::1::::<><>::
-d4.png::CompressedTexture2D::8003969100456558248::1680055907::1680055907::1::::<><>::
-d5.png::CompressedTexture2D::5425123956793727175::1680055907::1680055907::1::::<><>::
-d6.png::CompressedTexture2D::4543678091916454351::1680055907::1680055907::1::::<><>::
-d7.png::CompressedTexture2D::1646852170432750494::1680055907::1680055907::1::::<><>::
-d8.png::CompressedTexture2D::5229246112033187446::1680055907::1680055907::1::::<><>::
-d9.png::CompressedTexture2D::8326233208826568481::1680055907::1680055907::1::::<><>::
-d10.png::CompressedTexture2D::391116329161780929::1680055907::1680055907::1::::<><>::
-d11.png::CompressedTexture2D::7789383336773642002::1680055907::1680055907::1::::<><>::
-d12.png::CompressedTexture2D::8856197140743017644::1680055907::1680055907::1::::<><>::
-d13.png::CompressedTexture2D::3497541271104146569::1680055907::1680055907::1::::<><>::
-::res://Assets/Cards/Hearts/::1680055907
-h1.png::CompressedTexture2D::2145654240367230112::1680055907::1680055907::1::::<><>::
-h2.png::CompressedTexture2D::8210133617068663467::1680055907::1680055907::1::::<><>::
-h3.png::CompressedTexture2D::4712348963123907033::1680055907::1680055907::1::::<><>::
-h4.png::CompressedTexture2D::5343022952552107032::1680055907::1680055907::1::::<><>::
-h5.png::CompressedTexture2D::3158171471695826656::1680055907::1680055907::1::::<><>::
-h6.png::CompressedTexture2D::3843648219031792466::1680055907::1680055907::1::::<><>::
-h7.png::CompressedTexture2D::8111112462757008168::1680055907::1680055907::1::::<><>::
-h8.png::CompressedTexture2D::6897589231093886103::1680055907::1680055907::1::::<><>::
-h9.png::CompressedTexture2D::8869488285114027764::1680055907::1680055907::1::::<><>::
-h10.png::CompressedTexture2D::5591800759217637696::1680055907::1680055907::1::::<><>::
-h11.png::CompressedTexture2D::8506550673907401978::1680055907::1680055907::1::::<><>::
-h12.png::CompressedTexture2D::8300787877465098387::1680055907::1680055907::1::::<><>::
-h13.png::CompressedTexture2D::6759477738093402098::1680055907::1680055907::1::::<><>::
-::res://Assets/Cards/Spades/::1680055907
-s1.png::CompressedTexture2D::638905932514922454::1680055907::1680055907::1::::<><>::
-s2.png::CompressedTexture2D::7474858493406980769::1680055907::1680055907::1::::<><>::
-s3.png::CompressedTexture2D::3101567332750311692::1680055907::1680055907::1::::<><>::
-s4.png::CompressedTexture2D::3863229498867683110::1680055907::1680055907::1::::<><>::
-s5.png::CompressedTexture2D::5934524397296484563::1680055907::1680055907::1::::<><>::
-s6.png::CompressedTexture2D::1006607580081547321::1680055907::1680055907::1::::<><>::
-s7.png::CompressedTexture2D::2277444316375788419::1680055907::1680055907::1::::<><>::
-s8.png::CompressedTexture2D::3399575328027186527::1680055907::1680055907::1::::<><>::
-s9.png::CompressedTexture2D::1702448532272612935::1680055907::1680055907::1::::<><>::
-s10.png::CompressedTexture2D::9035890030801511330::1680055907::1680055907::1::::<><>::
-s11.png::CompressedTexture2D::5535800584594017629::1680055907::1680055907::1::::<><>::
-s12.png::CompressedTexture2D::1480714630044365294::1680055907::1680055907::1::::<><>::
-s13.png::CompressedTexture2D::2868209342063853857::1680055907::1680055907::1::::<><>::
-::res://Assets/Cards/Z_RNDM/::1680055907
-::res://Assets/Cards/Z_RNDM/Backs/::1680055907
-2B.png::CompressedTexture2D::6634326974955757495::1680055907::1680055907::1::::<><>::
-B.png::CompressedTexture2D::2025824092795080647::1680055907::1680055907::1::::<><>::
-::res://Assets/Cards/Z_RNDM/Jokers/::1680055907
-JB.png::CompressedTexture2D::3591033291941912363::1680055907::1680055907::1::::<><>::
-JR.png::CompressedTexture2D::8207952097853345231::1680055907::1680055907::1::::<><>::
-::res://Assets/Fonts/::1680241925
-::res://Assets/Fonts/maiden-orange-font/::1680241925
-info.txt::TextFile::-1::1680241925::0::1::::<><>::
-MaidenOrange-BXXV.ttf::FontFile::3472624317046211783::1680241925::1680241925::1::::<><>::
-::res://Assets/Fonts/maiden-orange-font/misc/::1680241925
-LICENSE.txt::TextFile::-1::1680241925::0::1::::<><>::
-::res://Assets/Shaders/::1680241925
-BluffTable.gdshader::Shader::-1::1680241925::0::1::::<><>::
-::res://Groups/::1680055907
-NumOfCPUS.tres::ButtonGroup::-1::1680055907::0::1::::<><>::
-::res://Scenes/::1681408696
-Bluff.tscn::PackedScene::2980733325626427760::1681396538::0::1::::<><>::res://Scripts/Bluff.gd<>res://Assets/Shaders/BluffTable.gdshader<>uid://bpo0sj8ob4gft<>uid://cvkby0y3wty4a<>uid://gc0yb4w8nr1a<>uid://dtbm0egjugty0<>uid://bn4glukot66r5
-BluffTable.gdshader::Shader::-1::1680746758::0::1::::<><>::
-BunnyHeadspace.tscn::PackedScene::5334628766814712323::1681408696::0::1::::<><>::uid://bh18cd86aasdc<>res://Scripts/BunnyHeadspace.gd<>uid://cjyrvlcws68lw<>uid://ou6w5vem52dk<>uid://bhruy6ojupxnk<>uid://bl4clgbd0bkk1<>uid://cmufdprq4ktta<>uid://dr044bs16d6gn<>uid://hjdbvf5xo8yt<>uid://cq1uiaod6361i<>uid://dla3ger8ohykc<>uid://biwchg5puqcqa<>uid://bkrvnro3vqqa6<>uid://b45uyo2p1m1y6<>uid://dmajmhrwb8vnd<>uid://ddm5dfqj2jlfs<>uid://jcxrxmjl4ubc<>uid://2k080temt43x<>uid://bci08vshyoahq<>uid://dpax0dk10g40g<>uid://cqfktwup771bn<>uid://cxfxul6u8qrdr
-Card.tscn::PackedScene::2836139679319454143::1681396538::0::1::::<><>::res://Scripts/Card.gd
-CodeDrawerChest.tscn::PackedScene::4322969909009996921::1681408696::0::1::::<><>::res://Scripts/CodeDrawerChest.gd<>uid://cior73gkqvjvs<>uid://b54ib3hbrgud<>uid://dslnqbjcepvw2<>uid://c03t003utl1dt<>uid://cesi2mdx4lyq2<>uid://swrk6y3ogoeb<>uid://bpqfu6dwnng44
-CodeDrawerVanity.tscn::PackedScene::2942983834760539003::1681408696::0::1::::<><>::res://Scripts/CodeDrawer.gd<>uid://cior73gkqvjvs<>uid://b54ib3hbrgud<>uid://dslnqbjcepvw2<>uid://c03t003utl1dt<>uid://cesi2mdx4lyq2<>uid://swrk6y3ogoeb<>uid://bpqfu6dwnng44
-DialogueBox.tscn::PackedScene::1429790021468852555::1681396538::0::1::::<><>::uid://dhd7slqpr7ebh<>uid://bpqfu6dwnng44
-DialogueOption.tscn::PackedScene::117371660240480441::1681396538::0::1::::<><>::res://Scripts/DialogueOption.gd<>uid://cogjpl23ffkhm<>uid://bpqfu6dwnng44<>uid://cn65cvhd023be
-Global.tscn::PackedScene::599049541030276570::1681396538::0::1::::<><>::res://Scripts/Global.gd
-MainScene.tscn::PackedScene::3118517110821397835::1681396538::0::1::::<><>::res://Scripts/MainScene.gd
-OpenDrawer.tscn::PackedScene::7597598875501020536::1681408696::0::1::::<><>::res://Scripts/OpenDrawer.gd<>uid://djce10hh6ewmf<>uid://fme2uxug5bvm<>uid://nmuyqgnbevlm<>uid://cyhv5w7ohrxa5
-Start.tscn::PackedScene::8964634616166242761::1681396538::0::1::::<><>::res://Scripts/Start.gd<>uid://leiuirv5rc6u
-::res://Scripts/::1681400194
-Bluff.gd::GDScript::-1::1680708414::0::1::::<>Node2D<>::
-BunnyHeadspace.gd::GDScript::-1::1681400153::0::1::::<>Control<>::
-Card.gd::GDScript::-1::1680708414::0::1::::<>Sprite2D<>::
-Clock.gd::GDScript::-1::1681016981::0::1::::<>TextureRect<>::
-CodeDrawer.gd::GDScript::-1::1681400168::0::1::::<>Control<>::
-CodeDrawerChest.gd::GDScript::-1::1681400194::0::1::::<>Control<>::
-DialogueOption.gd::GDScript::-1::1680708414::0::1::::<>Control<>::
-Global.gd::GDScript::-1::1680708414::0::1::::<>Node2D<>::
-MainScene.gd::GDScript::-1::1680708414::0::1::::<>Node2D<>::
-Newspaper.gd::GDScript::-1::1681018238::0::1::::<>TextureRect<>::
-OpenDrawer.gd::GDScript::-1::1681398212::0::1::::<>Control<>::
-Start.gd::GDScript::-1::1680708414::0::1::::<>Control<>::
-TheSun.gd::GDScript::-1::1681021977::0::1::::<>TextureRect<>::
-::res://Z-RNDM/::1681408696
-default_env.tres::Environment::797910927413459770::1681408696::0::1::::<><>::
-icon.png::CompressedTexture2D::8149539214728030452::1680055907::1680055907::1::::<><>::
+2a60927148abd1d33b818b535e306557
+::res://::1681453527
+README.md::TextFile::-1::1680489682::0::1::::<><>::
+::res://Assets/::1681453436
+ButtonPlaceholder.png::CompressedTexture2D::5065615437381662818::1680489682::1680489682::1::::<><>::
+::res://Assets/Backgrounds/::1680489682
+IMG_0339.png::CompressedTexture2D::222450540307864517::1680489682::1680489682::1::::<><>::
+StartScreen.png::CompressedTexture2D::780856690298206722::1680489682::1680489682::1::::<><>::
+::res://Assets/BunnyHeadspace/::1681453436
+Background.png::CompressedTexture2D::2933423853071100240::1680489682::1680489682::1::::<><>::
+::res://Assets/BunnyHeadspace/Clothes Chest/::1681453436
+::res://Assets/BunnyHeadspace/Clothes Chest/Exterior/::1680489682
+clothes chest club card.png::CompressedTexture2D::6940181991346742139::1680489682::1680489682::1::::<><>::
+clothes chest diamond card.png::CompressedTexture2D::8281474179230784786::1680489682::1680489682::1::::<><>::
+clothes chest ext backdrop.png::CompressedTexture2D::8190181137354704670::1680489682::1680489682::1::::<><>::
+clothes chest ext screen mockup.png::CompressedTexture2D::5368015909742313214::1680489682::1680489682::1::::<><>::
+clothes chest heart card.png::CompressedTexture2D::2175224763259052179::1680489682::1680489682::1::::<><>::
+clothes chest spade card.png::CompressedTexture2D::9039328178549377529::1680489682::1680489682::1::::<><>::
+::res://Assets/BunnyHeadspace/Code drawer/::1681453436
+::res://Assets/BunnyHeadspace/Code drawer/Exterior/::1681453436
+Button1.png::CompressedTexture2D::8446187351990406675::1681453436::1681453436::1::::<><>::
+Buttons2.png::CompressedTexture2D::6586564660433709289::1681453436::1681453436::1::::<><>::
+Buttons3.png::CompressedTexture2D::5091290129887815651::1681453436::1681453436::1::::<><>::
+Buttons4.png::CompressedTexture2D::1309867209480290001::1681453436::1681453436::1::::<><>::
+code drawer back drop.png::CompressedTexture2D::5364344219728487272::1680489682::1680489682::1::::<><>::
+code drawer buttons.png::CompressedTexture2D::7622248767253891600::1681453436::1680489682::1::::<><>::
+code drawer drawer.png::CompressedTexture2D::133895351499226171::1681453436::1680489682::1::::<><>::
+code drawer mock up.png::CompressedTexture2D::3776064716755901394::1680489682::1680489682::1::::<><>::
+::res://Assets/BunnyHeadspace/Code drawer/Interior/::1681453436
+code drawer clubs card.png::CompressedTexture2D::376008922560789226::1681453436::1680489682::1::::<><>::
+code drawer hour hand.png::CompressedTexture2D::6473154095236229938::1681453436::1680489682::1::::<><>::
+code drawer interior backdrop.png::CompressedTexture2D::7795381022199349285::1680489682::1680489682::1::::<><>::
+code drawer interior mock up.png::CompressedTexture2D::8811369438918946437::1680489682::1680489682::1::::<><>::
+codedrawer locket.png::CompressedTexture2D::938485549486792614::1681453436::1680489682::1::::<><>::
+::res://Assets/BunnyHeadspace/inventoryStuff/::1681453436
+club card in invt.png::CompressedTexture2D::1917320754419091803::1681453436::1680489682::1::::<><>::
+diamond card in invt.png::CompressedTexture2D::637256424579910700::1681453436::1680489682::1::::<><>::
+frame.png::CompressedTexture2D::3124702729886417071::1680489682::1680489682::1::::<><>::
+heart card in invt.png::CompressedTexture2D::8002096452124812201::1681453436::1680489682::1::::<><>::
+hour hand in invt.png::CompressedTexture2D::8213536015564134220::1681453436::1680489682::1::::<><>::
+inventory box.png::CompressedTexture2D::2993482040122665544::1681453436::1680489682::1::::<><>::
+minute hand in invt.png::CompressedTexture2D::5906827041512250231::1681453436::1680489682::1::::<><>::
+spade card in invt.png::CompressedTexture2D::2544891380167170254::1681453436::1680489682::1::::<><>::
+::res://Assets/BunnyHeadspace/Newspaper/::1681453436
+newspaper close up.png::CompressedTexture2D::1417608128074839602::1681453436::1680489682::1::::<><>::
+newspaper screen mock up.png::CompressedTexture2D::4770803506925774921::1680489682::1680489682::1::::<><>::
+::res://Assets/BunnyHeadspace/Zoom out/::1681453436
+club vase.png::CompressedTexture2D::8405894499143548573::1681453436::1680489682::1::::<><>::
+code drawer.png::CompressedTexture2D::510086354133731751::1681453436::1680489682::1::::<><>::
+costume chest.png::CompressedTexture2D::5950765335212974632::1681453436::1680489682::1::::<><>::
+diamond drawer.png::CompressedTexture2D::7933050359532006318::1681453436::1680489682::1::::<><>::
+diamond rock.png::CompressedTexture2D::1025854488595702220::1681453436::1680489682::1::::<><>::
+gf clock.png::CompressedTexture2D::2914095860174769144::1680489682::1680489682::1::::<><>::
+ground and wall.png::CompressedTexture2D::5455156298646311656::1680489682::1680489682::1::::<><>::
+hearts card.png::CompressedTexture2D::3218506313152348750::1681453436::1680489682::1::::<><>::
+mirrordesk.png::CompressedTexture2D::5656704803347396658::1681453436::1680489682::1::::<><>::
+newspaper.png::CompressedTexture2D::6398939493142217099::1681453436::1680489682::1::::<><>::
+spade lamp.png::CompressedTexture2D::4485086458480280151::1681453436::1680489682::1::::<><>::
+the sun.png::CompressedTexture2D::7396428269985814144::1680489682::1680489682::1::::<><>::
+::res://Assets/BunnyTable/::1681453501
+Amity Base Expression.png::CompressedTexture2D::3496416958002505223::1681453501::1681453501::1::::<><>::
+Amity Expression 2.png::CompressedTexture2D::3446177884514118059::1681453501::1681453501::1::::<><>::
+Amity Expression 3.png::CompressedTexture2D::7139682610125805371::1681453501::1681453501::1::::<><>::
+Amity Expression 4.png::CompressedTexture2D::3628760983239116901::1681453501::1681453501::1::::<><>::
+Amity Expression BREAK.png::CompressedTexture2D::6276837582206705434::1681453501::1681453501::1::::<><>::
+Amity Text Boil 2.png::CompressedTexture2D::209795472200480941::1681453501::1681453501::1::::<><>::
+Amity Text With Boil.png::CompressedTexture2D::2479152112727192250::1681453501::1681453501::1::::<><>::
+Background Bottom Layer.png::CompressedTexture2D::4959836606816384976::1681453501::1681453501::1::::<><>::
+Background Middle Layer.png::CompressedTexture2D::2053497878672321760::1681453501::1681453501::1::::<><>::
+Background Top Layer.png::CompressedTexture2D::6627038677512809153::1681453501::1681453501::1::::<><>::
+Background.png::CompressedTexture2D::3469705220257149645::1680489682::1680489682::1::::<><>::
+Beam of Light.png::CompressedTexture2D::8495687926514929445::1680489682::1680489682::1::::<><>::
+Card on Table.png::CompressedTexture2D::6893268601411464292::1680489682::1680489682::1::::<><>::
+Cursor.png::CompressedTexture2D::9018090738365579434::1680489682::1680489682::1::::<><>::
+Cursor_Final.png::CompressedTexture2D::1220825986946819071::1681453501::1681453501::1::::<><>::
+Empty Push Gauge.png::CompressedTexture2D::3359127618122596420::1680489682::1680489682::1::::<><>::
+Gun Chamber.png::CompressedTexture2D::856636053243879738::1681453501::1681453501::1::::<><>::
+Hand Down.png::CompressedTexture2D::226089234012895047::1680489682::1680489682::1::::<><>::
+Hand Up.png::CompressedTexture2D::3614245647330477164::1680489682::1680489682::1::::<><>::
+Jack Response Blank.png::CompressedTexture2D::7252868991814132823::1680489682::1680489682::1::::<><>::
+Jack Response.png::CompressedTexture2D::230947279155099098::1680489682::1680489682::1::::<><>::
+Level Four.png::CompressedTexture2D::5784364763193054313::1680489682::1680489682::1::::<><>::
+Level One.png::CompressedTexture2D::7526242669709006171::1680489682::1680489682::1::::<><>::
+Level Three.png::CompressedTexture2D::5011518052204194676::1680489682::1680489682::1::::<><>::
+Level Two.png::CompressedTexture2D::859545460741615788::1680489682::1680489682::1::::<><>::
+Neutral.png::CompressedTexture2D::6267555788833390258::1680489682::1680489682::1::::<><>::
+Opponent Response Blank.png::CompressedTexture2D::7658752781045757865::1680489682::1680489682::1::::<><>::
+Opponent Response.png::CompressedTexture2D::3310820393929174453::1680489682::1680489682::1::::<><>::
+Paper Texture Overlay.png::CompressedTexture2D::6437736417734959158::1680489682::1680489682::1::::<><>::
+Push Gauge 33.png::CompressedTexture2D::5284394125930002809::1680489682::1680489682::1::::<><>::
+Push Gauge.png::CompressedTexture2D::7419923604575323544::1680489682::1680489682::1::::<><>::
+Response 1 Hovered.png::CompressedTexture2D::5816247585100518141::1680489682::1680489682::1::::<><>::
+Response 1.png::CompressedTexture2D::3014057771457794898::1680489682::1680489682::1::::<><>::
+Response 2 Blank.png::CompressedTexture2D::8957558361202333426::1680489682::1680489682::1::::<><>::
+Response 2 Hovered Blank.png::CompressedTexture2D::2934845438271470586::1680489682::1680489682::1::::<><>::
+Response 2 Hovered.png::CompressedTexture2D::569380444822715620::1680489682::1680489682::1::::<><>::
+Response 2.png::CompressedTexture2D::9164723269200734882::1680489682::1680489682::1::::<><>::
+Response_Card_A_Base.png::CompressedTexture2D::8803456553996808797::1681453501::1681453501::1::::<><>::
+Response_Card_A_Hovered.png::CompressedTexture2D::5652911690738139028::1681453501::1681453501::1::::<><>::
+Response_Card_B_Base.png::CompressedTexture2D::7091994055832607378::1681453501::1681453501::1::::<><>::
+Response_Card_B_Hovered.png::CompressedTexture2D::9057427970815003204::1681453501::1681453501::1::::<><>::
+Response_Card_crop.png::CompressedTexture2D::5768445305432138458::1680489682::1680489682::1::::<><>::
+Response_hovered_Crop.png::CompressedTexture2D::5751118240402072094::1680489682::1680489682::1::::<><>::
+Table Textures.png::CompressedTexture2D::426822699576081072::1680489682::1680489682::1::::<><>::
+::res://Assets/Cards/::1680489682
+::res://Assets/Cards/Clubs/::1680489682
+c1.png::CompressedTexture2D::5971465954184123570::1680489682::1680489682::1::::<><>::
+c2.png::CompressedTexture2D::8797922069145250727::1680489682::1680489682::1::::<><>::
+c3.png::CompressedTexture2D::2609980216592597075::1680489682::1680489682::1::::<><>::
+c4.png::CompressedTexture2D::6797697386701264511::1680489682::1680489682::1::::<><>::
+c5.png::CompressedTexture2D::3074680852323002285::1680489682::1680489682::1::::<><>::
+c6.png::CompressedTexture2D::5498605559997636537::1680489682::1680489682::1::::<><>::
+c7.png::CompressedTexture2D::9002466816528280096::1680489682::1680489682::1::::<><>::
+c8.png::CompressedTexture2D::2410146477937327090::1680489682::1680489682::1::::<><>::
+c9.png::CompressedTexture2D::5284668519592841249::1680489682::1680489682::1::::<><>::
+c10.png::CompressedTexture2D::7164991743308491134::1680489682::1680489682::1::::<><>::
+c11.png::CompressedTexture2D::4786433232115399210::1680489682::1680489682::1::::<><>::
+c12.png::CompressedTexture2D::7491346982929300659::1680489682::1680489682::1::::<><>::
+c13.png::CompressedTexture2D::6060799684549590496::1680489682::1680489682::1::::<><>::
+::res://Assets/Cards/Diamonds/::1680489682
+d1.png::CompressedTexture2D::4556939616203114809::1680489682::1680489682::1::::<><>::
+d2.png::CompressedTexture2D::1242861601491217001::1680489682::1680489682::1::::<><>::
+d3.png::CompressedTexture2D::8630954720191962953::1680489682::1680489682::1::::<><>::
+d4.png::CompressedTexture2D::8003969100456558248::1680489682::1680489682::1::::<><>::
+d5.png::CompressedTexture2D::5425123956793727175::1680489682::1680489682::1::::<><>::
+d6.png::CompressedTexture2D::4543678091916454351::1680489682::1680489682::1::::<><>::
+d7.png::CompressedTexture2D::1646852170432750494::1680489682::1680489682::1::::<><>::
+d8.png::CompressedTexture2D::5229246112033187446::1680489682::1680489682::1::::<><>::
+d9.png::CompressedTexture2D::8326233208826568481::1680489682::1680489682::1::::<><>::
+d10.png::CompressedTexture2D::391116329161780929::1680489682::1680489682::1::::<><>::
+d11.png::CompressedTexture2D::7789383336773642002::1680489682::1680489682::1::::<><>::
+d12.png::CompressedTexture2D::8856197140743017644::1680489682::1680489682::1::::<><>::
+d13.png::CompressedTexture2D::3497541271104146569::1680489682::1680489682::1::::<><>::
+::res://Assets/Cards/Hearts/::1680489682
+h1.png::CompressedTexture2D::2145654240367230112::1680489682::1680489682::1::::<><>::
+h2.png::CompressedTexture2D::8210133617068663467::1680489682::1680489682::1::::<><>::
+h3.png::CompressedTexture2D::4712348963123907033::1680489682::1680489682::1::::<><>::
+h4.png::CompressedTexture2D::5343022952552107032::1680489682::1680489682::1::::<><>::
+h5.png::CompressedTexture2D::3158171471695826656::1680489682::1680489682::1::::<><>::
+h6.png::CompressedTexture2D::3843648219031792466::1680489682::1680489682::1::::<><>::
+h7.png::CompressedTexture2D::8111112462757008168::1680489682::1680489682::1::::<><>::
+h8.png::CompressedTexture2D::6897589231093886103::1680489682::1680489682::1::::<><>::
+h9.png::CompressedTexture2D::8869488285114027764::1680489682::1680489682::1::::<><>::
+h10.png::CompressedTexture2D::5591800759217637696::1680489682::1680489682::1::::<><>::
+h11.png::CompressedTexture2D::8506550673907401978::1680489682::1680489682::1::::<><>::
+h12.png::CompressedTexture2D::8300787877465098387::1680489682::1680489682::1::::<><>::
+h13.png::CompressedTexture2D::6759477738093402098::1680489682::1680489682::1::::<><>::
+::res://Assets/Cards/Spades/::1680489682
+s1.png::CompressedTexture2D::638905932514922454::1680489682::1680489682::1::::<><>::
+s2.png::CompressedTexture2D::7474858493406980769::1680489682::1680489682::1::::<><>::
+s3.png::CompressedTexture2D::3101567332750311692::1680489682::1680489682::1::::<><>::
+s4.png::CompressedTexture2D::3863229498867683110::1680489682::1680489682::1::::<><>::
+s5.png::CompressedTexture2D::5934524397296484563::1680489682::1680489682::1::::<><>::
+s6.png::CompressedTexture2D::1006607580081547321::1680489682::1680489682::1::::<><>::
+s7.png::CompressedTexture2D::2277444316375788419::1680489682::1680489682::1::::<><>::
+s8.png::CompressedTexture2D::3399575328027186527::1680489682::1680489682::1::::<><>::
+s9.png::CompressedTexture2D::1702448532272612935::1680489682::1680489682::1::::<><>::
+s10.png::CompressedTexture2D::9035890030801511330::1680489682::1680489682::1::::<><>::
+s11.png::CompressedTexture2D::5535800584594017629::1680489682::1680489682::1::::<><>::
+s12.png::CompressedTexture2D::1480714630044365294::1680489682::1680489682::1::::<><>::
+s13.png::CompressedTexture2D::2868209342063853857::1680489682::1680489682::1::::<><>::
+::res://Assets/Cards/Z_RNDM/::1680489682
+::res://Assets/Cards/Z_RNDM/Backs/::1680489682
+2B.png::CompressedTexture2D::6634326974955757495::1680489682::1680489682::1::::<><>::
+B.png::CompressedTexture2D::2025824092795080647::1680489682::1680489682::1::::<><>::
+::res://Assets/Cards/Z_RNDM/Jokers/::1680489682
+JB.png::CompressedTexture2D::3591033291941912363::1680489682::1680489682::1::::<><>::
+JR.png::CompressedTexture2D::8207952097853345231::1680489682::1680489682::1::::<><>::
+::res://Assets/Fonts/::1680489682
+::res://Assets/Fonts/maiden-orange-font/::1680489682
+info.txt::TextFile::-1::1680489682::0::1::::<><>::
+MaidenOrange-BXXV.ttf::FontFile::3472624317046211783::1680489682::1680489682::1::::<><>::
+::res://Assets/Fonts/maiden-orange-font/misc/::1680489682
+LICENSE.txt::TextFile::-1::1680489682::0::1::::<><>::
+::res://Assets/SFX/::1681453437
+click.wav::AudioStreamWAV::4026376881997781456::1680489682::1680489682::1::::<><>::
+::res://Assets/SFX/Cards shuffle vars/::1681453436
+Card_dealt_1_1.wav::AudioStreamWAV::7733552067780577801::1681453436::1681453436::1::::<><>::
+Card_dealt_1_2.wav::AudioStreamWAV::8750713113882784930::1681453436::1681453436::1::::<><>::
+Card_dealt_1_3.wav::AudioStreamWAV::7465050831673293091::1681453436::1681453436::1::::<><>::
+Card_dealt_1_4.wav::AudioStreamWAV::962327397479828294::1681453436::1681453436::1::::<><>::
+Card_dealt_1_5.wav::AudioStreamWAV::7148848485720414174::1681453436::1681453436::1::::<><>::
+Card_dealt_1_6.wav::AudioStreamWAV::3113535766579574335::1681453436::1681453436::1::::<><>::
+Card_dealt_1_7.wav::AudioStreamWAV::4325055958694548665::1681453436::1681453436::1::::<><>::
+Card_dealt_1_8.wav::AudioStreamWAV::5940421593350799981::1681453436::1681453436::1::::<><>::
+::res://Assets/SFX/chips_clack_variants/::1681453437
+chips_clack_2_1.wav::AudioStreamWAV::6920327774211504502::1681453437::1681453437::1::::<><>::
+chips_clack_2_2.wav::AudioStreamWAV::5074158870675459335::1681453437::1681453437::1::::<><>::
+chips_clack_2_3.wav::AudioStreamWAV::9135178033846760667::1681453437::1681453437::1::::<><>::
+::res://Assets/SFX/Songs/::1681453437
+TDYN_wind_interlude.wav::AudioStreamWAV::8484850084386931279::1681453437::1681453437::1::::<><>::
+::res://Assets/SFX/Songs/Jazz_rough_parts/::1681453437
+jazz_rough_loopable.wav::AudioStreamWAV::3351931508712739838::1681453437::1681453437::1::::<><>::
+jazz_rough_start.wav::AudioStreamWAV::9185057587092471159::1681453437::1681453437::1::::<><>::
+::res://Assets/Shaders/::1680489682
+BluffTable.gdshader::Shader::-1::1680489682::0::1::::<><>::
+::res://Groups/::1680489682
+NumOfCPUS.tres::ButtonGroup::-1::1680489682::0::1::::<><>::
+::res://Scenes/::1681453501
+Bluff.tscn::PackedScene::2980733325626427760::1681453501::0::1::::<><>::res://Scripts/Bluff.gd<>res://Assets/Shaders/BluffTable.gdshader<>uid://ccwt1wvcln5yq<>uid://4iy2sn5g6prk<>uid://bp2xqg184brch<>uid://c1ogmg1eiatsr<>uid://dtbm0egjugty0<>uid://bxmn3r4qq71ua<>uid://c5ui11g0fy5y5<>uid://cej7wjqgmmlhn<>uid://d3ffbu77o3x68<>uid://d34ks6k5uwthn<>uid://bn0x27q0drvgg
+BluffTable.gdshader::Shader::-1::1681451773::0::1::::<><>::
+BunnyHeadspace.tscn::PackedScene::5334628766814712323::1681453437::0::1::::<><>::uid://bh18cd86aasdc<>res://Scripts/BunnyHeadspace.gd<>uid://cjyrvlcws68lw<>uid://ou6w5vem52dk<>uid://bhruy6ojupxnk<>uid://bl4clgbd0bkk1<>uid://cmufdprq4ktta<>uid://dr044bs16d6gn<>uid://hjdbvf5xo8yt<>uid://cq1uiaod6361i<>uid://dla3ger8ohykc<>uid://biwchg5puqcqa<>uid://bkrvnro3vqqa6<>uid://b45uyo2p1m1y6<>uid://dmajmhrwb8vnd<>uid://ddm5dfqj2jlfs<>uid://jcxrxmjl4ubc<>uid://2k080temt43x<>uid://bci08vshyoahq<>uid://dpax0dk10g40g<>uid://cqfktwup771bn<>uid://cxfxul6u8qrdr
+Card.tscn::PackedScene::2836139679319454143::1681453437::0::1::::<><>::res://Scripts/Card.gd<>uid://diggqcn3jff1j<>uid://dww574i688rg1<>uid://demekc2hgn2rn<>uid://nyfnky75n5ag<>uid://c837qws5inpdu<>uid://cqvt41l6t48yb
+CodeDrawerChest.tscn::PackedScene::4322969909009996921::1681453437::0::1::::<><>::res://Scripts/CodeDrawerChest.gd<>uid://cior73gkqvjvs<>uid://b54ib3hbrgud<>uid://dslnqbjcepvw2<>uid://c03t003utl1dt<>uid://cesi2mdx4lyq2<>uid://swrk6y3ogoeb<>uid://bpqfu6dwnng44
+CodeDrawerVanity.tscn::PackedScene::2942983834760539003::1681453437::0::1::::<><>::res://Scripts/CodeDrawer.gd<>uid://cior73gkqvjvs<>uid://b54ib3hbrgud<>uid://dslnqbjcepvw2<>uid://c03t003utl1dt<>uid://cesi2mdx4lyq2<>uid://swrk6y3ogoeb<>uid://bpqfu6dwnng44
+DialogueBox.tscn::PackedScene::1429790021468852555::1681453501::0::1::::<><>::uid://c8vkhxxkyvrx<>uid://bpqfu6dwnng44
+DialogueOption.tscn::PackedScene::117371660240480441::1681453501::0::1::::<><>::res://Scripts/DialogueOption.gd<>uid://dxopv4ubc2kxp<>uid://bpqfu6dwnng44<>uid://cmskvn4uinm3e<>uid://bxmn3r4qq71ua<>uid://c8boduqd2ory5<>uid://d2bqrr1g4wsfs
+Global.tscn::PackedScene::599049541030276570::1681453192::0::1::::<><>::res://Scripts/Global.gd
+MainScene.tscn::PackedScene::3118517110821397835::1681450396::0::1::::<><>::res://Scripts/MainScene.gd
+OpenDrawer.tscn::PackedScene::7597598875501020536::1681453437::0::1::::<><>::res://Scripts/OpenDrawer.gd<>uid://djce10hh6ewmf<>uid://fme2uxug5bvm<>uid://nmuyqgnbevlm<>uid://cyhv5w7ohrxa5
+Start.tscn::PackedScene::2493575978751678625::1681453437::0::1::::<><>::res://Scripts/Start.gd<>uid://leiuirv5rc6u<>uid://bxmn3r4qq71ua<>uid://ds5eig4uxb42n
+::res://Scripts/::1681453501
+Bluff.gd::GDScript::-1::1681453501::0::1::::<>Node2D<>::
+BunnyHeadspace.gd::GDScript::-1::1681453437::0::1::::<>Control<>::
+Card.gd::GDScript::-1::1681453437::0::1::::<>Sprite2D<>::
+Clock.gd::GDScript::-1::1681453437::0::1::::<>TextureRect<>::
+CodeDrawer.gd::GDScript::-1::1681453437::0::1::::<>Control<>::
+CodeDrawerChest.gd::GDScript::-1::1681453437::0::1::::<>Control<>::
+DialogueOption.gd::GDScript::-1::1681453501::0::1::::<>Control<>::
+Global.gd::GDScript::-1::1681453501::0::1::::<>Node2D<>::
+MainScene.gd::GDScript::-1::1681451419::0::1::::<>Node2D<>::
+Newspaper.gd::GDScript::-1::1681453437::0::1::::<>TextureRect<>::
+OpenDrawer.gd::GDScript::-1::1681453437::0::1::::<>Control<>::
+Start.gd::GDScript::-1::1680489682::0::1::::<>Control<>::
+TheSun.gd::GDScript::-1::1681453437::0::1::::<>TextureRect<>::
+::res://Z-RNDM/::1681453192
+default_env.tres::Environment::797910927413459770::1681453192::0::1::::<><>::
+icon.png::CompressedTexture2D::8149539214728030452::1680489682::1680489682::1::::<><>::
