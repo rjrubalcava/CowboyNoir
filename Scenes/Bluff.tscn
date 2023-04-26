@@ -75,6 +75,7 @@ offset_right = 134.0
 offset_bottom = 990.0
 
 [node name="BarrelButton" type="TextureButton" parent="BluffyTheVampireSlayer/CardSelector"]
+layout_mode = 0
 offset_left = -361.0
 offset_top = -375.0
 offset_right = 440.0

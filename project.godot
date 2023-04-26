@@ -13,7 +13,7 @@ config_version=5
 config/name="CowboyNoir"
 run/main_scene="res://Scenes/Start.tscn"
 config/features=PackedStringArray("4.0")
-config/icon="res://Z-RNDM/icon.png"
+config/icon="res://Assets/General Cursor.png"
 config/custom_image=""
 
 [autoload]
