@@ -1,14 +1,2 @@
 res://Z-RNDM/default_env.tres
-res://Scenes/OpenDrawer.tscn
-res://Scenes/BunnyHeadspace.tscn
 res://Scenes/Bluff.tscn
-res://Scenes/Card.tscn
-res://Scenes/CodeDrawerChest.tscn
-res://Scenes/CodeDrawerVanity.tscn
-res://Scenes/DialogueBox.tscn
-res://Scenes/Global.tscn
-res://Scenes/MainScene.tscn
-res://Scenes/Start.tscn
-res://Scenes/DialogueOption.tscn
-res://Scenes/OpenChest.tscn
-res://Scenes/transition.tscn
