@@ -735,22 +735,32 @@ func _on_song_start_finished():
 
 func _on_barrel_button_pressed():
 	selectorIndex += 1
+	# Hide numbers for duration of rotation
 	cardToBluff.get_node("TextLeft").hide()
 	cardToBluff.get_node("TextCenter").hide()
 	cardToBluff.get_node("TextRight").hide()
+	# Update numbers (uses modular arithmetic)
 	cardToBluff.get_node("TextLeft").text = cardSyms[selectorIndex  % 13]
 	cardToBluff.get_node("TextCenter").text = cardSyms[(selectorIndex + 1) % 13]
 	cardToBluff.get_node("TextRight").text = cardSyms[(selectorIndex + 2) % 13]
+	# Disable button so it can't be spammed
+	cardToBluff.get_node("BarrelButton").disabled = true
+	# Begin rotation
 	rotateTicks = 0
 	cardToBluff.get_node("RotateTimer").start()
 
 
 func _on_rotate_timer_timeout():
-	print(cardToBluff.get_node("BarrelButton").rotation)
+	# Rotate (by 5 degrees)
 	cardToBluff.get_node("BarrelButton").rotation -= PI/36
 	rotateTicks += 1
+	# After rotation plays 9 times (1 full rotation, 45 degrees or 1/8 of a circle in all):
 	if rotateTicks == 9:
+		# Rotation is done, reveal numbers again
 		cardToBluff.get_node("TextLeft").show()
 		cardToBluff.get_node("TextCenter").show()
 		cardToBluff.get_node("TextRight").show()
+		# Disable timer
 		cardToBluff.get_node("RotateTimer").stop()
+		# Re-enable button
+		cardToBluff.get_node("BarrelButton").disabled = false
