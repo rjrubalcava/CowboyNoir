@@ -1,8 +1,11 @@
+Button
+Node2D
+AnimatedSprite2D
+TextureButton
 Timer
 AnimationPlayer
 RichTextLabel
 Control
-TextureButton
 AudioStreamPlayer
 AudioListener2D
 AudioStreamPlayer2D
@@ -13,8 +16,6 @@ TextureRect
 Sprite2D
 TextEdit
 AudioStreamPlayer2D
-Button
 OptionButton
 HBoxContainer
 ColorRect
-Node2D

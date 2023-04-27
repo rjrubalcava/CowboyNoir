@@ -722,8 +722,8 @@ func updateStress(stress):
 		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 4.png")
 	else:
 		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression BREAK.png")
-		# Need to add a timer
-		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+		$Breakpoint.show()
+		$Breakpoint.get_node("BreakpointAnim").play()
 
 
 func _on_song_start_finished():
@@ -762,3 +762,7 @@ func _on_rotate_timer_timeout():
 		cardToBluff.get_node("RotateTimer").stop()
 		# Re-enable button
 		cardToBluff.get_node("BarrelButton").disabled = false
+
+
+func _on_breakpoint_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")

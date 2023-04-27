@@ -59,7 +59,7 @@ mirrordesk.png::CompressedTexture2D::5656704803347396658::1681452901::1680242547
 newspaper.png::CompressedTexture2D::6398939493142217099::1681452901::1680242547::1::::<><>::
 spade lamp.png::CompressedTexture2D::4485086458480280151::1681452901::1680242547::1::::<><>::
 the sun.png::CompressedTexture2D::7396428269985814144::1680242547::1680242547::1::::<><>::
-::res://Assets/BunnyTable/::1682294235
+::res://Assets/BunnyTable/::1682557852
 Amity Base Expression.png::CompressedTexture2D::3496416958002505223::1681453420::1681453420::1::::<><>::
 Amity Expression 2.png::CompressedTexture2D::3446177884514118059::1681453420::1681453420::1::::<><>::
 Amity Expression 3.png::CompressedTexture2D::7139682610125805371::1681453420::1681453420::1::::<><>::
@@ -72,6 +72,7 @@ Background Middle Layer.png::CompressedTexture2D::2053497878672321760::168145342
 Background Top Layer.png::CompressedTexture2D::6627038677512809153::1681453420::1681453420::1::::<><>::
 Background.png::CompressedTexture2D::3469705220257149645::1680217419::1680217419::1::::<><>::
 Beam of Light.png::CompressedTexture2D::8495687926514929445::1680217419::1680217419::1::::<><>::
+Break Point Sprite.png::CompressedTexture2D::7281322268443854654::1682557651::1682557872::1::::<><>::
 Card on Table.png::CompressedTexture2D::6893268601411464292::1680217419::1680217419::1::::<><>::
 cursor maybe smaller_.png::CompressedTexture2D::5449573132465640960::1682290866::1682290924::1::::<><>::
 Cursor.png::CompressedTexture2D::9018090738365579434::1680217419::1680217419::1::::<><>::
@@ -149,7 +150,7 @@ h10.png::CompressedTexture2D::5591800759217637696::1682554629::1682555914::1::::
 h11.png::CompressedTexture2D::8506550673907401978::1682554630::1682555914::1::::<><>::
 h12.png::CompressedTexture2D::8300787877465098387::1682554630::1682555914::1::::<><>::
 h13.png::CompressedTexture2D::6759477738093402098::1682554630::1682555914::1::::<><>::
-::res://Assets/Cards/Spades/::1682555926
+::res://Assets/Cards/Spades/::1682555936
 s1.png::CompressedTexture2D::638905932514922454::1682554629::1682555936::1::::<><>::
 s2.png::CompressedTexture2D::7474858493406980769::1682554629::1682555936::1::::<><>::
 s3.png::CompressedTexture2D::3101567332750311692::1682554630::1682555936::1::::<><>::
@@ -200,11 +201,11 @@ jazz_rough_start.wav::AudioStreamWAV::9185057587092471159::1681452901::168145290
 BluffTable.gdshader::Shader::-1::1680217419::0::1::::<><>::
 ::res://Groups/::1679700749
 NumOfCPUS.tres::ButtonGroup::-1::1679700705::0::1::::<><>::
-::res://Scenes/::1682555851
+::res://Scenes/::1682557456
 Bluff.tscn::PackedScene::2980733325626427760::1682555213::0::1::::<><>::res://Scripts/Bluff.gd<>res://Assets/Shaders/BluffTable.gdshader<>uid://ccwt1wvcln5yq<>uid://4iy2sn5g6prk<>uid://bp2xqg184brch<>uid://c1ogmg1eiatsr<>uid://dtbm0egjugty0<>uid://bxmn3r4qq71ua<>uid://c5ui11g0fy5y5<>uid://d0d00cv72bfgn<>uid://bpqfu6dwnng44<>uid://cej7wjqgmmlhn<>uid://d3ffbu77o3x68<>uid://d34ks6k5uwthn<>uid://bn0x27q0drvgg
 BluffTable.gdshader::Shader::-1::1681453097::0::1::::<><>::
 BunnyHeadspace.tscn::PackedScene::5334628766814712323::1681452902::0::1::::<><>::uid://bh18cd86aasdc<>res://Scripts/BunnyHeadspace.gd<>uid://cjyrvlcws68lw<>uid://ou6w5vem52dk<>uid://bhruy6ojupxnk<>uid://bl4clgbd0bkk1<>uid://cmufdprq4ktta<>uid://dr044bs16d6gn<>uid://hjdbvf5xo8yt<>uid://cq1uiaod6361i<>uid://dla3ger8ohykc<>uid://biwchg5puqcqa<>uid://bkrvnro3vqqa6<>uid://b45uyo2p1m1y6<>uid://dmajmhrwb8vnd<>uid://ddm5dfqj2jlfs<>uid://jcxrxmjl4ubc<>uid://2k080temt43x<>uid://bci08vshyoahq<>uid://dpax0dk10g40g<>uid://cqfktwup771bn<>uid://cxfxul6u8qrdr
-Card.tscn::PackedScene::2836139679319454143::1682555851::0::1::::<><>::res://Scripts/Card.gd<>uid://diggqcn3jff1j<>uid://dww574i688rg1<>uid://demekc2hgn2rn<>uid://nyfnky75n5ag<>uid://c837qws5inpdu<>uid://cqvt41l6t48yb
+Card.tscn::PackedScene::2836139679319454143::1682557456::0::1::::<><>::res://Scripts/Card.gd<>uid://diggqcn3jff1j<>uid://dww574i688rg1<>uid://demekc2hgn2rn<>uid://nyfnky75n5ag<>uid://c837qws5inpdu<>uid://cqvt41l6t48yb
 CodeDrawerChest.tscn::PackedScene::4322969909009996921::1681452902::0::1::::<><>::res://Scripts/CodeDrawerChest.gd<>uid://cior73gkqvjvs<>uid://b54ib3hbrgud<>uid://dslnqbjcepvw2<>uid://c03t003utl1dt<>uid://cesi2mdx4lyq2<>uid://swrk6y3ogoeb<>uid://bpqfu6dwnng44
 CodeDrawerVanity.tscn::PackedScene::2942983834760539003::1681452902::0::1::::<><>::res://Scripts/CodeDrawer.gd<>uid://cior73gkqvjvs<>uid://b54ib3hbrgud<>uid://dslnqbjcepvw2<>uid://c03t003utl1dt<>uid://cesi2mdx4lyq2<>uid://swrk6y3ogoeb<>uid://bpqfu6dwnng44
 DialogueBox.tscn::PackedScene::1429790021468852555::1681453504::0::1::::<><>::uid://c8vkhxxkyvrx<>uid://bpqfu6dwnng44
@@ -213,8 +214,8 @@ Global.tscn::PackedScene::599049541030276570::1681453473::0::1::::<><>::res://Sc
 MainScene.tscn::PackedScene::3118517110821397835::1680242584::0::1::::<><>::res://Scripts/MainScene.gd
 OpenDrawer.tscn::PackedScene::7597598875501020536::1681452902::0::1::::<><>::res://Scripts/OpenDrawer.gd<>uid://djce10hh6ewmf<>uid://fme2uxug5bvm<>uid://nmuyqgnbevlm<>uid://cyhv5w7ohrxa5
 Start.tscn::PackedScene::2493575978751678625::1681452902::0::1::::<><>::res://Scripts/Start.gd<>uid://leiuirv5rc6u<>uid://bxmn3r4qq71ua<>uid://ds5eig4uxb42n
-::res://Scripts/::1682555835
-Bluff.gd::GDScript::-1::1682555835::0::1::::<>Node2D<>::
+::res://Scripts/::1682556439
+Bluff.gd::GDScript::-1::1682556439::0::1::::<>Node2D<>::
 BunnyHeadspace.gd::GDScript::-1::1681452902::0::1::::<>Control<>::
 Card.gd::GDScript::-1::1681452902::0::1::::<>Sprite2D<>::
 Clock.gd::GDScript::-1::1681452902::0::1::::<>TextureRect<>::
@@ -227,6 +228,6 @@ Newspaper.gd::GDScript::-1::1681452902::0::1::::<>TextureRect<>::
 OpenDrawer.gd::GDScript::-1::1681452902::0::1::::<>Control<>::
 Start.gd::GDScript::-1::1680280167::0::1::::<>Control<>::
 TheSun.gd::GDScript::-1::1681452902::0::1::::<>TextureRect<>::
-::res://Z-RNDM/::1682555851
-default_env.tres::Environment::797910927413459770::1682555851::0::1::::<><>::
+::res://Z-RNDM/::1682557456
+default_env.tres::Environment::797910927413459770::1682557456::0::1::::<><>::
 icon.png::CompressedTexture2D::8149539214728030452::1679700705::1679700718::1::::<><>::

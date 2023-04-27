@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=23 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bp2xqg184brch" path="res://Assets/BunnyTable/Amity Base Expression.png" id="5_0dn31"]
 [ext_resource type="Texture2D" uid="uid://c1ogmg1eiatsr" path="res://Assets/BunnyTable/Background Top Layer.png" id="5_v8cn3"]
 [ext_resource type="Texture2D" uid="uid://dtbm0egjugty0" path="res://Assets/BunnyTable/Beam of Light.png" id="6_kdsla"]
+[ext_resource type="Texture2D" uid="uid://db0ekw6mm0wty" path="res://Assets/BunnyTable/Break Point Sprite.png" id="7_52538"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="8_irqys"]
 [ext_resource type="AudioStream" uid="uid://c5ui11g0fy5y5" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_1.wav" id="9_n6tm3"]
 [ext_resource type="Texture2D" uid="uid://d0d00cv72bfgn" path="res://Assets/BunnyTable/Final Chamber.png" id="9_w1n6t"]
@@ -18,6 +19,42 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrtgy"]
 shader = ExtResource("2_belpe")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmll1"]
+atlas = ExtResource("7_52538")
+region = Rect2(0, 0, 445, 627)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmd1h"]
+atlas = ExtResource("7_52538")
+region = Rect2(445, 0, 445, 627)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhplu"]
+atlas = ExtResource("7_52538")
+region = Rect2(890, 0, 445, 627)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00pjy"]
+atlas = ExtResource("7_52538")
+region = Rect2(1335, 0, 445, 627)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7367l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmll1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmd1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhplu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00pjy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Bluff" type="Node2D"]
 script = ExtResource("1_ei7cw")
@@ -48,6 +85,21 @@ offset_right = 1659.0
 offset_bottom = 1213.0
 scale = Vector2(0.768, 0.768)
 texture = ExtResource("5_0dn31")
+
+[node name="Breakpoint" type="Node2D" parent="."]
+visible = false
+
+[node name="BreakpointAnim" type="AnimatedSprite2D" parent="Breakpoint"]
+position = Vector2(867, 282)
+scale = Vector2(0.768, 0.768)
+sprite_frames = SubResource("SpriteFrames_7367l")
+
+[node name="BreakpointButton" type="Button" parent="Breakpoint"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 786.0
+offset_top = 195.0
+offset_right = 966.0
+offset_bottom = 328.0
 
 [node name="LightDim" type="PointLight2D" parent="."]
 visible = false
@@ -135,45 +187,6 @@ offset_bottom = 188.0
 scale = Vector2(2, 2)
 text = "Current Round Card: "
 
-[node name="cardSelection" type="OptionButton" parent="BluffyTheVampireSlayer"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.187
-anchor_top = 0.5
-anchor_right = 0.187
-anchor_bottom = 0.5
-offset_left = 178.52
-offset_top = 110.0
-offset_right = 278.52
-offset_bottom = 160.0
-item_count = 13
-popup/item_0/text = "Ace"
-popup/item_0/id = 1
-popup/item_1/text = "2"
-popup/item_1/id = 2
-popup/item_2/text = "3"
-popup/item_2/id = 3
-popup/item_3/text = "4"
-popup/item_3/id = 4
-popup/item_4/text = "5"
-popup/item_4/id = 5
-popup/item_5/text = "6"
-popup/item_5/id = 6
-popup/item_6/text = "7"
-popup/item_6/id = 7
-popup/item_7/text = "8"
-popup/item_7/id = 8
-popup/item_8/text = "9"
-popup/item_8/id = 9
-popup/item_9/text = "10"
-popup/item_9/id = 10
-popup/item_10/text = "Jack"
-popup/item_10/id = 11
-popup/item_11/text = "Queen"
-popup/item_11/id = 12
-popup/item_12/text = "King"
-popup/item_12/id = 13
-
 [node name="Button" type="Button" parent="BluffyTheVampireSlayer"]
 layout_mode = 0
 offset_left = 1529.0
@@ -217,6 +230,7 @@ autoplay = true
 [node name="Song_loop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_ovjvy")
 
+[connection signal="pressed" from="Breakpoint/BreakpointButton" to="." method="_on_breakpoint_button_pressed"]
 [connection signal="pressed" from="BluffyTheVampireSlayer/CardSelector/BarrelButton" to="." method="_on_barrel_button_pressed"]
 [connection signal="timeout" from="BluffyTheVampireSlayer/CardSelector/RotateTimer" to="." method="_on_rotate_timer_timeout"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/Button" to="." method="_on_button_button_up"]
