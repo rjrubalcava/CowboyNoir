@@ -632,14 +632,12 @@ func realizeHands():
 			cardPosition = Vector2(900 - (x * 95),900 + (10 * x))
 			tempNode = Global.newNode(card, cardPosition, playerCards, 1)
 			tempNode.texture = get(playerHand[x])
-			tempNode.scale *=.40
 			tempNode.rotation = float((-x) / (2 * handSize))
 			tempNode.setCardID(playerHand[x])
 		else:
 			cardPosition = Vector2(900 + ((handSize - x)* 95),900 + (10 * (handSize - x)))
 			tempNode = Global.newNode(card, cardPosition, playerCards, 1)
 			tempNode.texture = get(playerHand[x])
-			tempNode.scale *=.40
 			tempNode.rotation = float((handSize - x) / (2 * handSize))
 			tempNode.setCardID(playerHand[x])
 	
