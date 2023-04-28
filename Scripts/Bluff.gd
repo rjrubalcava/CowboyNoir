@@ -101,7 +101,8 @@ var cpuCardsLastRound = null
 
 var stressLevel = 0
 var psychometerStage = 0
-var stress_up_sounds = ["chips_Stacking_1","chips_Stacking_2","chips_Stacking_3"]
+var stress_up_sounds = ["chips_Stacking_1","chips_Stacking_2"]
+var stress_down_sounds = ["chips_Stacking_neg_1"]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -110,10 +111,12 @@ func _ready():
 	rng.randomize()
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_up"):
+	if event.is_action_pressed("ui_up"): 
 		incPshGge()
 	elif event.is_action_pressed("ui_down"):
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+		$Transition.play()
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#print(dontDisplay)
@@ -693,6 +696,14 @@ func updateStress(stress):
 	print("got update")
 	if stress > 0:
 		var curr_sound = get_node(stress_up_sounds.pick_random())
+		
+		curr_sound.set_pitch_scale(1 + randf_range(0.2,0.5))
+		curr_sound.play()
+	stressLevel += stress
+	if stress < 0:
+		var curr_sound = get_node(stress_down_sounds.pick_random()) 
+		
+		curr_sound.set_pitch_scale(1 - randf_range(0.2,0.5))
 		curr_sound.play()
 	stressLevel += stress
 	if stressLevel < 0:
@@ -707,6 +718,7 @@ func updateStress(stress):
 		$Character.texture = preload("res://Assets/BunnyTable/Level Four.png")
 	else:
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+		$Transition.play()
 
 
 func _on_song_start_finished():

@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bw4dg1l2h0lx"]
+[gd_scene load_steps=6 format=3 uid="uid://cvb0jgwoweake"]
 
 [ext_resource type="Script" path="res://Scripts/DialogueOption.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://cogjpl23ffkhm" path="res://Assets/BunnyTable/Response_Card_crop.png" id="2_wwnas"]
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="3_3agfe"]
 [ext_resource type="Texture2D" uid="uid://cn65cvhd023be" path="res://Assets/BunnyTable/Response_hovered_Crop.png" id="4_4gqbt"]
-[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="5_2hck4"]
+[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="5_kds7x"]
 
 [node name="DialogueOption" type="Control"]
 layout_mode = 3
@@ -105,7 +105,7 @@ offset_right = 555.0
 offset_bottom = 645.0
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_2hck4")
+stream = ExtResource("5_kds7x")
 
 [connection signal="mouse_entered" from="LeftOpt/Texture" to="." method="_on_left_texture_mouse_entered"]
 [connection signal="mouse_exited" from="LeftOpt/HoverTexture" to="." method="_on_left_hover_texture_mouse_exited"]

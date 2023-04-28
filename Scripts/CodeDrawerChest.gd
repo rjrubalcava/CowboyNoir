@@ -54,21 +54,31 @@ func adjust_letter(direction):
 	selector.set("text", alphabet[letter_indices[current_selector]])   
 
 func _unhandled_input(event):
-	
+	var UD_sound = get_node("UD_lock") 
+	var LR_sound = get_node("LR_lock")
 	if event.is_action_pressed("ui_up"):
 		result.clear()
 		adjust_letter("up")
+		UD_sound.set_pitch_scale(1 + 0.3) 
+		UD_sound.play()
+		
 	elif event.is_action_pressed("ui_down"):
 		result.clear()
 		adjust_letter("down")
+		UD_sound.set_pitch_scale(1 - 0.2)
+		UD_sound.play()
 	elif event.is_action_pressed("ui_right"):
 		if current_selector != 3:
 			current_selector+=1
 		button_checker()
+		LR_sound.set_pitch_scale(1 + 0.1)
+		LR_sound.play()
 	elif event.is_action_pressed("ui_left"):
 		if current_selector != 0:
 			current_selector-=1
 		button_checker()
+		LR_sound.set_pitch_scale(1 -0.1)
+		LR_sound.play()
 	elif event.is_action_pressed("ui_accept"):
 		var number1 = $NumberSelector1.text
 		var number2 = $NumberSelector2.text
