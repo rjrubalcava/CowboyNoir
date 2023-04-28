@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm6gaujnm6ld1"]
+
+[ext_resource type="Texture2D" uid="uid://cqf0b3qbsaawq" path="res://Assets/Overworld/overworld_almost_done.png" id="1_jlm75"]
+[ext_resource type="Script" path="res://Scripts/Overworld.gd" id="1_w21fl"]
+[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="3_b5pvv"]
+
+[node name="Overworld" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w21fl")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("1_jlm75")
+
+[node name="AmitySel" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1479.0
+offset_top = 373.0
+offset_right = 1820.0
+offset_bottom = 817.0
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_b5pvv")
+
+[connection signal="pressed" from="AmitySel" to="." method="_on_amity_sel_pressed"]

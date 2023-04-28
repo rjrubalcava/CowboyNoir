@@ -1,3 +1,4 @@
+Button
 TextureRect
 VideoStreamPlayer
 CollisionShape2D
@@ -15,7 +16,6 @@ Sprite2D
 TextEdit
 Timer
 AudioStreamPlayer2D
-Button
 OptionButton
 RichTextLabel
 HBoxContainer

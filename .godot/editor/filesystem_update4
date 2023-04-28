@@ -4,3 +4,7 @@ res://Scenes/Global.tscn
 res://Scenes/Start.tscn
 res://Scripts/Start.gd
 res://Scenes/Credits.tscn
+res://Scenes/Overworld.tscn
+res://Scripts/Overworld.gd
+res://Scenes/MainScene.tscn
+res://Scripts/MainScene.gd
