@@ -1,4 +1,6 @@
+Control
 TextureButton
+Sprite2D
 TextureRect
 Button
 VideoStreamPlayer
@@ -8,12 +10,10 @@ StaticBody2D
 CharacterBody2D
 DirectionalLight2D
 AnimatedSprite2D
-Control
 AudioStreamPlayer
 AudioListener2D
 AudioStreamPlayer2D
 Camera2D
-Sprite2D
 TextEdit
 Timer
 AudioStreamPlayer2D

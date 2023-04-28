@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://db0ekw6mm0wty" path="res://Assets/BunnyTable/Break Point Sprite.png" id="7_52538"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="8_irqys"]
 [ext_resource type="AudioStream" uid="uid://c5ui11g0fy5y5" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_1.wav" id="9_n6tm3"]
-[ext_resource type="Texture2D" uid="uid://d0d00cv72bfgn" path="res://Assets/BunnyTable/Final Chamber.png" id="9_w1n6t"]
+[ext_resource type="Texture2D" uid="uid://mg7w2i4qumcg" path="res://Assets/BunnyTable/Gun Chamber.png" id="10_2ec6h"]
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="10_45hga"]
 [ext_resource type="AudioStream" uid="uid://cej7wjqgmmlhn" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_2.wav" id="10_6811y"]
 [ext_resource type="AudioStream" uid="uid://d3ffbu77o3x68" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_3.wav" id="11_7ix15"]
@@ -119,60 +119,131 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="CardSelector" type="Control" parent="BluffyTheVampireSlayer"]
-layout_mode = 3
+[node name="RevolvyIMG" type="Sprite2D" parent="BluffyTheVampireSlayer"]
+position = Vector2(101, 978)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_2ec6h")
+
+[node name="Revolvy" type="Control" parent="BluffyTheVampireSlayer"]
 anchors_preset = 0
-offset_left = 94.0
-offset_top = 950.0
-offset_right = 134.0
-offset_bottom = 990.0
+offset_left = 101.0
+offset_top = 978.0
+offset_right = 101.0
+offset_bottom = 978.0
+scale = Vector2(0.75, 0.75)
 
-[node name="BarrelButton" type="TextureButton" parent="BluffyTheVampireSlayer/CardSelector"]
-layout_mode = 0
-offset_left = -361.0
-offset_top = -375.0
-offset_right = 440.0
-offset_bottom = 458.0
-rotation = 3.14159
-scale = Vector2(0.768, 0.768)
-pivot_offset = Vector2(387, 387)
-texture_normal = ExtResource("9_w1n6t")
+[node name="TextLeft" type="RichTextLabel" parent="BluffyTheVampireSlayer/Revolvy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -293.333
+offset_right = 18.0
+offset_bottom = -236.333
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.75, 1.75)
+theme_override_colors/default_color = Color(0.121569, 0.0745098, 0.0666667, 1)
+theme_override_fonts/normal_font = ExtResource("10_45hga")
+theme_override_font_sizes/normal_font_size = 52
+text = "K"
 
-[node name="TextLeft" type="RichTextLabel" parent="BluffyTheVampireSlayer/CardSelector"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = -196.0
-offset_right = 60.0
-offset_bottom = -139.0
+[node name="TextCenter" type="RichTextLabel" parent="BluffyTheVampireSlayer/Revolvy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 184.0
+offset_top = -237.333
+offset_right = 244.0
+offset_bottom = -179.333
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.760964
+scale = Vector2(1.75, 1.75)
+theme_override_colors/default_color = Color(0.121569, 0.0745098, 0.0666667, 1)
+theme_override_fonts/normal_font = ExtResource("10_45hga")
+theme_override_font_sizes/normal_font_size = 52
+text = "A"
+
+[node name="TextRight" type="RichTextLabel" parent="BluffyTheVampireSlayer/Revolvy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 289.333
+offset_top = -46.6666
+offset_right = 353.333
+offset_bottom = 10.3334
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+scale = Vector2(1.75, 1.75)
 theme_override_colors/default_color = Color(0.121569, 0.0745098, 0.0666667, 1)
 theme_override_fonts/normal_font = ExtResource("10_45hga")
 theme_override_font_sizes/normal_font_size = 52
 text = "2"
 
-[node name="TextCenter" type="RichTextLabel" parent="BluffyTheVampireSlayer/CardSelector"]
-layout_mode = 0
-offset_left = 150.0
-offset_top = -146.0
-offset_right = 210.0
-offset_bottom = -88.0
+[node name="TextSupaRight" type="RichTextLabel" parent="BluffyTheVampireSlayer/Revolvy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 244.0
+offset_top = 164.0
+offset_right = 319.0
+offset_bottom = 219.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 2.25497
+scale = Vector2(1.75, 1.75)
 theme_override_colors/default_color = Color(0.121569, 0.0745098, 0.0666667, 1)
 theme_override_fonts/normal_font = ExtResource("10_45hga")
 theme_override_font_sizes/normal_font_size = 52
 text = "3"
 
-[node name="TextRight" type="RichTextLabel" parent="BluffyTheVampireSlayer/CardSelector"]
-layout_mode = 0
-offset_left = 211.0
-offset_top = -15.0
-offset_right = 275.0
-offset_bottom = 42.0
+[node name="TextSupaLeft" type="RichTextLabel" parent="BluffyTheVampireSlayer/Revolvy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.333
+offset_top = -165.333
+offset_right = -178.333
+offset_bottom = -110.333
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.886627
+scale = Vector2(1.75, 1.75)
 theme_override_colors/default_color = Color(0.121569, 0.0745098, 0.0666667, 1)
 theme_override_fonts/normal_font = ExtResource("10_45hga")
 theme_override_font_sizes/normal_font_size = 52
-text = "4"
+text = "Q"
 
-[node name="RotateTimer" type="Timer" parent="BluffyTheVampireSlayer/CardSelector"]
-wait_time = 0.1
+[node name="buttLeft" type="TextureButton" parent="BluffyTheVampireSlayer/Revolvy"]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -371.0
+offset_right = 84.0
+offset_bottom = -173.0
+
+[node name="buttRight" type="TextureButton" parent="BluffyTheVampireSlayer/Revolvy"]
+layout_mode = 0
+offset_left = 179.0
+offset_top = -112.0
+offset_right = 379.0
+offset_bottom = 136.0
 
 [node name="PlayerCards" type="HBoxContainer" parent="BluffyTheVampireSlayer"]
 layout_mode = 0
@@ -186,7 +257,6 @@ offset_top = 33.0
 offset_right = 1429.0
 offset_bottom = 188.0
 scale = Vector2(2, 2)
-text = "Current Round Card: "
 
 [node name="Button" type="Button" parent="BluffyTheVampireSlayer"]
 layout_mode = 0
@@ -211,6 +281,17 @@ offset_top = 226.0
 offset_right = 1739.0
 offset_bottom = 276.0
 text = "Pass Round"
+
+[node name="textSelected" type="RichTextLabel" parent="BluffyTheVampireSlayer"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 929.0
+offset_right = 133.0
+offset_bottom = 985.0
+scale = Vector2(3, 3)
+theme_override_colors/default_color = Color(0.121569, 0.0745098, 0.0666667, 1)
+theme_override_fonts/normal_font = ExtResource("10_45hga")
+theme_override_font_sizes/normal_font_size = 52
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_irqys")
@@ -241,8 +322,8 @@ offset_right = 191.0
 offset_bottom = 158.0
 
 [connection signal="pressed" from="Breakpoint/BreakpointButton" to="." method="_on_breakpoint_button_pressed"]
-[connection signal="pressed" from="BluffyTheVampireSlayer/CardSelector/BarrelButton" to="." method="_on_barrel_button_pressed"]
-[connection signal="timeout" from="BluffyTheVampireSlayer/CardSelector/RotateTimer" to="." method="_on_rotate_timer_timeout"]
+[connection signal="button_up" from="BluffyTheVampireSlayer/Revolvy/buttLeft" to="." method="_on_butt_left_button_up"]
+[connection signal="button_up" from="BluffyTheVampireSlayer/Revolvy/buttRight" to="." method="_on_butt_right_button_up"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/Buton" to="." method="_on_buton_button_up"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/pass" to="." method="_on_pass_button_up"]
