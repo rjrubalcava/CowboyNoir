@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=24 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://d3ffbu77o3x68" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_3.wav" id="11_7ix15"]
 [ext_resource type="AudioStream" uid="uid://d34ks6k5uwthn" path="res://Assets/SFX/Songs/Jazz_rough_parts/jazz_rough_start.wav" id="12_s1njf"]
 [ext_resource type="AudioStream" uid="uid://bn0x27q0drvgg" path="res://Assets/SFX/Songs/Jazz_rough_parts/jazz_rough_loopable.wav" id="13_ovjvy"]
+[ext_resource type="PackedScene" uid="uid://3dqpr6nbuyif" path="res://Scenes/Journal.tscn" id="17_eha08"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrtgy"]
 shader = ExtResource("2_belpe")
@@ -230,6 +231,15 @@ autoplay = true
 [node name="Song_loop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_ovjvy")
 
+[node name="Journal" parent="." instance=ExtResource("17_eha08")]
+visible = false
+
+[node name="JournalButton" type="TextureButton" parent="."]
+offset_left = 80.0
+offset_top = 45.0
+offset_right = 191.0
+offset_bottom = 158.0
+
 [connection signal="pressed" from="Breakpoint/BreakpointButton" to="." method="_on_breakpoint_button_pressed"]
 [connection signal="pressed" from="BluffyTheVampireSlayer/CardSelector/BarrelButton" to="." method="_on_barrel_button_pressed"]
 [connection signal="timeout" from="BluffyTheVampireSlayer/CardSelector/RotateTimer" to="." method="_on_rotate_timer_timeout"]
@@ -237,3 +247,4 @@ stream = ExtResource("13_ovjvy")
 [connection signal="button_up" from="BluffyTheVampireSlayer/Buton" to="." method="_on_buton_button_up"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/pass" to="." method="_on_pass_button_up"]
 [connection signal="finished" from="Song_start" to="." method="_on_song_start_finished"]
+[connection signal="pressed" from="JournalButton" to="." method="_on_journal_button_pressed"]

@@ -1,5 +1,6 @@
-Button
+TextureButton
 TextureRect
+Button
 VideoStreamPlayer
 CollisionShape2D
 Area2D
@@ -19,6 +20,5 @@ AudioStreamPlayer2D
 OptionButton
 RichTextLabel
 HBoxContainer
-TextureButton
 ColorRect
 Node2D

@@ -8,3 +8,5 @@ res://Scenes/Overworld.tscn
 res://Scripts/Overworld.gd
 res://Scenes/MainScene.tscn
 res://Scripts/MainScene.gd
+res://Scenes/Journal.tscn
+res://Scripts/Bluff.gd
