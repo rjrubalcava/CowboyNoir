@@ -13,7 +13,8 @@ config_version=5
 config/name="CowboyNoir"
 run/main_scene="res://Scenes/Start.tscn"
 config/features=PackedStringArray("4.0")
-config/icon="res://Z-RNDM/icon.png"
+config/icon="res://Assets/General Cursor.png"
+config/custom_image=""
 
 [autoload]
 
@@ -25,6 +26,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 mouse_cursor/tooltip_position_offset=Vector2(2.08165e-12, 2.08165e-12)
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://Assets/General Cursor.png"
 
 [dotnet]
 
