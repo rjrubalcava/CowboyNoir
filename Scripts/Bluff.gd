@@ -218,7 +218,7 @@ func cupieTurn():
 		for x in lastRoundHand:
 			centerHand.append(x)
 		lastRoundHand = []
-		stageOfRound = 2
+		stageOfRound = 1
 		cpuTurn = false
 		inst.text = "Amity Played "
 		inst.add_text(str(cardCount))
