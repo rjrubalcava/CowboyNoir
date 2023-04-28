@@ -5,8 +5,8 @@ extends Control
 @onready var TheSun: TextureRect = $TheSun
 @onready var Background: TextureRect = $Background
 @onready var Midground: TextureRect = $Midground
-@onready var EnlargedNewspaper = preload("res://Assets/BunnyHeadspace/Newspaper/newspaper close up.png")
-@onready var SmallerNewspaper = preload("res://Assets/BunnyHeadspace/Zoom out/newspaper.png")
+@onready var EnlargedNewspaper = preload("res://Assets/BunnyHeadspace/New/Final Headspace Assets/newspaperclue.png")
+@onready var SmallerNewspaper = preload("res://Assets/BunnyHeadspace/New/Final Headspace Assets/small newspaper.png")
 @onready var InventoryBox: TextureRect = $InventoryBox
 @onready var HourHand: CharacterBody2D = $HourHand
 @onready var MinuteHand: CharacterBody2D = $MinuteHand
@@ -33,12 +33,12 @@ func _ready():
 	mouse_pos = get_global_mouse_position()
 	Enlarged_Newspaper_sprite = Sprite2D.new()
 	Enlarged_Newspaper_sprite.texture = EnlargedNewspaper
-	Enlarged_Newspaper_sprite.scale = Vector2(0.75, 0.75)
+	Enlarged_Newspaper_sprite.scale = Vector2(0.5, 0.5)
 	add_child(Enlarged_Newspaper_sprite)
 	Enlarged_Newspaper_sprite.hide()
 	HeartCard.hide()
-	HourHand.hide()
-	MinuteHand.hide()
+	#HourHand.hide()
+	#MinuteHand.hide()
 	DiamondCard.hide()
 	ClubCard.hide()
 	SpadeCard.hide()
@@ -64,17 +64,17 @@ func _process(delta):
 	
 func scale_up(my_tween, my_sprite):
 	if my_sprite == Newspaper:
-		Enlarged_Newspaper_sprite.scale = Vector2(1.5, 1.5)
+		Enlarged_Newspaper_sprite.scale = Vector2(0.5, 0.5)
 		my_tween.tween_property(my_sprite, "scale", Vector2(1.2, 1.2), 0.8 )
 	else:
-		Enlarged_Newspaper_sprite.scale = Vector2(0.75, 0.75)
+		Enlarged_Newspaper_sprite.scale = Vector2(0.5, 0.5)
 		my_tween.tween_property(my_sprite, "scale", Vector2(1, 1), 0.8 )
 
 func scale_down(my_tween, my_sprite):
 	if my_sprite == Newspaper:
-		my_tween.parallel().tween_property(my_sprite, "scale", Vector2(0.76, 0.76), 0.5 )
+		my_tween.parallel().tween_property(my_sprite, "scale", Vector2(0.5, 0.5), 0.5 )
 	else:
-		my_tween.parallel().tween_property(my_sprite, "scale", Vector2(0.76, 0.76), 0.5 )
+		my_tween.parallel().tween_property(my_sprite, "scale", Vector2(0.5, 0.5), 0.5 )
 	
 func change_texture(my_tween, old_texture, new_texture):
 	if new_texture == EnlargedNewspaper:
@@ -203,11 +203,11 @@ func _on_newspaper_mouse_exited():
 	
 func _on_costume_chest_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(CostumeChest, "scale", Vector2(0.8,0.8), 0.1)
+	TW.tween_property(CostumeChest, "scale", Vector2(0.51,0.51), 0.1)
 
 func _on_costume_chest_mouse_exited():
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(CostumeChest, "scale", Vector2(0.76,0.76), 0.1)
+	TW.tween_property(CostumeChest, "scale", Vector2(0.5,0.5), 0.1)
 
 func drag(my_sprite):
 	my_sprite.velocity = mouse_velocity

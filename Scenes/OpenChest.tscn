@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://fct6nco54e05"]
+[gd_scene load_steps=6 format=3 uid="uid://fct6nco54e05"]
 
-[ext_resource type="Texture2D" uid="uid://chv8rnmtjwtgc" path="res://Assets/BunnyHeadspace/Clothes Chest/Interior/chest BKGd.png" id="1_bau6a"]
 [ext_resource type="Script" path="res://Scripts/OpenChest.gd" id="1_v8rra"]
 [ext_resource type="Texture2D" uid="uid://d3811j4r7d5fs" path="res://Assets/BunnyHeadspace/Clothes Chest/Interior/clothes 1.png" id="2_jy6m6"]
 [ext_resource type="Texture2D" uid="uid://cmvk6x2ymkvve" path="res://Assets/BunnyHeadspace/Clothes Chest/Interior/clothes2.png" id="3_4b8it"]
@@ -17,7 +16,6 @@ layout_mode = 0
 offset_right = 2500.0
 offset_bottom = 1406.0
 scale = Vector2(0.76, 0.76)
-texture = ExtResource("1_bau6a")
 
 [node name="Clothes1" type="TextureRect" parent="."]
 layout_mode = 0
