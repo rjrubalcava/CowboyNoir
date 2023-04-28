@@ -108,6 +108,7 @@ var selectorIndex = 0
 
 var rotateTicks
 
+var pauseDialogue = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -122,6 +123,17 @@ func _unhandled_input(event):
 		incPshGge()
 	elif event.is_action_pressed("ui_down"):
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+	# Close journal if it is open and esc is pressed
+	elif event.is_action_pressed("ui_cancel") and $Journal.visible:
+		# Show global dialogue elements if dialogue has been previously paused
+		if pauseDialogue:
+			for option in Global.current_options:
+				option.show()
+			Global.current_prompt.show()
+			# Unpause
+			pauseDialogue = false
+		# Close journal
+		$Journal.hide()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#print(dontDisplay)
@@ -766,3 +778,17 @@ func _on_rotate_timer_timeout():
 
 func _on_breakpoint_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+
+
+func _on_journal_button_pressed():
+	# Open journal
+	$Click.play()
+	# Hide global dialogue elements
+	if Global.current_prompt.visible:
+		# Pause  so dialogue isn't revealed on closing menu if it was already hidden
+		pauseDialogue = true
+		for option in Global.current_options:
+			option.hide()
+		Global.current_prompt.hide()
+	# Open journal
+	$Journal.show()
