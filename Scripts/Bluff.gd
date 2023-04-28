@@ -632,14 +632,12 @@ func realizeHands():
 			cardPosition = Vector2(900 - (x * 95),900 + (10 * x))
 			tempNode = Global.newNode(card, cardPosition, playerCards, 1)
 			tempNode.texture = get(playerHand[x])
-			tempNode.scale *=.40
 			tempNode.rotation = float((-x) / (2 * handSize))
 			tempNode.setCardID(playerHand[x])
 		else:
 			cardPosition = Vector2(900 + ((handSize - x)* 95),900 + (10 * (handSize - x)))
 			tempNode = Global.newNode(card, cardPosition, playerCards, 1)
 			tempNode.texture = get(playerHand[x])
-			tempNode.scale *=.40
 			tempNode.rotation = float((handSize - x) / (2 * handSize))
 			tempNode.setCardID(playerHand[x])
 	
@@ -724,8 +722,8 @@ func updateStress(stress):
 		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 4.png")
 	else:
 		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression BREAK.png")
-		# Need to add a timer
-		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+		$Breakpoint.show()
+		$Breakpoint.get_node("BreakpointAnim").play()
 
 
 func _on_song_start_finished():
@@ -735,22 +733,36 @@ func _on_song_start_finished():
 
 func _on_barrel_button_pressed():
 	selectorIndex += 1
+	# Hide numbers for duration of rotation
 	cardToBluff.get_node("TextLeft").hide()
 	cardToBluff.get_node("TextCenter").hide()
 	cardToBluff.get_node("TextRight").hide()
+	# Update numbers (uses modular arithmetic)
 	cardToBluff.get_node("TextLeft").text = cardSyms[selectorIndex  % 13]
 	cardToBluff.get_node("TextCenter").text = cardSyms[(selectorIndex + 1) % 13]
 	cardToBluff.get_node("TextRight").text = cardSyms[(selectorIndex + 2) % 13]
+	# Disable button so it can't be spammed
+	cardToBluff.get_node("BarrelButton").disabled = true
+	# Begin rotation
 	rotateTicks = 0
 	cardToBluff.get_node("RotateTimer").start()
 
 
 func _on_rotate_timer_timeout():
-	print(cardToBluff.get_node("BarrelButton").rotation)
+	# Rotate (by 5 degrees)
 	cardToBluff.get_node("BarrelButton").rotation -= PI/36
 	rotateTicks += 1
+	# After rotation plays 9 times (1 full rotation, 45 degrees or 1/8 of a circle in all):
 	if rotateTicks == 9:
+		# Rotation is done, reveal numbers again
 		cardToBluff.get_node("TextLeft").show()
 		cardToBluff.get_node("TextCenter").show()
 		cardToBluff.get_node("TextRight").show()
+		# Disable timer
 		cardToBluff.get_node("RotateTimer").stop()
+		# Re-enable button
+		cardToBluff.get_node("BarrelButton").disabled = false
+
+
+func _on_breakpoint_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
