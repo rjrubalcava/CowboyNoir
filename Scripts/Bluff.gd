@@ -60,7 +60,7 @@ extends Node2D
 
 @onready var playerCards = $BluffyTheVampireSlayer/PlayerCards
 @onready var inst = $BluffyTheVampireSlayer/playInstruction
-@onready var cardToBluff = $BluffyTheVampireSlayer/cardSelection
+@onready var cardToBluff = $BluffyTheVampireSlayer/CardSelector
 @onready var butt = $BluffyTheVampireSlayer/Button
 @onready var buton = $BluffyTheVampireSlayer/Buton
 @onready var pesto = $BluffyTheVampireSlayer/pass
@@ -103,9 +103,18 @@ var stressLevel = 0
 var psychometerStage = 0
 var stress_up_sounds = ["chips_Stacking_1","chips_Stacking_2","chips_Stacking_3"]
 
+var cardSyms = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
+var selectorIndex = 0
+
+var rotateTicks
+
+var pauseDialogue = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Set cursor to be Amity's (eventually will have a different one for each character)
+	Input.set_custom_mouse_cursor(preload("res://Assets/BunnyTable/Cursor_Final.png")) #Reference: 
+		# https://godotengine.org/qa/1155/way-to-change-what-cursor-looks-like-in-game-via-gdscript
 	rng = RandomNumberGenerator.new()
 	rng.randomize()
 
@@ -114,6 +123,17 @@ func _unhandled_input(event):
 		incPshGge()
 	elif event.is_action_pressed("ui_down"):
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+	# Close journal if it is open and esc is pressed
+	elif event.is_action_pressed("ui_cancel") and $Journal.visible:
+		# Show global dialogue elements if dialogue has been previously paused
+		if pauseDialogue:
+			for option in Global.current_options:
+				option.show()
+			Global.current_prompt.show()
+			# Unpause
+			pauseDialogue = false
+		# Close journal
+		$Journal.hide()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#print(dontDisplay)
@@ -140,10 +160,19 @@ func _process(delta):
 		
 func _on_button_button_up():
 	$Click.play()
-	if(cardToBluff.get_selected_id() > 0 and stageOfRound == 0):
+	if(stageOfRound == 0):
 		stageOfRound = 1
-		cardOfRound = cardToBluff.get_selected_id()
-		cardToBluff.select(-1)
+		cardOfRound = cardToBluff.get_node("TextCenter").text
+		if cardOfRound == "A":
+			cardOfRound = 1
+		elif cardOfRound == "J":
+			cardOfRound = 11
+		elif cardOfRound == "Q":
+			cardOfRound = 12
+		elif cardOfRound == "K":
+			cardOfRound = 13
+		else:
+			cardOfRound = int(cardOfRound)
 		cardToBluff.visible = false
 	elif(stageOfRound < 1):
 		cardOfRound = -1
@@ -615,14 +644,12 @@ func realizeHands():
 			cardPosition = Vector2(900 - (x * 95),900 + (10 * x))
 			tempNode = Global.newNode(card, cardPosition, playerCards, 1)
 			tempNode.texture = get(playerHand[x])
-			tempNode.scale *=.40
 			tempNode.rotation = float((-x) / (2 * handSize))
 			tempNode.setCardID(playerHand[x])
 		else:
 			cardPosition = Vector2(900 + ((handSize - x)* 95),900 + (10 * (handSize - x)))
 			tempNode = Global.newNode(card, cardPosition, playerCards, 1)
 			tempNode.texture = get(playerHand[x])
-			tempNode.scale *=.40
 			tempNode.rotation = float((handSize - x) / (2 * handSize))
 			tempNode.setCardID(playerHand[x])
 	
@@ -707,10 +734,61 @@ func updateStress(stress):
 		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 4.png")
 	else:
 		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression BREAK.png")
-		# Need to add a timer
-		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+		$Breakpoint.show()
+		$Breakpoint.get_node("BreakpointAnim").play()
 
 
 func _on_song_start_finished():
 	print("song finished playing")
 	$Song_loop.play()  
+
+
+func _on_barrel_button_pressed():
+	selectorIndex += 1
+	# Hide numbers for duration of rotation
+	cardToBluff.get_node("TextLeft").hide()
+	cardToBluff.get_node("TextCenter").hide()
+	cardToBluff.get_node("TextRight").hide()
+	# Update numbers (uses modular arithmetic)
+	cardToBluff.get_node("TextLeft").text = cardSyms[selectorIndex  % 13]
+	cardToBluff.get_node("TextCenter").text = cardSyms[(selectorIndex + 1) % 13]
+	cardToBluff.get_node("TextRight").text = cardSyms[(selectorIndex + 2) % 13]
+	# Disable button so it can't be spammed
+	cardToBluff.get_node("BarrelButton").disabled = true
+	# Begin rotation
+	rotateTicks = 0
+	cardToBluff.get_node("RotateTimer").start()
+
+
+func _on_rotate_timer_timeout():
+	# Rotate (by 5 degrees)
+	cardToBluff.get_node("BarrelButton").rotation -= PI/36
+	rotateTicks += 1
+	# After rotation plays 9 times (1 full rotation, 45 degrees or 1/8 of a circle in all):
+	if rotateTicks == 9:
+		# Rotation is done, reveal numbers again
+		cardToBluff.get_node("TextLeft").show()
+		cardToBluff.get_node("TextCenter").show()
+		cardToBluff.get_node("TextRight").show()
+		# Disable timer
+		cardToBluff.get_node("RotateTimer").stop()
+		# Re-enable button
+		cardToBluff.get_node("BarrelButton").disabled = false
+
+
+func _on_breakpoint_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+
+
+func _on_journal_button_pressed():
+	# Open journal
+	$Click.play()
+	# Hide global dialogue elements
+	if Global.current_prompt.visible:
+		# Pause  so dialogue isn't revealed on closing menu if it was already hidden
+		pauseDialogue = true
+		for option in Global.current_options:
+			option.hide()
+		Global.current_prompt.hide()
+	# Open journal
+	$Journal.show()
