@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://3dqpr6nbuyif"]
+
+[ext_resource type="Texture2D" uid="uid://cnj0qk6uninm0" path="res://Assets/Journal/journal_amity.png" id="1_3x5xq"]
+
+[node name="Journal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CurrentPage" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("1_3x5xq")

@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://buqbhqp81febv"]
+
+[ext_resource type="Script" path="res://Scripts/ClockPuzzle.gd" id="1_n3fj8"]
+[ext_resource type="Texture2D" uid="uid://cfdedjymvkoj" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/unsolvedclock.png" id="1_oq7h0"]
+[ext_resource type="Texture2D" uid="uid://nlwqr25ws0ah" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/hourhand.png" id="2_w3fua"]
+[ext_resource type="Texture2D" uid="uid://2x04q2kp27hr" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/minutehand.png" id="4_n3xjy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ddkt1"]
+radius = 300.027
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ube6u"]
+size = Vector2(1259.26, 333.333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs3f8"]
+size = Vector2(759.574, 255.724)
+
+[node name="ClockPuzzle" type="Node2D"]
+script = ExtResource("1_n3fj8")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_oq7h0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+position = Vector2(952, 703)
+shape = SubResource("CircleShape2D_ddkt1")
+
+[node name="HourHand" type="CharacterBody2D" parent="."]
+z_index = 1
+collision_mask = 16
+
+[node name="HourHandSprite" type="TextureRect" parent="HourHand"]
+offset_left = 235.0
+offset_top = 67.0
+offset_right = 1533.0
+offset_bottom = 418.0
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("2_w3fua")
+
+[node name="Area2DHourHand" type="Area2D" parent="HourHand/HourHandSprite"]
+
+[node name="CollisionShape2DHH" type="CollisionShape2D" parent="HourHand/HourHandSprite/Area2DHourHand"]
+position = Vector2(662.963, 177.778)
+shape = SubResource("RectangleShape2D_ube6u")
+
+[node name="MinuteHand" type="CharacterBody2D" parent="."]
+z_index = 1
+collision_mask = 16
+
+[node name="MinuteHandSprite" type="TextureRect" parent="MinuteHand"]
+offset_left = 57.0
+offset_top = 183.0
+offset_right = 785.0
+offset_bottom = 587.0
+scale = Vector2(0.447802, 0.307639)
+texture = ExtResource("4_n3xjy")
+
+[node name="Area2DMinuteHand" type="Area2D" parent="MinuteHand/MinuteHandSprite"]
+position = Vector2(-29.0307, 425.824)
+
+[node name="CollisionShape2DMH" type="CollisionShape2D" parent="MinuteHand/MinuteHandSprite/Area2DMinuteHand"]
+position = Vector2(410.788, -263.034)
+rotation = -2.79253
+skew = -0.057596
+shape = SubResource("RectangleShape2D_bs3f8")
+
+[connection signal="area_entered" from="StaticBody2D/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="HourHand/HourHandSprite/Area2DHourHand" to="." method="_on_area_2d_hour_hand_area_entered"]
+[connection signal="area_exited" from="HourHand/HourHandSprite/Area2DHourHand" to="." method="_on_area_2d_hour_hand_area_exited"]
+[connection signal="input_event" from="HourHand/HourHandSprite/Area2DHourHand" to="." method="_on_area_2d_hour_hand_input_event"]
+[connection signal="area_entered" from="MinuteHand/MinuteHandSprite/Area2DMinuteHand" to="." method="_on_area_2d_minute_hand_area_entered"]
+[connection signal="area_exited" from="MinuteHand/MinuteHandSprite/Area2DMinuteHand" to="." method="_on_area_2d_minute_hand_area_exited"]
+[connection signal="input_event" from="MinuteHand/MinuteHandSprite/Area2DMinuteHand" to="." method="_on_area_2d_minute_hand_input_event"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c321qv5wwiyst"]
+[gd_scene load_steps=6 format=3 uid="uid://bbr53j4b0wi0p"]
 
 [ext_resource type="Script" path="res://Scripts/Start.gd" id="1_s8hsd"]
 [ext_resource type="Texture2D" uid="uid://leiuirv5rc6u" path="res://Assets/Backgrounds/StartScreen.png" id="2_tnkj4"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="3_y6r6x"]
 [ext_resource type="AudioStream" uid="uid://ds5eig4uxb42n" path="res://Assets/SFX/Songs/TDYN_wind_interlude.wav" id="4_a8ab1"]
+[ext_resource type="PackedScene" uid="uid://be8x4ykhg1sbl" path="res://Scenes/Credits.tscn" id="5_0arcb"]
 
 [node name="Start" type="Control"]
 layout_mode = 3
@@ -19,13 +20,22 @@ offset_bottom = 1426.0
 scale = Vector2(0.768, 0.768)
 texture = ExtResource("2_tnkj4")
 
-[node name="Button" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 1401.0
 offset_top = 514.0
 offset_right = 1741.0
 offset_bottom = 594.0
+rotation = -0.00828301
+
+[node name="CreditsButton2" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1386.0
+offset_top = 623.0
+offset_right = 1715.0
+offset_bottom = 702.0
 rotation = -0.00828301
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
@@ -35,4 +45,14 @@ stream = ExtResource("3_y6r6x")
 stream = ExtResource("4_a8ab1")
 autoplay = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="IntroVid" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Credits" parent="." instance=ExtResource("5_0arcb")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CreditsButton2" to="." method="_on_credits_button_pressed"]
