@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dxopv4ubc2kxp" path="res://Assets/BunnyTable/Response_Card_A_Base.png" id="2_wrk7b"]
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="3_3agfe"]
 [ext_resource type="Texture2D" uid="uid://cmskvn4uinm3e" path="res://Assets/BunnyTable/Response_Card_A_Hovered.png" id="3_f68dq"]
-[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="5_2hck4"]
+[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="5_2hck4"]
 [ext_resource type="Texture2D" uid="uid://c8boduqd2ory5" path="res://Assets/BunnyTable/Response_Card_B_Base.png" id="5_m7mbn"]
 [ext_resource type="Texture2D" uid="uid://d2bqrr1g4wsfs" path="res://Assets/BunnyTable/Response_Card_B_Hovered.png" id="6_s63xg"]
 
@@ -116,7 +116,7 @@ offset_right = 115.0
 offset_bottom = 71.0
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_kds7x")
+stream = ExtResource("5_2hck4")
 
 [connection signal="mouse_entered" from="LeftOpt/Texture" to="." method="_on_left_texture_mouse_entered"]
 [connection signal="mouse_exited" from="LeftOpt/HoverTexture" to="." method="_on_left_hover_texture_mouse_exited"]
