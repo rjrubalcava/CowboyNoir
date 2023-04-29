@@ -11,8 +11,27 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+<<<<<<< HEAD
 	pass
 
+=======
+	if Global.clubcardclick == true:
+		ClubsCard.hide()
+	if Global.hourhandclick == true:
+		HourHand.hide()
+
+func _input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if ClubsCard.get_global_rect().has_point(event.position):
+			Global.clubcardclick = true
+		elif HourHand.get_global_rect().has_point(event.position):
+			Global.hourhandclick = true
+			
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_accept"):
+		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+		
+>>>>>>> main
 func _on_clubs_card_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(ClubsCard, "scale", Vector2(0.8,0.8), 0.1)

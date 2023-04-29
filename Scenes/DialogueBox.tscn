@@ -1,18 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://umuoyje8ae8j"]
+[gd_scene load_steps=7 format=3 uid="uid://umuoyje8ae8j"]
 
-[ext_resource type="Texture2D" uid="uid://dhd7slqpr7ebh" path="res://Assets/BunnyTable/Opponent Response Blank.png" id="1_2ur4r"]
+[ext_resource type="Texture2D" uid="uid://c8vkhxxkyvrx" path="res://Assets/BunnyTable/Amity Text Boil 2.png" id="1_hkkro"]
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="2_0ewdj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_326nc"]
+atlas = ExtResource("1_hkkro")
+region = Rect2(0, 0, 713, 323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs6r5"]
+atlas = ExtResource("1_hkkro")
+region = Rect2(713, 0, 713, 323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwhih"]
+atlas = ExtResource("1_hkkro")
+region = Rect2(1426, 0, 713, 323)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5duxr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_326nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs6r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwhih")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="DialogueBox" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Texture" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 2500.0
-offset_bottom = 1406.0
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(372, 399)
 scale = Vector2(0.768, 0.768)
-texture = ExtResource("1_2ur4r")
+sprite_frames = SubResource("SpriteFrames_5duxr")
 
 [node name="Text" type="RichTextLabel" parent="."]
 layout_mode = 0

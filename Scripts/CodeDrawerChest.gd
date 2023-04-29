@@ -96,7 +96,7 @@ func _unhandled_input(event):
 		
 func open_drawer():
 	if result[0]== "9" and result[1]=="2" and result[2]=="6"  and result[3]=="3":
-		get_tree().change_scene_to_file("res://Scenes/OpenDrawer.tscn")
+		get_tree().change_scene_to_file("res://Scenes/OpenChest.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
 		print("Try again, the passsword is not correct")
