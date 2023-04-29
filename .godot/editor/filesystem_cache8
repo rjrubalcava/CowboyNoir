@@ -1,14 +1,14 @@
 2a60927148abd1d33b818b535e306557
-::res://::1682659703
+::res://::1682782988
 README.md::TextFile::-1::1680489682::0::1::::<><>::
-::res://Assets/::1681453436
+::res://Assets/::1682688865
 ButtonPlaceholder.png::CompressedTexture2D::5065615437381662818::1680489682::1680489682::1::::<><>::
 ::res://Assets/Backgrounds/::1680489682
 IMG_0339.png::CompressedTexture2D::222450540307864517::1680489682::1680489682::1::::<><>::
 StartScreen.png::CompressedTexture2D::780856690298206722::1680489682::1680489682::1::::<><>::
-::res://Assets/BunnyHeadspace/::1681453436
+::res://Assets/BunnyHeadspace/::1682688865
 Background.png::CompressedTexture2D::2933423853071100240::1680489682::1680489682::1::::<><>::
-::res://Assets/BunnyHeadspace/Clothes Chest/::1681453436
+::res://Assets/BunnyHeadspace/Clothes Chest/::1682688865
 ::res://Assets/BunnyHeadspace/Clothes Chest/Exterior/::1680489682
 clothes chest club card.png::CompressedTexture2D::6940181991346742139::1680489682::1680489682::1::::<><>::
 clothes chest diamond card.png::CompressedTexture2D::8281474179230784786::1680489682::1680489682::1::::<><>::
@@ -57,7 +57,7 @@ mirrordesk.png::CompressedTexture2D::5656704803347396658::1681453436::1680489682
 newspaper.png::CompressedTexture2D::6398939493142217099::1681453436::1680489682::1::::<><>::
 spade lamp.png::CompressedTexture2D::4485086458480280151::1681453436::1680489682::1::::<><>::
 the sun.png::CompressedTexture2D::7396428269985814144::1680489682::1680489682::1::::<><>::
-::res://Assets/BunnyTable/::1682392353
+::res://Assets/BunnyTable/::1682688865
 Background.png::CompressedTexture2D::3469705220257149645::1680489682::1680489682::1::::<><>::
 Beam of Light.png::CompressedTexture2D::8495687926514929445::1680489682::1680489682::1::::<><>::
 Card on Table.png::CompressedTexture2D::6893268601411464292::1680489682::1680489682::1::::<><>::
@@ -156,7 +156,7 @@ info.txt::TextFile::-1::1680489682::0::1::::<><>::
 MaidenOrange-BXXV.ttf::FontFile::3472624317046211783::1680489682::1680489682::1::::<><>::
 ::res://Assets/Fonts/maiden-orange-font/misc/::1680489682
 LICENSE.txt::TextFile::-1::1680489682::0::1::::<><>::
-::res://Assets/SFX/::1682659703
+::res://Assets/SFX/::1682746870
 ::res://Assets/SFX/Cards shuffle vars/::1681453436
 Card_dealt_1_1.wav::AudioStreamWAV::7733552067780577801::1681453436::1681453436::1::::<><>::
 Card_dealt_1_2.wav::AudioStreamWAV::8750713113882784930::1681453436::1681453436::1::::<><>::
@@ -166,54 +166,55 @@ Card_dealt_1_5.wav::AudioStreamWAV::7148848485720414174::1681453436::1681453436:
 Card_dealt_1_6.wav::AudioStreamWAV::3113535766579574335::1681453436::1681453436::1::::<><>::
 Card_dealt_1_7.wav::AudioStreamWAV::4325055958694548665::1681453436::1681453436::1::::<><>::
 Card_dealt_1_8.wav::AudioStreamWAV::5940421593350799981::1681453436::1681453436::1::::<><>::
-::res://Assets/SFX/chest sfx/::1682659710
-Metal Latch.wav::AudioStreamWAV::3259263477045085818::1682659710::1682659710::1::::<><>::
+::res://Assets/SFX/chest sfx/::1682688865
+Metal Latch.wav::AudioStreamWAV::3259263477045085818::1682688865::1682688865::1::::<><>::
 ::res://Assets/SFX/chips_clack_variants/::1681453437
 chips_clack_2_1.wav::AudioStreamWAV::6920327774211504502::1681453437::1681453437::1::::<><>::
 chips_clack_2_2.wav::AudioStreamWAV::5074158870675459335::1681453437::1681453437::1::::<><>::
 chips_clack_2_3.wav::AudioStreamWAV::9135178033846760667::1681453437::1681453437::1::::<><>::
-::res://Assets/SFX/clicks/::1682659703
-backwards-negative click.wav::AudioStreamWAV::4027524516515027669::1682659552::1682659552::1::::<><>::
-click.wav::AudioStreamWAV::4026376881997781456::1680489682::1682659538::1::::<><>::
-::res://Assets/SFX/Songs/::1681453437
+::res://Assets/SFX/clicks/::1682688865
+backwards-negative click.wav::AudioStreamWAV::4027524516515027669::1682688865::1682688865::1::::<><>::
+click.wav::AudioStreamWAV::4026376881997781456::1682688865::1682688865::1::::<><>::
+::res://Assets/SFX/Songs/::1682746922
+Headspace theme.wav::AudioStreamWAV::408940718644326458::1682746863::1682746922::1::::<><>::
 TDYN_wind_interlude.wav::AudioStreamWAV::8484850084386931279::1681453437::1681453437::1::::<><>::
 ::res://Assets/SFX/Songs/Jazz_rough_parts/::1681453437
 jazz_rough_loopable.wav::AudioStreamWAV::3351931508712739838::1681453437::1681453437::1::::<><>::
 jazz_rough_start.wav::AudioStreamWAV::9185057587092471159::1681453437::1681453437::1::::<><>::
-::res://Assets/SFX/Transitions/::1682658706
-bluff-to-mind.wav::AudioStreamWAV::8980160917466539246::1682658706::1682658706::1::::<><>::
+::res://Assets/SFX/Transitions/::1682688865
+bluff-to-mind.wav::AudioStreamWAV::8980160917466539246::1682688865::1682688865::1::::<><>::
 ::res://Assets/Shaders/::1680489682
 BluffTable.gdshader::Shader::-1::1680489682::0::1::::<><>::
 ::res://Groups/::1680489682
 NumOfCPUS.tres::ButtonGroup::-1::1680489682::0::1::::<><>::
-::res://Scenes/::1682659538
-Bluff.tscn::PackedScene::2149713129778540852::1682659538::0::1::::<><>::res://Scripts/Bluff.gd<>res://Assets/Shaders/BluffTable.gdshader<>uid://bpo0sj8ob4gft<>uid://cvkby0y3wty4a<>uid://gc0yb4w8nr1a<>uid://dtbm0egjugty0<>uid://bn4glukot66r5<>uid://bxmn3r4qq71ua<>uid://c5ui11g0fy5y5<>res://Scenes/chips_Stacking_1.gd<>uid://cej7wjqgmmlhn<>uid://d3ffbu77o3x68<>uid://d34ks6k5uwthn<>uid://bn0x27q0drvgg<>uid://d07b65wwmwmao
+::res://Scenes/::1682749987
+Bluff.tscn::PackedScene::2149713129778540852::1682749790::0::1::::<><>::res://Scripts/Bluff.gd<>res://Assets/Shaders/BluffTable.gdshader<>uid://bpo0sj8ob4gft<>uid://cvkby0y3wty4a<>uid://gc0yb4w8nr1a<>uid://dtbm0egjugty0<>uid://bn4glukot66r5<>uid://bxmn3r4qq71ua<>uid://c5ui11g0fy5y5<>res://Scenes/chips_Stacking_1.gd<>uid://cej7wjqgmmlhn<>uid://d3ffbu77o3x68<>uid://d34ks6k5uwthn<>uid://bn0x27q0drvgg<>uid://d07b65wwmwmao
 BluffTable.gdshader::Shader::-1::1681451773::0::1::::<><>::
-BunnyHeadspace.tscn::PackedScene::5334628766814712323::1682659313::0::1::::<><>::uid://bh18cd86aasdc<>res://Scripts/BunnyHeadspace.gd<>uid://cjyrvlcws68lw<>uid://ou6w5vem52dk<>uid://bhruy6ojupxnk<>uid://bl4clgbd0bkk1<>uid://cmufdprq4ktta<>uid://dr044bs16d6gn<>uid://hjdbvf5xo8yt<>uid://cq1uiaod6361i<>uid://dla3ger8ohykc<>uid://biwchg5puqcqa<>uid://bkrvnro3vqqa6<>uid://b45uyo2p1m1y6<>uid://dmajmhrwb8vnd<>uid://ddm5dfqj2jlfs<>uid://jcxrxmjl4ubc<>uid://2k080temt43x<>uid://bci08vshyoahq<>uid://dpax0dk10g40g<>uid://cqfktwup771bn<>uid://cxfxul6u8qrdr<>uid://d07b65wwmwmao
+BunnyHeadspace.tscn::PackedScene::5334628766814712323::1682749987::0::1::::<><>::uid://bh18cd86aasdc<>res://Scripts/BunnyHeadspace.gd<>uid://cjyrvlcws68lw<>uid://ou6w5vem52dk<>uid://bhruy6ojupxnk<>uid://bl4clgbd0bkk1<>uid://cmufdprq4ktta<>uid://dr044bs16d6gn<>uid://hjdbvf5xo8yt<>uid://cq1uiaod6361i<>uid://dla3ger8ohykc<>uid://biwchg5puqcqa<>uid://bkrvnro3vqqa6<>uid://b45uyo2p1m1y6<>uid://dmajmhrwb8vnd<>uid://ddm5dfqj2jlfs<>uid://jcxrxmjl4ubc<>uid://2k080temt43x<>uid://bci08vshyoahq<>uid://dpax0dk10g40g<>uid://cqfktwup771bn<>uid://cxfxul6u8qrdr<>uid://d07b65wwmwmao<>uid://bmo2uf3m4sflq<>uid://f3dgueu72h3o
 Card.tscn::PackedScene::2836139679319454143::1681453437::0::1::::<><>::res://Scripts/Card.gd<>uid://diggqcn3jff1j<>uid://dww574i688rg1<>uid://demekc2hgn2rn<>uid://nyfnky75n5ag<>uid://c837qws5inpdu<>uid://cqvt41l6t48yb
-chips_Stacking_1.gd::GDScript::-1::1682658797::0::1::::<>AudioStreamPlayer<>::
-CodeDrawerChest.tscn::PackedScene::4322969909009996921::1681453437::0::1::::<><>::res://Scripts/CodeDrawerChest.gd<>uid://cior73gkqvjvs<>uid://b54ib3hbrgud<>uid://dslnqbjcepvw2<>uid://c03t003utl1dt<>uid://cesi2mdx4lyq2<>uid://swrk6y3ogoeb<>uid://bpqfu6dwnng44
-CodeDrawerVanity.tscn::PackedScene::2942983834760539003::1681453437::0::1::::<><>::res://Scripts/CodeDrawer.gd<>uid://cior73gkqvjvs<>uid://b54ib3hbrgud<>uid://dslnqbjcepvw2<>uid://c03t003utl1dt<>uid://cesi2mdx4lyq2<>uid://swrk6y3ogoeb<>uid://bpqfu6dwnng44
-DialogueBox.tscn::PackedScene::1429790021468852555::1682392353::0::1::::<><>::uid://dhd7slqpr7ebh<>uid://bpqfu6dwnng44
-DialogueOption.tscn::PackedScene::6250405808294698520::1682659538::0::1::::<><>::res://Scripts/DialogueOption.gd<>uid://cogjpl23ffkhm<>uid://bpqfu6dwnng44<>uid://cn65cvhd023be<>uid://bxmn3r4qq71ua
+chips_Stacking_1.gd::GDScript::-1::1682746558::0::1::::<>AudioStreamPlayer<>::
+CodeDrawerChest.tscn::PackedScene::4322969909009996921::1682749790::0::1::::<><>::res://Scripts/CodeDrawerChest.gd<>uid://cior73gkqvjvs<>uid://b54ib3hbrgud<>uid://dslnqbjcepvw2<>uid://c03t003utl1dt<>uid://cesi2mdx4lyq2<>uid://swrk6y3ogoeb<>uid://bpqfu6dwnng44<>uid://bxmn3r4qq71ua<>uid://bxm70f4bpth7r
+CodeDrawerVanity.tscn::PackedScene::2942983834760539003::1682749790::0::1::::<><>::res://Scripts/CodeDrawer.gd<>uid://cior73gkqvjvs<>uid://b54ib3hbrgud<>uid://dslnqbjcepvw2<>uid://c03t003utl1dt<>uid://cesi2mdx4lyq2<>uid://swrk6y3ogoeb<>uid://bpqfu6dwnng44<>uid://bxm70f4bpth7r<>uid://bxmn3r4qq71ua
+DialogueBox.tscn::PackedScene::1429790021468852555::1682688865::0::1::::<><>::uid://dhd7slqpr7ebh<>uid://bpqfu6dwnng44
+DialogueOption.tscn::PackedScene::6250405808294698520::1682749790::0::1::::<><>::res://Scripts/DialogueOption.gd<>uid://cogjpl23ffkhm<>uid://bpqfu6dwnng44<>uid://cn65cvhd023be<>uid://bxmn3r4qq71ua
 Global.tscn::PackedScene::599049541030276570::1681453533::0::1::::<><>::res://Scripts/Global.gd
 MainScene.tscn::PackedScene::3118517110821397835::1681450396::0::1::::<><>::res://Scripts/MainScene.gd
-OpenDrawer.tscn::PackedScene::7597598875501020536::1681453437::0::1::::<><>::res://Scripts/OpenDrawer.gd<>uid://djce10hh6ewmf<>uid://fme2uxug5bvm<>uid://nmuyqgnbevlm<>uid://cyhv5w7ohrxa5
-Start.tscn::PackedScene::6795475553488936247::1682659538::0::1::::<><>::res://Scripts/Start.gd<>uid://leiuirv5rc6u<>uid://bxmn3r4qq71ua<>uid://ds5eig4uxb42n
-::res://Scripts/::1682659537
-Bluff.gd::GDScript::-1::1682659234::0::1::::<>Node2D<>::
-BunnyHeadspace.gd::GDScript::-1::1682659537::0::1::::<>Control<>::
+OpenDrawer.tscn::PackedScene::7597598875501020536::1682749790::0::1::::<><>::res://Scripts/OpenDrawer.gd<>uid://djce10hh6ewmf<>uid://fme2uxug5bvm<>uid://nmuyqgnbevlm<>uid://cyhv5w7ohrxa5<>uid://bmo2uf3m4sflq
+Start.tscn::PackedScene::6795475553488936247::1682749790::0::1::::<><>::res://Scripts/Start.gd<>uid://leiuirv5rc6u<>uid://bxmn3r4qq71ua<>uid://ds5eig4uxb42n
+::res://Scripts/::1682749987
+Bluff.gd::GDScript::-1::1682749981::0::1::::<>Node2D<>::
+BunnyHeadspace.gd::GDScript::-1::1682749987::0::1::::<>Control<>::
 Card.gd::GDScript::-1::1681453437::0::1::::<>Sprite2D<>::
 Clock.gd::GDScript::-1::1681453437::0::1::::<>TextureRect<>::
-CodeDrawer.gd::GDScript::-1::1681453437::0::1::::<>Control<>::
-CodeDrawerChest.gd::GDScript::-1::1681453437::0::1::::<>Control<>::
-DialogueOption.gd::GDScript::-1::1682392353::0::1::::<>Control<>::
-Global.gd::GDScript::-1::1682392353::0::1::::<>Node2D<>::
+CodeDrawer.gd::GDScript::-1::1682688865::0::1::::<>Control<>::
+CodeDrawerChest.gd::GDScript::-1::1682688865::0::1::::<>Control<>::
+DialogueOption.gd::GDScript::-1::1682688865::0::1::::<>Control<>::
+Global.gd::GDScript::-1::1682688865::0::1::::<>Node2D<>::
 MainScene.gd::GDScript::-1::1681451419::0::1::::<>Node2D<>::
 Newspaper.gd::GDScript::-1::1681453437::0::1::::<>TextureRect<>::
-OpenDrawer.gd::GDScript::-1::1681453437::0::1::::<>Control<>::
+OpenDrawer.gd::GDScript::-1::1682688865::0::1::::<>Control<>::
 Start.gd::GDScript::-1::1680489682::0::1::::<>Control<>::
 TheSun.gd::GDScript::-1::1681453437::0::1::::<>TextureRect<>::
-::res://Z-RNDM/::1682659538
-default_env.tres::Environment::797910927413459770::1682659538::0::1::::<><>::
+::res://Z-RNDM/::1682749987
+default_env.tres::Environment::797910927413459770::1682749987::0::1::::<><>::
 icon.png::CompressedTexture2D::8149539214728030452::1680489682::1680489682::1::::<><>::

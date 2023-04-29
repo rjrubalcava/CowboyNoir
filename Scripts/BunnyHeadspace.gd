@@ -21,12 +21,16 @@ var Enlarged_Newspaper_sprite: Sprite2D
 var selected = false
 
 func _ready():
+	
 	Enlarged_Newspaper_sprite = Sprite2D.new()
 	Enlarged_Newspaper_sprite.texture = EnlargedNewspaper 
 	Enlarged_Newspaper_sprite.scale = Vector2(0.75, 0.75)
 	add_child(Enlarged_Newspaper_sprite)
 	Enlarged_Newspaper_sprite.hide()
+	
 	$Transition.play()
+	
+		
 
 func _process(delta):
 	pass
