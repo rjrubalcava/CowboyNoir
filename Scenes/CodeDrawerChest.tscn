@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2ucxhlcmg8af"]
+[gd_scene load_steps=11 format=3 uid="uid://b2ucxhlcmg8af"]
 
 [ext_resource type="Script" path="res://Scripts/CodeDrawerChest.gd" id="1_k75a3"]
 [ext_resource type="Texture2D" uid="uid://dk7hphch658xg" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/chestpuzzle.png" id="2_xd0tj"]
 [ext_resource type="Texture2D" uid="uid://dvikj4o7mkl0o" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/boudoirbuttons.png" id="3_ga4g4"]
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="7_wt87w"]
+[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="9_wo8xw"]
+[ext_resource type="AudioStream" uid="uid://bxm70f4bpth7r" path="res://Assets/SFX/clicks/backwards-negative click.wav" id="10_kh4jb"]
 
 [node name="CodeDrawerChest" type="Control"]
 layout_mode = 3
@@ -108,3 +110,9 @@ theme_override_fonts/normal_font = ExtResource("7_wt87w")
 theme_override_font_sizes/normal_font_size = 100
 theme_override_font_sizes/bold_font_size = 20
 text = "0"
+
+[node name="LR_lock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_wo8xw")
+
+[node name="UD_lock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_kh4jb")

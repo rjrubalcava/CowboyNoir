@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgillxbhf2j1y"]
+[gd_scene load_steps=7 format=3 uid="uid://dgillxbhf2j1y"]
 
 [ext_resource type="Script" path="res://Scripts/OpenDrawer.gd" id="1_7ybmh"]
 [ext_resource type="Texture2D" uid="uid://cqk0d4krjtubm" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/emptyboudoir.png" id="2_k26ek"]
 [ext_resource type="Texture2D" uid="uid://cgi85cwpjyi42" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/clubcard.png" id="3_ak850"]
 [ext_resource type="Texture2D" uid="uid://nlwqr25ws0ah" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/hourhand.png" id="4_ko4pr"]
+
+
+[ext_resource type="Script" path="res://Scripts/OpenDrawer.gd" id="1_7ybmh"]
+[ext_resource type="Texture2D" uid="uid://djce10hh6ewmf" path="res://Assets/BunnyHeadspace/Code drawer/Interior/code drawer interior backdrop.png" id="2_6sidm"]
+[ext_resource type="Texture2D" uid="uid://fme2uxug5bvm" path="res://Assets/BunnyHeadspace/Code drawer/Interior/code drawer clubs card.png" id="3_ie6uq"]
+[ext_resource type="Texture2D" uid="uid://nmuyqgnbevlm" path="res://Assets/BunnyHeadspace/Code drawer/Interior/codedrawer locket.png" id="4_te5ts"]
+[ext_resource type="Texture2D" uid="uid://cyhv5w7ohrxa5" path="res://Assets/BunnyHeadspace/Code drawer/Interior/code drawer hour hand.png" id="5_uhwjp"]
+[ext_resource type="AudioStream" uid="uid://bmo2uf3m4sflq" path="res://Assets/SFX/chest sfx/Metal Latch.wav" id="6_pyoqu"]
 
 [node name="OpenDrawer" type="Control"]
 layout_mode = 3
@@ -37,6 +45,9 @@ offset_right = 1610.0
 offset_bottom = 1177.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_ko4pr")
+
+[node name="Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_pyoqu")
 
 [connection signal="mouse_entered" from="ClubsCard" to="." method="_on_clubs_card_mouse_entered"]
 [connection signal="mouse_exited" from="ClubsCard" to="." method="_on_clubs_card_mouse_exited"]

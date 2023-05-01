@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Start.gd" id="1_s8hsd"]
 [ext_resource type="Texture2D" uid="uid://leiuirv5rc6u" path="res://Assets/Backgrounds/StartScreen.png" id="2_tnkj4"]
-[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="3_gtvxg"]
+[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="3_y6r6x"]
 [ext_resource type="AudioStream" uid="uid://ds5eig4uxb42n" path="res://Assets/SFX/Songs/TDYN_wind_interlude.wav" id="4_a8ab1"]
 [ext_resource type="PackedScene" uid="uid://be8x4ykhg1sbl" path="res://Scenes/Credits.tscn" id="5_0arcb"]
 
@@ -13,8 +13,10 @@ script = ExtResource("1_s8hsd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -6.00003
+offset_top = 20.0
+offset_right = 2494.0
+offset_bottom = 1426.0
 scale = Vector2(0.768, 0.768)
 texture = ExtResource("2_tnkj4")
 
@@ -37,7 +39,7 @@ offset_bottom = 702.0
 rotation = -0.00828301
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_gtvxg")
+stream = ExtResource("3_y6r6x")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_a8ab1")

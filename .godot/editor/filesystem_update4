@@ -1,9 +1,6 @@
 res://Z-RNDM/default_env.tres
-res://Scenes/BunnyHeadspace.tscn
-res://Scenes/ClockPuzzle.tscn
 res://Scenes/Global.tscn
-res://Scenes/OpenDrawer.tscn
-res://Scenes/CodeDrawerVanity.tscn
-res://Scenes/DialogueBox.tscn
-res://Scenes/OpenChest.tscn
-res://Scenes/PuzzleSolvedScreen.tscn
+res://Scenes/chips_Stacking_1.gd
+res://Scenes/Overworld.tscn
+res://Scenes/Journal.tscn
+res://Scenes/DialogueOption.tscn

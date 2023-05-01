@@ -101,7 +101,8 @@ var cpuCardsLastRound = null
 
 var stressLevel = 0
 var psychometerStage = 0
-var stress_up_sounds = ["chips_Stacking_1","chips_Stacking_2","chips_Stacking_3"]
+var stress_up_sounds = ["chips_Stacking_1","chips_Stacking_2"]
+var stress_down_sounds = ["chips_Stacking_neg_1"]
 
 var cardSyms = ["2","3","4","5","6","7","8","9","10","J","Q","K","A"]
 var selectorIndex = 0
@@ -119,10 +120,11 @@ func _ready():
 	rng.randomize()
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_up"):
+	if event.is_action_pressed("ui_up"): 
 		incPshGge()
 	elif event.is_action_pressed("ui_down"):
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+		$Transition.play()	
 	# Close journal if it is open and esc is pressed
 	elif event.is_action_pressed("ui_cancel") and $Journal.visible:
 		# Show global dialogue elements if dialogue has been previously paused
@@ -720,6 +722,14 @@ func updateStress(stress):
 	print("got update")
 	if stress > 0:
 		var curr_sound = get_node(stress_up_sounds.pick_random())
+		
+		curr_sound.set_pitch_scale(1 + randf_range(0.2,0.5))
+		curr_sound.play()
+	stressLevel += stress
+	if stress < 0:
+		var curr_sound = get_node(stress_down_sounds.pick_random()) 
+		
+		curr_sound.set_pitch_scale(1 - randf_range(0.2,0.5))
 		curr_sound.play()
 	stressLevel += stress
 	if stressLevel < 0:
@@ -777,6 +787,7 @@ func _on_rotate_timer_timeout():
 
 
 func _on_breakpoint_button_pressed():
+	$Transition.play()
 	get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
 
 

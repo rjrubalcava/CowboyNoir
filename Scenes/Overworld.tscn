@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cqf0b3qbsaawq" path="res://Assets/Overworld/overworld_almost_done.png" id="1_jlm75"]
 [ext_resource type="Script" path="res://Scripts/Overworld.gd" id="1_w21fl"]
-[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="3_b5pvv"]
+[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="3_b5pvv"]
 [ext_resource type="PackedScene" uid="uid://3dqpr6nbuyif" path="res://Scenes/Journal.tscn" id="4_m0w33"]
 
 [node name="Overworld" type="Control"]
