@@ -19,23 +19,13 @@ func _input(event):
 			Global.minutecardclick = true
 	if event.is_action_pressed("ui_accept"):
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
-		
-func _on_knife_mouse_entered():
-	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(Knife, "scale", Vector2(0.8,0.8), 0.1)
-	
-
-func _on_knife_mouse_exited():
-	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(Knife, "scale", Vector2(0.76,0.76), 0.1)
-
 
 
 func _on_minute_hand_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(MinuteHand, "scale", Vector2(0.8,0.8), 0.1)
+	TW.tween_property(MinuteHand, "scale", Vector2(0.52,0.52), 0.1)
 
 
 func _on_minute_hand_mouse_exited():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(MinuteHand, "scale", Vector2(0.76,0.76), 0.1)
+	TW.tween_property(MinuteHand, "scale", Vector2(0.5,0.5), 0.1)

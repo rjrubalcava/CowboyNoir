@@ -1,6 +1,9 @@
-TextureButton
+Marker2D
+Node3D
 TextureRect
+TextEdit
 Button
+TextureButton
 VideoStreamPlayer
 CollisionShape2D
 Area2D
@@ -14,7 +17,6 @@ AudioListener2D
 AudioStreamPlayer2D
 Camera2D
 Sprite2D
-TextEdit
 Timer
 AudioStreamPlayer2D
 OptionButton

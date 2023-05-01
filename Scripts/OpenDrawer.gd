@@ -29,29 +29,19 @@ func _unhandled_input(event):
 		
 func _on_clubs_card_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(ClubsCard, "scale", Vector2(0.8,0.8), 0.1)
+	TW.tween_property(ClubsCard, "scale", Vector2(0.22,0.22), 0.1)
 
 
 func _on_clubs_card_mouse_exited():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(ClubsCard, "scale", Vector2(0.76,0.76), 0.1)
-
-
-func _on_locket_mouse_entered():
-	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(Locket, "scale", Vector2(0.8,0.8), 0.1)
-
-
-func _on_locket_mouse_exited():
-	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(Locket, "scale", Vector2(0.76,0.76), 0.1)
+	TW.tween_property(ClubsCard, "scale", Vector2(0.2,0.2), 0.1)
 
 
 func _on_hour_hand_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(HourHand, "scale", Vector2(0.8,0.8), 0.1)
+	TW.tween_property(HourHand, "scale", Vector2(0.52,0.52), 0.1)
 
 
 func _on_hour_hand_mouse_exited():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(HourHand, "scale", Vector2(0.76,0.76), 0.1)
+	TW.tween_property(HourHand, "scale", Vector2(0.5,0.5), 0.1)

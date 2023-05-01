@@ -1,12 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh6urp6y76v4v"]
+[gd_scene load_steps=5 format=3 uid="uid://bh6urp6y76v4v"]
 
 [ext_resource type="Script" path="res://Scripts/CodeDrawer.gd" id="1_l4okr"]
-[ext_resource type="Texture2D" uid="uid://cior73gkqvjvs" path="res://Assets/BunnyHeadspace/Code drawer/Exterior/code drawer back drop.png" id="2_7ax2t"]
-[ext_resource type="Texture2D" uid="uid://b54ib3hbrgud" path="res://Assets/BunnyHeadspace/Code drawer/Exterior/code drawer drawer.png" id="3_p8xdy"]
-[ext_resource type="Texture2D" uid="uid://dslnqbjcepvw2" path="res://Assets/BunnyHeadspace/Code drawer/Exterior/Button1.png" id="4_t8xol"]
-[ext_resource type="Texture2D" uid="uid://c03t003utl1dt" path="res://Assets/BunnyHeadspace/Code drawer/Exterior/Buttons2.png" id="5_y8iet"]
-[ext_resource type="Texture2D" uid="uid://cesi2mdx4lyq2" path="res://Assets/BunnyHeadspace/Code drawer/Exterior/Buttons3.png" id="6_7hi5u"]
-[ext_resource type="Texture2D" uid="uid://swrk6y3ogoeb" path="res://Assets/BunnyHeadspace/Code drawer/Exterior/Buttons4.png" id="7_ip5kw"]
+[ext_resource type="Texture2D" uid="uid://0rcllbfpggn4" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/boudoirpuzzlenobuttons.png" id="2_qq66k"]
+[ext_resource type="Texture2D" uid="uid://dvikj4o7mkl0o" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/boudoirbuttons.png" id="3_3m5nd"]
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="8_653b3"]
 
 [node name="CodeDrawerVanity" type="Control"]
@@ -18,60 +14,51 @@ script = ExtResource("1_l4okr")
 layout_mode = 0
 offset_right = 2500.0
 offset_bottom = 1406.0
-scale = Vector2(0.76, 0.76)
-texture = ExtResource("2_7ax2t")
-
-[node name="Drawer" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 352.0
-offset_top = 280.0
-offset_right = 1980.0
-offset_bottom = 1099.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_p8xdy")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qq66k")
 
 [node name="Buttons1" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 523.0
-offset_top = 358.0
-offset_right = 683.0
-offset_bottom = 1012.0
-scale = Vector2(0.76, 0.76)
-texture = ExtResource("4_t8xol")
+offset_left = 475.0
+offset_top = 293.0
+offset_right = 719.0
+offset_bottom = 1298.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3m5nd")
 
 [node name="Buttons2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 742.0
-offset_top = 351.0
-offset_right = 923.0
-offset_bottom = 996.0
-scale = Vector2(0.76, 0.76)
-texture = ExtResource("5_y8iet")
+offset_left = 755.0
+offset_top = 291.0
+offset_right = 999.0
+offset_bottom = 1296.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3m5nd")
 
 [node name="Buttons3" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 988.0
-offset_top = 331.0
-offset_right = 1169.0
-offset_bottom = 990.0
-scale = Vector2(0.76, 0.76)
-texture = ExtResource("6_7hi5u")
+offset_left = 1016.0
+offset_top = 290.0
+offset_right = 1260.0
+offset_bottom = 1295.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3m5nd")
 
 [node name="Buttons4" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1223.0
-offset_top = 318.0
-offset_right = 1402.0
-offset_bottom = 970.0
-scale = Vector2(0.76, 0.76)
-texture = ExtResource("7_ip5kw")
+offset_left = 1309.0
+offset_top = 288.0
+offset_right = 1553.0
+offset_bottom = 1293.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3m5nd")
 
 [node name="NumberSelector1" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 568.0
-offset_top = 595.0
-offset_right = 768.0
-offset_bottom = 865.0
+offset_left = 521.0
+offset_top = 525.0
+offset_right = 721.0
+offset_bottom = 795.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("8_653b3")
 theme_override_font_sizes/normal_font_size = 100
@@ -80,10 +67,10 @@ text = "0"
 
 [node name="NumberSelector2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 794.0
-offset_top = 587.0
-offset_right = 994.0
-offset_bottom = 857.0
+offset_left = 784.0
+offset_top = 521.0
+offset_right = 984.0
+offset_bottom = 791.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("8_653b3")
 theme_override_font_sizes/normal_font_size = 100
@@ -92,10 +79,10 @@ text = "0"
 
 [node name="NumberSelector3" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 1036.0
-offset_top = 577.0
-offset_right = 1236.0
-offset_bottom = 847.0
+offset_left = 1062.0
+offset_top = 523.0
+offset_right = 1262.0
+offset_bottom = 793.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("8_653b3")
 theme_override_font_sizes/normal_font_size = 100
@@ -104,10 +91,10 @@ text = "0"
 
 [node name="NumberSelector4" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 1267.0
-offset_top = 566.0
-offset_right = 1467.0
-offset_bottom = 836.0
+offset_left = 1321.0
+offset_top = 522.0
+offset_right = 1521.0
+offset_bottom = 792.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("8_653b3")
 theme_override_font_sizes/normal_font_size = 100

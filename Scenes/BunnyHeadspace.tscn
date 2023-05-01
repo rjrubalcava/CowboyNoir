@@ -1,32 +1,20 @@
-[gd_scene load_steps=22 format=3 uid="uid://ciaes6gmsx3ut"]
+[gd_scene load_steps=16 format=3 uid="uid://ciaes6gmsx3ut"]
 
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
-[ext_resource type="Texture2D" uid="uid://t3im4ufvxun3" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/Background.png" id="2_4geki"]
+[ext_resource type="Texture2D" uid="uid://shdxih2t8rt0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/Unsolved Background.png" id="2_i06qd"]
 [ext_resource type="Texture2D" uid="uid://dh10ul2b886i1" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/stationaryobjects.png" id="3_qqchb"]
-[ext_resource type="Texture2D" uid="uid://ou6w5vem52dk" path="res://Assets/BunnyHeadspace/Zoom out/diamond rock.png" id="4_1w7tk"]
+[ext_resource type="Texture2D" uid="uid://c1ogmg1eiatsr" path="res://Assets/BunnyTable/Background Top Layer.png" id="4_b7alq"]
 [ext_resource type="Texture2D" uid="uid://ct2s5tq4litjv" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/boudoir.png" id="5_xy4g5"]
-[ext_resource type="Texture2D" uid="uid://bl4clgbd0bkk1" path="res://Assets/BunnyHeadspace/Zoom out/hearts card.png" id="6_8umd0"]
-[ext_resource type="Texture2D" uid="uid://hjdbvf5xo8yt" path="res://Assets/BunnyHeadspace/Zoom out/code drawer.png" id="10_xhkrq"]
-[ext_resource type="Texture2D" uid="uid://dla3ger8ohykc" path="res://Assets/BunnyHeadspace/Zoom out/diamond drawer.png" id="12_4cjag"]
+[ext_resource type="Texture2D" uid="uid://u1ayky8ih0r0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/diamondcard.png" id="9_nykbk"]
+[ext_resource type="Texture2D" uid="uid://bhrgbtjfycbr" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/heartcard.png" id="9_sen0s"]
+[ext_resource type="Texture2D" uid="uid://cgi85cwpjyi42" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/clubcard.png" id="10_06awf"]
+[ext_resource type="Texture2D" uid="uid://dqalpakvgfop2" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/chair.png" id="11_0w42j"]
+[ext_resource type="Texture2D" uid="uid://cal1yv7n5fh3j" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/spadecard.png" id="11_wj428"]
 [ext_resource type="Texture2D" uid="uid://dahk8okd6o0fh" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/small newspaper.png" id="12_be87g"]
-[ext_resource type="Texture2D" uid="uid://bkrvnro3vqqa6" path="res://Assets/BunnyHeadspace/inventoryStuff/frame.png" id="13_4iq0c"]
-[ext_resource type="Texture2D" uid="uid://ddm5dfqj2jlfs" path="res://Assets/BunnyHeadspace/Zoom out/the sun.png" id="14_ykb1b"]
-[ext_resource type="Texture2D" uid="uid://jcxrxmjl4ubc" path="res://Assets/BunnyHeadspace/inventoryStuff/diamond card in invt.png" id="15_ee2hf"]
-[ext_resource type="Texture2D" uid="uid://2k080temt43x" path="res://Assets/BunnyHeadspace/inventoryStuff/club card in invt.png" id="16_bphh4"]
-[ext_resource type="Texture2D" uid="uid://bci08vshyoahq" path="res://Assets/BunnyHeadspace/inventoryStuff/spade card in invt.png" id="17_67m7m"]
 [ext_resource type="Texture2D" uid="uid://besm63c6ry3vs" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/clock.png" id="18_mhtqg"]
 [ext_resource type="Texture2D" uid="uid://dpax0dk10g40g" path="res://Assets/BunnyHeadspace/inventoryStuff/hour hand in invt.png" id="18_yyxmo"]
 [ext_resource type="Texture2D" uid="uid://cqfktwup771bn" path="res://Assets/BunnyHeadspace/inventoryStuff/minute hand in invt.png" id="19_g7haf"]
 [ext_resource type="Texture2D" uid="uid://di778u008pt0h" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/unopenedchest.png" id="19_lb5j2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysjfa"]
-size = Vector2(60.8507, 155.947)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aw7ns"]
-size = Vector2(76.8229, 158.438)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_73f8q"]
-radius = 43.0116
 
 [node name="BunnyHeadspace" type="Control"]
 layout_mode = 3
@@ -35,12 +23,10 @@ script = ExtResource("1_ioy2x")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = -2.0
-offset_right = 2501.0
-offset_bottom = 1404.0
-scale = Vector2(0.76, 0.76)
-texture = ExtResource("2_4geki")
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_i06qd")
 metadata/_edit_lock_ = true
 
 [node name="Midground" type="TextureRect" parent="."]
@@ -56,19 +42,27 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_qqchb")
 metadata/_edit_lock_ = true
 
-[node name="DiamondRock" type="TextureRect" parent="."]
-visible = false
+[node name="Frame" type="TextureRect" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 1531.0
-offset_top = 631.0
-offset_right = 1831.0
-offset_bottom = 966.0
-scale = Vector2(0.76, 0.76)
-texture = ExtResource("4_1w7tk")
+offset_right = 2500.0
+offset_bottom = 1406.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("4_b7alq")
+
+[node name="Clock" type="TextureRect" parent="."]
+z_index = 3
+layout_mode = 0
+offset_left = 380.0
+offset_top = 110.0
+offset_right = 1092.0
+offset_bottom = 1107.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_mhtqg")
+metadata/_edit_lock_ = true
 
 [node name="MirrorDesk" type="TextureRect" parent="."]
-z_index = 1
+z_index = 3
 layout_mode = 0
 offset_left = 1027.0
 offset_top = 393.0
@@ -78,46 +72,23 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_xy4g5")
 metadata/_edit_lock_ = true
 
-[node name="Chair" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 275.0
-offset_top = 451.0
-offset_right = 550.0
-offset_bottom = 925.0
-scale = Vector2(0.768, 0.768)
-
-[node name="DiamondDrawer" type="TextureRect" parent="."]
-visible = false
-z_index = 1
-layout_mode = 0
-offset_left = 1204.0
-offset_top = 639.0
-offset_right = 1352.0
-offset_bottom = 709.0
-scale = Vector2(0.768, 0.768)
-texture = ExtResource("12_4cjag")
-
-[node name="Frame" type="TextureRect" parent="."]
-z_index = 1
-layout_mode = 0
-offset_left = 27.0
-offset_top = 1107.0
-offset_right = 2527.0
-offset_bottom = 2513.0
-scale = Vector2(0.768, 0.768)
-texture = ExtResource("13_4iq0c")
-
 [node name="HeartsCard" type="TextureRect" parent="."]
-visible = false
-z_index = 5
+z_index = 6
 layout_mode = 0
-offset_left = 617.0
-offset_top = 853.0
-offset_right = 778.0
-offset_bottom = 954.0
-scale = Vector2(0.76, 0.76)
-texture = ExtResource("6_8umd0")
+offset_left = 1142.0
+offset_top = 866.0
+offset_right = 2094.0
+offset_bottom = 2276.0
+rotation = -0.977384
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("9_sen0s")
+
+[node name="HeartsButton" type="Button" parent="HeartsCard"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 26.0
+offset_right = 912.0
+offset_bottom = 1404.0
 
 [node name="Newspaper" type="TextureRect" parent="."]
 light_mask = 4
@@ -135,82 +106,112 @@ metadata/_edit_lock_ = true
 [node name="HeartCard" type="TextureRect" parent="."]
 z_index = 5
 layout_mode = 0
-offset_left = 192.0
-offset_top = 92.0
-offset_right = 309.0
-offset_bottom = 228.0
-scale = Vector2(0.5, 0.5)
+offset_left = 162.0
+offset_top = 39.0
+offset_right = 1114.0
+offset_bottom = 1449.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_sen0s")
 
 [node name="DiamondCard" type="TextureRect" parent="."]
-visible = false
 z_index = 5
 layout_mode = 0
-offset_left = 279.0
-offset_top = 81.0
-offset_right = 393.0
-offset_bottom = 242.0
-scale = Vector2(0.768, 0.768)
-texture = ExtResource("15_ee2hf")
+offset_left = 239.0
+offset_top = 38.0
+offset_right = 1183.0
+offset_bottom = 1457.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("9_nykbk")
+
+[node name="DiamondCardGround" type="TextureRect" parent="."]
+z_index = 6
+layout_mode = 0
+offset_left = 753.0
+offset_top = 912.0
+offset_right = 1697.0
+offset_bottom = 2331.0
+rotation = -1.04196
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("9_nykbk")
+
+[node name="DiamondButton" type="Button" parent="DiamondCardGround"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 915.0
+offset_bottom = 1415.0
 
 [node name="ClubCard" type="TextureRect" parent="."]
-visible = false
 z_index = 5
 layout_mode = 0
-offset_left = 365.0
-offset_top = 87.0
-offset_right = 505.0
-offset_bottom = 248.0
-scale = Vector2(0.768, 0.768)
-texture = ExtResource("16_bphh4")
+offset_left = 315.0
+offset_top = 38.0
+offset_right = 1266.0
+offset_bottom = 1453.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("10_06awf")
+
+[node name="Chair" type="TextureRect" parent="."]
+z_index = 6
+layout_mode = 0
+offset_left = 991.0
+offset_top = 597.0
+offset_right = 1288.0
+offset_bottom = 1071.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_0w42j")
 
 [node name="SpadeCard" type="TextureRect" parent="."]
-visible = false
 z_index = 5
 layout_mode = 0
-offset_left = 470.0
-offset_top = 93.0001
-offset_right = 602.0
-offset_bottom = 238.0
-scale = Vector2(0.768, 0.768)
-texture = ExtResource("17_67m7m")
+offset_left = 391.0
+offset_top = 38.0
+offset_right = 1339.0
+offset_bottom = 1450.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("11_wj428")
 
-[node name="CodeDrawer" type="TextureRect" parent="."]
-light_mask = 512
-visibility_layer = 512
-z_index = 5
+[node name="SpadeCardGround" type="TextureRect" parent="."]
+z_index = 6
 layout_mode = 0
-offset_left = 1112.0
-offset_top = 611.0
-offset_right = 1284.0
-offset_bottom = 689.0
-scale = Vector2(0.768, 0.768)
-texture = ExtResource("10_xhkrq")
+offset_left = 836.0
+offset_top = 735.0
+offset_right = 1784.0
+offset_bottom = 2147.0
+rotation = -0.911062
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("11_wj428")
 
-[node name="TheSun" type="TextureRect" parent="."]
-visible = false
-light_mask = 4
-visibility_layer = 4
-z_index = 5
+[node name="SpadeButton" type="Button" parent="SpadeCardGround"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1520.0
-offset_top = 73.0
-offset_right = 1975.0
-offset_bottom = 500.0
-scale = Vector2(0.768, 0.768)
-texture = ExtResource("14_ykb1b")
+offset_right = 946.0
+offset_bottom = 1412.0
 
-[node name="Clock" type="TextureRect" parent="."]
-light_mask = 4
-visibility_layer = 4
+[node name="HourHand" type="CharacterBody2D" parent="."]
 z_index = 5
-layout_mode = 0
-offset_left = 380.0
-offset_top = 110.0
-offset_right = 1092.0
-offset_bottom = 1107.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("18_mhtqg")
-metadata/_edit_lock_ = true
+scale = Vector2(0.768, 0.768)
+collision_mask = 16
+
+[node name="HourHandSprite" type="TextureRect" parent="HourHand"]
+offset_left = 108.073
+offset_top = 44.2708
+offset_right = 223.073
+offset_bottom = 196.271
+texture = ExtResource("18_yyxmo")
+
+[node name="MinuteHand" type="CharacterBody2D" parent="."]
+z_index = 5
+position = Vector2(8, 1)
+scale = Vector2(0.768, 0.768)
+collision_mask = 16
+
+[node name="MinuteHandSprite" type="TextureRect" parent="MinuteHand"]
+offset_left = 37.7604
+offset_top = 33.8542
+offset_right = 150.761
+offset_bottom = 191.854
+pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
+texture = ExtResource("19_g7haf")
 
 [node name="CostumeChest" type="TextureRect" parent="."]
 z_index = 5
@@ -223,86 +224,39 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("19_lb5j2")
 metadata/_edit_lock_ = true
 
-[node name="HourHand" type="CharacterBody2D" parent="."]
-z_index = 5
-scale = Vector2(0.768, 0.768)
-collision_mask = 16
+[node name="Button" type="Button" parent="CostumeChest"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 132.0
+offset_top = 106.0
+offset_right = 862.0
+offset_bottom = 624.0
 
-[node name="HourHandSprite" type="TextureRect" parent="HourHand"]
-offset_left = 161.458
-offset_top = 114.583
-offset_right = 276.458
-offset_bottom = 266.583
-texture = ExtResource("18_yyxmo")
-
-[node name="HourHandArea2D" type="Area2D" parent="HourHand/HourHandSprite"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HourHand/HourHandSprite/HourHandArea2D"]
-position = Vector2(59.8263, 76.8229)
-skew = 0.406662
-shape = SubResource("RectangleShape2D_ysjfa")
-
-[node name="MinuteHand" type="CharacterBody2D" parent="."]
-z_index = 5
-position = Vector2(8, 1)
-scale = Vector2(0.768, 0.768)
-collision_mask = 16
-
-[node name="MinuteHandSprite" type="TextureRect" parent="MinuteHand"]
-offset_left = 40.3646
-offset_top = 65.1042
-offset_right = 153.365
-offset_bottom = 223.104
-pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
-texture = ExtResource("19_g7haf")
-
-[node name="MinuteHandArea2D" type="Area2D" parent="MinuteHand/MinuteHandSprite"]
-position = Vector2(-1.30209, 5.20833)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MinuteHand/MinuteHandSprite/MinuteHandArea2D"]
-position = Vector2(63.8021, 74.2188)
-skew = 0.42237
-shape = SubResource("RectangleShape2D_aw7ns")
-
-[node name="ClockFace" type="StaticBody2D" parent="."]
-z_index = 5
-collision_layer = 16
-
-[node name="Area2D" type="Area2D" parent="ClockFace"]
-position = Vector2(2, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClockFace/Area2D"]
-position = Vector2(541, 246)
-skew = -0.247837
-shape = SubResource("CircleShape2D_73f8q")
-metadata/_edit_lock_ = true
-
+[connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
+[connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]
+[connection signal="mouse_entered" from="MirrorDesk" to="." method="_on_mirror_desk_mouse_entered"]
+[connection signal="mouse_exited" from="MirrorDesk" to="." method="_on_mirror_desk_mouse_exited"]
+[connection signal="button_down" from="HeartsCard/HeartsButton" to="." method="_on_hearts_button_button_down"]
 [connection signal="mouse_entered" from="Newspaper" to="." method="_on_newspaper_mouse_entered"]
 [connection signal="mouse_exited" from="Newspaper" to="." method="_on_newspaper_mouse_exited"]
 [connection signal="mouse_entered" from="HeartCard" to="." method="_on_heart_card_mouse_entered"]
 [connection signal="mouse_exited" from="HeartCard" to="." method="_on_heart_card_mouse_exited"]
 [connection signal="mouse_entered" from="DiamondCard" to="." method="_on_diamond_card_mouse_entered"]
 [connection signal="mouse_exited" from="DiamondCard" to="." method="_on_diamond_card_mouse_exited"]
+[connection signal="button_down" from="DiamondCardGround/DiamondButton" to="." method="_on_diamond_button_button_down"]
 [connection signal="mouse_entered" from="ClubCard" to="." method="_on_club_card_mouse_entered"]
 [connection signal="mouse_exited" from="ClubCard" to="." method="_on_club_card_mouse_exited"]
 [connection signal="mouse_entered" from="SpadeCard" to="." method="_on_spade_card_mouse_entered"]
 [connection signal="mouse_exited" from="SpadeCard" to="." method="_on_spade_card_mouse_exited"]
-[connection signal="mouse_entered" from="CodeDrawer" to="." method="_on_code_drawer_mouse_entered"]
-[connection signal="mouse_exited" from="CodeDrawer" to="." method="_on_code_drawer_mouse_exited"]
-[connection signal="mouse_entered" from="TheSun" to="." method="_on_the_sun_mouse_entered"]
-[connection signal="mouse_exited" from="TheSun" to="." method="_on_the_sun_mouse_exited"]
-[connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
-[connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]
-[connection signal="mouse_entered" from="CostumeChest" to="." method="_on_costume_chest_mouse_entered"]
-[connection signal="mouse_exited" from="CostumeChest" to="." method="_on_costume_chest_mouse_exited"]
+[connection signal="button_down" from="SpadeCardGround/SpadeButton" to="." method="_on_spade_button_button_down"]
 [connection signal="gui_input" from="HourHand/HourHandSprite" to="." method="_on_hour_hand_sprite_gui_input"]
 [connection signal="mouse_entered" from="HourHand/HourHandSprite" to="." method="_on_hour_hand_sprite_mouse_entered"]
 [connection signal="mouse_exited" from="HourHand/HourHandSprite" to="." method="_on_hour_hand_sprite_mouse_exited"]
-[connection signal="area_entered" from="HourHand/HourHandSprite/HourHandArea2D" to="." method="_on_hour_hand_area_2d_area_entered"]
-[connection signal="area_exited" from="HourHand/HourHandSprite/HourHandArea2D" to="." method="_on_hour_hand_area_2d_area_exited"]
 [connection signal="gui_input" from="MinuteHand/MinuteHandSprite" to="." method="_on_minute_hand_sprite_gui_input"]
 [connection signal="mouse_entered" from="MinuteHand/MinuteHandSprite" to="." method="_on_minute_hand_sprite_mouse_entered"]
 [connection signal="mouse_exited" from="MinuteHand/MinuteHandSprite" to="." method="_on_minute_hand_sprite_mouse_exited"]
-[connection signal="area_entered" from="MinuteHand/MinuteHandSprite/MinuteHandArea2D" to="." method="_on_minute_hand_area_2d_area_entered"]
-[connection signal="area_exited" from="MinuteHand/MinuteHandSprite/MinuteHandArea2D" to="." method="_on_minute_hand_area_2d_area_exited"]
-[connection signal="area_entered" from="ClockFace/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="mouse_entered" from="CostumeChest" to="." method="_on_costume_chest_mouse_entered"]
+[connection signal="mouse_exited" from="CostumeChest" to="." method="_on_costume_chest_mouse_exited"]
+[connection signal="button_down" from="CostumeChest/Button" to="." method="_on_button_button_down"]
+[connection signal="mouse_entered" from="CostumeChest/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="CostumeChest/Button" to="." method="_on_button_mouse_exited"]
