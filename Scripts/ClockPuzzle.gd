@@ -68,4 +68,19 @@ func _on_area_2d_area_entered(area):
 	
 	if hourhandtouched == true and minutehandtouched == true:
 		area_is_touched =true
+<<<<<<< Updated upstream
 		print("Both tocuhed")
+=======
+		Global.puzzlesolved = true
+		await get_tree().create_timer(0.5).timeout
+		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
+		await get_tree().create_timer(0.5).timeout
+		
+func move_hands(my_sprite):
+	if my_sprite == HourHand:
+		var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+		TW.tween_property(my_sprite, "position", Vector2(780,450), 0.5) 
+	elif my_sprite == MinuteHand:
+		var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+		TW.tween_property(my_sprite, "position", Vector2(860,450), 0.5) 
+>>>>>>> Stashed changes
