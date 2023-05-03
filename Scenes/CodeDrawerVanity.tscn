@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh6urp6y76v4v"]
+[gd_scene load_steps=7 format=3 uid="uid://bh6urp6y76v4v"]
 
 [ext_resource type="Script" path="res://Scripts/CodeDrawer.gd" id="1_l4okr"]
 [ext_resource type="Texture2D" uid="uid://0rcllbfpggn4" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/boudoirpuzzlenobuttons.png" id="2_qq66k"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ciaes6gmsx3ut"]
+[gd_scene load_steps=19 format=3 uid="uid://ciaes6gmsx3ut"]
 
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
 [ext_resource type="Texture2D" uid="uid://shdxih2t8rt0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/Unsolved Background.png" id="2_i06qd"]
@@ -14,11 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://besm63c6ry3vs" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/clock.png" id="18_mhtqg"]
 [ext_resource type="Texture2D" uid="uid://dpax0dk10g40g" path="res://Assets/BunnyHeadspace/inventoryStuff/hour hand in invt.png" id="18_yyxmo"]
 [ext_resource type="Texture2D" uid="uid://cqfktwup771bn" path="res://Assets/BunnyHeadspace/inventoryStuff/minute hand in invt.png" id="19_g7haf"]
-[ext_resource type="Texture2D" uid="uid://cxfxul6u8qrdr" path="res://Assets/BunnyHeadspace/Zoom out/newspaper.png" id="22_ydlq2"]
+[ext_resource type="Texture2D" uid="uid://di778u008pt0h" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/unopenedchest.png" id="19_lb5j2"]
 [ext_resource type="AudioStream" uid="uid://d07b65wwmwmao" path="res://Assets/SFX/Transitions/bluff-to-mind.wav" id="23_ajvl5"]
 [ext_resource type="AudioStream" uid="uid://bmo2uf3m4sflq" path="res://Assets/SFX/chest sfx/Metal Latch.wav" id="24_73k5i"]
 [ext_resource type="AudioStream" uid="uid://f3dgueu72h3o" path="res://Assets/SFX/Songs/Headspace theme.wav" id="25_drb5u"]
-[ext_resource type="Texture2D" uid="uid://di778u008pt0h" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/unopenedchest.png" id="19_lb5j2"]
 
 [node name="BunnyHeadspace" type="Control"]
 layout_mode = 3
@@ -155,7 +154,7 @@ scale = Vector2(0.08, 0.08)
 texture = ExtResource("10_06awf")
 
 [node name="Chair" type="TextureRect" parent="."]
-z_index = 6
+z_index = 4
 layout_mode = 0
 offset_left = 991.0
 offset_top = 597.0
@@ -236,11 +235,6 @@ offset_top = 106.0
 offset_right = 862.0
 offset_bottom = 624.0
 
-[connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
-[connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]
-[connection signal="mouse_entered" from="MirrorDesk" to="." method="_on_mirror_desk_mouse_entered"]
-[connection signal="mouse_exited" from="MirrorDesk" to="." method="_on_mirror_desk_mouse_exited"]
-[connection signal="button_down" from="HeartsCard/HeartsButton" to="." method="_on_hearts_button_button_down"]
 [node name="Transition" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_ajvl5")
 
@@ -251,8 +245,11 @@ autoplay = true
 [node name="chest opening" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_73k5i")
 
-[connection signal="mouse_entered" from="CostumeChest" to="." method="_on_costume_chest_mouse_entered"]
-[connection signal="mouse_exited" from="CostumeChest" to="." method="_on_costume_chest_mouse_exited"]
+[connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
+[connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]
+[connection signal="mouse_entered" from="MirrorDesk" to="." method="_on_mirror_desk_mouse_entered"]
+[connection signal="mouse_exited" from="MirrorDesk" to="." method="_on_mirror_desk_mouse_exited"]
+[connection signal="button_down" from="HeartsCard/HeartsButton" to="." method="_on_hearts_button_button_down"]
 [connection signal="mouse_entered" from="Newspaper" to="." method="_on_newspaper_mouse_entered"]
 [connection signal="mouse_exited" from="Newspaper" to="." method="_on_newspaper_mouse_exited"]
 [connection signal="mouse_entered" from="HeartCard" to="." method="_on_heart_card_mouse_entered"]

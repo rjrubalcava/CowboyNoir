@@ -121,7 +121,7 @@ func _input(event):
 			scale_down(TW, TheSun)
 			await get_tree().create_timer(0.8).timeout
 			Enlarged_Newspaper_sprite.show()
-			Enlarged_Newspaper_sprite.z_index = 5
+			Enlarged_Newspaper_sprite.z_index = 8
 		elif MirrorDesk.get_global_rect().has_point(event.position):
 			get_tree().change_scene_to_file("res://Scenes/CodeDrawerVanity.tscn")
 		elif CostumeChest.get_global_rect().has_point(event.position):
@@ -151,19 +151,6 @@ func _on_clock_mouse_entered():
 
 func _on_clock_mouse_exited():
 	Clock.set_modulate(Color(1, 1, 1, 1))
-
-func _on_the_sun_mouse_entered():
-	if area_is_touched == false:
-		var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-		TW.tween_property(TheSun, "modulate", Color.ROSY_BROWN, 0.1)
-	else:
-		pass
-func _on_the_sun_mouse_exited():
-	
-	if area_is_touched == false:
-		TheSun.set_modulate(Color(1, 1, 1, 1))
-	else:
-		pass
 
 func _on_heart_card_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)

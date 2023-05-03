@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2ucxhlcmg8af"]
+[gd_scene load_steps=7 format=3 uid="uid://b2ucxhlcmg8af"]
 
 [ext_resource type="Script" path="res://Scripts/CodeDrawerChest.gd" id="1_k75a3"]
 [ext_resource type="Texture2D" uid="uid://dk7hphch658xg" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/chestpuzzle.png" id="2_xd0tj"]
