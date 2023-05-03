@@ -4,12 +4,15 @@ res://Scenes/chips_Stacking_1.gd
 res://Scenes/Overworld.tscn
 res://Scenes/Journal.tscn
 res://Scenes/DialogueOption.tscn
-res://Scenes/BunnyHeadspace.tscn
 res://Scenes/CodeDrawerChest.tscn
 res://Scenes/CodeDrawerVanity.tscn
 res://Scenes/Credits.tscn
 res://Scenes/DialogueBox.tscn
 res://Scenes/PuzzleSolvedScreen.tscn
 res://Scenes/transition.tscn
-res://Scripts/BunnyHeadspace.gd
+res://Scenes/BunnyHeadspace.tscn
 res://Scenes/Card.tscn
+res://Scripts/BunnyHeadspace.gd
+res://Scenes/ClockPuzzle.tscn
+res://Scripts/PuzzleSolvedScreen.gd
+res://Scripts/ClockPuzzle.gd

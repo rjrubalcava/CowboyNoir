@@ -249,7 +249,7 @@ func _on_minute_hand_area_2d_area_exited(area):
 
 func _on_mirror_desk_mouse_entered():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(MirrorDesk, "scale", Vector2(0.52,0.52), 0.1)
+	TW.tween_property(MirrorDesk, "scale", Vector2(0.508,0.508), 0.1)
 
 func _on_mirror_desk_mouse_exited():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
@@ -281,6 +281,36 @@ func _on_spade_button_button_down():
 func puzzlesolved():
 	if Global.puzzlesolved==true:
 		var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-		TW.tween_property(Background, "modulate", Color.DARK_SLATE_GRAY, 0.3)
-		await get_tree().create_timer(3).timeout
+		TW.tween_property(Background, "modulate", Color.DARK_BLUE, 0.3)
+		await get_tree().create_timer(4).timeout
 		get_tree().change_scene_to_file("res://Scenes/PuzzleSolvedScreen.tscn")
+
+
+func _on_hearts_button_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(HeartsCardGround, "scale", Vector2(0.075,0.075), 0.1)
+
+
+func _on_hearts_button_mouse_exited():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(HeartsCardGround, "scale", Vector2(0.07,0.07), 0.1)
+
+
+func _on_diamond_button_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(DiamondCardGround, "scale", Vector2(0.075,0.075), 0.1)
+
+
+func _on_diamond_button_mouse_exited():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(DiamondCardGround, "scale", Vector2(0.07,0.07), 0.1)
+
+
+func _on_spade_button_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(SpadeCardGround, "scale", Vector2(0.075,0.075), 0.1)
+
+
+func _on_spade_button_mouse_exited():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(SpadeCardGround, "scale", Vector2(0.07,0.07), 0.1)
