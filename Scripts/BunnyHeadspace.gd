@@ -35,10 +35,7 @@ var minutehandtouched = false
 var hourhandtouched = false
 
 func _ready():
-	
 	$Transition.play()
-	
-		
 	mouse_pos = get_global_mouse_position()
 	Enlarged_Newspaper_sprite = Sprite2D.new()
 	Enlarged_Newspaper_sprite.texture = EnlargedNewspaper

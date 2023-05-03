@@ -11,9 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://dqalpakvgfop2" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/chair.png" id="11_0w42j"]
 [ext_resource type="Texture2D" uid="uid://cal1yv7n5fh3j" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/spadecard.png" id="11_wj428"]
 [ext_resource type="Texture2D" uid="uid://dahk8okd6o0fh" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/small newspaper.png" id="12_be87g"]
+[ext_resource type="Texture2D" uid="uid://nlwqr25ws0ah" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/hourhand.png" id="13_4b6tg"]
+[ext_resource type="Texture2D" uid="uid://2x04q2kp27hr" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/minutehand.png" id="14_vhf2r"]
 [ext_resource type="Texture2D" uid="uid://besm63c6ry3vs" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/clock.png" id="18_mhtqg"]
-[ext_resource type="Texture2D" uid="uid://dpax0dk10g40g" path="res://Assets/BunnyHeadspace/inventoryStuff/hour hand in invt.png" id="18_yyxmo"]
-[ext_resource type="Texture2D" uid="uid://cqfktwup771bn" path="res://Assets/BunnyHeadspace/inventoryStuff/minute hand in invt.png" id="19_g7haf"]
 [ext_resource type="Texture2D" uid="uid://di778u008pt0h" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/unopenedchest.png" id="19_lb5j2"]
 [ext_resource type="AudioStream" uid="uid://d07b65wwmwmao" path="res://Assets/SFX/Transitions/bluff-to-mind.wav" id="23_ajvl5"]
 [ext_resource type="AudioStream" uid="uid://bmo2uf3m4sflq" path="res://Assets/SFX/chest sfx/Metal Latch.wav" id="24_73k5i"]
@@ -195,11 +195,13 @@ scale = Vector2(0.768, 0.768)
 collision_mask = 16
 
 [node name="HourHandSprite" type="TextureRect" parent="HourHand"]
-offset_left = 108.073
-offset_top = 44.2708
-offset_right = 223.073
-offset_bottom = 196.271
-texture = ExtResource("18_yyxmo")
+offset_left = 187.5
+offset_top = 50.7812
+offset_right = 1485.5
+offset_bottom = 401.781
+rotation = 1.56207
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("13_4b6tg")
 
 [node name="MinuteHand" type="CharacterBody2D" parent="."]
 z_index = 5
@@ -208,12 +210,14 @@ scale = Vector2(0.768, 0.768)
 collision_mask = 16
 
 [node name="MinuteHandSprite" type="TextureRect" parent="MinuteHand"]
-offset_left = 37.7604
-offset_top = 33.8542
-offset_right = 150.761
-offset_bottom = 191.854
+offset_left = 95.0521
+offset_top = 44.2708
+offset_right = 823.052
+offset_bottom = 448.271
+rotation = 1.17286
+scale = Vector2(0.2, 0.2)
 pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
-texture = ExtResource("19_g7haf")
+texture = ExtResource("14_vhf2r")
 
 [node name="CostumeChest" type="TextureRect" parent="."]
 z_index = 5
