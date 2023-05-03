@@ -69,8 +69,8 @@ extends Node2D
 @onready var tr = $BluffyTheVampireSlayer/Revolvy/TextRight
 @onready var tsr = $BluffyTheVampireSlayer/Revolvy/TextSupaRight
 
-@onready var butt = $BluffyTheVampireSlayer/Button
-@onready var buton = $BluffyTheVampireSlayer/Buton
+@onready var bluffCnfrm = $BluffyTheVampireSlayer/Button
+@onready var callBluffBtn = $BluffyTheVampireSlayer/Buton
 @onready var pesto = $BluffyTheVampireSlayer/pass
 @onready var bluffy = $BluffyTheVampireSlayer
 
@@ -94,7 +94,6 @@ var flipRight = false
 var canFlip = true
 var oldRotation = 0
 var cardOfRound = null
-var cpuTurn = null #POSITIVE FOR CPU TURN, NEGATIVE FOR PLAYERS TURN
 var cpuCallProc = 15 #LIKELIHOOD TO CALL A BLUFF
 var cpuBluffProc = 30 #LIKELIHOOD TO BLUFF
 
@@ -102,15 +101,14 @@ var cpuBluffProc = 30 #LIKELIHOOD TO BLUFF
 var centerHand = null
 var playerHand = null
 var cpuOneHand = null
-var stageOfRound = 0
+var stageOfRound = ''
 var depthOfRound = 0
-var cpuLastTurn = ""
-var wasBluff = false
 var cardsReady = false
 var cardCount = 0
+var cardsPlayedInRound = 0
 var lastRoundHand = []
 var lastRoundBluff = false
-var numOfPasses = 0
+var lastRoundPass = false
 var depthOfTurns = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -141,7 +139,7 @@ func _unhandled_input(event):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(depthOfTurns >= 3):
+	if(depthOfTurns >= 2):
 		dontDisplay = true
 		incPshGge()
 		depthOfTurns = 0
@@ -149,248 +147,284 @@ func _process(delta):
 		bluffy.visible = false
 	else:
 		bluffy.visible = true
-		if(cpuTurn):
-			cupieTurn()
+		if(stageOfRound == 'A'):
+			#PLAYER IS STARTING A NEW ROUND
+			pesto.visible = true
+			bluffCnfrm.visible = true
+			callBluffBtn.visible = false
+			revolvy.visible = false
+			revolvyCard.text = ''
+			inst.text = "It Is Your Turn To Start A Round, You Can Either Pass Or Play"
+		elif(stageOfRound == 'B'):
+			#PLAYER CHOSE TO PLAY NEW ROUND, CHOOSING A CARD TYPE
+			pesto.visible = false
+			bluffCnfrm.visible = true
+			callBluffBtn.visible = false
+			revolvy.visible = true
+			inst.text = "Good Choice Partner, Select Which Rank Of Card Would You Like To Play"
+		elif(stageOfRound == 'C'):
+			#PLAYER HAS CHOSEN CARD TO PLAY VALUE ALLOW THEM TO SELECT A NONZERO NUMBER OF CARDS
+			pesto.visible = false
+			bluffCnfrm.visible = true
+			callBluffBtn.visible = false
+			revolvy.visible = false
+			var boxText = "Mighty Fine Choice " + revolvyCard.text + "'s Are A Great Rank To Play. Select The Cards You Would Like To Play"
+			inst.text = boxText
+			if(!cardsReady):
+				playerCardsReady(true)
+		elif(stageOfRound == 'D'):
+			#CPUS TURN IN THE MIDDLE OF A ROUND
+			cupieD()
+		elif(stageOfRound == 'E'):
+			#CPU PLAYED A MOVE, NOW PLAYERS TURN MID ROUND
+			pesto.visible = true
+			bluffCnfrm.visible = true
+			callBluffBtn.visible = true
+			revolvy.visible = false
+			if(cardsReady):
+				playerCardsReady(false)
+		elif(stageOfRound == 'F'):
+			#HERE THE CPU STARTS A NEW ROUND
+			pesto.visible = false
+			bluffCnfrm.visible = false
+			callBluffBtn.visible = false
+			revolvy.visible = false
+			if(cardsReady):
+				playerCardsReady(false)
+			cupieF()
+		elif(stageOfRound == 'G'):
+			cupieG()
+		elif(stageOfRound == 'H'):
+			cupieG()
 		else:
-			player()	
+			print("SOMETHING GOT REALLY WEIRD REALLY FAST")
 	if(flipLeft):
 		flipperLefter(delta)
 	elif(flipRight):
 		flipperRighter(delta)
-		
-func cupieTurn():
-	print(stageOfRound)
-	revolvy.visible = false
-	butt.visible = false
-	buton.visible = false
-	pesto.visible = false
-	inst.text = "Amity is deciding what to do"
-	if(stageOfRound == 0):
-		#IF HERE, HERE TURN TO START A NEW ROUND
-		numOfPasses = 0
-		print("STAGE 0")
-		depthOfTurns += 1
-		lastRoundBluff = false
-		lastRoundHand = []
-		cardCount = 0
-		for x in cpuOneHand:
-			if(x.to_int() == cardOfRound):
-				cardCount += 1
-		
-		if(cardCount > 0):
-			for x in cpuOneHand:
-				if(x.to_int() == cardOfRound):
-					lastRoundHand.append(x)
-					cpuOneHand.erase(x)
-			print("STAGE PLAY")
-		else:
-			print("STAGE BLUFF")
-			lastRoundBluff = true
-			var cardsToBluff = rng.randi_range(0,100)
-			if(cardsToBluff < 60):
-				cardCount = 1
-				lastRoundHand.append(cpuOneHand[0])
-				cpuOneHand.erase(cpuOneHand[0])
-			elif(cardsToBluff < 85):
-				cardCount = 2
-				lastRoundHand.append(cpuOneHand[0])
-				lastRoundHand.append(cpuOneHand[1])
-				cpuOneHand.erase(cpuOneHand[1])
-				cpuOneHand.erase(cpuOneHand[0])
-			elif(cardsToBluff < 99):
-				cardCount = 3
-				lastRoundHand.append(cpuOneHand[0])
-				lastRoundHand.append(cpuOneHand[1])
-				lastRoundHand.append(cpuOneHand[2])
-				cpuOneHand.erase(cpuOneHand[2])
-				cpuOneHand.erase(cpuOneHand[1])
-				cpuOneHand.erase(cpuOneHand[0])
-			else:
-				cardCount = 4
-				lastRoundHand.append(cpuOneHand[0])
-				lastRoundHand.append(cpuOneHand[1])
-				lastRoundHand.append(cpuOneHand[2])
-				lastRoundHand.append(cpuOneHand[3])
-				cpuOneHand.erase(cpuOneHand[3])
-				cpuOneHand.erase(cpuOneHand[2])
-				cpuOneHand.erase(cpuOneHand[1])
-				cpuOneHand.erase(cpuOneHand[0])
-		for x in lastRoundHand:
-			centerHand.append(x)
-		lastRoundHand = []
-		stageOfRound = 1
-		cpuTurn = false
-		inst.text = "Amity Played "
-		inst.add_text(str(cardCount))
-		inst.add_text(" Cards, It's Your Turn To Pass, Play, or Call Bluff")
-		if(cardOfRound == 1):
-			revolvyCard.text = "A"
-		elif(cardOfRound > 1 and cardOfRound < 10):
-			revolvyCard.text = str(cardOfRound)
-		elif(cardOfRound == 11):
-			revolvyCard.text = "J"
-		elif(cardOfRound == 12):
-			revolvyCard.text = "Q"
-		elif(cardOfRound == 13):
-			revolvyCard.text = "K"
-		print("VAVAVOOM")
-	elif(stageOfRound == 2):
-		#IF HERE, YOU THE PLAYER JUST PLAYED SOMETHING, AND SHE NEEDS TO RESPOND
-		print("STAGE 2")
-		if(shouldCupieCallBluff()):
-			#IF HERE, WE ARE CALLING BLUFF
-			print("STAGE CALL BLUFF")	
-			if(lastRoundBluff):
-				#IF SHE SUCCESSFULLY CALLED BLUFF, SHE WILL BE MORE LIKELY TO CALL BLUFF IN THE FUTURE
-				if(cpuCallProc <= 100):
-					cpuCallProc *= 1.1
-				else:
-					cpuCallProc = 100
-				lost(false)
-			else:
-				#IF SHE UNSUCCESSFULLY CALLED BLUFF, SHE WILL BE LESS LIKELY TO CALL BLUFF IN THE FUTURE
-				if(cpuCallProc >= 15):
-					cpuCallProc /= 1.1
-				else:
-					cpuCallProc = 15
-				lost(true)
-		else:
-			#IF HERE WE ARE NOT CALLING BLUFF AND NEED TO DECIDE WHAT TO DO
-			if(shouldCupiePass()):
-				print("STAGE PASS")
-				#IF HERE, WE DECIDED TO PASS
-				inst.text = "Amity Passed, It Is Your Turn To Play or Pass"
-				numOfPasses += 1
-				if(numOfPasses >= 2):
-					stageOfRound = 0
-					depthOfTurns += 1
-					numOfPasses = 0
-				else:
-					stageOfRound = 3
-				cpuTurn = false
-				lastRoundBluff = false
-			else:
-				numOfPasses = 0
-				#IF HERE, WE HAVE DECIDED TO PLAY
-				lastRoundBluff = false
-				lastRoundHand = []
-				cardCount = 0
-				for x in cpuOneHand:
-					if(x.to_int() == cardOfRound):
-						cardCount += 1
-				
-				if(cardCount > 0):
-					for x in cpuOneHand:
-						if(x.to_int() == cardOfRound):
-							lastRoundHand.append(x)
-							cpuOneHand.erase(x)
-					print("STAGE PLAY")
-				else:
-					print("STAGE BLUFF")
-					lastRoundBluff = true
-					var cardsToBluff = rng.randi_range(0,100)
-					if(cardsToBluff < 60 or cpuOneHand.size() <= 1):
-						cardCount = 1
-						lastRoundHand.append(cpuOneHand[0])
-						cpuOneHand.erase(cpuOneHand[0])
-					elif(cardsToBluff < 85 or cpuOneHand.size() <= 2):
-						cardCount = 2
-						lastRoundHand.append(cpuOneHand[0])
-						lastRoundHand.append(cpuOneHand[1])
-						cpuOneHand.erase(cpuOneHand[1])
-						cpuOneHand.erase(cpuOneHand[0])
-					elif(cardsToBluff < 99 or cpuOneHand.size() <= 3):
-						cardCount = 3
-						lastRoundHand.append(cpuOneHand[0])
-						lastRoundHand.append(cpuOneHand[1])
-						lastRoundHand.append(cpuOneHand[2])
-						cpuOneHand.erase(cpuOneHand[2])
-						cpuOneHand.erase(cpuOneHand[1])
-						cpuOneHand.erase(cpuOneHand[0])
-					else:
-						cardCount = 4
-						lastRoundHand.append(cpuOneHand[0])
-						lastRoundHand.append(cpuOneHand[1])
-						lastRoundHand.append(cpuOneHand[2])
-						lastRoundHand.append(cpuOneHand[3])
-						cpuOneHand.erase(cpuOneHand[3])
-						cpuOneHand.erase(cpuOneHand[2])
-						cpuOneHand.erase(cpuOneHand[1])
-						cpuOneHand.erase(cpuOneHand[0])
-				for x in lastRoundHand:
-					centerHand.append(x)
-				lastRoundHand = []
-				stageOfRound = 2
-				cpuTurn = false
-				inst.text = "Amity Played "
-				inst.add_text(str(cardCount))
-				inst.add_text(" Cards, It's Your Turn To Pass, Play, or Call Bluff")
-				if(cardOfRound == 1):
-					revolvyCard.text = "A"
-				elif(cardOfRound > 1 and cardOfRound < 10):
-					revolvyCard.text = str(cardOfRound)
-				elif(cardOfRound == 11):
-					revolvyCard.text = "J"
-				elif(cardOfRound == 12):
-					revolvyCard.text = "Q"
-				elif(cardOfRound == 13):
-					revolvyCard.text = "K"
-				print("WAAAAA")
-
-
-func shouldCupiePass():
-	for x in cpuOneHand:
-		if(x.to_int() == cardOfRound):
-			return(false)
-	var a = rng.randi_range(0,100)
-	if(a < cpuBluffProc):
-		return(false)
-	else:
-		return(true)
 
 
 func lost(cpuOrNot):
 	if(cpuOrNot):
 		for x in centerHand:
 			cpuOneHand.append(x)
-		cpuTurn = true
+		stageOfRound = 'F'
+		depthOfRound = 0
 	else:
 		for x in centerHand:
 			playerHand.append(x)
-		cpuTurn = false
+		stageOfRound = 'A'
+		depthOfRound = 0
 	centerHand = []
-	realizeHands()
-	depthOfRound = 0
-	stageOfRound = 0
 	depthOfTurns += 1
-	
+	realizeHands()
 
+func cupieD():
+	print(cpuOneHand)
+	print(cardCount)
+	print(lastRoundBluff)
+	print(lastRoundPass)
+	print(centerHand)
+	#CPUS TURN IN THE MIDDLE OF A ROUND
+	#LAST ROUND BLUFF, LAST ROUND PASS, CARD COUNT, SHOULD BE SET
+	#NEED TO DECIDE WHETHER TO PASS, PLAY, OR CALL BLUFF
+	if(shouldCupieCallBluff()):
+		print("I CALLED BLUFF")
+		if(lastRoundBluff):
+			print("I Won")
+			lost(false)
+			#WE GO TO A
+		else:
+			print("I Lost")
+			lost(true)
+			#WE GO TO F
+	else:
+		print("I DIDNT CALL BLUFF")
+		#IF HERE, WE DO NOT CALL BLUFF
+		#CHECK FOR IF WE HAVE A POSSIBLE MOVE
+		var cpusCards = 0
+		var cupieHasMove = false
+		for x in cpuOneHand:
+			if(x.to_int() == cardOfRound):
+				cupieHasMove = true
+				cpusCards += 1
+		if(cupieHasMove):
+			print("I Have A Move")
+			#IF HERE CPU HAS MOVE, DECIDE TO BLUFF OR PLAY
+			var shouldBluff = cpuBluffProc
+			#BLUFF HALF AS MANY TIMES IF WE HAVE A MOVE
+			shouldBluff /= 2
+			if(rng.randi_range(0,100) < shouldBluff):
+				print("Bluffing Despite Move")
+				#IF HERE, WE HAVE A MOVE, BUT WILL BLUFF ANYWAYS
+				cardCount = cpusCards
+				lastRoundBluff = true
+				for x in cpuOneHand:
+					#print(x)
+					#print(cardOfRound)
+					if(cpusCards > 0):
+						centerHand.append(x)
+						cpuOneHand.erase(x)
+						cpusCards -= 1
+				stageOfRound = 'E'
+			else:
+				#IF HERE, WE HAVE A MOVE AND WILL DO THAT MOVE
+				print("Doing Non Bluff Move")
+				cardCount = 0
+				lastRoundBluff = false
+				for x in cpuOneHand:
+					#print(x)
+					#print(cardOfRound)
+					if(x.to_int() == cardOfRound and cpusCards > 0):
+						centerHand.append(x)
+						cpuOneHand.erase(x)
+						cardCount += 1
+				stageOfRound = 'E'
+		else:
+			#OTHERWISE, IF NO MOVE, DECIDE IF WE SHOULD PASS OR BLUFF
+			print("I Don't Have A Move")
+			if(rng.randi_range(0,100) < cpuBluffProc):
+				#IF HERE, WE CHOOSE TO BLUFF AND NO MOVE
+				print("I Am Going To Bluff")
+				cardCount = 0
+				lastRoundBluff = true
+				lastRoundPass = false
+				var cardsToBluff = rng.randi_range(1,4 - cardCount)
+				if(cardsToBluff > cpuOneHand.size()):
+					cardsToBluff = cpuOneHand.size()
+				for x in cpuOneHand:
+					if(cardsToBluff > 0):
+						cardCount += 1
+						centerHand.append(x)
+						cpuOneHand.erase(x)
+						cardsToBluff -= 1
+				stageOfRound = 'E'
+			else:
+				#IF HERE WE PASS
+				print("I Am Going To Pass")
+				lastRoundBluff = false
+				lastRoundHand = []
+				if(lastRoundPass):
+					stageOfRound = 'A'
+				else:
+					lastRoundPass = true
+					stageOfRound = 'E'
+	print(cpuOneHand)
+	print(cardCount)
+	print(lastRoundBluff)
+	print(lastRoundPass)
+	print(centerHand)
+	realizeHands()
+	if(lastRoundPass):
+		inst.text = "Amity Passed, It Is Your Turn Again"
+	elif(stageOfRound == 'A'):
+		inst.text = "Amity Called Bluff And Won"
+	elif(stageOfRound == 'F'):
+		inst.text = "Amity Called Bluff And Lost"
+	else: 
+		inst.text = "Amity Played " + str(cardCount) + " cards, and she has " + str(cpuOneHand.size()) + " cards left Will You Call Bluff, Pass, Or Play"
+
+func cupieF():
+	#CPU WILL NEVER PASS ON A FIRST TURN BC THATS USELESS
+	#CHECK IF THERE ARE MORE THAN ONE VALUE IN HAND
+	depthOfTurns += 1
+	var hasMoreThanOneValues = false
+	for x in cpuOneHand:
+		for y in cpuOneHand:
+			if(x.to_int() != y.to_int()):
+				hasMoreThanOneValues = true
+	if(hasMoreThanOneValues):
+		if(rng.randi_range(0,100) < cpuBluffProc):
+			#WILL BLUFF
+			stageOfRound = 'H'
+		else:
+			#WILL PLAY STRAIGHT
+			stageOfRound = 'G'
+	else:
+		#IF WE ONLY HAVE ONE VALUE OF CARD, WE PLAY STRAIGHT BECAUSE WE WILL WIN
+		stageOfRound = 'G'
+
+func cupieG():
+	lastRoundBluff = false
+	lastRoundPass = false
+	cardCount = 0
+	cardOfRound = cpuOneHand[0].to_int()
+	for x in cpuOneHand:
+		if(x.to_int() == cardOfRound):
+			centerHand.append(x)
+			cpuOneHand.erase(x)
+			cardCount += 1
+	stageOfRound = 'E'
+	if(cardOfRound == 1):
+		revolvyCard.text = "A"
+	elif(cardOfRound == 11):
+		revolvyCard.text = "J"
+	elif(cardOfRound == 12):
+		revolvyCard.text = "Q"
+	elif(cardOfRound == 13):
+		revolvyCard.text = "K"
+	else:
+		revolvyCard.text = str(cardOfRound)
+	inst.text = "Amity Started The Round By Playing " + str(cardCount) + " " + revolvyCard.text + "'s Will You Pass, Play, or Call Bluff"
+
+func cupieH():
+	#HERE TO BLUFF ON THE FIRST ROUND
+	lastRoundBluff = false
+	lastRoundPass = false
+	cardCount = 0
+	var cardToFake
+	for x in cpuOneHand:
+		for y in cpuOneHand:
+			if(x.to_int() != y.to_int()):
+				cardOfRound = y.to_int()
+				cardToFake = x.to_int()
+	for x in cpuOneHand:
+		if(x.to_int() == cardToFake):
+			centerHand.append(x)
+			cpuOneHand.erase(x)
+			cardCount += 1
+	stageOfRound = 'E'
+	if(cardOfRound == '1'):
+		revolvyCard.text = "A"
+	elif(cardOfRound == '11'):
+		revolvyCard.text = "J"
+	elif(cardOfRound == '12'):
+		revolvyCard.text = "Q"
+	elif(cardOfRound == '13'):
+		revolvyCard.text = "K"
+	else:
+		revolvyCard.text = str(cardOfRound)
+	inst.text = "Amity Started The Round By Playing " + str(cardCount) + " " + revolvyCard.text + "'s Will You Pass, Play, or Call Bluff"
 
 func shouldCupieCallBluff():
 	if(playerHand.size() == 0):
+		#print("I CALLED BC PLAYER HAS NO CARDS")
 		return(true)
-	if(cardCount == 0):
+	if(lastRoundPass):
+		#print("I DIDNT CALL BC PLAYER DIDNT PLAY ANY CARDS")
 		return(false)
 	var cpusCardsOfRound = 0
 	for x in cpuOneHand:
 		if(x.to_int() == cardOfRound):
 			cpusCardsOfRound += 1
-	if(cpusCardsOfRound + cardCount > 4):
+	if((cpusCardsOfRound + cardCount) > 4):
+		#print("I CALLED BC TOO MANY CARDS")
 		return(true)
 	else:
 		var a = randi_range(0,100)
-		a *= depthOfRound
+		a /= depthOfRound
 		if(a < cpuCallProc):
+			#print(a)
 			return(true)
 		else:
+			#print("I DIDNT CALL BC PROC DIDNT HIT")
 			return(false)
-
 
 func flipperLefter(delta):
 	canFlip = false
 	if(revolvy.rotation_degrees < 45):
-		revIMG.rotation_degrees += (delta * 60)
-		revolvy.rotation_degrees += (delta * 60)
+		revIMG.rotation_degrees += (delta * 120)
+		revolvy.rotation_degrees += (delta * 120)
 	else:
 		#IF WE ARE HERE WE HAVE FINISHED ROTATION AND SHOULD CHANGE NUMBERS
 		tsr.text = tr.text
@@ -415,13 +449,12 @@ func flipperLefter(delta):
 		flipLeft= false
 		canFlip = true
 		cardOfRound = revolvyCard.text
-		
-		
+
 func flipperRighter(delta):
 	canFlip = false
 	if(revolvy.rotation_degrees > -45):
-		revIMG.rotation_degrees -= (delta * 60)
-		revolvy.rotation_degrees -= (delta * 60)
+		revIMG.rotation_degrees -= (delta * 120)
+		revolvy.rotation_degrees -= (delta * 120)
 	else:
 		#IF WE ARE HERE WE HAVE FINISHED ROTATION AND SHOULD CHANGE NUMBERS
 		tsl.text = tl.text
@@ -448,23 +481,31 @@ func flipperRighter(delta):
 		cardOfRound = revolvyCard.text
 
 func _on_button_button_up():
+	#CONFIRM BUTTON
 	$Click.play()
-	numOfPasses = 0
-	if(stageOfRound == 0):
+	if(stageOfRound == 'A'):
+		#CHOOSING TO PLAY NEW ROUND
+		cardsPlayedInRound = 0
 		depthOfRound = 0
-		cardOfRound = revolvyCard.text
-		if(cardOfRound == "K"):
-			cardOfRound = 13
-		elif(cardOfRound == "Q"):
-			cardOfRound = 12
-		elif(cardOfRound == "J"):
-			cardOfRound = 11	
-		elif(cardOfRound == "A"):
+		stageOfRound = 'B'
+		revolvyCard.text = tc.text
+	elif(stageOfRound == 'B'):
+		#GOING TO SELECT A RANK OF CARD TO PLAY
+		depthOfRound = 0
+		if(revolvyCard.text == 'A'):
 			cardOfRound = 1
+		elif(revolvyCard.text == 'K'):
+			cardOfRound = 13
+		elif(revolvyCard.text == 'Q'):
+			cardOfRound = 12
+		elif(revolvyCard.text == 'J'):
+			cardOfRound = 11
 		else:
-			cardOfRound = int(cardOfRound)
-		stageOfRound = 1
-	elif(stageOfRound == 1 or stageOfRound == 3):
+			cardOfRound = revolvyCard.text.to_int()
+		stageOfRound = 'C'
+		cardsPlayedInRound = 0
+		#print(cardOfRound)
+	elif(stageOfRound == 'C'):
 		cardCount = 0
 		lastRoundHand = []
 		for x in playerCards.get_children():
@@ -472,89 +513,48 @@ func _on_button_button_up():
 				cardCount += 1
 				lastRoundHand.append(x)
 		if(cardCount > 0):
-			stageOfRound = 2
-			cpuTurn = true
+			depthOfRound += 1
+			cardsPlayedInRound += cardCount
+			stageOfRound = 'D'
+			lastRoundPass = false
 			lastRoundBluff = false
 			for x in lastRoundHand:
 				var a = x.get("cardID")
 				centerHand.push_back(a)
 				playerHand.erase(x.get("cardID"))
 				var c = a.to_int()
-				print(c)
 				if(c != cardOfRound):
 					lastRoundBluff = true
-			butt.visible = false
 			playerCardsReady(false)
-			depthOfRound += 1
-			realizeHands()
-			
-func _on_buton_button_up():
-	$Click.play()
-	#HERE IF PLAYER IS CALLING BLUFF
-	if(lastRoundBluff):
-		#IF PLAYER CALLED BLUFF ON A BLUFF, SHE BECOMES LESS LIKELY TO BLUFF
-		if(cpuBluffProc >= 30):
-			cpuBluffProc /= 1.1
-		else:
-			cpuBluffProc = 30
-		lost(true)
-	else:
-		#IF PLAYER CALLED BLUFF ON A NON BLUFF, SHE BECOMES MORE LIKELY TO BLUFF
-		if(cpuBluffProc <= 50):
-			cpuBluffProc *= 1.1
-		else:
-			cpuBluffProc = 50
-		lost(false)
+	elif(stageOfRound == 'E'):
+		stageOfRound = 'C'
 
-func _on_pass_button_up():
+func _on_buton_button_up():
+	#CALL BLUFF BUTTON
 	$Click.play()
-	cpuTurn = true
-	lastRoundBluff = false
-	lastRoundHand = []
-	cardCount = 0
-	numOfPasses += 1
-	if(numOfPasses >= 2):
-		stageOfRound = 0
-		numOfPasses = 0
-		depthOfTurns += 1
-	else: 
-		stageOfRound = 2
+	if(stageOfRound == 'E'):
+		if(lastRoundBluff):
+			lost(true)
+		else:
+			lost(false)
+	
+func _on_pass_button_up():
+	#PASS BUTTON
+	$Click.play()
+	if(stageOfRound == 'A'):
+		stageOfRound = 'F'
+	elif(stageOfRound == 'E'):
+		if(lastRoundPass):
+			stageOfRound = 'F'
+			depthOfTurns += 1
+		else:
+			lastRoundPass = true
+			stageOfRound = 'D'
 
 func playerCardsReady(toReady):
 	cardsReady = toReady
 	for x in playerCards.get_children():
 				x.setReady(toReady)
-
-func player():
-	if(stageOfRound == 0):
-		if(cardsReady):
-			playerCardsReady(false)
-		buton.visible = false
-		pesto.visible = false
-		butt.visible = true
-		revolvy.visible = true
-		inst.text = "It's Your Turn To Start A Round, Which Type Of Card Would You Like To Play?"
-	elif(stageOfRound == 1):
-		buton.visible = false
-		pesto.visible = false
-		butt.visible = true
-		revolvy.visible = false
-		inst.text = "Select The Card's You Would Like To Play"
-		if(!cardsReady):
-			playerCardsReady(true)
-	elif(stageOfRound == 2):
-		buton.visible = true
-		pesto.visible = true
-		butt.visible = true
-		revolvy.visible = false
-	elif(stageOfRound == 3):
-		buton.visible = false
-		pesto.visible = true
-		butt.visible = true
-		revolvy.visible = false
-		if(!cardsReady):
-			playerCardsReady(true)
-		
 
 func incPshGge():
 	dontDisplay = true
@@ -564,12 +564,12 @@ func incPshGge():
 
 #Creates a new Game
 #Right now Number of Opponents Doesn't work and is fixed
-func initGame(numOfOpponents):
+func initGame():
 	#Calling to Remove Any Old Cards From Player Hand
 	rmPlayerHand()
 	
-	#Calling To Deal New Hands, RIGHT NOW NUMBER OF OPPONENTS IS ALWAYS 2
-	dealNewHands(numOfOpponents)
+	#Calling To Deal New Hands
+	dealNewHands()
 	"""INITIALIZING DIALOGUE"""
 	Global.init_dialogue()	
 	"""INITIALIZING DIALOGUE"""
@@ -580,10 +580,9 @@ func initGame(numOfOpponents):
 	Global.playDialogue("111a")
 	"""PLAYING DIALOGUE"""
 	
-	cpuTurn = flipCoin()
+	var cpuTurn = flipCoin()
 	print(cpuTurn)
-	cpuTurn = false
-
+	stageOfRound = 'A'
 
 #Tails If Under 50, Heads Otherwise 
 func flipCoin():
@@ -612,7 +611,7 @@ func realizeHands():
 				tempNode.setCardID(playerHand[x])
 		
 #Deals out new hands for the new game
-func dealNewHands(numOfOpponents):
+func dealNewHands():
 	#Setting Deck To Be Full Again
 	clubsArr = [1,2,3,4,5,6,7,8,9,10,11,12,13]
 	diamondsArr = [1,2,3,4,5,6,7,8,9,10,11,12,13]
@@ -684,15 +683,12 @@ func updateStress(stress):
 		$Breakpoint.show()
 		$Breakpoint.get_node("BreakpointAnim").play()
 
-
 func _on_song_start_finished():
 	print("song finished playing")
 	$Song_loop.play()  
 
-
 func _on_breakpoint_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
-
 
 func _on_journal_button_pressed():
 	# Open journal
@@ -707,12 +703,10 @@ func _on_journal_button_pressed():
 	# Open journal
 	$Journal.show()
 
-
 func _on_butt_left_button_up():
 	if(canFlip):
 		canFlip = false
 		flipLeft = true
-
 
 func _on_butt_right_button_up():
 	if(canFlip):

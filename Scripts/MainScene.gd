@@ -40,4 +40,4 @@ func startBluff(character):
 	initBluff.name = "Bluff"
 	
 	#Initializing a new Game 
-	initBluff.initGame(2)
+	initBluff.initGame()
