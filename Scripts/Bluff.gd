@@ -110,6 +110,7 @@ var lastRoundHand = []
 var lastRoundBluff = false
 var lastRoundPass = false
 var depthOfTurns = 0
+var noWinner = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -174,7 +175,10 @@ func _process(delta):
 				playerCardsReady(true)
 		elif(stageOfRound == 'D'):
 			#CPUS TURN IN THE MIDDLE OF A ROUND
-			cupieD()
+			if (cpuOneHand.size() > 0):
+				cupieD()
+			else:
+				noWinner = false
 		elif(stageOfRound == 'E'):
 			#CPU PLAYED A MOVE, NOW PLAYERS TURN MID ROUND
 			pesto.visible = true
@@ -196,6 +200,12 @@ func _process(delta):
 			cupieG()
 		elif(stageOfRound == 'H'):
 			cupieG()
+		elif(stageOfRound == 'Y'):
+			#AMITY WON
+			pass
+		elif(stageOfRound == 'Z'):
+			#PLAYER WON
+			pass
 		else:
 			print("SOMETHING GOT REALLY WEIRD REALLY FAST")
 	if(flipLeft):
@@ -210,11 +220,18 @@ func lost(cpuOrNot):
 			cpuOneHand.append(x)
 		stageOfRound = 'F'
 		depthOfRound = 0
+		if(playerHand.size() == 0):
+			noWinner = false
+			stageOfRound = 'Z'
 	else:
 		for x in centerHand:
 			playerHand.append(x)
 		stageOfRound = 'A'
 		depthOfRound = 0
+		if(cpuOneHand.size() == 0):
+			noWinner = false
+			inst.text = "Amity Beat You!"
+			stageOfRound = 'Y'
 	centerHand = []
 	depthOfTurns += 1
 	realizeHands()
