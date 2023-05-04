@@ -20,17 +20,19 @@ func _on_button_pressed():
 		if action == "increase":
 			# Increase stress
 			get_parent().get_node("MainScene").get_node("Bluff").updateStress(20)
+			if not Global.bluffCompleted:
 			# Hide dialogue to begin round of Bluff
-			Global.current_prompt.hide()
-			for option in Global.current_options:
-				option.hide()
-			get_parent().get_node("MainScene").continueGame();
+				Global.current_prompt.hide()
+				for option in Global.current_options:
+					option.hide()
+				get_parent().get_node("MainScene").continueGame();
 		elif action == "neutral":
-			# Hide dialogue to begin round of Bluff
-			Global.current_prompt.hide()
-			for option in Global.current_options:
-				option.hide()
-			get_parent().get_node("MainScene").continueGame();
+			if not Global.bluffCompleted:
+				# Hide dialogue to begin round of Bluff
+				Global.current_prompt.hide()
+				for option in Global.current_options:
+					option.hide()
+				get_parent().get_node("MainScene").continueGame();
 		elif action == "dismiss":
 			# reinitialize global dialogue status
 			Global.current_prompt = null
@@ -46,6 +48,8 @@ func _on_button_pressed():
 				option.hide()
 			# Hide bluff
 			get_parent().get_node("MainScene").stopGame();
+		elif action == "end_bluff":
+			Global.bluffCompleted = true
 
 
 func _on_left_button_mouse_entered():
