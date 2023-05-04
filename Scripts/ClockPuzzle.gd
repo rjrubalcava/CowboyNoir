@@ -15,8 +15,8 @@ var area_is_touched = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#HourHand.hide()
-	#MinuteHand.hide()
+	HourHand.hide()
+	MinuteHand.hide()
 	HeartCard.hide()
 	DiamondCard.hide()
 	ClubCard.hide()
