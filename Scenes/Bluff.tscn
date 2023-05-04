@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ogmg1eiatsr" path="res://Assets/BunnyTable/Background Top Layer.png" id="5_v8cn3"]
 [ext_resource type="Texture2D" uid="uid://dtbm0egjugty0" path="res://Assets/BunnyTable/Beam of Light.png" id="6_kdsla"]
 [ext_resource type="Texture2D" uid="uid://db0ekw6mm0wty" path="res://Assets/BunnyTable/Break Point Sprite.png" id="7_52538"]
-[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/click.wav" id="8_irqys"]
+[ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="8_irqys"]
 [ext_resource type="AudioStream" uid="uid://c5ui11g0fy5y5" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_1.wav" id="9_n6tm3"]
 [ext_resource type="Texture2D" uid="uid://mg7w2i4qumcg" path="res://Assets/BunnyTable/Gun Chamber.png" id="10_2ec6h"]
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="10_45hga"]
@@ -158,10 +158,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 184.0
-offset_top = -237.333
-offset_right = 244.0
-offset_bottom = -179.333
+offset_left = 190.667
+offset_top = -230.667
+offset_right = 250.667
+offset_bottom = -172.667
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.760964
@@ -178,10 +178,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 289.333
-offset_top = -46.6666
-offset_right = 353.333
-offset_bottom = 10.3334
+offset_left = 296.0
+offset_top = -33.3334
+offset_right = 360.0
+offset_bottom = 23.6666
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 1.5708
@@ -198,10 +198,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 244.0
-offset_top = 164.0
-offset_right = 319.0
-offset_bottom = 219.0
+offset_left = 237.333
+offset_top = 178.667
+offset_right = 312.333
+offset_bottom = 233.667
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 2.25497
@@ -218,10 +218,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -253.333
-offset_top = -165.333
-offset_right = -178.333
-offset_bottom = -110.333
+offset_left = -246.667
+offset_top = -166.667
+offset_right = -171.667
+offset_bottom = -111.667
 grow_horizontal = 2
 grow_vertical = 2
 rotation = -0.886627

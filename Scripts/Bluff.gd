@@ -586,18 +586,10 @@ func incPshGge():
 func initGame():
 	#Calling to Remove Any Old Cards From Player Hand
 	rmPlayerHand()
-	
 	#Calling To Deal New Hands
 	dealNewHands()
-	"""INITIALIZING DIALOGUE"""
-	Global.init_dialogue()	
-	"""INITIALIZING DIALOGUE"""
-	
 	#Calling to Add Players Cards to Hand
 	realizeHands()
-	"""PLAYING DIALOGUE"""
-	Global.playDialogue("111a")
-	"""PLAYING DIALOGUE"""
 	
 	var cpuTurn = flipCoin()
 	print(cpuTurn)
