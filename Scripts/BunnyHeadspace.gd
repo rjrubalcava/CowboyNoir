@@ -28,15 +28,12 @@ var Enlarged_Newspaper_sprite: Sprite2D
 var selected = false
 var minutehandclicked=false
 var hourhandclicked = false
-var mouse_pos = Vector2()
-var mouse_velocity = Vector2()
 var area_is_touched = false
 var minutehandtouched = false
 var hourhandtouched = false
 
 func _ready():
 	$Transition.play()
-	mouse_pos = get_global_mouse_position()
 	Enlarged_Newspaper_sprite = Sprite2D.new()
 	Enlarged_Newspaper_sprite.texture = EnlargedNewspaper
 	Enlarged_Newspaper_sprite.scale = Vector2(0.5, 0.5)
@@ -50,9 +47,6 @@ func _ready():
 	SpadeCard.hide()
 
 func _process(delta):
-	var current_mouse_pos = get_global_mouse_position()
-	mouse_velocity = (current_mouse_pos - mouse_pos) / delta
-	mouse_pos = current_mouse_pos
 	if Global.clubcardclick == true:
 		ClubCard.show()
 	if Global.hourhandclick == true:
@@ -62,10 +56,6 @@ func _process(delta):
 		HeartCard.show()
 	if Global.minutecardclick == true:
 		MinuteHand.show()
-	if minutehandclicked == true:
-		drag(MinuteHand)
-	if hourhandclicked == true:
-		drag(HourHand)
 	if Global.diamondcardclick == true:
 		DiamondCardGround.hide()
 		DiamondCard.show()
@@ -196,10 +186,6 @@ func _on_costume_chest_mouse_exited():
 	var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(CostumeChest, "scale", Vector2(0.5,0.5), 0.1)
 
-func drag(my_sprite):
-	my_sprite.velocity = mouse_velocity
-	my_sprite.move_and_slide()
-		
 #Hour hand signals
 func _on_hour_hand_sprite_gui_input(event):
 	if Input.is_action_pressed("click"):

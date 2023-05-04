@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://ciaes6gmsx3ut"]
+[gd_scene load_steps=20 format=3 uid="uid://ciaes6gmsx3ut"]
 
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
 [ext_resource type="Texture2D" uid="uid://shdxih2t8rt0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/Unsolved Background.png" id="2_i06qd"]
 [ext_resource type="Texture2D" uid="uid://dh10ul2b886i1" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/stationaryobjects.png" id="3_qqchb"]
 [ext_resource type="Texture2D" uid="uid://c1ogmg1eiatsr" path="res://Assets/BunnyTable/Background Top Layer.png" id="4_b7alq"]
 [ext_resource type="Texture2D" uid="uid://ct2s5tq4litjv" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/boudoir.png" id="5_xy4g5"]
+[ext_resource type="Texture2D" uid="uid://biwchg5puqcqa" path="res://Assets/BunnyHeadspace/inventoryStuff/inventory box.png" id="7_xava8"]
 [ext_resource type="Texture2D" uid="uid://u1ayky8ih0r0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/diamondcard.png" id="9_nykbk"]
 [ext_resource type="Texture2D" uid="uid://bhrgbtjfycbr" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/heartcard.png" id="9_sen0s"]
 [ext_resource type="Texture2D" uid="uid://cgi85cwpjyi42" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/clubcard.png" id="10_06awf"]
@@ -75,6 +76,15 @@ offset_bottom = 1077.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_xy4g5")
 
+[node name="Inventory" type="TextureRect" parent="."]
+modulate = Color(0.780392, 0.521569, 0.247059, 1)
+layout_mode = 0
+offset_top = 6.0
+offset_right = 926.0
+offset_bottom = 351.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_xava8")
+
 [node name="HeartsCard" type="TextureRect" parent="."]
 z_index = 6
 layout_mode = 0
@@ -108,20 +118,20 @@ texture = ExtResource("12_be87g")
 [node name="HeartCard" type="TextureRect" parent="."]
 z_index = 5
 layout_mode = 0
-offset_left = 162.0
-offset_top = 39.0
-offset_right = 1114.0
-offset_bottom = 1449.0
+offset_left = 137.0
+offset_top = 50.0
+offset_right = 1089.0
+offset_bottom = 1460.0
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("9_sen0s")
 
 [node name="DiamondCard" type="TextureRect" parent="."]
 z_index = 5
 layout_mode = 0
-offset_left = 239.0
-offset_top = 38.0
-offset_right = 1183.0
-offset_bottom = 1457.0
+offset_left = 217.0
+offset_top = 50.0
+offset_right = 1161.0
+offset_bottom = 1469.0
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("9_nykbk")
 
@@ -145,10 +155,10 @@ offset_bottom = 1415.0
 [node name="ClubCard" type="TextureRect" parent="."]
 z_index = 5
 layout_mode = 0
-offset_left = 315.0
-offset_top = 38.0
-offset_right = 1266.0
-offset_bottom = 1453.0
+offset_left = 295.0
+offset_top = 49.0
+offset_right = 1246.0
+offset_bottom = 1464.0
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("10_06awf")
 
@@ -165,10 +175,10 @@ texture = ExtResource("11_0w42j")
 [node name="SpadeCard" type="TextureRect" parent="."]
 z_index = 5
 layout_mode = 0
-offset_left = 391.0
-offset_top = 38.0
-offset_right = 1339.0
-offset_bottom = 1450.0
+offset_left = 374.0
+offset_top = 46.0
+offset_right = 1322.0
+offset_bottom = 1458.0
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("11_wj428")
 
@@ -195,10 +205,10 @@ scale = Vector2(0.768, 0.768)
 collision_mask = 16
 
 [node name="HourHandSprite" type="TextureRect" parent="HourHand"]
-offset_left = 187.5
-offset_top = 50.7812
-offset_right = 1485.5
-offset_bottom = 401.781
+offset_left = 173.177
+offset_top = 62.5
+offset_right = 1471.18
+offset_bottom = 413.5
 rotation = 1.56207
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("13_4b6tg")
@@ -210,10 +220,10 @@ scale = Vector2(0.768, 0.768)
 collision_mask = 16
 
 [node name="MinuteHandSprite" type="TextureRect" parent="MinuteHand"]
-offset_left = 95.0521
-offset_top = 44.2708
-offset_right = 823.052
-offset_bottom = 448.271
+offset_left = 92.0
+offset_top = 59.625
+offset_right = 820.0
+offset_bottom = 466.625
 rotation = 1.17286
 scale = Vector2(0.2, 0.2)
 pivot_offset = Vector2(2.08165e-12, 2.08165e-12)
