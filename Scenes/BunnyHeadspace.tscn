@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://ciaes6gmsx3ut"]
+[gd_scene load_steps=21 format=3 uid="uid://ciaes6gmsx3ut"]
 
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
 [ext_resource type="Texture2D" uid="uid://shdxih2t8rt0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/Unsolved Background.png" id="2_i06qd"]
 [ext_resource type="Texture2D" uid="uid://dh10ul2b886i1" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/stationaryobjects.png" id="3_qqchb"]
 [ext_resource type="Texture2D" uid="uid://c1ogmg1eiatsr" path="res://Assets/BunnyTable/Background Top Layer.png" id="4_b7alq"]
 [ext_resource type="Texture2D" uid="uid://ct2s5tq4litjv" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/boudoir.png" id="5_xy4g5"]
+[ext_resource type="Texture2D" uid="uid://qlvn31xp8r5d" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/smallboudoirpuzzlepanel.png" id="7_cj2j8"]
 [ext_resource type="Texture2D" uid="uid://biwchg5puqcqa" path="res://Assets/BunnyHeadspace/inventoryStuff/inventory box.png" id="7_xava8"]
 [ext_resource type="Texture2D" uid="uid://u1ayky8ih0r0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/diamondcard.png" id="9_nykbk"]
 [ext_resource type="Texture2D" uid="uid://bhrgbtjfycbr" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/heartcard.png" id="9_sen0s"]
@@ -76,6 +77,16 @@ offset_bottom = 1077.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_xy4g5")
 
+[node name="MirrorDeskDrawer" type="TextureRect" parent="."]
+z_index = 3
+layout_mode = 0
+offset_left = 1132.0
+offset_top = 606.0
+offset_right = 1331.0
+offset_bottom = 697.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_cj2j8")
+
 [node name="Inventory" type="TextureRect" parent="."]
 modulate = Color(0.780392, 0.521569, 0.247059, 1)
 layout_mode = 0
@@ -84,24 +95,6 @@ offset_right = 926.0
 offset_bottom = 351.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("7_xava8")
-
-[node name="HeartsCard" type="TextureRect" parent="."]
-z_index = 6
-layout_mode = 0
-offset_left = 1142.0
-offset_top = 866.0
-offset_right = 2094.0
-offset_bottom = 2276.0
-rotation = -0.977384
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("9_sen0s")
-
-[node name="HeartsButton" type="Button" parent="HeartsCard"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 26.0
-offset_right = 912.0
-offset_bottom = 1404.0
 
 [node name="Newspaper" type="TextureRect" parent="."]
 light_mask = 4
@@ -165,12 +158,32 @@ texture = ExtResource("10_06awf")
 [node name="Chair" type="TextureRect" parent="."]
 z_index = 4
 layout_mode = 0
-offset_left = 978.0
-offset_top = 589.0
-offset_right = 1275.0
-offset_bottom = 1063.0
+offset_left = 969.0
+offset_top = 565.0
+offset_right = 1266.0
+offset_bottom = 1039.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_0w42j")
+
+[node name="HeartsCard" type="TextureRect" parent="."]
+z_index = 3
+layout_mode = 0
+offset_left = 1009.0
+offset_top = 705.0
+offset_right = 1961.0
+offset_bottom = 2115.0
+rotation = -0.977384
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("9_sen0s")
+
+[node name="HeartsButton" type="Button" parent="HeartsCard"]
+modulate = Color(1, 1, 1, 0)
+z_index = 3
+layout_mode = 0
+offset_left = 35.5319
+offset_top = -23.957
+offset_right = 921.532
+offset_bottom = 1380.04
 
 [node name="SpadeCard" type="TextureRect" parent="."]
 z_index = 5
@@ -183,21 +196,24 @@ scale = Vector2(0.08, 0.08)
 texture = ExtResource("11_wj428")
 
 [node name="SpadeCardGround" type="TextureRect" parent="."]
-z_index = 6
+z_index = 2
 layout_mode = 0
-offset_left = 836.0
-offset_top = 735.0
-offset_right = 1784.0
-offset_bottom = 2147.0
+offset_left = 1200.0
+offset_top = 608.0
+offset_right = 2148.0
+offset_bottom = 2020.0
 rotation = -0.911062
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("11_wj428")
 
 [node name="SpadeButton" type="Button" parent="SpadeCardGround"]
 modulate = Color(1, 1, 1, 0)
+z_index = 2
 layout_mode = 0
-offset_right = 946.0
-offset_bottom = 1412.0
+offset_left = 28.7976
+offset_top = 13.8184
+offset_right = 974.797
+offset_bottom = 1425.82
 
 [node name="HourHand" type="CharacterBody2D" parent="."]
 z_index = 5
@@ -260,11 +276,8 @@ stream = ExtResource("24_73k5i")
 
 [connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
 [connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]
-[connection signal="mouse_entered" from="MirrorDesk" to="." method="_on_mirror_desk_mouse_entered"]
-[connection signal="mouse_exited" from="MirrorDesk" to="." method="_on_mirror_desk_mouse_exited"]
-[connection signal="button_down" from="HeartsCard/HeartsButton" to="." method="_on_hearts_button_button_down"]
-[connection signal="mouse_entered" from="HeartsCard/HeartsButton" to="." method="_on_hearts_button_mouse_entered"]
-[connection signal="mouse_exited" from="HeartsCard/HeartsButton" to="." method="_on_hearts_button_mouse_exited"]
+[connection signal="mouse_entered" from="MirrorDeskDrawer" to="." method="_on_mirror_desk_drawer_mouse_entered"]
+[connection signal="mouse_exited" from="MirrorDeskDrawer" to="." method="_on_mirror_desk_drawer_mouse_exited"]
 [connection signal="mouse_entered" from="Newspaper" to="." method="_on_newspaper_mouse_entered"]
 [connection signal="mouse_exited" from="Newspaper" to="." method="_on_newspaper_mouse_exited"]
 [connection signal="mouse_entered" from="HeartCard" to="." method="_on_heart_card_mouse_entered"]
@@ -276,6 +289,9 @@ stream = ExtResource("24_73k5i")
 [connection signal="mouse_exited" from="DiamondCardGround/DiamondButton" to="." method="_on_diamond_button_mouse_exited"]
 [connection signal="mouse_entered" from="ClubCard" to="." method="_on_club_card_mouse_entered"]
 [connection signal="mouse_exited" from="ClubCard" to="." method="_on_club_card_mouse_exited"]
+[connection signal="button_down" from="HeartsCard/HeartsButton" to="." method="_on_hearts_button_button_down"]
+[connection signal="mouse_entered" from="HeartsCard/HeartsButton" to="." method="_on_hearts_button_mouse_entered"]
+[connection signal="mouse_exited" from="HeartsCard/HeartsButton" to="." method="_on_hearts_button_mouse_exited"]
 [connection signal="mouse_entered" from="SpadeCard" to="." method="_on_spade_card_mouse_entered"]
 [connection signal="mouse_exited" from="SpadeCard" to="." method="_on_spade_card_mouse_exited"]
 [connection signal="button_down" from="SpadeCardGround/SpadeButton" to="." method="_on_spade_button_button_down"]
