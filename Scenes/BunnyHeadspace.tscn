@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dh10ul2b886i1" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/stationaryobjects.png" id="3_qqchb"]
 [ext_resource type="Texture2D" uid="uid://c1ogmg1eiatsr" path="res://Assets/BunnyTable/Background Top Layer.png" id="4_b7alq"]
 [ext_resource type="Texture2D" uid="uid://ct2s5tq4litjv" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/boudoir.png" id="5_xy4g5"]
-[ext_resource type="Texture2D" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/smallboudoirpuzzlepanel.png" id="7_cj2j8"]
+[ext_resource type="Texture2D" uid="uid://qlvn31xp8r5d" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/smallboudoirpuzzlepanel.png" id="7_cj2j8"]
 [ext_resource type="Texture2D" uid="uid://biwchg5puqcqa" path="res://Assets/BunnyHeadspace/inventoryStuff/inventory box.png" id="7_xava8"]
 [ext_resource type="Texture2D" uid="uid://u1ayky8ih0r0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/diamondcard.png" id="9_nykbk"]
 [ext_resource type="Texture2D" uid="uid://bhrgbtjfycbr" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/heartcard.png" id="9_sen0s"]
