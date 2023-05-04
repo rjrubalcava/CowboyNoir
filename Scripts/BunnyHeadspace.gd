@@ -21,7 +21,7 @@ extends Control
 @onready var MirrorDesk: TextureRect = $MirrorDesk
 @onready var DiamondCardGround: TextureRect = $DiamondCardGround
 @onready var SpadeCardGround: TextureRect = $SpadeCardGround
-@onready var MirrorDeskDrawer: TextureRect = $MirrorDeskDrawer
+
 
 
 var Enlarged_Newspaper_sprite: Sprite2D
@@ -109,7 +109,7 @@ func _input(event):
 			await get_tree().create_timer(0.8).timeout
 			Enlarged_Newspaper_sprite.show()
 			Enlarged_Newspaper_sprite.z_index = 8
-		elif MirrorDeskDrawer.get_global_rect().has_point(event.position):
+		elif MirrorDesk.get_global_rect().has_point(event.position):
 			get_tree().change_scene_to_file("res://Scenes/CodeDrawerVanity.tscn")
 		elif CostumeChest.get_global_rect().has_point(event.position):
 			get_tree().change_scene_to_file("res://Scenes/CodeDrawerChest.tscn")
@@ -230,6 +230,14 @@ func _on_minute_hand_area_2d_area_entered(area):
 func _on_minute_hand_area_2d_area_exited(area):
 	minutehandtouched = false
 
+func _on_mirror_desk_mouse_entered():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(MirrorDesk, "scale", Vector2(0.508,0.508), 0.1)
+
+func _on_mirror_desk_mouse_exited():
+	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
+	TW.tween_property(MirrorDesk, "scale", Vector2(0.5,0.5), 0.1)
+
 
 func _on_button_button_down():
 	get_tree().change_scene_to_file("res://Scenes/CodeDrawerChest.tscn")
@@ -289,13 +297,3 @@ func _on_spade_button_mouse_entered():
 func _on_spade_button_mouse_exited():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(SpadeCardGround, "scale", Vector2(0.07,0.07), 0.1)
-
-
-func _on_mirror_desk_drawer_mouse_entered():
-	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(MirrorDeskDrawer, "scale", Vector2(0.52,0.52), 0.1)
-
-
-func _on_mirror_desk_drawer_mouse_exited():
-	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
-	TW.tween_property(MirrorDeskDrawer, "scale", Vector2(0.5,0.5), 0.1)
