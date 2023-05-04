@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxm70f4bpth7r"
+path="res://.godot/imported/backwards-negative click.wav-feb3a565e2d4e5df33c51b41ceb324ad.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/clicks/backwards-negative click.wav"
+dest_files=["res://.godot/imported/backwards-negative click.wav-feb3a565e2d4e5df33c51b41ceb324ad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
