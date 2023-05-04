@@ -706,7 +706,6 @@ func _on_song_start_finished():
 	$Song_loop.play()  
 
 func _on_breakpoint_button_pressed():
-	$Transition.play()
 	get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
 
 func _on_journal_button_pressed():

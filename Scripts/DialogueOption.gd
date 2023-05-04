@@ -38,7 +38,7 @@ func _on_button_pressed():
 			Global.current_prompt = null
 			Global.current_options = []
 			# Return player to overworld
-			get_tree().change_scene_to_file("res://Scenes/Overworld.tscn")
+			get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")
 		elif action == "force_breakpoint":
 			# Max stress
 			get_parent().get_node("MainScene").get_node("Bluff").updateStress(500)
