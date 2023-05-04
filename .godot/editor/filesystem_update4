@@ -1,8 +1,7 @@
 res://Z-RNDM/default_env.tres
-res://Scenes/Bluff.tscn
+res://Scenes/PuzzleSolvedScreen.tscn
 res://Scenes/chips_Stacking_1.gd
-res://Scenes/Card.tscn
-res://Scenes/Overworld.tscn
-res://Scenes/Journal.tscn
-res://Scripts/Bluff.gd
-res://Scripts/MainScene.gd
+res://Scenes/BunnyHeadspace.tscn
+res://Scenes/ClockPuzzle.tscn
+res://Scripts/ClockPuzzle.gd
+res://Scripts/BunnyHeadspace.gd
