@@ -127,7 +127,6 @@ func _unhandled_input(event):
 		incPshGge()
 	elif event.is_action_pressed("ui_down"):
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
-		$Transition.play()	
 	# Close journal if it is open and esc is pressed
 	elif event.is_action_pressed("ui_cancel") and $Journal.visible:
 		# Show global dialogue elements if dialogue has been previously paused
