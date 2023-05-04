@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dodxyqs5rwsue"
-path="res://.godot/imported/icon.png-c6d325ed106c168a87f907b17d82b6a1.ctex"
+uid="uid://bt6bggjusyavl"
+path="res://.godot/imported/chestinteriornoclockhand.png-ce1d7973bd7fb799e48c6c55b1fbd603.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Z-RNDM/icon.png"
-dest_files=["res://.godot/imported/icon.png-c6d325ed106c168a87f907b17d82b6a1.ctex"]
+source_file="res://Assets/BunnyHeadspace/New/Final Headspace Assets/chestinteriornoclockhand.png"
+dest_files=["res://.godot/imported/chestinteriornoclockhand.png-ce1d7973bd7fb799e48c6c55b1fbd603.ctex"]
 
 [params]
 

@@ -1,7 +1,3 @@
 res://Z-RNDM/default_env.tres
-res://Scenes/DialogueOption.tscn
+res://Scenes/Start.tscn
 res://Scenes/chips_Stacking_1.gd
-res://Scenes/Global.tscn
-res://Scenes/Overworld.tscn
-res://Scenes/Journal.tscn
-res://Scenes/Bluff.tscn

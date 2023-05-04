@@ -18,10 +18,28 @@ func _ready():
 
 
 func _process(delta):
-	pass
+	if(initBluff != null):
+		if(!initBluff.noWinner):
+			var stress = initBluff.stressLevel
+			initBluff.queue_Free()
+			#Recognizing new Scene to play Bluff
+			var genBluff = load("res://Scenes/Bluff.tscn")
+		
+			#Creating a new instance of bluff to play game
+			initBluff = genBluff.instantiate()
+			#Adding Bluff instance to Main Tree
+			add_child(initBluff)
+			initBluff.name = "Bluff"
+		
+			#Initializing a new Game 
+			initBluff.initGame()
+			initBluff.updateStress(stress)
 
 func continueGame():
 	initBluff.dontDisplay = false
+	
+func stopGame():
+	initBluff.dontDisplay = true
 
 func _exit_tree():
 	Global.m_parent = null
@@ -40,4 +58,6 @@ func startBluff(character):
 	initBluff.name = "Bluff"
 	
 	#Initializing a new Game 
-	initBluff.initGame(2)
+	initBluff.initGame()
+	Global.init_dialogue()	
+	Global.playDialogue("111a")
