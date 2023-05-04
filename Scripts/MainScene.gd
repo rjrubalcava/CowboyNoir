@@ -22,6 +22,9 @@ func _process(delta):
 
 func continueGame():
 	initBluff.dontDisplay = false
+	
+func stopGame():
+	initBluff.dontDisplay = true
 
 func _exit_tree():
 	Global.m_parent = null

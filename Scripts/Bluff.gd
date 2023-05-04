@@ -719,7 +719,6 @@ func rmPlayerHand():
 	cpuCardsLastRound = []
 	
 func updateStress(stress):
-	print("got update")
 	if stress > 0:
 		var curr_sound = get_node(stress_up_sounds.pick_random())
 		
