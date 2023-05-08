@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=23 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://4iy2sn5g6prk" path="res://Assets/BunnyTable/Background Middle Layer.png" id="4_orrug"]
 [ext_resource type="Texture2D" uid="uid://bp2xqg184brch" path="res://Assets/BunnyTable/Amity Base Expression.png" id="5_0dn31"]
 [ext_resource type="Texture2D" uid="uid://c1ogmg1eiatsr" path="res://Assets/BunnyTable/Background Top Layer.png" id="5_v8cn3"]
-[ext_resource type="Texture2D" uid="uid://dtbm0egjugty0" path="res://Assets/BunnyTable/Beam of Light.png" id="6_kdsla"]
 [ext_resource type="Texture2D" uid="uid://db0ekw6mm0wty" path="res://Assets/BunnyTable/Break Point Sprite.png" id="7_52538"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="8_sjxgv"]
 [ext_resource type="AudioStream" uid="uid://c5ui11g0fy5y5" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_1.wav" id="9_n6tm3"]
@@ -101,14 +100,6 @@ offset_left = 786.0
 offset_top = 195.0
 offset_right = 966.0
 offset_bottom = 328.0
-
-[node name="LightDim" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(960, 540)
-scale = Vector2(0.768, 0.768)
-energy = 1.8
-blend_mode = 2
-texture = ExtResource("6_kdsla")
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_sjxgv")
