@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://buqbhqp81febv"]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="Script" path="res://Scripts/ClockPuzzle.gd" id="1_n3fj8"]
 [ext_resource type="Texture2D" uid="uid://cfdedjymvkoj" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/unsolvedclock.png" id="1_oq7h0"]
 [ext_resource type="Texture2D" uid="uid://nlwqr25ws0ah" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/hourhand.png" id="2_w3fua"]
 [ext_resource type="Texture2D" uid="uid://c1ogmg1eiatsr" path="res://Assets/BunnyTable/Background Top Layer.png" id="3_ls3ka"]
-[ext_resource type="Texture2D" uid="uid://biwchg5puqcqa" path="res://Assets/BunnyHeadspace/inventoryStuff/inventory box.png" id="3_pbuf6"]
+[ext_resource type="Texture2D" uid="uid://biwchg5puqcqa" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/inventory box.png" id="3_pbuf6"]
 [ext_resource type="Texture2D" uid="uid://2x04q2kp27hr" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/minutehand.png" id="4_n3xjy"]
 [ext_resource type="Texture2D" uid="uid://bhrgbtjfycbr" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/heartcard.png" id="5_g7x3f"]
 [ext_resource type="Texture2D" uid="uid://u1ayky8ih0r0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/diamondcard.png" id="6_825ek"]
 [ext_resource type="Texture2D" uid="uid://cgi85cwpjyi42" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/clubcard.png" id="7_lk21q"]
 [ext_resource type="Texture2D" uid="uid://cal1yv7n5fh3j" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/spadecard.png" id="8_f2u7c"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ddkt1"]
 radius = 300.027

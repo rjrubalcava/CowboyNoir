@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=24 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -14,7 +14,6 @@
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="10_45hga"]
 [ext_resource type="AudioStream" uid="uid://cej7wjqgmmlhn" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_2.wav" id="10_6811y"]
 [ext_resource type="AudioStream" uid="uid://d3ffbu77o3x68" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_3.wav" id="11_7ix15"]
-[ext_resource type="AudioStream" uid="uid://d07b65wwmwmao" path="res://Assets/SFX/Transitions/bluff-to-mind.wav" id="15_6x07e"]
 [ext_resource type="AudioStream" uid="uid://b3yedrfaogef7" path="res://Assets/SFX/Songs/Jazz_rough_parts/bar music intro.wav" id="15_tttxw"]
 [ext_resource type="AudioStream" uid="uid://l8cjxvq43iax" path="res://Assets/SFX/Songs/Jazz_rough_parts/bar music loop.wav" id="16_igwlm"]
 [ext_resource type="PackedScene" uid="uid://3dqpr6nbuyif" path="res://Scenes/Journal.tscn" id="17_eha08"]
