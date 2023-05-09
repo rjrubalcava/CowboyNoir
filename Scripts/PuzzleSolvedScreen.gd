@@ -3,7 +3,7 @@ extends Node2D
 @onready var Transition : AudioStreamPlayer2D = $TextureRect/BulletSound
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Transition.play()
+	pass
 	
 
 

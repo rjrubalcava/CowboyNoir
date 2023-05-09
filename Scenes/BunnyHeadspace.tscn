@@ -265,9 +265,11 @@ rotation = -0.326377
 
 [node name="Transition" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_ajvl5")
+volume_db = -1.874
 
 [node name="chest opening" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_73k5i")
+volume_db = -6.559
 
 [connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
 [connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]

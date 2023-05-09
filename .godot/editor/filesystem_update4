@@ -19,3 +19,5 @@ res://Scenes/DialogueBox.tscn
 res://Scenes/Credits.tscn
 res://Scripts/ClockPuzzle.gd
 res://Scripts/BunnyHeadspace.gd
+res://Scripts/Global.gd
+res://Scripts/PuzzleSolvedScreen.gd

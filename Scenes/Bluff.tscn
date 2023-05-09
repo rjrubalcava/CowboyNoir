@@ -316,6 +316,7 @@ stream = ExtResource("16_hr6pp")
 
 [node name="Song_loop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_igwlm")
+volume_db = -6.92
 
 [node name="Journal" parent="." instance=ExtResource("17_eha08")]
 visible = false

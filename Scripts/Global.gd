@@ -21,8 +21,8 @@ var diamondcardclick = false
 var puzzlesolved = false
 var bluffCompleted = false
 var BHTransition = false
-var HeadspaceSong = ""
-var clockDong = ""
+var HeadspaceSong 
+var clockDong 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	HeadspaceSong = get_node("HeadspaceMusic")

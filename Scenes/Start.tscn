@@ -43,6 +43,7 @@ stream = ExtResource("3_y6r6x")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_a8ab1")
+volume_db = -6.92
 autoplay = true
 
 [node name="IntroVid" type="VideoStreamPlayer" parent="."]
