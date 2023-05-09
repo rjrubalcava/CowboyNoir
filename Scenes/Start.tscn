@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbr53j4b0wi0p"]
+[gd_scene load_steps=7 format=3 uid="uid://bbr53j4b0wi0p"]
 
 [ext_resource type="Script" path="res://Scripts/Start.gd" id="1_s8hsd"]
 [ext_resource type="Texture2D" uid="uid://leiuirv5rc6u" path="res://Assets/Backgrounds/StartScreen.png" id="2_tnkj4"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="3_y6r6x"]
-[ext_resource type="AudioStream" uid="uid://ds5eig4uxb42n" path="res://Assets/SFX/Songs/TDYN_wind_interlude.wav" id="4_a8ab1"]
+[ext_resource type="AudioStream" uid="uid://c574yg6dnbm3b" path="res://Assets/SFX/Songs/tdyk op FIRST LOOP.mp3" id="4_s7bhx"]
 [ext_resource type="PackedScene" uid="uid://be8x4ykhg1sbl" path="res://Scenes/Credits.tscn" id="5_0arcb"]
+[ext_resource type="AudioStream" uid="uid://dfwl7e88mmgh5" path="res://Assets/SFX/Songs/tdyk op INFINITE LOOP MP3.mp3" id="5_nt32o"]
 
 [node name="Start" type="Control"]
 layout_mode = 3
@@ -41,8 +42,13 @@ rotation = -0.00828301
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_y6r6x")
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_a8ab1")
+[node name="StartMusicIntro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_s7bhx")
+volume_db = -6.92
+autoplay = true
+
+[node name="StartMusicLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nt32o")
 volume_db = -6.92
 autoplay = true
 
@@ -57,3 +63,4 @@ layout_mode = 1
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CreditsButton2" to="." method="_on_credits_button_pressed"]
+[connection signal="finished" from="StartMusicIntro" to="." method="_on_start_music_intro_finished"]
