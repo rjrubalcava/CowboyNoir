@@ -1,7 +1,4 @@
+res://Scripts/Global.gd
 res://Z-RNDM/default_env.tres
-res://Scenes/Start.tscn
+res://Scenes/Global.tscn
 res://Scenes/chips_Stacking_1.gd
-res://Scenes/BunnyHeadspace.tscn
-res://Scenes/OpenDrawer.tscn
-res://Scenes/DialogueBox.tscn
-res://Scenes/Bluff.tscn

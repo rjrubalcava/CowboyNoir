@@ -25,7 +25,7 @@ var HeadspaceSong
 var clockDong 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	HeadspaceSong = get_node("HeadspaceMusic")
+	HeadspaceSong = get_node("HeadspaceMusicStart")
 	clockDong = get_node("clockDong")
 
 func newNode(node, location, parent, scaleMult):
@@ -479,3 +479,7 @@ func resize_text(textBox, char_count):
 	textBox.size = textBox.size * pow(1.15, scale_level)
 	# Reduce y origin of textBox rect to utilize space above the center of the DialogueBox or DialogueOption
 	textBox.position.y = textBox.position.y - rise_level
+
+
+func _on_headspace_music_start_finished():
+	$HeadspaceMusicLoop.play() 
