@@ -88,6 +88,7 @@ func area_checker():
 	if hourhandtouched == true and minutehandtouched == true:
 		area_is_touched =true
 		Global.puzzlesolved = true
+		
 		await get_tree().create_timer(0.5).timeout
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
 		await get_tree().create_timer(0.5).timeout
@@ -110,6 +111,7 @@ func _on_area_2d_minute_hand_mouse_entered():
 func _on_area_2d_minute_hand_mouse_exited():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(MinuteHand, "scale", Vector2(1,1), 0.1)
+	
 
 
 func _on_area_2d_hour_hand_mouse_entered():
@@ -120,3 +122,4 @@ func _on_area_2d_hour_hand_mouse_entered():
 func _on_area_2d_hour_hand_mouse_exited():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(HourHand, "scale", Vector2(1,1), 0.1)
+	

@@ -32,8 +32,14 @@ var area_is_touched = false
 var minutehandtouched = false
 var hourhandtouched = false
 
+#sound variables
+var clockpuzzlesolved = false
+
 func _ready():
-	$Transition.play()
+	if Global.BHTransition == false:
+		$Transition.play()
+		Global.BHTransition = true
+		Global.HeadspaceSong.play()
 	Enlarged_Newspaper_sprite = Sprite2D.new()
 	Enlarged_Newspaper_sprite.texture = EnlargedNewspaper
 	Enlarged_Newspaper_sprite.scale = Vector2(0.5, 0.5)
@@ -45,6 +51,7 @@ func _ready():
 	DiamondCard.hide()
 	ClubCard.hide()
 	SpadeCard.hide()
+	
 
 func _process(delta):
 	if Global.clubcardclick == true:
@@ -99,7 +106,9 @@ func _input(event):
 			change_position(TW, Newspaper, newspaper_coordinates)
 			scale_down(TW,TheSun)
 			scale_down(TW,Newspaper)
+			
 			get_tree().change_scene_to_file("res://Scenes/ClockPuzzle.tscn")
+			
 		elif Newspaper.get_global_rect().has_point(event.position):
 			scale_up(TW, Newspaper)
 			change_texture(TW, Newspaper, Enlarged_Newspaper_sprite)
@@ -110,9 +119,13 @@ func _input(event):
 			Enlarged_Newspaper_sprite.show()
 			Enlarged_Newspaper_sprite.z_index = 8
 		elif MirrorDeskDrawer.get_global_rect().has_point(event.position):
+			
 			get_tree().change_scene_to_file("res://Scenes/CodeDrawerVanity.tscn")
+			
 		elif CostumeChest.get_global_rect().has_point(event.position):
+			
 			get_tree().change_scene_to_file("res://Scenes/CodeDrawerChest.tscn")
+			
 		elif Background.get_global_rect().has_point(event.position):
 			change_texture(TW, Newspaper, SmallerNewspaper)
 			scale_down(TW, TheSun)
@@ -232,7 +245,9 @@ func _on_minute_hand_area_2d_area_exited(area):
 
 
 func _on_button_button_down():
+	
 	get_tree().change_scene_to_file("res://Scenes/CodeDrawerChest.tscn")
+	
 
 
 func _on_button_mouse_entered():
@@ -257,8 +272,12 @@ func puzzlesolved():
 	if Global.puzzlesolved==true:
 		var TW = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 		TW.tween_property(Background, "modulate", Color.DARK_BLUE, 0.3)
-		await get_tree().create_timer(4).timeout
+		if clockpuzzlesolved == false:
+			Global.clockDong.play()
+			clockpuzzlesolved = true
+		await get_tree().create_timer(5).timeout
 		get_tree().change_scene_to_file("res://Scenes/PuzzleSolvedScreen.tscn")
+		
 
 
 func _on_hearts_button_mouse_entered():

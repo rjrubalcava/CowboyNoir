@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ciaes6gmsx3ut"]
+[gd_scene load_steps=20 format=3 uid="uid://ciaes6gmsx3ut"]
 
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
 [ext_resource type="Texture2D" uid="uid://shdxih2t8rt0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/Unsolved Background.png" id="2_i06qd"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://di778u008pt0h" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/unopenedchest.png" id="19_lb5j2"]
 [ext_resource type="AudioStream" uid="uid://d07b65wwmwmao" path="res://Assets/SFX/Transitions/bluff-to-mind.wav" id="23_ajvl5"]
 [ext_resource type="AudioStream" uid="uid://bmo2uf3m4sflq" path="res://Assets/SFX/chest sfx/Metal Latch.wav" id="24_73k5i"]
-[ext_resource type="AudioStream" uid="uid://f3dgueu72h3o" path="res://Assets/SFX/Songs/Headspace theme.wav" id="25_drb5u"]
 
 [node name="BunnyHeadspace" type="Control"]
 layout_mode = 3
@@ -266,10 +265,6 @@ rotation = -0.326377
 
 [node name="Transition" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_ajvl5")
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("25_drb5u")
-autoplay = true
 
 [node name="chest opening" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_73k5i")

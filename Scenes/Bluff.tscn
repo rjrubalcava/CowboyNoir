@@ -14,8 +14,8 @@
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="10_45hga"]
 [ext_resource type="AudioStream" uid="uid://cej7wjqgmmlhn" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_2.wav" id="10_6811y"]
 [ext_resource type="AudioStream" uid="uid://d3ffbu77o3x68" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_3.wav" id="11_7ix15"]
-[ext_resource type="AudioStream" uid="uid://d07b65wwmwmao" path="res://Assets/SFX/Transitions/bluff-to-mind.wav" id="15_6x07e"]
 [ext_resource type="AudioStream" uid="uid://b3yedrfaogef7" path="res://Assets/SFX/Songs/Jazz_rough_parts/bar music intro.wav" id="15_tttxw"]
+[ext_resource type="AudioStream" uid="uid://3d5v0yhj8ljk" path="res://Assets/SFX/clicks/Revolver click.wav" id="16_hr6pp"]
 [ext_resource type="AudioStream" uid="uid://l8cjxvq43iax" path="res://Assets/SFX/Songs/Jazz_rough_parts/bar music loop.wav" id="16_igwlm"]
 [ext_resource type="PackedScene" uid="uid://3dqpr6nbuyif" path="res://Scenes/Journal.tscn" id="17_eha08"]
 
@@ -306,9 +306,13 @@ stream = ExtResource("10_6811y")
 [node name="chips_Stacking_3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_7ix15")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Song_start" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_tttxw")
+volume_db = -6.92
 autoplay = true
+
+[node name="Revolver Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_hr6pp")
 
 [node name="Song_loop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_igwlm")
@@ -328,5 +332,5 @@ offset_bottom = 158.0
 [connection signal="button_up" from="BluffyTheVampireSlayer/Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/Buton" to="." method="_on_buton_button_up"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/pass" to="." method="_on_pass_button_up"]
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_song_start_finished"]
+[connection signal="finished" from="Song_start" to="." method="_on_song_start_finished"]
 [connection signal="pressed" from="JournalButton" to="." method="_on_journal_button_pressed"]
