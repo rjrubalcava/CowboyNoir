@@ -5,6 +5,8 @@ extends Node2D
 @onready var DiamondCard: TextureRect = $DiamondCard
 @onready var ClubCard: TextureRect = $ClubCard
 @onready var SpadeCard: TextureRect = $SpadeCard
+@onready var HourHandSp: TextureRect = $HourHand/HourHandSprite
+@onready var MinuteHandSP: TextureRect = $MinuteHand/MinuteHandSprite
 var mouse_pos = Vector2()
 var mouse_velocity = Vector2()
 var minutehandclicked=false
@@ -15,8 +17,8 @@ var area_is_touched = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	HourHand.hide()
-	MinuteHand.hide()
+	#HourHand.hide()
+	#MinuteHand.hide()
 	HeartCard.hide()
 	DiamondCard.hide()
 	ClubCard.hide()
@@ -44,6 +46,7 @@ func _process(delta):
 	if minutehandclicked == true:
 		drag(MinuteHand)
 	area_checker()
+	my_rotate()
 func drag(my_sprite):
 	my_sprite.velocity = mouse_velocity
 	my_sprite.move_and_slide()
@@ -88,7 +91,7 @@ func area_checker():
 	if hourhandtouched == true and minutehandtouched == true:
 		area_is_touched =true
 		Global.puzzlesolved = true
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
 		await get_tree().create_timer(0.5).timeout
 		
@@ -120,3 +123,11 @@ func _on_area_2d_hour_hand_mouse_entered():
 func _on_area_2d_hour_hand_mouse_exited():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(HourHand, "scale", Vector2(1,1), 0.1)
+
+func my_rotate():
+	if area_is_touched == true:
+		await get_tree().create_timer(1).timeout
+		var tween = get_tree().create_tween()
+		tween.tween_property(HourHandSp, "rotation_degrees", (205), 1)
+		tween.parallel().tween_property(MinuteHandSP, "rotation_degrees", (250), 1)
+		area_is_touched = false
