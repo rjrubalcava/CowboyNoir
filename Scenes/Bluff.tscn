@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=23 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://4iy2sn5g6prk" path="res://Assets/BunnyTable/Background Middle Layer.png" id="4_orrug"]
 [ext_resource type="Texture2D" uid="uid://bp2xqg184brch" path="res://Assets/BunnyTable/Amity Base Expression.png" id="5_0dn31"]
 [ext_resource type="Texture2D" uid="uid://c1ogmg1eiatsr" path="res://Assets/BunnyTable/Background Top Layer.png" id="5_v8cn3"]
-[ext_resource type="Texture2D" uid="uid://dtbm0egjugty0" path="res://Assets/BunnyTable/Beam of Light.png" id="6_kdsla"]
 [ext_resource type="Texture2D" uid="uid://db0ekw6mm0wty" path="res://Assets/BunnyTable/Break Point Sprite.png" id="7_52538"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="8_sjxgv"]
 [ext_resource type="AudioStream" uid="uid://c5ui11g0fy5y5" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_1.wav" id="9_n6tm3"]
@@ -14,9 +13,9 @@
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="10_45hga"]
 [ext_resource type="AudioStream" uid="uid://cej7wjqgmmlhn" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_2.wav" id="10_6811y"]
 [ext_resource type="AudioStream" uid="uid://d3ffbu77o3x68" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_3.wav" id="11_7ix15"]
-[ext_resource type="AudioStream" uid="uid://b3yedrfaogef7" path="res://Assets/SFX/Songs/Jazz_rough_parts/bar music intro.wav" id="15_tttxw"]
 [ext_resource type="AudioStream" uid="uid://3d5v0yhj8ljk" path="res://Assets/SFX/clicks/Revolver click.wav" id="16_hr6pp"]
-[ext_resource type="AudioStream" uid="uid://l8cjxvq43iax" path="res://Assets/SFX/Songs/Jazz_rough_parts/bar music loop.wav" id="16_igwlm"]
+[ext_resource type="AudioStream" uid="uid://deys2d5v6687o" path="res://Assets/SFX/Songs/Jazz_rough_parts/tdyk bar FIRST LOOP MP3.mp3" id="14_nerhv"]
+[ext_resource type="AudioStream" uid="uid://bxjty12kt2xqy" path="res://Assets/SFX/Songs/Jazz_rough_parts/tdyk bar INFINITE LOOP MP3.mp3" id="15_filab"]
 [ext_resource type="PackedScene" uid="uid://3dqpr6nbuyif" path="res://Scenes/Journal.tscn" id="17_eha08"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrtgy"]
@@ -102,14 +101,6 @@ offset_left = 786.0
 offset_top = 195.0
 offset_right = 966.0
 offset_bottom = 328.0
-
-[node name="LightDim" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(960, 540)
-scale = Vector2(0.768, 0.768)
-energy = 1.8
-blend_mode = 2
-texture = ExtResource("6_kdsla")
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_sjxgv")
@@ -306,8 +297,8 @@ stream = ExtResource("10_6811y")
 [node name="chips_Stacking_3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_7ix15")
 
-[node name="Song_start" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15_tttxw")
+[node name="Song_init" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_nerhv")
 volume_db = -6.92
 autoplay = true
 
@@ -315,8 +306,8 @@ autoplay = true
 stream = ExtResource("16_hr6pp")
 
 [node name="Song_loop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_igwlm")
 volume_db = -6.92
+stream = ExtResource("15_filab")
 
 [node name="Journal" parent="." instance=ExtResource("17_eha08")]
 visible = false
@@ -333,5 +324,5 @@ offset_bottom = 158.0
 [connection signal="button_up" from="BluffyTheVampireSlayer/Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/Buton" to="." method="_on_buton_button_up"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/pass" to="." method="_on_pass_button_up"]
-[connection signal="finished" from="Song_start" to="." method="_on_song_start_finished"]
+[connection signal="finished" from="Song_init" to="." method="_on_song_start_finished"]
 [connection signal="pressed" from="JournalButton" to="." method="_on_journal_button_pressed"]
