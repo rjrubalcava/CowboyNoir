@@ -1,4 +1,4 @@
-res://Scripts/Global.gd
 res://Z-RNDM/default_env.tres
-res://Scenes/Global.tscn
+res://Scenes/Bluff.tscn
 res://Scenes/chips_Stacking_1.gd
+res://Scenes/BunnyHeadspace.tscn

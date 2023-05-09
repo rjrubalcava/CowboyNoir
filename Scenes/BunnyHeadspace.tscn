@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dcu4r22s0sslx"]
+[gd_scene load_steps=20 format=3 uid="uid://dcu4r22s0sslx"]
 
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
 [ext_resource type="Texture2D" uid="uid://shdxih2t8rt0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/Unsolved Background.png" id="2_i06qd"]
@@ -269,7 +269,7 @@ volume_db = -1.874
 
 [node name="chest opening" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_73k5i")
-volume_db = -6.559
+volume_db = -4.685
 
 [connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
 [connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]

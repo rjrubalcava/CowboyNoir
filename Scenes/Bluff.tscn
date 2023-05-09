@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=24 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -13,9 +13,9 @@
 [ext_resource type="FontFile" uid="uid://bpqfu6dwnng44" path="res://Assets/Fonts/maiden-orange-font/MaidenOrange-BXXV.ttf" id="10_45hga"]
 [ext_resource type="AudioStream" uid="uid://cej7wjqgmmlhn" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_2.wav" id="10_6811y"]
 [ext_resource type="AudioStream" uid="uid://d3ffbu77o3x68" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_3.wav" id="11_7ix15"]
-[ext_resource type="AudioStream" uid="uid://3d5v0yhj8ljk" path="res://Assets/SFX/clicks/Revolver click.wav" id="16_hr6pp"]
 [ext_resource type="AudioStream" uid="uid://deys2d5v6687o" path="res://Assets/SFX/Songs/Jazz_rough_parts/tdyk bar FIRST LOOP MP3.mp3" id="14_nerhv"]
 [ext_resource type="AudioStream" uid="uid://bxjty12kt2xqy" path="res://Assets/SFX/Songs/Jazz_rough_parts/tdyk bar INFINITE LOOP MP3.mp3" id="15_filab"]
+[ext_resource type="AudioStream" uid="uid://3d5v0yhj8ljk" path="res://Assets/SFX/clicks/Revolver click.wav" id="16_hr6pp"]
 [ext_resource type="PackedScene" uid="uid://3dqpr6nbuyif" path="res://Scenes/Journal.tscn" id="17_eha08"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrtgy"]
@@ -290,12 +290,15 @@ stream = ExtResource("8_sjxgv")
 
 [node name="chips_Stacking_1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_n6tm3")
+volume_db = -4.685
 
 [node name="chips_Stacking_2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_6811y")
+volume_db = -4.685
 
 [node name="chips_Stacking_3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_7ix15")
+volume_db = -4.685
 
 [node name="Song_init" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_nerhv")
@@ -304,10 +307,11 @@ autoplay = true
 
 [node name="Revolver Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_hr6pp")
+volume_db = -4.685
 
 [node name="Song_loop" type="AudioStreamPlayer" parent="."]
-volume_db = -6.92
 stream = ExtResource("15_filab")
+volume_db = -6.92
 
 [node name="Journal" parent="." instance=ExtResource("17_eha08")]
 visible = false
