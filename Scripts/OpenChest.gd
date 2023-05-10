@@ -16,6 +16,8 @@ func _process(delta):
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if MinuteHand.get_global_rect().has_point(event.position):
+			Global.objpickup.set_pitch_scale(randf_range(0.9,1.15))
+			Global.objpickup.play()
 			Global.minutecardclick = true
 	if event.is_action_pressed("ui_accept"):
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")

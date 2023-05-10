@@ -4,7 +4,7 @@ extends Control
 
 var outcome = -1
 var actions = []
-
+var hoversfxisplaying = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -53,6 +53,10 @@ func _on_button_pressed():
 
 
 func _on_left_button_mouse_entered():
+	if hoversfxisplaying == false:
+		$onHover.set_pitch_scale(randf_range(0.90,1.15))
+		$onHover.play()
+		hoversfxisplaying = true
 	$LeftOpt/Texture.hide()
 	$LeftOpt/HoverTexture.show()
 	$LeftOpt.scale *= 1.5
@@ -63,6 +67,10 @@ func _on_left_button_mouse_exited():
 	$LeftOpt.scale /= 1.5
 
 func _on_right_button_mouse_entered():
+	if hoversfxisplaying == false:
+		$onHover.set_pitch_scale(randf_range(0.90,1.15))
+		$onHover.play()
+		hoversfxisplaying = true
 	$RightOpt/Texture.hide()
 	$RightOpt/HoverTexture.show()
 	$RightOpt.scale *= 1.5
@@ -71,3 +79,9 @@ func _on_right_button_mouse_exited():
 	$RightOpt/HoverTexture.hide()
 	$RightOpt/Texture.show()
 	$RightOpt.scale /= 1.5
+
+
+func _on_on_hover_finished():
+	await get_tree().create_timer(0.3).timeout
+	hoversfxisplaying = false
+	

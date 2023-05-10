@@ -20,13 +20,17 @@ var spadecardclick = false
 var diamondcardclick = false
 var puzzlesolved = false
 var bluffCompleted = false
+
+#sound vars
 var BHTransition = false
 var HeadspaceSong 
 var clockDong 
+var objpickup
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	HeadspaceSong = get_node("HeadspaceMusicStart")
 	clockDong = get_node("clockDong")
+	objpickup = get_node("objPickup")
 
 func newNode(node, location, parent, scaleMult):
 	var newNode = node.instantiate()

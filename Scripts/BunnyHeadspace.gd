@@ -265,12 +265,18 @@ func _on_button_mouse_exited():
 	TW.tween_property(CostumeChest, "scale", Vector2(0.5,0.5), 0.1)
 
 func _on_hearts_button_button_down():
+	Global.objpickup.set_pitch_scale(randf_range(0.9,1.15))
+	Global.objpickup.play()
 	Global.heartcardclick = true
 
 func _on_diamond_button_button_down():
+	Global.objpickup.set_pitch_scale(randf_range(0.9,1.15))
+	Global.objpickup.play()
 	Global.diamondcardclick = true
 	
 func _on_spade_button_button_down():
+	Global.objpickup.set_pitch_scale(randf_range(0.9,1.15))
+	Global.objpickup.play() 
 	Global.spadecardclick = true
 
 func puzzlesolved():
