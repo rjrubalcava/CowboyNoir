@@ -19,7 +19,6 @@ func _on_button_pressed():
 	for action in actions:
 		if action == "increase":
 			# Increase stress
-			print(get_parent().get_node("MainScene").get_children())
 			get_parent().get_node("MainScene").get_node("Bluff").updateStress(20)
 			if not Global.bluffCompleted:
 			# Hide dialogue to begin round of Bluff

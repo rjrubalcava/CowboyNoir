@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=28 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://cdfhps1wujvc6" path="res://Assets/SFX/Cards shuffle vars/card Pickup.wav" id="17_q7js3"]
 [ext_resource type="AudioStream" uid="uid://bmjyaydij0l8k" path="res://Assets/SFX/Transitions/HSpace_ready.wav" id="18_18s46"]
 [ext_resource type="AudioStream" uid="uid://e8e38uh2ytnp" path="res://Assets/SFX/Cards shuffle vars/positive card shuffle_F.wav" id="18_lc3cm"]
+[ext_resource type="Texture2D" uid="uid://bvesxl7ygf5lr" path="res://Assets/Journal/Journal Tiny.png" id="21_q2rn8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrtgy"]
 shader = ExtResource("2_belpe")
@@ -329,10 +330,11 @@ stream = ExtResource("18_lc3cm")
 visible = false
 
 [node name="JournalButton" type="TextureButton" parent="."]
-offset_left = 80.0
-offset_top = 45.0
-offset_right = 191.0
-offset_bottom = 158.0
+offset_left = 1737.0
+offset_top = 910.0
+offset_right = 1854.0
+offset_bottom = 1040.0
+texture_normal = ExtResource("21_q2rn8")
 
 [connection signal="pressed" from="Breakpoint/BreakpointButton" to="." method="_on_breakpoint_button_pressed"]
 [connection signal="button_up" from="BluffyTheVampireSlayer/Revolvy/buttLeft" to="." method="_on_butt_left_button_up"]

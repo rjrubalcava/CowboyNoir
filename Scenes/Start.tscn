@@ -1,43 +1,162 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbr53j4b0wi0p"]
+[gd_scene load_steps=16 format=3 uid="uid://bbr53j4b0wi0p"]
 
 [ext_resource type="Script" path="res://Scripts/Start.gd" id="1_s8hsd"]
-[ext_resource type="Texture2D" uid="uid://leiuirv5rc6u" path="res://Assets/Backgrounds/StartScreen.png" id="2_tnkj4"]
+[ext_resource type="Texture2D" uid="uid://bipfbd24i5al" path="res://Assets/Intro/Final Splash LONG.png" id="2_e2380"]
+[ext_resource type="Texture2D" uid="uid://wqjdtaha2d84" path="res://Assets/Intro/Final Border.png" id="3_dgrbm"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="3_y6r6x"]
+[ext_resource type="Texture2D" uid="uid://ci6l8fwsb4dg2" path="res://Assets/Intro/Title.png" id="4_gs4ds"]
 [ext_resource type="AudioStream" uid="uid://c574yg6dnbm3b" path="res://Assets/SFX/Songs/tdyk op FIRST LOOP.mp3" id="4_s7bhx"]
 [ext_resource type="PackedScene" uid="uid://be8x4ykhg1sbl" path="res://Scenes/Credits.tscn" id="5_0arcb"]
 [ext_resource type="AudioStream" uid="uid://dfwl7e88mmgh5" path="res://Assets/SFX/Songs/tdyk op INFINITE LOOP MP3.mp3" id="5_nt32o"]
+[ext_resource type="Texture2D" uid="uid://b4l3qev7xlta7" path="res://Assets/Intro/Final Play Button.png" id="9_6scpv"]
+[ext_resource type="Texture2D" uid="uid://dvjx6hnesl2qu" path="res://Assets/Intro/Final Play Button Hovered.png" id="10_nqna8"]
+[ext_resource type="Texture2D" uid="uid://bmvm26yt05bo8" path="res://Assets/Intro/Final Credits Button.png" id="11_lhyhl"]
+[ext_resource type="Texture2D" uid="uid://d4mvvw23y1iwj" path="res://Assets/Intro/Final Credits Button Hovered.png" id="12_56n6w"]
+[ext_resource type="Texture2D" uid="uid://dwmjueyrsd7ki" path="res://Assets/Intro/Final Exit Button Base.png" id="13_8lbjx"]
+[ext_resource type="VideoStream" path="res://Assets/Intro/tdyk-cutscene-_1_.ogv" id="14_bs7we"]
+[ext_resource type="Texture2D" uid="uid://c8hr2n6s1jw7a" path="res://Assets/Intro/Final Exit Button Hovered.png" id="14_k8nfl"]
 
 [node name="Start" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_s8hsd")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -6.00003
-offset_top = 20.0
-offset_right = 2494.0
-offset_bottom = 1426.0
+offset_left = -1030.0
+offset_right = 2810.0
+offset_bottom = 1406.0
 scale = Vector2(0.768, 0.768)
-texture = ExtResource("2_tnkj4")
+texture = ExtResource("2_e2380")
 
-[node name="StartButton" type="Button" parent="."]
+[node name="IntroVid" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("14_bs7we")
+volume_db = -6.92
+
+[node name="Border" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_dgrbm")
+
+[node name="ButtonHolder" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1300.0
+offset_top = 120.0
+offset_right = 1709.0
+offset_bottom = 890.0
+texture = ExtResource("4_gs4ds")
+
+[node name="Exit" type="Control" parent="ButtonHolder"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 153.0
+offset_top = 667.0
+offset_right = 193.0
+offset_bottom = 707.0
+mouse_filter = 2
+
+[node name="Texture" type="TextureRect" parent="ButtonHolder/Exit"]
+layout_mode = 0
+offset_left = -110.0
+offset_top = -53.0
+offset_right = 220.0
+offset_bottom = 93.0
+texture = ExtResource("13_8lbjx")
+
+[node name="HoverTexture" type="TextureRect" parent="ButtonHolder/Exit"]
+visible = false
+layout_mode = 0
+offset_left = -115.0
+offset_top = -51.0
+offset_right = 215.0
+offset_bottom = 91.0
+texture = ExtResource("14_k8nfl")
+
+[node name="ExitButton" type="Button" parent="ButtonHolder/Exit"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1401.0
-offset_top = 514.0
-offset_right = 1741.0
-offset_bottom = 594.0
-rotation = -0.00828301
+offset_left = -100.0
+offset_top = -32.0
+offset_right = 325.0
+offset_bottom = 83.0
+rotation = -0.0436332
+scale = Vector2(0.717058, 0.94925)
 
-[node name="CreditsButton2" type="Button" parent="."]
+[node name="Credits" type="Control" parent="ButtonHolder"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 153.0
+offset_top = 516.0
+offset_right = 193.0
+offset_bottom = 556.0
+mouse_filter = 2
+
+[node name="Texture" type="TextureRect" parent="ButtonHolder/Credits"]
+layout_mode = 0
+offset_left = -110.0
+offset_top = -53.0
+offset_right = 220.0
+offset_bottom = 93.0
+texture = ExtResource("11_lhyhl")
+
+[node name="HoverTexture" type="TextureRect" parent="ButtonHolder/Credits"]
+visible = false
+layout_mode = 0
+offset_left = -112.0
+offset_top = -51.0
+offset_right = 218.0
+offset_bottom = 91.0
+texture = ExtResource("12_56n6w")
+
+[node name="CreditsButton" type="Button" parent="ButtonHolder/Credits"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1386.0
-offset_top = 623.0
-offset_right = 1715.0
-offset_bottom = 702.0
+offset_left = -99.0
+offset_top = -37.0
+offset_right = 207.0
+offset_bottom = 74.0
 rotation = -0.00828301
+
+[node name="Play" type="Control" parent="ButtonHolder"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 153.0
+offset_top = 371.0
+offset_right = 193.0
+offset_bottom = 411.0
+mouse_filter = 2
+
+[node name="Texture" type="TextureRect" parent="ButtonHolder/Play"]
+layout_mode = 0
+offset_left = -110.0
+offset_top = -53.0
+offset_right = 220.0
+offset_bottom = 93.0
+texture = ExtResource("9_6scpv")
+
+[node name="HoverTexture" type="TextureRect" parent="ButtonHolder/Play"]
+visible = false
+layout_mode = 0
+offset_left = -112.0
+offset_top = -55.0
+offset_right = 218.0
+offset_bottom = 87.0
+texture = ExtResource("10_nqna8")
+
+[node name="StartButton" type="Button" parent="ButtonHolder/Play"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -100.0
+offset_top = -32.0
+offset_right = 325.0
+offset_bottom = 83.0
+rotation = -0.0436332
+scale = Vector2(0.717058, 0.94925)
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_y6r6x")
@@ -45,22 +164,22 @@ stream = ExtResource("3_y6r6x")
 [node name="StartMusicIntro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_s7bhx")
 volume_db = -6.92
-autoplay = true
 
 [node name="StartMusicLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_nt32o")
 volume_db = -6.92
-autoplay = true
 
-[node name="IntroVid" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Credits" parent="." instance=ExtResource("5_0arcb")]
+[node name="CreditsPage" parent="." instance=ExtResource("5_0arcb")]
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CreditsButton2" to="." method="_on_credits_button_pressed"]
+[connection signal="mouse_entered" from="ButtonHolder/Exit/ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonHolder/Exit/ExitButton" to="." method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="ButtonHolder/Exit/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="ButtonHolder/Credits/CreditsButton" to="." method="_on_credits_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonHolder/Credits/CreditsButton" to="." method="_on_credits_button_mouse_exited"]
+[connection signal="pressed" from="ButtonHolder/Credits/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="mouse_entered" from="ButtonHolder/Play/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonHolder/Play/StartButton" to="." method="_on_start_button_mouse_exited"]
+[connection signal="pressed" from="ButtonHolder/Play/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="finished" from="StartMusicIntro" to="." method="_on_start_music_intro_finished"]

@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://3dqpr6nbuyif"]
+[gd_scene load_steps=11 format=3 uid="uid://3dqpr6nbuyif"]
 
-[ext_resource type="Texture2D" uid="uid://cnj0qk6uninm0" path="res://Assets/Journal/journal_amity.png" id="1_3x5xq"]
+[ext_resource type="Texture2D" uid="uid://cp20fnrjyt4c8" path="res://Assets/Journal/amity page bkgd-edited 4.28.png" id="1_5m4bl"]
+[ext_resource type="Script" path="res://Scripts/Journal.gd" id="1_c28tl"]
+[ext_resource type="Texture2D" uid="uid://dsbf65dal8cq7" path="res://Assets/Journal/photo clue in journal.png" id="2_d86l1"]
+[ext_resource type="Texture2D" uid="uid://biggg6r4ycw7v" path="res://Assets/Journal/Boone tab.png" id="3_pcdcc"]
+[ext_resource type="Texture2D" uid="uid://bu00p6o107sti" path="res://Assets/Journal/Peter tab.png" id="4_qh50m"]
+[ext_resource type="Texture2D" uid="uid://dqdcqats7e35k" path="res://Assets/Journal/iris tab.png" id="5_6y2gr"]
+[ext_resource type="Texture2D" uid="uid://dwmsg4c0neb3m" path="res://Assets/Journal/Stan tab.png" id="6_u525p"]
+[ext_resource type="Texture2D" uid="uid://ckf4arm1tbh3v" path="res://Assets/Journal/Amity tab (1).png" id="7_kxbfe"]
+[ext_resource type="Texture2D" uid="uid://dgduot0tynd4v" path="res://Assets/Journal/help book mark.png" id="7_vdq4d"]
+[ext_resource type="Texture2D" uid="uid://jsns2d1dyy1w" path="res://Assets/Journal/Journal-Tutorial page.png" id="10_x34pf"]
 
 [node name="Journal" type="Control"]
 layout_mode = 3
@@ -9,10 +18,84 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_c28tl")
 
 [node name="CurrentPage" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.768, 0.768)
-texture = ExtResource("1_3x5xq")
+texture = ExtResource("1_5m4bl")
+
+[node name="Lovers" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1039.0
+offset_top = 107.0
+offset_right = 1573.0
+offset_bottom = 702.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("2_d86l1")
+
+[node name="Tabs" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Boone" type="TextureButton" parent="Tabs"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 780.0
+offset_right = 214.0
+offset_bottom = 1002.0
+texture_normal = ExtResource("3_pcdcc")
+
+[node name="Peter" type="TextureButton" parent="Tabs"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 330.0
+offset_right = 130.0
+offset_bottom = 507.0
+texture_normal = ExtResource("4_qh50m")
+
+[node name="Iris" type="TextureButton" parent="Tabs"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 172.0
+offset_right = 139.0
+offset_bottom = 354.0
+texture_normal = ExtResource("5_6y2gr")
+
+[node name="Stan" type="TextureButton" parent="Tabs"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 510.0
+offset_right = 153.0
+offset_bottom = 695.0
+texture_normal = ExtResource("6_u525p")
+
+[node name="Help" type="TextureButton" parent="Tabs"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 511.0
+offset_right = 624.0
+offset_bottom = 947.0
+texture_normal = ExtResource("7_vdq4d")
+
+[node name="HelpPage" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.768, 0.768)
+texture = ExtResource("10_x34pf")
+
+[node name="Amity" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 616.0
+offset_right = 236.0
+offset_bottom = 807.0
+texture_normal = ExtResource("7_kxbfe")
+
+[connection signal="pressed" from="Tabs/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="Amity" to="." method="_on_amity_pressed"]

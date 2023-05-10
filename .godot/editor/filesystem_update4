@@ -4,3 +4,13 @@ res://Scenes/chips_Stacking_1.gd
 res://Scripts/Start.gd
 res://Scenes/Bluff.tscn
 res://Scripts/Bluff.gd
+res://Scenes/Start.tscn
+res://Scenes/DialogueOption.tscn
+res://Scripts/DialogueOption.gd
+res://Scenes/BunnyHeadspace.tscn
+res://Scripts/BunnyHeadspace.gd
+res://Scenes/Overworld.tscn
+res://Scenes/Global.tscn
+res://Scenes/Journal.tscn
+res://Scripts/Journal.gd
+res://Scripts/Overworld.gd

@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://dyf3wja30lp11"]
-
-[node name="Transition" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

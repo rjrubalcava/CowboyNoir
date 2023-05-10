@@ -1,8 +1,8 @@
-AudioStreamPlayer
-Control
-TextureButton
-Sprite2D
 TextureRect
+TextureButton
+Control
+AudioStreamPlayer
+Sprite2D
 Button
 VideoStreamPlayer
 CollisionShape2D

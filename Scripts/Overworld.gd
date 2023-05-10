@@ -20,4 +20,7 @@ func _on_amity_sel_pressed():
 func _on_journal_button_pressed():
 	# Open journal
 	$Click.play()
-	$Journal.show()
+	if $Journal.visible:
+		$Journal.hide()
+	else:
+		$Journal.show()

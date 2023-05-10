@@ -725,7 +725,18 @@ func _on_journal_button_pressed():
 			option.hide()
 		Global.current_prompt.hide()
 	# Open journal
-	$Journal.show()
+	if $Journal.visible:
+		# Show global dialogue elements if dialogue has been previously paused
+		if pauseDialogue:
+			for option in Global.current_options:
+				option.show()
+			Global.current_prompt.show()
+			# Unpause
+			pauseDialogue = false
+		# Close journal
+		$Journal.hide()
+	else:
+		$Journal.show()
 
 func _on_butt_left_button_up():
 	if(canFlip):

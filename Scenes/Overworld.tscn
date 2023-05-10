@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bm6gaujnm6ld1"]
+[gd_scene load_steps=6 format=3 uid="uid://bm6gaujnm6ld1"]
 
-[ext_resource type="Texture2D" uid="uid://cqf0b3qbsaawq" path="res://Assets/Overworld/overworld_almost_done.png" id="1_jlm75"]
 [ext_resource type="Script" path="res://Scripts/Overworld.gd" id="1_w21fl"]
+[ext_resource type="Texture2D" uid="uid://b0a8lpbdrrpsd" path="res://Assets/Overworld/overworld.png" id="2_3felh"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="3_b5pvv"]
 [ext_resource type="PackedScene" uid="uid://3dqpr6nbuyif" path="res://Scenes/Journal.tscn" id="4_m0w33"]
+[ext_resource type="Texture2D" uid="uid://bvesxl7ygf5lr" path="res://Assets/Journal/Journal Tiny.png" id="5_idd3h"]
 
 [node name="Overworld" type="Control"]
 layout_mode = 3
@@ -19,15 +20,15 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.768, 0.768)
-texture = ExtResource("1_jlm75")
+texture = ExtResource("2_3felh")
 
 [node name="AmitySel" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1479.0
-offset_top = 373.0
-offset_right = 1820.0
-offset_bottom = 817.0
+offset_left = 1534.0
+offset_top = 458.0
+offset_right = 1791.0
+offset_bottom = 815.0
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_b5pvv")
@@ -38,10 +39,11 @@ layout_mode = 1
 
 [node name="JournalButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 80.0
-offset_top = 45.0
-offset_right = 191.0
-offset_bottom = 158.0
+offset_left = 1768.0
+offset_top = 919.0
+offset_right = 1885.0
+offset_bottom = 1049.0
+texture_normal = ExtResource("5_idd3h")
 
 [connection signal="pressed" from="AmitySel" to="." method="_on_amity_sel_pressed"]
 [connection signal="pressed" from="JournalButton" to="." method="_on_journal_button_pressed"]
