@@ -472,6 +472,7 @@ func playDialogue(key):
 			Global.current_options = []
 			# Return player to overworld
 			get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")
+			return
 
 	# Create visual options
 	var num_options = len(options)
