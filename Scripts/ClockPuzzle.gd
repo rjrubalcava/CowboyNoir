@@ -113,6 +113,7 @@ func _on_area_2d_minute_hand_mouse_entered():
 func _on_area_2d_minute_hand_mouse_exited():
 	var TW = get_tree().create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_IN_OUT)
 	TW.tween_property(MinuteHand, "scale", Vector2(1,1), 0.1)
+	
 
 
 func _on_area_2d_hour_hand_mouse_entered():

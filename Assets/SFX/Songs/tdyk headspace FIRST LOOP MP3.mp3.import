@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0gcpel7g41ol"
+path="res://.godot/imported/tdyk headspace FIRST LOOP MP3.mp3-3570a7d729e795fb2405f13f2de6ff83.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Songs/tdyk headspace FIRST LOOP MP3.mp3"
+dest_files=["res://.godot/imported/tdyk headspace FIRST LOOP MP3.mp3-3570a7d729e795fb2405f13f2de6ff83.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

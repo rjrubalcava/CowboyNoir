@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ciaes6gmsx3ut"]
+[gd_scene load_steps=21 format=3 uid="uid://dcu4r22s0sslx"]
 
 [ext_resource type="Script" path="res://Scripts/BunnyHeadspace.gd" id="1_ioy2x"]
 [ext_resource type="Texture2D" uid="uid://shdxih2t8rt0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/Unsolved Background.png" id="2_i06qd"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ogmg1eiatsr" path="res://Assets/BunnyTable/Background Top Layer.png" id="4_b7alq"]
 [ext_resource type="Texture2D" uid="uid://ct2s5tq4litjv" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/boudoir.png" id="5_xy4g5"]
 [ext_resource type="Texture2D" uid="uid://qlvn31xp8r5d" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/smallboudoirpuzzlepanel.png" id="7_cj2j8"]
-[ext_resource type="Texture2D" uid="uid://biwchg5puqcqa" path="res://Assets/BunnyHeadspace/inventoryStuff/inventory box.png" id="7_xava8"]
+[ext_resource type="Texture2D" uid="uid://biwchg5puqcqa" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/inventory box.png" id="8_x2af8"]
 [ext_resource type="Texture2D" uid="uid://u1ayky8ih0r0" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/diamondcard.png" id="9_nykbk"]
 [ext_resource type="Texture2D" uid="uid://bhrgbtjfycbr" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/heartcard.png" id="9_sen0s"]
 [ext_resource type="Texture2D" uid="uid://cgi85cwpjyi42" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/clubcard.png" id="10_06awf"]
@@ -17,9 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://2x04q2kp27hr" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/minutehand.png" id="14_vhf2r"]
 [ext_resource type="Texture2D" uid="uid://besm63c6ry3vs" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/clock.png" id="18_mhtqg"]
 [ext_resource type="Texture2D" uid="uid://di778u008pt0h" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/unopenedchest.png" id="19_lb5j2"]
+[ext_resource type="AudioStream" uid="uid://0njs0i4ealm1" path="res://Assets/SFX/Transitions/Newspaper_sample_4.wav" id="20_a5e08"]
 [ext_resource type="AudioStream" uid="uid://d07b65wwmwmao" path="res://Assets/SFX/Transitions/bluff-to-mind.wav" id="23_ajvl5"]
 [ext_resource type="AudioStream" uid="uid://bmo2uf3m4sflq" path="res://Assets/SFX/chest sfx/Metal Latch.wav" id="24_73k5i"]
-[ext_resource type="AudioStream" uid="uid://f3dgueu72h3o" path="res://Assets/SFX/Songs/Headspace theme.wav" id="25_drb5u"]
 
 [node name="BunnyHeadspace" type="Control"]
 layout_mode = 3
@@ -94,7 +94,7 @@ offset_top = 6.0
 offset_right = 926.0
 offset_bottom = 351.0
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("7_xava8")
+texture = ExtResource("8_x2af8")
 
 [node name="Newspaper" type="TextureRect" parent="."]
 light_mask = 4
@@ -266,13 +266,14 @@ rotation = -0.326377
 
 [node name="Transition" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_ajvl5")
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("25_drb5u")
-autoplay = true
+volume_db = -1.874
 
 [node name="chest opening" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_73k5i")
+volume_db = -4.685
+
+[node name="newspaperOpening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_a5e08")
 
 [connection signal="mouse_entered" from="Clock" to="." method="_on_clock_mouse_entered"]
 [connection signal="mouse_exited" from="Clock" to="." method="_on_clock_mouse_exited"]

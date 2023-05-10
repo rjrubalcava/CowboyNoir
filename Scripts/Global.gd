@@ -20,9 +20,13 @@ var spadecardclick = false
 var diamondcardclick = false
 var puzzlesolved = false
 var bluffCompleted = false
+var BHTransition = false
+var HeadspaceSong 
+var clockDong 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	HeadspaceSong = get_node("HeadspaceMusicStart")
+	clockDong = get_node("clockDong")
 
 func newNode(node, location, parent, scaleMult):
 	var newNode = node.instantiate()
@@ -142,7 +146,6 @@ func init_dialogue():
 		character_dialogue_dict["723a"] = ["Seems logical to me. Who else had motive to kill Iris?", ["723a", "723b"], []]
 		character_dialogue_dict["723b"] = ["So is Stan. Been acting weird all week, even before Iris died. If I was you, I'd start with those two.", ["723c", "723d"], []]
 		character_dialogue_dict["723c"] = ["He's the first person I called when I found Iris. He didn't sound surprised when I gave him the news.", ["723e", "723f"], []]
-		
 		# Tree 3:
 		character_dialogue_dict["731a"] = ["Fine. It sounds to me like someone was planning something.", ["731a", "731b"], []]
 		character_dialogue_dict["732a"] = ["Stan has been acting weird lately. I'd start with him.", ["732a", "732b"], []]
@@ -159,18 +162,37 @@ func init_dialogue():
 		# Tree 5:
 		character_dialogue_dict["751a"] = ["I don't need protection because I can handle myself.", ["751a", "751b"], []]
 		character_dialogue_dict["752a"] = ["...", ["752a", "752b"], []]
+		# Tree 6:
+		character_dialogue_dict["761a"] = ["Me?!", ["761a", "761b"], []]
+		character_dialogue_dict["762a"] = ["I have no idea what you're talking about.", ["762a", "762b"], []]
+		character_dialogue_dict["762b"] = ["What kind of fucking question is that?!", ["762c", "762d"], []]
+		character_dialogue_dict["763a"] = ["How do I do that?", ["763a"], []]
+		character_dialogue_dict["763b"] = ["How do I do that?", ["763b"], []]
 		# Tree 7:
-		character_dialogue_dict["761a"] = ["What are you talking about?", ["761a", "761b"], []]
-		character_dialogue_dict["762a"] = ["Of course she talked to me, she was worried about Boone!", ["762a", "762b"], []]
-		character_dialogue_dict["762b"] = ["I have nothing to hide! Iris was worried about Boone and you didn't help her.", ["762c", "762d"], []]
-		# Tree 7:
-		character_dialogue_dict["771a"] = ["She didn't say anything else. She was scared.", ["771a", "771b"], []]
-		character_dialogue_dict["772a"] = ["Yes. That was our last conversation, so I think I'd remember.", ["772a", "772b"], []]
-		character_dialogue_dict["772b"] = ["She said something about Boone.", ["772c", "772d"], []]
+		character_dialogue_dict["771a"] = ["He was sick of being the number two guy. He was planning something.", ["771a", "771b"], []]
+		character_dialogue_dict["772a"] = ["What do I have to do for you to believe me?", ["772a", "772b"], []]
+		character_dialogue_dict["772b"] = ["I don't know much. You should talk to Stan, though.", ["772c", "772d"], []]
+		character_dialogue_dict["773a"] = ["Yes ... will you leave me alone now?", ["773a"], []]
+		character_dialogue_dict["773b"] = ["What?", ["773b"], []]
+		character_dialogue_dict["774a"] = ["What?", ["774a"], []]
 		# Tree 8:
-		character_dialogue_dict["781a"] = ["She didn't say anything else. She was scared.", ["781a", "781b"], []]
-		character_dialogue_dict["782a"] = ["Yes. That was our last conversation, so I think I'd remember.", ["782a", "782b"], []]
-		character_dialogue_dict["782b"] = ["She said something about Boone.", ["782c", "782d"], []]
+		character_dialogue_dict["781a"] = ["I left.", ["781a", "781b"], []]
+		character_dialogue_dict["782a"] = ["She told me to ...", ["782a", "782b"], []]
+		character_dialogue_dict["782b"] = ["I just went home ...", ["782c", "782d"], []]
+		character_dialogue_dict["783a"] = ["That's not fair", ["783a"], []]
+		character_dialogue_dict["783b"] = ["What do I have to do for you to believe me?", ["783b"], []]
+		# Dismissal dialogue:
+		character_dialogue_dict["d1"] = ["Get the fuck away from me. I don't want to talk to you anymore.", "0", ["dismiss"]]
+		character_dialogue_dict["d2"] = ["You're not getting anything else outta me. Leave before I shoot you.", "0", ["dismiss"]]
+		character_dialogue_dict["d3"] = ["I'm done listening to you patronize me. I'm [i]choosing[/i] to tell you to fuck off. ", "0", ["dismiss"]]
+		character_dialogue_dict["d4"] = ["Fuck you. I'm done wasting my breath.", "0", ["dismiss"]]
+		character_dialogue_dict["d5"] = ["Because he's just as scared as the rest of us. I've said too much, figure the rest out on your own.", "0", ["dismiss"]]
+		character_dialogue_dict["d6"] = ["I gave you Peter, now get the fuck away from me before I shoot you.", "0", ["dismiss"]]
+		character_dialogue_dict["d7"] = ["I gave you Boone, now get away from me before the others get suspicious.", "0", ["dismiss"]]
+		character_dialogue_dict["d8"] = ["I gave you Stan, now get the fuck away from me before I shoot you.", "0", ["dismiss"]]
+		character_dialogue_dict["d9"] = ["I'm trying to help you. You're on your own now detective.", "0", ["dismiss"]]
+		character_dialogue_dict["dA"] = ["I'm done listening to you patronize me. Get out of here unless you want a bullet in the forehead.", "0", ["dismiss"]]
+		character_dialogue_dict["dB"] = ["You have enough. Figure it out detective, but keep me out of it.", "0", ["dismiss"]]
 		##### END ######
 		
 		###### PLAYER ######
@@ -281,26 +303,26 @@ func init_dialogue():
 		# Tree 1:
 		player_dialogue_dict["611a"] = ["Then stop stalling.", "612a", []]
 		player_dialogue_dict["611b"] = ["Then just give me a name.", "612b", []]
-		player_dialogue_dict["612a"] = ["Either you know who the killer is, or you are the killer.", "0", ["dismiss"]]
+		player_dialogue_dict["612a"] = ["Either you know who the killer is, or you are the killer.", "d1", []]
 		player_dialogue_dict["612b"] = ["I will not leave until you tell me what you know.", "731a", ["neutral", "end_bluff"]]
-		player_dialogue_dict["612c"] = ["Stop with the games.", "0", ["dismiss"]]
+		player_dialogue_dict["612c"] = ["Stop with the games.", "d2", []]
 		player_dialogue_dict["612d"] = ["I'm not leaving until you give me a name.", "731a", ["neutral", "end_bluff"]]
 		# Tree 2:
 		player_dialogue_dict["621a"] = ["At least I'm not a coward.", "622a", []]
 		player_dialogue_dict["621b"] = ["No one would know that you talked.", "622b", []]
-		player_dialogue_dict["622a"] = ["I know enough.", "0", ["dismiss"]]
+		player_dialogue_dict["622a"] = ["I know enough.", "d1", []]
 		player_dialogue_dict["622b"] = ["Prove me wrong.", "731a", ["neutral", "end_bluff"]]
-		player_dialogue_dict["622c"] = ["Because you don't have to say anything. Just let me in ...", "0", ["dismiss"]]
+		player_dialogue_dict["622c"] = ["Because you don't have to say anything. Just let me in ...", "d1", []]
 		player_dialogue_dict["622d"] = ["I'm going to be talking to everyone. No one would know it was you.", "731a", ["neutral", "end_bluff"]]
 		# Tree 3
 		player_dialogue_dict["631a"] = ["That's not an option", "632a", []]
 		player_dialogue_dict["631b"] = ["Amity, I made a mistake. I need to fix things.", "632b", []]
-		player_dialogue_dict["632a"] = ["How about you stop and think about [i]your[/i] options for a second.", "0", ["dismiss"]]
+		player_dialogue_dict["632a"] = ["How about you stop and think about [i]your[/i] options for a second.", "d3", []]
 		player_dialogue_dict["632b"] = ["Stop the games. I'm not leaving until you help me.", "731a", ["neutral", "end_bluff"]]
 		player_dialogue_dict["632c"] = ["You don't know what you're talking about.", "721a", ["increase", "end_bluff"]]
 		player_dialogue_dict["632d"] = ["There has to be something I can do.", "711a", ["neutral", "end_bluff"]]
 		# Tree 4:
-		player_dialogue_dict["641a"] = ["Or because you killed her.", "0", ["dismiss"]]
+		player_dialogue_dict["641a"] = ["Or because you killed her.", "d4", []]
 		player_dialogue_dict["641b"] = ["And Iris couldn't?", "642b", []]
 		player_dialogue_dict["642c"] = ["It's okay. I have everything I need.", "0", ["force_breakpoint"]]
 		# Tree 5:
@@ -326,58 +348,85 @@ func init_dialogue():
 		player_dialogue_dict["672d"] = ["Funny, I remember her saying something about you.", "761a", ["increase", "end_bluff"]]
 		### stage 7 ###
 		# Tree 1:
-		player_dialogue_dict["711a"] = ["Then stop stalling.", "712a", []]
-		player_dialogue_dict["711b"] = ["Then just give me a name.", "712b", []]
-		player_dialogue_dict["712a"] = ["Either you know who the killer is, or you are the killer.", "0", ["dismiss"]]
-		player_dialogue_dict["712b"] = ["I will not leave until you tell me what you know.", "731a", ["neutral"]]
-		player_dialogue_dict["712c"] = ["Stop with the games.", "0", ["dismiss"]]
-		player_dialogue_dict["712d"] = ["I'm not leaving until you give me a name.", "731a", ["neutral"]]
+		player_dialogue_dict["711a"] = ["Stan ...", "712a", []]
+		player_dialogue_dict["711b"] = ["Peter ...", "712b", []]
+		player_dialogue_dict["712a"] = ["How do you know that?", "713a", []]
+		player_dialogue_dict["712b"] = ["You?", "713b", []]
+		player_dialogue_dict["712c"] = ["You sound quick to give up on a friend.", "d6", []]
+		player_dialogue_dict["712d"] = ["Fine, I'll talk to him again. But I need something from you first.", "713c", []]
+		player_dialogue_dict["713a"] = ["Why wouldn't Stan have said anything to me about this?", "d5", []]
+		player_dialogue_dict["713b"] = ["What else did you find?", "714a", []]
+		player_dialogue_dict["713c"] = ["Show me.", "714b", []]
+		player_dialogue_dict["713d"] = ["I need to see for myself.", "714b", []]
+		player_dialogue_dict["713d"] = ["Just relax ...", "0", ["force_breakpoint"]]
+		player_dialogue_dict["714a"] = ["I believe you, but there's one more thing I need.", "0", ["force_breakpoint"]]
+		player_dialogue_dict["713b"] = ["Just relax ...", "0", ["force_breakpoint"]]
 		# Tree 2:
-		player_dialogue_dict["721a"] = ["At least I'm not a coward.", "722a", []]
-		player_dialogue_dict["721b"] = ["No one would know that you talked.", "722b", []]
-		player_dialogue_dict["722a"] = ["I know enough.", "0", ["dismiss"]]
-		player_dialogue_dict["722b"] = ["Prove me wrong.", "731a", ["neutral"]]
-		player_dialogue_dict["722c"] = ["Because you don't have to say anything. Just let me in ...", "0", ["dismiss"]]
-		player_dialogue_dict["722d"] = ["I'm going to be talking to everyone. No one would know it was you.", "731a", ["neutral"]]
+		player_dialogue_dict["721a"] = ["What did you do?", "722a", []]
+		player_dialogue_dict["721b"] = ["Tell me what you know.", "722b", []]
+		player_dialogue_dict["722a"] = ["This sounds awfully convenient for you ...", "d9", []]
+		player_dialogue_dict["722b"] = ["Boone?!", "723a", []]
+		player_dialogue_dict["722c"] = ["He's scared.", "723b", []]
+		player_dialogue_dict["722d"] = ["weird how?", "723c", []]
+		player_dialogue_dict["723a"] = ["There's something we're missing ...", "d7", []]
+		player_dialogue_dict["723b"] = ["Thank you. I just need one more thing from you ...", "0", ["force_breakpoint"]]
+		player_dialogue_dict["723c"] = ["What else are you hiding?", "d8", []]
+		player_dialogue_dict["723d"] = ["Finally. I just need one more thing from you ...", "0", ["force_breakpoint"]]
+		player_dialogue_dict["723e"] = ["What else are you hiding?", "d6", []]
+		player_dialogue_dict["723f"] = ["Finally. I just need one more thing from you ...", "0", ["force_breakpoint"]]
 		# Tree 3
-		player_dialogue_dict["731a"] = ["That's not an option", "732a", []]
-		player_dialogue_dict["731b"] = ["Amity, I made a mistake. I need to fix things.", "732b", []]
-		player_dialogue_dict["732a"] = ["How about you stop and think about [i]your[/i] options for a second.", "0", ["dismiss"]]
-		player_dialogue_dict["732b"] = ["Stop the games. I'm not leaving until you help me.", "731a", ["neutral"]]
-		player_dialogue_dict["732c"] = ["You don't know what you're talking about.", "721a", ["increase"]]
-		player_dialogue_dict["732d"] = ["There has to be something I can do.", "711a", ["neutral"]]
+		player_dialogue_dict["731a"] = ["Your memory does work.", "732a", []]
+		player_dialogue_dict["731b"] = ["I need a name.", "732b", []]
+		player_dialogue_dict["732a"] = ["I'd call it being a coward.", "dA", []]
+		player_dialogue_dict["732b"] = ["Give me something I can use.", "733a", []]
+		player_dialogue_dict["732c"] = ["What else are you hiding?", "d6", []]
+		player_dialogue_dict["732d"] = ["Finally. I just need one more thing from you ...", "0", ["force_breakpoint"]]
+		player_dialogue_dict["733a"] = ["What else are you hiding?", "d8", []]
+		player_dialogue_dict["733b"] = ["Finally. I just need one more thing from you ...", "0", ["force_breakpoint"]]
 		# Tree 4:
-		player_dialogue_dict["741a"] = ["Or because you killed her.", "0", ["dismiss"]]
-		player_dialogue_dict["741b"] = ["And Iris couldn't?", "742b", []]
-		player_dialogue_dict["742c"] = ["It's okay. I have everything I need.", "0", ["force_breakpoint"]]
+		player_dialogue_dict["741a"] = ["You can start by telling me where you were when she died.", "742a", []]
+		player_dialogue_dict["741b"] = ["It's not everyday the boss gets murdered. Is someone planning a take over?", "742b", []]
+		player_dialogue_dict["742a"] = ["What'd you find?", "743a", []]
+		player_dialogue_dict["742b"] = ["Go on.", "743a", []]
+		player_dialogue_dict["742c"] = ["Bullshit. Stop with the games.", "dB", []]
+		player_dialogue_dict["742d"] = ["Who does?", "743b", []]
+		player_dialogue_dict["743a"] = ["Any idea where she was going?", "744a", []]
+		player_dialogue_dict["743b"] = ["A suitcase?", "744b", []]
+		player_dialogue_dict["743c"] = ["What else are you hiding?", "d6", []]
+		player_dialogue_dict["743d"] = ["Finally. I just need one more thing from you ...", "0", ["force_breakpoint"]]
+		player_dialogue_dict["744a"] = ["Now I just need you to show me ...", "0", ["force_breakpoint"]]
+		player_dialogue_dict["744b"] = ["I just need one more thing from you ...", "0", ["force_breakpoint"]]
 		# Tree 5:
-		player_dialogue_dict["751a"] = ["Then answer the question.", "752a", []]
-		player_dialogue_dict["751b"] = ["You're right. I'm sorry.", "752b", []]
-		player_dialogue_dict["752a"] = ["Then I can only think of one reason why you wouldn't need protection.", "751a", ["increase"]]
-		player_dialogue_dict["752b"] = ["Then you have a lot of explaining to do.", "741a", ["neutral"]]
-		player_dialogue_dict["752c"] = ["Then I can only think of one reason why you wouldn't need protection.", "751a", ["increase"]]
-		player_dialogue_dict["752d"] = ["Then you have a lot of explaining to do.", "751a", ["neutral"]]
+		player_dialogue_dict["751a"] = ["Or because you killed her.", "d4", []]
+		player_dialogue_dict["751b"] = ["And Iris couldn't?", "752a", []]
+		player_dialogue_dict["752a"] = ["It's okay. I have everything I need.", "0", ["force_breakpoint"]]
 		# Tree 6:
-		player_dialogue_dict["761a"] = ["I know she didn't talk to you.", "762a", []]
-		player_dialogue_dict["761b"] = ["You're hiding something.", "762b", []]
-		player_dialogue_dict["762a"] = ["Boone is an idiot. What could he have done?", "771a", ["increase"]]
-		player_dialogue_dict["762b"] = ["She told me she was worried about you ...", "761a", ["increase"]]
-		player_dialogue_dict["762c"] = ["Boone is an idiot. What could he have done?", "771a", ["increase"]]
-		player_dialogue_dict["762d"] = ["She never mentioned Boone, she only mentioned you ...", "761a", ["increase"]]
+		player_dialogue_dict["761a"] = ["She said \"things weren't right with you.\" care to explain?", "762a", []]
+		player_dialogue_dict["761b"] = ["How were things with you and Iris up until she died?", "762b", []]
+		player_dialogue_dict["762a"] = ["It's your word against my sister's. I'm gonna go with my sister.", "d1", []]
+		player_dialogue_dict["762b"] = ["Then prove it to me.", "763a", []]
+		player_dialogue_dict["762c"] = ["That's not an answer.", "d1", []]
+		player_dialogue_dict["762d"] = ["Prove her wrong.", "763b", []]
+		player_dialogue_dict["763a"] = ["Just let me in ...", "0", ["force_breakpoint"]]
+		player_dialogue_dict["763b"] = ["Just let me in ...", "0", ["force_breakpoint"]]
 		# Tree 7
-		player_dialogue_dict["771a"] = ["Are you sure about that?", "772a", []]
-		player_dialogue_dict["771b"] = ["What was she scared of?", "772b", []]
-		player_dialogue_dict["772a"] = ["Where did you go after?", "781a", ["increase"]]
-		player_dialogue_dict["772b"] = ["She mentioned you the last time I talked to her ... and I'm pretty sure I remember.", "771a", ["increase"]]
-		player_dialogue_dict["772c"] = ["Boone is an idiot, I doubt he could have had anything to do with this.", "771a", ["increase"]]
-		player_dialogue_dict["772d"] = ["Funny, I remember her saying something about you.", "771a", ["increase"]]
+		player_dialogue_dict["771a"] = ["Bullshit.", "772a", []]
+		player_dialogue_dict["771b"] = ["Go on.", "772b", []]
+		player_dialogue_dict["772a"] = ["Sorry, I don't trust cowards.", "d1", []]
+		player_dialogue_dict["772b"] = ["Just one more thing ...", "0", ["force_breakpoint"]]
+		player_dialogue_dict["772c"] = ["Stan?!", "773a", []]
+		player_dialogue_dict["772d"] = ["Finally. I just need one more thing from you ...", "0", ["force_breakpoint"]]
+		player_dialogue_dict["773a"] = ["I just need one more thing from you ...", "0", ["force_breakpoint"]]
 		# Tree 8
-		player_dialogue_dict["781a"] = ["Are you sure about that?", "782a", []]
-		player_dialogue_dict["781b"] = ["What was she scared of?", "782b", []]
-		player_dialogue_dict["782a"] = ["Where did you go after?", "781a", ["increase"]]
-		player_dialogue_dict["782b"] = ["She mentioned you the last time I talked to her ... and I'm pretty sure I remember.", "771a", ["increase"]]
-		player_dialogue_dict["782c"] = ["Boone is an idiot, I doubt he could have had anything to do with this.", "771a", ["increase"]]
-		player_dialogue_dict["782d"] = ["Funny, I remember her saying something about you.", "761a", ["increase"]]
+		player_dialogue_dict["781a"] = ["You just [i]left[/i] after she said she was scared?", "782a", []]
+		player_dialogue_dict["781b"] = ["Where did you go?", "782b", []]
+		player_dialogue_dict["782a"] = ["AND YOU LISTENED!?", "d1", []]
+		player_dialogue_dict["782b"] = ["This whole time you tried to make [i]me[/i] feel guilty...", "783a", []]
+		player_dialogue_dict["782c"] = ["You really expect me to believe that?", "783b", []]
+		player_dialogue_dict["782d"] = ["You have a chance to make this right ...", "0", ["force_breakpoint"]]
+		player_dialogue_dict["783a"] = ["It's not fair for you to blame me either!", "d1", []]
+		player_dialogue_dict["783b"] = ["Help me make things right. For both of us.", "0", ["force_breakpoint"]]
+		player_dialogue_dict["783c"] = ["Just one more thing ...", "0", ["force_breakpoint"]]
 		##### END ######
 		
 		### NULL CASE ###
@@ -402,6 +451,7 @@ func playDialogue(key):
 	var options = Global.character_dialogue_dict[key][1]
 	# Lookup actions array
 	var actions = Global.character_dialogue_dict[key][2]
+			
 	# Create visual prompt
 	current_prompt = dialogueBox.instantiate()
 	current_prompt.get_node("Text").text = "[center]" + prompt_text + "[/center]"
@@ -411,6 +461,18 @@ func playDialogue(key):
 	# differently for two labels displayed simultaneously)
 	resize_text(current_prompt.get_node("Text"), prompt_size)
 	get_tree().get_root().add_child(current_prompt) # adding to main
+	
+	# Execute prompt actions:
+	for action in actions:
+		if action == "dismiss":
+			# Wait 3 seconds for the user to read the dismissal dialogue
+			await get_tree().create_timer(3).timeout
+			# reinitialize global dialogue status
+			Global.current_prompt = null
+			Global.current_options = []
+			# Return player to overworld
+			get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")
+			return
 
 	# Create visual options
 	var num_options = len(options)
@@ -455,23 +517,23 @@ func playDialogue(key):
 """
 func resize_text(textBox, char_count):
 	# Determine how many resizings must be performed based on number of characters in text string
-	var scale_level = 0
-	var rise_level = 0
-	if char_count > 9:
-		scale_level+=1
-	if char_count > 18:
-		scale_level+=1
-	if char_count > 36:
-		scale_level+=1
-	if char_count > 11:
-		rise_level+=3
-	if char_count > 15:
-		rise_level+=5
-	if char_count > 36:
-		rise_level+=12
+	var downScale_level = char_count / 9
+	var rise_level = char_count / 4
+	
 	# Reduce scale to give the appearance of shrinking text
-	textBox.scale = textBox.scale * pow(0.85, scale_level)
+	textBox.scale = textBox.scale * pow(0.91, downScale_level)
 	# Increase size of textBox rect to counteract reduced scale
-	textBox.size = textBox.size * pow(1.15, scale_level)
-	# Reduce y origin of textBox rect to utilize space above the center of the DialogueBox or DialogueOption
-	textBox.position.y = textBox.position.y - rise_level
+	textBox.size = textBox.size * pow(1.11, downScale_level)
+	if char_count > 45:
+		# Reduce y origin of textBox rect to utilize space above the center of the DialogueBox or DialogueOption
+		textBox.position.y = textBox.position.y - (rise_level * 0.8)
+		# Reduce x origin of textBox rect to account for rescaling
+		textBox.position.x = textBox.position.x - (rise_level * 0.4)
+	else:
+		# Reduce y origin of textBox rect to utilize space above the center of the DialogueBox or DialogueOption
+		textBox.position.y = textBox.position.y - (rise_level * 1.65)
+		# Reduce x origin of textBox rect to account for rescaling
+		textBox.position.x = textBox.position.x - (rise_level * 0.3)
+		
+func _on_headspace_music_start_finished():
+	$HeadspaceMusicLoop.play() 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c574yg6dnbm3b"
+path="res://.godot/imported/tdyk op FIRST LOOP.mp3-216e3d1795949b55f3bab633702f4e4e.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/Songs/tdyk op FIRST LOOP.mp3"
+dest_files=["res://.godot/imported/tdyk op FIRST LOOP.mp3-216e3d1795949b55f3bab633702f4e4e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

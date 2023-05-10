@@ -22,3 +22,7 @@ func _on_credits_button_pressed():
 	# Open credits
 	$Click.play()
 	$Credits.show()
+
+
+func _on_start_music_intro_finished():
+	$StartMusicLoop.play()

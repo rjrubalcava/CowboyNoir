@@ -113,6 +113,7 @@ var lastRoundPass = false
 var depthOfTurns = 0
 var noWinner = true
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Set cursor to be Amity's (eventually will have a different one for each character)
@@ -441,6 +442,7 @@ func shouldCupieCallBluff():
 func flipperLefter(delta):
 	canFlip = false
 	if(revolvy.rotation_degrees < 45):
+		
 		revIMG.rotation_degrees += (delta * 120)
 		revolvy.rotation_degrees += (delta * 120)
 	else:
@@ -471,6 +473,7 @@ func flipperLefter(delta):
 func flipperRighter(delta):
 	canFlip = false
 	if(revolvy.rotation_degrees > -45):
+		
 		revIMG.rotation_degrees -= (delta * 120)
 		revolvy.rotation_degrees -= (delta * 120)
 	else:
@@ -678,7 +681,6 @@ func updateStress(stress):
 		
 		curr_sound.set_pitch_scale(1 + randf_range(0.2,0.5))
 		curr_sound.play()
-	stressLevel += stress
 	if stress < 0:
 		var curr_sound = get_node(stress_down_sounds.pick_random()) 
 		
@@ -724,8 +726,12 @@ func _on_butt_left_button_up():
 	if(canFlip):
 		canFlip = false
 		flipLeft = true
+		$"Revolver Click".set_pitch_scale(0.85)
+		$"Revolver Click".play()
 
 func _on_butt_right_button_up():
 	if(canFlip):
 		canFlip = false
 		flipRight = true
+		$"Revolver Click".play()
+		$"Revolver Click".set_pitch_scale(1.1)
