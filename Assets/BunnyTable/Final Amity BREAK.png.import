@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp2xqg184brch"
-path="res://.godot/imported/Amity Base Expression.png-a7eb60672e87263e91ba8592de01c951.ctex"
+uid="uid://dx4apks04tw7x"
+path="res://.godot/imported/Final Amity BREAK.png-24d308dd155ed7c62a45396c298bf111.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BunnyTable/Amity Base Expression.png"
-dest_files=["res://.godot/imported/Amity Base Expression.png-a7eb60672e87263e91ba8592de01c951.ctex"]
+source_file="res://Assets/BunnyTable/Final Amity BREAK.png"
+dest_files=["res://.godot/imported/Final Amity BREAK.png-24d308dd155ed7c62a45396c298bf111.ctex"]
 
 [params]
 

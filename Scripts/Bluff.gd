@@ -694,15 +694,15 @@ func updateStress(stress):
 	if stressLevel < 0:
 		stressLevel = 0
 	if stressLevel < 30:
-		$Character.texture = preload("res://Assets/BunnyTable/Amity Base Expression.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Final Amity 1.png")
 	elif stressLevel < 60:
-		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 2.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Final Amity 2.png")
 	elif stressLevel < 90:
-		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 3.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Final Amity 3.png")
 	elif (stressLevel < 120):
-		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 4.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Final Amity 4.png")
 	else:
-		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression BREAK.png")
+		$Character.texture = preload("res://Assets/BunnyTable/Final Amity BREAK.png")
 		$HSpace_is_ready.play()
 		$Breakpoint.show()
 		$Breakpoint.get_node("BreakpointAnim").play()

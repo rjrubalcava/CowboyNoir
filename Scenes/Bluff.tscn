@@ -4,8 +4,8 @@
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
 [ext_resource type="Texture2D" uid="uid://ccwt1wvcln5yq" path="res://Assets/BunnyTable/Background Bottom Layer.png" id="3_4ywot"]
 [ext_resource type="Texture2D" uid="uid://4iy2sn5g6prk" path="res://Assets/BunnyTable/Background Middle Layer.png" id="4_orrug"]
-[ext_resource type="Texture2D" uid="uid://bp2xqg184brch" path="res://Assets/BunnyTable/Amity Base Expression.png" id="5_0dn31"]
 [ext_resource type="Texture2D" uid="uid://c1ogmg1eiatsr" path="res://Assets/BunnyTable/Background Top Layer.png" id="5_v8cn3"]
+[ext_resource type="Texture2D" uid="uid://bsisct3wuaufm" path="res://Assets/BunnyTable/Final Amity 1.png" id="6_bvgxx"]
 [ext_resource type="Texture2D" uid="uid://db0ekw6mm0wty" path="res://Assets/BunnyTable/Break Point Sprite.png" id="7_52538"]
 [ext_resource type="AudioStream" uid="uid://bxmn3r4qq71ua" path="res://Assets/SFX/clicks/click.wav" id="8_sjxgv"]
 [ext_resource type="AudioStream" uid="uid://c5ui11g0fy5y5" path="res://Assets/SFX/chips_clack_variants/chips_clack_2_1.wav" id="9_n6tm3"]
@@ -88,7 +88,7 @@ offset_top = 124.0
 offset_right = 1659.0
 offset_bottom = 1213.0
 scale = Vector2(0.768, 0.768)
-texture = ExtResource("5_0dn31")
+texture = ExtResource("6_bvgxx")
 
 [node name="Breakpoint" type="Node2D" parent="."]
 visible = false
