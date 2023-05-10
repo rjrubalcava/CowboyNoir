@@ -492,27 +492,23 @@ func playDialogue(key):
 """
 func resize_text(textBox, char_count):
 	# Determine how many resizings must be performed based on number of characters in text string
-	var scale_level = 0
-	var rise_level = 0
-	if char_count > 9:
-		scale_level+=1
-	if char_count > 18:
-		scale_level+=1
-	if char_count > 36:
-		scale_level+=1
-	if char_count > 11:
-		rise_level+=3
-	if char_count > 15:
-		rise_level+=5
-	if char_count > 36:
-		rise_level+=12
+	var downScale_level = char_count / 9
+	var rise_level = char_count / 4
+	
 	# Reduce scale to give the appearance of shrinking text
-	textBox.scale = textBox.scale * pow(0.85, scale_level)
+	textBox.scale = textBox.scale * pow(0.91, downScale_level)
 	# Increase size of textBox rect to counteract reduced scale
-	textBox.size = textBox.size * pow(1.15, scale_level)
-	# Reduce y origin of textBox rect to utilize space above the center of the DialogueBox or DialogueOption
-	textBox.position.y = textBox.position.y - rise_level
-
-
+	textBox.size = textBox.size * pow(1.11, downScale_level)
+	if char_count > 45:
+		# Reduce y origin of textBox rect to utilize space above the center of the DialogueBox or DialogueOption
+		textBox.position.y = textBox.position.y - (rise_level * 0.8)
+		# Reduce x origin of textBox rect to account for rescaling
+		textBox.position.x = textBox.position.x - (rise_level * 0.4)
+	else:
+		# Reduce y origin of textBox rect to utilize space above the center of the DialogueBox or DialogueOption
+		textBox.position.y = textBox.position.y - (rise_level * 1.65)
+		# Reduce x origin of textBox rect to account for rescaling
+		textBox.position.x = textBox.position.x - (rise_level * 0.3)
+		
 func _on_headspace_music_start_finished():
 	$HeadspaceMusicLoop.play() 
