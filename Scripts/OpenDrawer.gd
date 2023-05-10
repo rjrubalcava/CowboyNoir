@@ -19,8 +19,13 @@ func _process(delta):
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if ClubsCard.get_global_rect().has_point(event.position):
+			Global.objpickup.set_pitch_scale(randf_range(0.9,1.15))
+			Global.objpickup.play()
 			Global.clubcardclick = true
+			
 		elif HourHand.get_global_rect().has_point(event.position):
+			Global.objpickup.set_pitch_scale(randf_range(0.9,1.15))
+			Global.objpickup.play()
 			Global.hourhandclick = true
 			
 func _unhandled_input(event):

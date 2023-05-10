@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bhggmx10gjjov"
+path="res://.godot/imported/chest opening with unlock.wav-a461953a02fe5c2cd0731d23d610405e.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/chest sfx/chest opening with unlock.wav"
+dest_files=["res://.godot/imported/chest opening with unlock.wav-a461953a02fe5c2cd0731d23d610405e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

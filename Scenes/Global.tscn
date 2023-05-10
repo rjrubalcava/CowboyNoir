@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://isgi1y48yu55"]
+[gd_scene load_steps=6 format=3 uid="uid://isgi1y48yu55"]
 
 [ext_resource type="Script" path="res://Scripts/Global.gd" id="1"]
 [ext_resource type="AudioStream" uid="uid://c0gcpel7g41ol" path="res://Assets/SFX/Songs/tdyk headspace FIRST LOOP MP3.mp3" id="2_shh4n"]
 [ext_resource type="AudioStream" uid="uid://ba2ejpr566kwh" path="res://Assets/SFX/Songs/tdyk headspace INFINITE LOOP MP3.mp3" id="3_k8mje"]
 [ext_resource type="AudioStream" uid="uid://dhn18ls8flyti" path="res://Assets/SFX/Transitions/Clock_dong.wav" id="3_ykjrc"]
+[ext_resource type="AudioStream" uid="uid://dqxqxbr5740u4" path="res://Assets/SFX/clicks/item_pickup_1.wav" id="5_qtkpa"]
 
 [node name="Global" type="Node2D"]
 script = ExtResource("1")
@@ -19,5 +20,8 @@ volume_db = -6.92
 [node name="clockDong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ykjrc")
 volume_db = -4.685
+
+[node name="objPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qtkpa")
 
 [connection signal="finished" from="HeadspaceMusicStart" to="." method="_on_headspace_music_start_finished"]

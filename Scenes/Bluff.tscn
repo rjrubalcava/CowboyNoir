@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bip5iiguowys3"]
+[gd_scene load_steps=27 format=3 uid="uid://bip5iiguowys3"]
 
 [ext_resource type="Script" path="res://Scripts/Bluff.gd" id="1_ei7cw"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BluffTable.gdshader" id="2_belpe"]
@@ -17,6 +17,9 @@
 [ext_resource type="AudioStream" uid="uid://bxjty12kt2xqy" path="res://Assets/SFX/Songs/Jazz_rough_parts/tdyk bar INFINITE LOOP MP3.mp3" id="15_filab"]
 [ext_resource type="AudioStream" uid="uid://3d5v0yhj8ljk" path="res://Assets/SFX/clicks/Revolver click.wav" id="16_hr6pp"]
 [ext_resource type="PackedScene" uid="uid://3dqpr6nbuyif" path="res://Scenes/Journal.tscn" id="17_eha08"]
+[ext_resource type="AudioStream" uid="uid://cdfhps1wujvc6" path="res://Assets/SFX/Cards shuffle vars/card Pickup.wav" id="17_q7js3"]
+[ext_resource type="AudioStream" uid="uid://bmjyaydij0l8k" path="res://Assets/SFX/Transitions/HSpace_ready.wav" id="18_18s46"]
+[ext_resource type="AudioStream" uid="uid://e8e38uh2ytnp" path="res://Assets/SFX/Cards shuffle vars/positive card shuffle_F.wav" id="18_lc3cm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rrtgy"]
 shader = ExtResource("2_belpe")
@@ -312,6 +315,15 @@ volume_db = -4.685
 [node name="Song_loop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_filab")
 volume_db = -6.92
+
+[node name="RoundReshuffle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_q7js3")
+
+[node name="HSpace_is_ready" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_18s46")
+
+[node name="cardPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_lc3cm")
 
 [node name="Journal" parent="." instance=ExtResource("17_eha08")]
 visible = false

@@ -95,7 +95,7 @@ func _unhandled_input(event):
 		open_drawer()
 		
 func open_drawer():
-	if result[0]== "9" and result[1]=="2" and result[2]=="6"  and result[3]=="3":
+	if result[0]== "6" and result[1]=="3" and result[2]=="2"  and result[3]=="9":
 		get_tree().change_scene_to_file("res://Scenes/OpenChest.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")

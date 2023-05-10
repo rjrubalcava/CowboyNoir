@@ -34,6 +34,7 @@ var hourhandtouched = false
 
 #sound variables
 var clockpuzzlesolved = false
+var NewspaperPlay = false
 
 func _ready():
 	if Global.BHTransition == false:
@@ -115,6 +116,9 @@ func _input(event):
 			change_position(TW, Enlarged_Newspaper_sprite, center)
 			scale_down(TW, Clock)
 			scale_down(TW, TheSun)
+			if NewspaperPlay == false:
+				$newspaperOpening.play()
+				NewspaperPlay = true
 			await get_tree().create_timer(0.8).timeout
 			Enlarged_Newspaper_sprite.show()
 			Enlarged_Newspaper_sprite.z_index = 8
@@ -133,6 +137,7 @@ func _input(event):
 			scale_down(TW, Clock)
 			change_position(TW, Newspaper, newspaper_coordinates)
 			Enlarged_Newspaper_sprite.hide()
+			NewspaperPlay = false
 			
 	
 		
@@ -260,12 +265,18 @@ func _on_button_mouse_exited():
 	TW.tween_property(CostumeChest, "scale", Vector2(0.5,0.5), 0.1)
 
 func _on_hearts_button_button_down():
+	Global.objpickup.set_pitch_scale(randf_range(0.9,1.15))
+	Global.objpickup.play()
 	Global.heartcardclick = true
 
 func _on_diamond_button_button_down():
+	Global.objpickup.set_pitch_scale(randf_range(0.9,1.15))
+	Global.objpickup.play()
 	Global.diamondcardclick = true
 	
 func _on_spade_button_button_down():
+	Global.objpickup.set_pitch_scale(randf_range(0.9,1.15))
+	Global.objpickup.play() 
 	Global.spadecardclick = true
 
 func puzzlesolved():

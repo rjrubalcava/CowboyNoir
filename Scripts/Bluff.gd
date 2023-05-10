@@ -228,7 +228,9 @@ func lost(cpuOrNot):
 		if(playerHand.size() == 0):
 			noWinner = false
 			stageOfRound = 'Z'
+			$RoundReshuffle.play()
 	else:
+		$cardPickup.play()
 		for x in centerHand:
 			playerHand.append(x)
 		stageOfRound = 'A'
@@ -237,8 +239,11 @@ func lost(cpuOrNot):
 			noWinner = false
 			inst.text = "Amity Beat You!"
 			stageOfRound = 'Y'
+			$RoundReshuffle.play()
+			
 	centerHand = []
 	depthOfTurns += 1
+	
 	realizeHands()
 
 func cupieD():
@@ -688,7 +693,6 @@ func updateStress(stress):
 		
 		curr_sound.set_pitch_scale(1 + randf_range(0.2,0.5))
 		curr_sound.play()
-	stressLevel += stress
 	if stress < 0:
 		var curr_sound = get_node(stress_down_sounds.pick_random()) 
 		
@@ -707,6 +711,7 @@ func updateStress(stress):
 		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression 4.png")
 	else:
 		$Character.texture = preload("res://Assets/BunnyTable/Amity Expression BREAK.png")
+		$HSpace_is_ready.play()
 		$Breakpoint.show()
 		$Breakpoint.get_node("BreakpointAnim").play()
 

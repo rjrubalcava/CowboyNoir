@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://fct6nco54e05"]
+[gd_scene load_steps=5 format=3 uid="uid://fct6nco54e05"]
 
 [ext_resource type="Script" path="res://Scripts/OpenChest.gd" id="1_v8rra"]
 [ext_resource type="Texture2D" uid="uid://bt6bggjusyavl" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/chestinteriornoclockhand.png" id="2_bq1ul"]
 [ext_resource type="Texture2D" uid="uid://2x04q2kp27hr" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/minutehand.png" id="3_sl74t"]
+[ext_resource type="AudioStream" uid="uid://bhggmx10gjjov" path="res://Assets/SFX/chest sfx/chest opening with unlock.wav" id="4_7phan"]
 
 [node name="OpenChest" type="Control"]
 layout_mode = 3
@@ -24,6 +25,9 @@ offset_right = 1261.0
 offset_bottom = 940.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_sl74t")
+
+[node name="ChestOpening" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7phan")
 
 [connection signal="mouse_entered" from="MinuteHand" to="." method="_on_minute_hand_mouse_entered"]
 [connection signal="mouse_exited" from="MinuteHand" to="." method="_on_minute_hand_mouse_exited"]
