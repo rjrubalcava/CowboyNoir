@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cqk0d4krjtubm" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/emptyboudoir.png" id="2_k26ek"]
 [ext_resource type="Texture2D" uid="uid://cgi85cwpjyi42" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/clubcard.png" id="3_ak850"]
 [ext_resource type="Texture2D" uid="uid://nlwqr25ws0ah" path="res://Assets/BunnyHeadspace/New/Final Headspace Assets/hourhand.png" id="4_ko4pr"]
-[ext_resource type="AudioStream" uid="uid://bmo2uf3m4sflq" path="res://Assets/SFX/chest sfx/Metal Latch.wav" id="6_pyoqu"]
+[ext_resource type="AudioStream" uid="uid://wi8o1d2mur1h" path="res://Assets/SFX/chest sfx/Drawer_opening_with_unlock.wav" id="5_454da"]
 
 [node name="OpenDrawer" type="Control"]
 layout_mode = 3
@@ -40,7 +40,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_ko4pr")
 
 [node name="Open" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_pyoqu")
+stream = ExtResource("5_454da")
 
 [connection signal="mouse_entered" from="ClubsCard" to="." method="_on_clubs_card_mouse_entered"]
 [connection signal="mouse_exited" from="ClubsCard" to="." method="_on_clubs_card_mouse_exited"]

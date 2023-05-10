@@ -1,4 +1,11 @@
 res://Z-RNDM/default_env.tres
-res://Scenes/Bluff.tscn
+res://Scenes/OpenChest.tscn
 res://Scenes/chips_Stacking_1.gd
+res://Scripts/OpenChest.gd
+res://Scenes/Start.tscn
+res://Scenes/OpenDrawer.tscn
+res://Scenes/Bluff.tscn
+res://Scenes/DialogueBox.tscn
+res://Scenes/Global.tscn
 res://Scenes/BunnyHeadspace.tscn
+res://Scripts/BunnyHeadspace.gd

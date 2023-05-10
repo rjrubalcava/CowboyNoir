@@ -34,6 +34,7 @@ var hourhandtouched = false
 
 #sound variables
 var clockpuzzlesolved = false
+var NewspaperPlay = false
 
 func _ready():
 	if Global.BHTransition == false:
@@ -115,6 +116,9 @@ func _input(event):
 			change_position(TW, Enlarged_Newspaper_sprite, center)
 			scale_down(TW, Clock)
 			scale_down(TW, TheSun)
+			if NewspaperPlay == false:
+				$newspaperOpening.play()
+				NewspaperPlay = true
 			await get_tree().create_timer(0.8).timeout
 			Enlarged_Newspaper_sprite.show()
 			Enlarged_Newspaper_sprite.z_index = 8
@@ -133,6 +137,7 @@ func _input(event):
 			scale_down(TW, Clock)
 			change_position(TW, Newspaper, newspaper_coordinates)
 			Enlarged_Newspaper_sprite.hide()
+			NewspaperPlay = false
 			
 	
 		
