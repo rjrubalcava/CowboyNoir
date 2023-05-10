@@ -21,7 +21,9 @@ func _process(delta):
 	if(initBluff != null):
 		if(!initBluff.noWinner):
 			var stress = initBluff.stressLevel
+			remove_child(get_node("Bluff"))
 			initBluff.queue_free()
+			print(Global.m_parent.get_children())
 			#Recognizing new Scene to play Bluff
 			var genBluff = load("res://Scenes/Bluff.tscn")
 		

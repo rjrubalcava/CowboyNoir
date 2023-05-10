@@ -124,12 +124,7 @@ func _ready():
 	revolvyCard.text = tc.text
 
 func _unhandled_input(event):
-	if event.is_action_pressed("ui_up"): 
-		incPshGge()
-	elif event.is_action_pressed("ui_down"):
-		get_tree().change_scene_to_file("res://Scenes/BunnyHeadspace.tscn")
-	# Close journal if it is open and esc is pressed
-	elif event.is_action_pressed("ui_cancel") and $Journal.visible:
+	if event.is_action_pressed("ui_cancel") and $Journal.visible:
 		# Show global dialogue elements if dialogue has been previously paused
 		if pauseDialogue:
 			for option in Global.current_options:
@@ -139,10 +134,7 @@ func _unhandled_input(event):
 			pauseDialogue = false
 		# Close journal
 		$Journal.hide()
-	elif event.is_action_pressed("ui_right"):
-		noWinner = false
-		stageOfRound == 'Y'
-
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(depthOfTurns >= 1):
