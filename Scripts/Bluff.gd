@@ -139,10 +139,13 @@ func _unhandled_input(event):
 			pauseDialogue = false
 		# Close journal
 		$Journal.hide()
+	elif event.is_action_pressed("ui_right"):
+		noWinner = false
+		stageOfRound == 'Y'
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(depthOfTurns >= 2):
+	if(depthOfTurns >= 1):
 		dontDisplay = true
 		incPshGge()
 		depthOfTurns = 0
@@ -325,6 +328,7 @@ func cupieD():
 				lastRoundHand = []
 				if(lastRoundPass):
 					stageOfRound = 'A'
+					centerHand = []
 				else:
 					lastRoundPass = true
 					stageOfRound = 'E'
@@ -568,6 +572,7 @@ func _on_pass_button_up():
 		if(lastRoundPass):
 			stageOfRound = 'F'
 			depthOfTurns += 1
+			centerHand = []
 		else:
 			lastRoundPass = true
 			stageOfRound = 'D'
@@ -578,6 +583,8 @@ func playerCardsReady(toReady):
 				x.setReady(toReady)
 
 func incPshGge():
+	print("Accessed")
+	print(depthOfTurns)
 	dontDisplay = true
 	Global.current_prompt.show()
 	for option in Global.current_options:

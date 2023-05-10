@@ -21,7 +21,7 @@ func _process(delta):
 	if(initBluff != null):
 		if(!initBluff.noWinner):
 			var stress = initBluff.stressLevel
-			initBluff.queue_Free()
+			initBluff.queue_free()
 			#Recognizing new Scene to play Bluff
 			var genBluff = load("res://Scenes/Bluff.tscn")
 		
@@ -34,6 +34,7 @@ func _process(delta):
 			#Initializing a new Game 
 			initBluff.initGame()
 			initBluff.updateStress(stress)
+			initBluff.dontDisplay = false
 
 func continueGame():
 	initBluff.dontDisplay = false
@@ -45,8 +46,9 @@ func _exit_tree():
 	Global.m_parent = null
 
 func startBluff(character):
-	# Remove overworld
-	initWorld.queue_free()
+	if is_instance_valid(initWorld):
+		# Remove overworld
+		initWorld.queue_free()
 	#Recognizing new Scene to play Bluff
 	var genBluff = load("res://Scenes/Bluff.tscn")
 	
